@@ -14,7 +14,13 @@ public class Person:BaseEntity
     public string? SecondName { get; set; }
     public string Surname { get; set; }
     public string? SecondSurname { get; set; }
-    public string Mail { get; set; }
+    public string Mail
+    {// Buraya bakılıcak
+        get
+        {
+            return $"{Name}.{Surname}@bilgeadam.com";
+        }
+    }
     public string Address { get; set; }
     public string PhoneNumber { get; set; }
     public decimal Salary { get; set; }
@@ -28,5 +34,4 @@ public class Person:BaseEntity
     public Guid DepartmentId { get; set; }
     public Department Department { get; set; }
     public string CompanyName { get; set; }
-
 }
