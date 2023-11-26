@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR.Domain.Concrete
 {
-    internal class Personel
+    public class Person
     {
 
 
