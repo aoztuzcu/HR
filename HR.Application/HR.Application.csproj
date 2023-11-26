@@ -7,12 +7,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CustomValidations\**" />
+    <Compile Remove="Services\**" />
+    <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="CustomValidations\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="CustomValidations\**" />
+    <None Remove="Services\**" />
+    <None Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Contracts\IRepository\Base\" />
     <Folder Include="Contracts\IService\Base\" />
-    <Folder Include="CustomValidations\" />
-    <Folder Include="Services\" />
-    <Folder Include="ViewModels\Base\" />
-    <Folder Include="ViewModels\Enums\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Features\People\Commands\" />
+    <Folder Include="Features\People\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HR.Domain\HR.Domain.csproj" />
   </ItemGroup>
 
 </Project>
