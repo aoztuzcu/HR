@@ -12,7 +12,7 @@ namespace HR.Presentation
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            //builder.Services.AddApplicationService();
+            builder.Services.AddApplicationService();
             builder.Services.AddPersistenceService(builder.Configuration);
 
             var app = builder.Build();
@@ -30,7 +30,7 @@ namespace HR.Presentation
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Person}/{action=Index}/{id?}");
 
             app.Run();
         }

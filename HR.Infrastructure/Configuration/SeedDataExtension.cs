@@ -13,26 +13,32 @@ public static class SeedDataExtension
     public static void Seed(this ModelBuilder modelBuilder)
     {
         var departmantId = Guid.NewGuid();
+        var departmantId2 = Guid.NewGuid();
+        var jobId2 = Guid.NewGuid();
         var jobId = Guid.NewGuid();
         modelBuilder.Entity<Department>().HasData(
         new Department
         {
-            Id = Guid.NewGuid(),
+            Id = departmantId2,
+            CreatedDate = DateTime.Now,
             Name = "Mechanical Design"
         },
         new Department
         {
             Id = Guid.NewGuid(),
+            CreatedDate = DateTime.Now,
             Name = "HR"
         },
         new Department
         {
             Id = Guid.NewGuid(),
+            CreatedDate = DateTime.Now,
             Name = "Accounting"
         },
         new Department
         {
             Id = departmantId,
+            CreatedDate = DateTime.Now,
             Name = "Information Technology"
         }
         );
@@ -52,12 +58,14 @@ public static class SeedDataExtension
             Id = Guid.NewGuid(),
             CreatedDate = DateTime.Now,
             Name = "BackEnd Developer",
-        }, new Job
+        },
+        new Job
         {
-            Id = Guid.NewGuid(),
+            Id = jobId2,
             CreatedDate = DateTime.Now,
             Name = "Civil Engineer",
-        }, new Job
+        }
+        , new Job
         {
             Id = Guid.NewGuid(),
             CreatedDate = DateTime.Now,
@@ -82,7 +90,25 @@ public static class SeedDataExtension
                Photo = "image_avatar-female.png",
                JobId = jobId,
                DepartmentId = departmantId
-           }
+           },
+             new Person
+             {
+                 Id = Guid.NewGuid(),
+                 CreatedDate = DateTime.Now,
+                 IdentityNumber = "65803196176",
+                 Address = "Yenibosna/İstanbul",
+                 BirthDate = new DateTime(1990, 05, 22),
+                 HireDate = DateTime.Now,
+                 Salary = 34000,
+                 PlaceofBirth = "İstanbul",
+                 Name = "Muhammet",
+                 Surname = "Coşkun",                 
+                 PhoneNumber = "5226932145",
+                 CompanyName = "Microsoft",
+                 Photo = "image_avatar-female.png",
+                 JobId = jobId2,
+                 DepartmentId = departmantId2
+             }
         );
     }
 

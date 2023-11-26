@@ -4,8 +4,6 @@ using HR.Application.Features.People.ViewModels;
 using MediatR;
 
 namespace HR.Application.Features.People.Queries.GetPerson;
-
-
 public class GetPersonQueryHandler : IRequestHandler<GetPersonQuery, PersonDetailVM>
 {
     private readonly IPersonRepository repository;
