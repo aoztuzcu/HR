@@ -8,6 +8,5 @@ namespace HR.Infrastructure.Persistence
 {
     public class HRContext
     {
-        
     }
 }
