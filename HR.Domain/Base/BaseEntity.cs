@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Domain.Base
+namespace HR.Domain.Base;
+public abstract class BaseEntity
 {
-    public abstract class BaseEntity
-    {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public bool IsActive { get; set; } = true;
-        public DateTime CreateDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public DateTime? DeletedDate { get; set; }
-
-
-    }
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public bool IsActive { get; set; } = true;
+    public DateTime CreatedDate { get; set; }
+    public DateTime? UpdatedDate { get; set; }
+    public DateTime? DeletedDate { get; set; }
 }
