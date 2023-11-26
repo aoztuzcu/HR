@@ -1,3 +1,6 @@
+using HR.Persistence;
+using HR.Application;
+
 namespace HR.Presentation
 {
     public class Program
@@ -8,6 +11,9 @@ namespace HR.Presentation
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //builder.Services.AddApplicationService();
+            builder.Services.AddPersistenceService(builder.Configuration);
 
             var app = builder.Build();
 

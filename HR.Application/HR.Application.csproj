@@ -7,30 +7,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Contracts\IRepository\**" />
+    <Compile Remove="Contracts\IService\**" />
     <Compile Remove="CustomValidations\**" />
     <Compile Remove="Services\**" />
     <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Contracts\IRepository\**" />
+    <EmbeddedResource Remove="Contracts\IService\**" />
     <EmbeddedResource Remove="CustomValidations\**" />
     <EmbeddedResource Remove="Services\**" />
     <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="Contracts\IRepository\**" />
+    <None Remove="Contracts\IService\**" />
     <None Remove="CustomValidations\**" />
     <None Remove="Services\**" />
     <None Remove="ViewModels\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\IRepository\Base\" />
-    <Folder Include="Contracts\IService\Base\" />
-    <Folder Include="Contracts\" />
     <Folder Include="Behaviors\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Features\People\Commands\" />
-    <Folder Include="Features\People\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.8.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
   <ItemGroup>

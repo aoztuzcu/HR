@@ -1,27 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using HR.Domain.Base;
 using HR.Domain.Concrete;
-using HR.Domain.Base;
 using HR.Persistence.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace HR.Infrastructure.Persistence;
 
 public class HRContext : DbContext
 {
-
-
-    public HRContext(DbContextOptions<HRContext> options) : base(options)
-    {
-
-    }
+    public HRContext(DbContextOptions<HRContext> options) : base(options) { }
 
     public DbSet<Department> Departments { get; set; }
-    public DbSet<Person> Persons { get; set; }
-    public DbSet<Job> jobs { get; set; }
+    public DbSet<Person> People { get; set; }
+    public DbSet<Job> Jobs { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
@@ -47,7 +37,6 @@ public class HRContext : DbContext
         return base.SaveChangesAsync(cancellationToken);
     }
 
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
@@ -56,7 +45,6 @@ public class HRContext : DbContext
         }
         base.OnConfiguring(optionsBuilder);
     }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new PersonConfiguration())
@@ -64,5 +52,4 @@ public class HRContext : DbContext
                 .ApplyConfiguration(new JobConfiguration());
         base.OnModelCreating(modelBuilder);
     }
-
 }
