@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HR.Application\HR.Application.csproj" />
+    <ProjectReference Include="..\HR.Domain\HR.Domain.csproj" />
+    <ProjectReference Include="..\HR.Infrastructure\HR.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
