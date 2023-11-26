@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\IRepository\Base\" />
+    <Folder Include="Contracts\IService\Base\" />
+    <Folder Include="CustomValidations\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\Base\" />
+    <Folder Include="ViewModels\Enums\" />
+  </ItemGroup>
+
+</Project>
