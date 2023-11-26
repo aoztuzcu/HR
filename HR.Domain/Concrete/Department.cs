@@ -10,5 +10,5 @@ namespace HR.Domain.Concrete;
 public class Department: BaseEntity
 {
     public string Name { get; set; }
-    public IEnumerable<Person> Persons { get; set; }
+    public IEnumerable<Person>? People { get; set; } 
 }

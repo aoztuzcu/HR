@@ -50,6 +50,7 @@ public class HRContext : DbContext
         modelBuilder.ApplyConfiguration(new PersonConfiguration())
                 .ApplyConfiguration(new DepartmentConfiguration())
                 .ApplyConfiguration(new JobConfiguration());
+        modelBuilder.Seed();
         base.OnModelCreating(modelBuilder);
     }
 }
