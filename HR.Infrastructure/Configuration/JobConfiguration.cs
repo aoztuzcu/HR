@@ -15,11 +15,8 @@ namespace HR.Persistence.Configuration
         {
             builder.HasQueryFilter(x => x.IsActive);
             builder.HasKey(x => x.Id);
-
             builder.Property(x => x.Name).IsRequired().HasMaxLength(30).HasColumnType("varchar");
-
-
-
+            
         }
     }
 }
