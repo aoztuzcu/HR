@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <label asp-for="PhotoFile" class="control-label"></label>
                                 <input asp-for="PhotoFile" class="form-control" type="file" value="@Model.Photo" />
-                                <span asp-validation-for="Photo" class="text-danger"></span>
+                                <span asp-validation-for="PhotoFile" class="text-danger"></span>
                             </div>
 
                             <div class="form-group">
@@ -57,7 +57,7 @@
 
                             <div class="form-group">
                                 <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
-                                <a asp-action ="Index" class="btn btn-light">İptal</a>
+                                <a asp-action="Index" class="btn btn-light">İptal</a>
                             </div>
 
                         </form>
@@ -67,5 +67,10 @@
         </div>
     </div>
 </section>
+
+
+<script src="~/jquery/jquery.slim.min.js">></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 
