@@ -1,11 +1,6 @@
 ﻿using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR.Application.Features.People.ViewModels;
 public class PersonDetailVM
@@ -21,7 +16,6 @@ public class PersonDetailVM
     public string PhoneNumber { get; set; }
     public string Photo { get; set; }
     public IFormFile PhotoFile { get; set; }
-
     public DateTime BirthDate { get; set; }
     public string PlaceofBirth { get; set; }
     public DateTime HireDate { get; set; }

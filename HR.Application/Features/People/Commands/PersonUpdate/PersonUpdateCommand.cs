@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HR.Application.Features.People.Commands.PersonUpdate;
 
-public class PersonUpdateCommand : IRequest
+public class PersonUpdateCommand : IRequest<PersonUpdateCommand>
 {
     public Guid Id { get; set; }
     public string Photo { get; set; }

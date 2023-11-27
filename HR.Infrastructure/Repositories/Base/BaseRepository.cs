@@ -21,9 +21,10 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
     public async Task<T> GetAsync(Expression<Func<T, bool>> expression, CancellationToken token)
         => await context.Set<T>().FirstOrDefaultAsync(expression, token) ?? throw new Exception($"{nameof(T)} Data Not Found!");
 
-    public async Task UpdateAsync(T entity, CancellationToken token)
+    public async Task<T> UpdateAsync(T entity, CancellationToken token)
     {
         context.Entry(entity).State = EntityState.Modified;
         await context.SaveChangesAsync(token);
+        return entity;
     }
 }

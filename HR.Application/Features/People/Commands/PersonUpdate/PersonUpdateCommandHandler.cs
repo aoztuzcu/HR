@@ -5,7 +5,7 @@ using MediatR;
 
 namespace HR.Application.Features.People.Commands.PersonUpdate;
 
-public class PersonUpdateCommandHandler : IRequestHandler<PersonUpdateCommand>
+public class PersonUpdateCommandHandler : IRequestHandler<PersonUpdateCommand, PersonUpdateCommand>
 {
     private readonly IPersonRepository repository;
     private readonly IMapper mapper;
@@ -16,9 +16,12 @@ public class PersonUpdateCommandHandler : IRequestHandler<PersonUpdateCommand>
         this.mapper = mapper;
     }
 
-    public async Task Handle(PersonUpdateCommand request, CancellationToken cancellationToken)
+
+    async Task<PersonUpdateCommand> IRequestHandler<PersonUpdateCommand, PersonUpdateCommand>.Handle(PersonUpdateCommand request, CancellationToken cancellationToken)
     {
         var newEntity = mapper.Map<Person>(request);
-        await repository.UpdateAsync(newEntity , cancellationToken);
+        var result = await repository.UpdateAsync(newEntity, cancellationToken);
+        return mapper.Map<PersonUpdateCommand>(result);
+       
     }
 }
