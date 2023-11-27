@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace HR.Domain.Concrete;
 
-public class Person:BaseEntity
+public class Person : BaseEntity
 {
     //public Person()
     //{
@@ -21,16 +21,16 @@ public class Person:BaseEntity
     public string? SecondSurname { get; set; }
 
     //private string? mail;
-    public string? Mail
-    {
-        get
-        {
-            return $"{Name.Trim().ToLower()}.{Surname.Trim().ToLower()}@bilgeadam.com"; ;
-        }
-        set 
-        {  
-        }
-    }
+    public string? Mail { get; set; }
+
+    //public string? Mail
+    //{
+    //    get
+    //    {
+    //        return $"{Name.Trim().ToLower()}.{Surname.Trim().ToLower()}@bilgeadam.com"; ;
+    //    }
+    //    set { }
+    //}
     public string Address { get; set; }
     public string PhoneNumber { get; set; }
     public decimal Salary { get; set; }

@@ -1,4 +1,7 @@
-﻿using HR.Application.Features.People.Queries.GetPerson;
+﻿using AutoMapper;
+using HR.Application.Features.People.Commands.PersonUpdate;
+using HR.Application.Features.People.Queries.GetPerson;
+using HR.Application.Features.People.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,9 +10,12 @@ namespace HR.Presentation.Controllers
     public class PersonController : Controller
     {
         private readonly IMediator mediator;
-        public PersonController(IMediator mediator)
+        private readonly IMapper mapper;
+
+        public PersonController(IMediator mediator, IMapper mapper)
         {
-            this.mediator = mediator;   
+            this.mediator = mediator;
+            this.mapper = mapper;
         }
         public async Task<IActionResult> Index(GetPersonQuery query)
         {
@@ -17,15 +23,35 @@ namespace HR.Presentation.Controllers
             var result = await mediator.Send(query);
             return View(result);
         }
-        //public async Task<IActionResult> Update(GetPersonQuery query)
-        //{
-        //    query.Id = Guid.Parse("B6F37500-CFD3-4968-9D76-71091665E28A");
-        //    var result = await mediator.Send(query);
-        //    return View(result);
-        //}
-        public async Task<IActionResult> Detail()
+
+        public async Task<IActionResult> UpdatePerson(Guid id)
         {
-            return View();
+            GetPersonQuery query = new GetPersonQuery() { Id = id };
+            var result = await mediator.Send(query);
+            return View(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdatePerson(PersonDetailVM personDetailVM)
+        {
+            GetPersonQuery query = new GetPersonQuery() { Id = personDetailVM.Id };
+            var result = await mediator.Send(query);
+
+            var updateResult = mapper.Map<PersonUpdateCommand>(result);
+            updateResult.Id = personDetailVM.Id;
+            updateResult.Photo = personDetailVM.Photo;
+            updateResult.Address = personDetailVM.Address;
+            updateResult.PhoneNumber = personDetailVM.PhoneNumber;
+
+            await mediator.Send(updateResult);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Detail(Guid id)
+        {
+            GetPersonQuery query = new GetPersonQuery() { Id = id };
+            var result = await mediator.Send(query);
+            return View(result);
         }
 
     }

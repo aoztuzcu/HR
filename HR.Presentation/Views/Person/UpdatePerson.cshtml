@@ -1,0 +1,72 @@
+﻿@model PersonDetailVM
+
+@{
+    ViewData["Title"] = "Kullanıcı Bilgileri Güncelle";
+}
+
+<section>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="~/photos/@Model.Photo" alt="..."
+                             class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">@Model.Name @Model.SecondName @Model.Surname @Model.SecondSurname</h5>
+                        <p class="text-muted mb-1">@Model.Job.Name</p>
+                        <p class="text-muted mb-4">@Model.Department.Name</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            @* <a asp-action="Update" asp-controller="Home" class="btn btn-primary">Güncelle</a> *@
+                            <a asp-action="Detail" asp-controller="Person" asp-route-id="@Model.Id" class="btn btn-outline-primary ms-1">Detay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Kullanıcı Bilgileri Güncelle</h4>
+                        <p class="card-description">
+                            Kullanıcı Bilgeleri Güncelle
+                        </p>
+                        <form class="forms-sample" asp-action="UpdatePerson" asp-controller="Person" method="post">
+
+                            <div class="form-group">
+                                <label asp-for="Photo" class="control-label"></label>
+                                <input asp-for="Photo" class="form-control" value="Photo" type="file" />
+                                <span asp-validation-for="Photo" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber">Telefon Numarası</label>
+                                <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Telefon Numarası">
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Address">Adres</label>
+                                <textarea asp-for="Address" class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                <label asp-for="Id" class="control-label"></label>
+                                <input asp-for="Id" class="form-control" />
+                                <span asp-validation-for="Id" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
+                                <a asp-action ="Index" class="btn btn-light">İptal</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
