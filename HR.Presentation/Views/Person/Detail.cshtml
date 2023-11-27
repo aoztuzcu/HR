@@ -9,11 +9,15 @@
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-body text-center">
-                        <img src="~/images/img_avatar3.png" alt="avatar"
+                        <img src="~/photos/@Model.Photo" alt="..."
                              class="rounded-circle img-fluid" style="width: 150px;">
-                        <h5 class="my-3">@Model.Name @Model.Surname</h5>
-                        <p class="text-muted mb-1">@Model.Job</p>
-                        <p class="text-muted mb-4">@Model.Department</p>
+                        <h5 class="my-3">@Model.Name @Model.SecondName @Model.Surname @Model.SecondSurname</h5>
+                        <p class="text-muted mb-1">@Model.Job.Name</p>
+                        <p class="text-muted mb-4">@Model.Department.Name</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <a asp-action="UpdatePerson" asp-controller="Person" asp-route-id="@Model.Id" class="btn btn-primary">Güncelle</a>
+                            @* <a asp-action="Detail" asp-controller="Person" asp-route-id="@Model.Id" class="btn btn-outline-primary ms-1">Detay</a> *@
+                        </div>
 
                     </div>
                 </div>
@@ -25,17 +29,17 @@
 
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Full Name</p>
+                                <p class="mb-0">Tam Adı</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">@Model.Name @Model.Surname</p>
+                                <p class="text-muted mb-0">@Model.Name @Model.SecondName @Model.Surname @Model.SecondSurname</p>
                             </div>
                         </div>
 
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Identity Number</p>
+                                <p class="mb-0">Kimlik Numarası</p>
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-muted mb-0">@Model.IdentityNumber</p>
@@ -45,7 +49,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Birth Date</p>
+                                <p class="mb-0">Doğum Tarihi</p>
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-muted mb-0">@Model.BirthDate.ToShortDateString()</p>
@@ -55,7 +59,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Place of Birth</p>
+                                <p class="mb-0">Doğum Yeri</p>
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-muted mb-0">@Model.PlaceofBirth</p>
@@ -65,7 +69,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Email</p>
+                                <p class="mb-0">E-mail</p>
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-muted mb-0">@Model.Mail</p>
@@ -75,7 +79,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Mobile</p>
+                                <p class="mb-0">Telefon Numarası</p>
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-muted mb-0">@Model.PhoneNumber</p>
@@ -85,10 +89,30 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Address</p>
+                                <p class="mb-0">Adres</p>
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-muted mb-0">@Model.Address</p>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Çalıştığı Kurum</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">@Model.CompanyName</p>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">İşe Başlangıç Tarihi</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">@Model.HireDate.ToShortDateString()</p>
                             </div>
                         </div>
 
