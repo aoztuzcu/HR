@@ -42,7 +42,10 @@ namespace HR.Presentation.Controllers
             
             var updateResult = mapper.Map<PersonUpdateCommand>(result);
             updateResult.Id = personDetailVM.Id;
-            updateResult.Photo = FileOperation.ReturnFileName(personDetailVM.PhotoFile, "photos", webHostEnvironment);
+            if (personDetailVM.PhotoFile !=null)
+            {
+                updateResult.Photo = FileOperation.ReturnFileName(personDetailVM.PhotoFile, "photos", webHostEnvironment);
+            }
             updateResult.Address = personDetailVM.Address;
             updateResult.PhoneNumber = personDetailVM.PhoneNumber;
             
