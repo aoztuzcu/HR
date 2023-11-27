@@ -30,11 +30,11 @@
                         <p class="card-description">
                             Kullanıcı Bilgeleri Güncelle
                         </p>
-                        <form class="forms-sample" asp-action="UpdatePerson" asp-controller="Person" method="post">
+                        <form class="forms-sample" asp-action="UpdatePerson" asp-controller="Person" method="post" enctype="multipart/form-data">
 
                             <div class="form-group">
-                                <label asp-for="Photo" class="control-label"></label>
-                                <input asp-for="Photo" class="form-control" value="Photo" type="file" />
+                                <label asp-for="PhotoFile" class="control-label"></label>
+                                <input asp-for="PhotoFile" class="form-control" value="Photo" type="file" />
                                 <span asp-validation-for="Photo" class="text-danger"></span>
                             </div>
 

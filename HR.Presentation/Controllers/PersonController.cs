@@ -2,6 +2,7 @@
 using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.Queries.GetPerson;
 using HR.Application.Features.People.ViewModels;
+using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +12,13 @@ namespace HR.Presentation.Controllers
     {
         private readonly IMediator mediator;
         private readonly IMapper mapper;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
-        public PersonController(IMediator mediator, IMapper mapper)
+        public PersonController(IMediator mediator, IMapper mapper , IWebHostEnvironment webHostEnvironment)
         {
             this.mediator = mediator;
             this.mapper = mapper;
+            this.webHostEnvironment = webHostEnvironment;
         }
         public async Task<IActionResult> Index(GetPersonQuery query)
         {
@@ -36,13 +39,13 @@ namespace HR.Presentation.Controllers
         {
             GetPersonQuery query = new GetPersonQuery() { Id = personDetailVM.Id };
             var result = await mediator.Send(query);
-
+            
             var updateResult = mapper.Map<PersonUpdateCommand>(result);
             updateResult.Id = personDetailVM.Id;
-            updateResult.Photo = personDetailVM.Photo;
+            updateResult.Photo = FileOperation.ReturnFileName(personDetailVM.PhotoFile, "photos", webHostEnvironment);
             updateResult.Address = personDetailVM.Address;
             updateResult.PhoneNumber = personDetailVM.PhoneNumber;
-
+            
             await mediator.Send(updateResult);
             return RedirectToAction("Index");
         }
