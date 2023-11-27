@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TestTemplate</title>
+    <title>@ViewData["Title"]  HRMS</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TestTemplate.styles.css" asp-append-version="true" />
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/template/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="~/template/vendors/base/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/photos/">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -24,8 +24,11 @@
             <!-- partial:partials/_navbar.html -->
             <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
                 <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo me-5" asp-action="Index" asp-controller="Home"><img src="~/template/images/logo.svg" class="me-2" alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" asp-action="Index" asp-controller="Home"><img src="~/template/images/logo-mini.svg" alt="logo" /></a>
+               @*     <a class="navbar-brand brand-logo me-5" asp-action="Index" asp-controller="Person">
+                        <img style=" width: 100%;" src="~/photos/WhatsApp Görsel 2023-11-27 saat 20.39.11_7ebe0465.jpg" class="me-2" alt="logo" />
+                    </a>*@
+                    @*<a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Person"><img style=" width:200px " src="~/photos/Ekran görüntüsü 2023-11-27 205649.png" alt="logo" /></a>*@
+                    <a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Person"><img style="width:max-content;" src="~/photos/Ekran görüntüsü 2023-11-27 220712.png" alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -163,24 +166,29 @@
             <!-- partial -->
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
-                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#BFD9D7">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" asp-action="Index" asp-controller="Home">
+                            <a class="nav-link" asp-action="Index" asp-controller="Person">
                                 <i class="ti-shield menu-icon"></i>
                                 <span class="menu-title">Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                                <i class="ti-palette menu-icon"></i>
+                                @*  <i class="ti-palette menu-icon"></i>
                                 <span class="menu-title">UI Elements</span>
+                                <i class="menu-arrow"></i>*@
+                                <i class="ti-palette menu-icon"></i>
+                                <span class="menu-title">Personel Bilgileri</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/buttons.html">Buttons</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/typography.html">Typography</a></li>
+                                    @*   <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/buttons.html">Buttons</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/typography.html">Typography</a></li>*@
+                                    <li class="nav-item"> <a class="nav-link" asp-action="Detail" asp-controller="Person" asp-route-id="78516AFA-1058-4808-8DA2-6B79DC0592FB">Detay</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="UpdatePerson" asp-controller="Person" asp-route-id="78516AFA-1058-4808-8DA2-6B79DC0592FB">Güncelle</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -257,9 +265,23 @@
             &copy; 2023 - TestTemplate - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/template/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/template/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/template/js/site.js" asp-append-version="true"></script>
+    <script src="~/template/vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="~/template/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/template/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/template/js/off-canvas.js"></script>
+    <script src="~/template/js/hoverable-collapse.js"></script>
+    <script src="~/template/js/template.js"></script>
+    <script src="~/template/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/dashboard.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
