@@ -12,4 +12,14 @@ public class PersonRepository : BaseRepository<Person>, IPersonRepository
 
     public async Task<Person> GetByIdAsync(Guid Id, CancellationToken token)
         => await context.People.Include(x => x.Department).Include(y => y.Job).FirstOrDefaultAsync(f => f.Id == Id, token);
+
+    public async Task<Person> UpdateAsyncByPerson(Person entity, CancellationToken token)
+    {
+        await context.People.ExecuteUpdateAsync(s => s.SetProperty(b => b.Address, entity.Address));
+        await context.People.ExecuteUpdateAsync(s => s.SetProperty(b => b.PhoneNumber, entity.PhoneNumber));
+        if (entity.Photo is not null)
+            await context.People.ExecuteUpdateAsync(s => s.SetProperty(b => b.Photo, entity.Photo));   
+        await context.SaveChangesAsync(token);
+        return entity;
+    }
 }

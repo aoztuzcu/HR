@@ -1,7 +1,9 @@
-﻿@model PersonDetailVM
-
+﻿@using HR.Application.Features.People.ViewModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model PersonDetailVM
 @{
-    ViewData["Title"] = "Kullanıcı Bilgileri Güncelle";
+    ViewData["Title"] = "UpdatePerson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <section>
@@ -16,7 +18,7 @@
                         <p class="text-muted mb-1">@Model.Job.Name</p>
                         <p class="text-muted mb-4">@Model.Department.Name</p>
                         <div class="d-flex justify-content-center mb-2">
-                             <a asp-action="Update" asp-controller="Home" class="btn btn-primary">Güncelle</a> 
+                            <a asp-action="Update" asp-controller="Home" class="btn btn-primary">Güncelle</a>
                             <a asp-action="Detail" asp-controller="Person" asp-route-id="@Model.Id" class="btn btn-outline-primary ms-1">Detay</a>
                         </div>
                     </div>
@@ -39,7 +41,7 @@
 
                             <div class="form-group">
                                 <label asp-for="PhoneNumber">Telefon Numarası</label>
-                                <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="(___) ___-____" required>
+                                <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="(___) ___-____" >
                                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                             </div>
 
@@ -59,7 +61,6 @@
                                 <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
                                 <a asp-action="Index" class="btn btn-light">İptal</a>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -67,11 +68,8 @@
         </div>
     </div>
 </section>
-
 @section Scripts{
     @{
-       await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-
-

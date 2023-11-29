@@ -20,7 +20,7 @@ public class PersonUpdateCommandHandler : IRequestHandler<PersonUpdateCommand, P
     async Task<PersonUpdateCommand> IRequestHandler<PersonUpdateCommand, PersonUpdateCommand>.Handle(PersonUpdateCommand request, CancellationToken cancellationToken)
     {
         var newEntity = mapper.Map<Person>(request);
-        var result = await repository.UpdateAsync(newEntity, cancellationToken);
+        var result = await repository.UpdateAsyncByPerson(newEntity, cancellationToken);
         return mapper.Map<PersonUpdateCommand>(result);
        
     }

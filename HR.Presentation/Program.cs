@@ -27,10 +27,18 @@ namespace HR.Presentation
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapAreaControllerRoute(
+                  name: "areaDefault",
+                  areaName: "Personnel",
+                  pattern: "{area:exists}/{controller=Person}/{action=Index}/{id?}"
+                ); ;
 
-            app.MapControllerRoute(
+                endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Person}/{action=Index}/{id?}");
+            });
 
             app.Run();
         }

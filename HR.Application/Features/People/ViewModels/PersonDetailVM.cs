@@ -1,7 +1,8 @@
-﻿using HR.Application.Features.Departments.ViewModels;
+﻿using HR.Application.Exceptions;
+using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
 using Microsoft.AspNetCore.Http;
-
+using System.ComponentModel.DataAnnotations;
 namespace HR.Application.Features.People.ViewModels;
 public class PersonDetailVM
 {
@@ -12,10 +13,19 @@ public class PersonDetailVM
     public string Surname { get; set; }
     public string? SecondSurname { get; set; }
     public string Mail { get; set; }
+    [Required(ErrorMessage ="Telefon numarası boş geçilemez.")]
+    [MinLength(5, ErrorMessage ="Lütfen minimum 5 karakterden oluşan bir adres giriniz..")]
     public string Address { get; set; }
+    [Required(ErrorMessage = "Adres boş geçilemez.")]
+    [MinLength(10,ErrorMessage ="Lütfen 10 haneli bir telefon numarası giriniz. ")]
+    [MaxLength(10, ErrorMessage = "Lütfen 10 haneli bir telefon numarası giriniz. ")]
+    [DataType(DataType.PhoneNumber)]
     public string PhoneNumber { get; set; }
-    public string Photo { get; set; }
-    public IFormFile PhotoFile { get; set; }
+    [AllowedFileExtensions(new string[] {".png",".jpeg",".jpg"})]
+    public string? Photo { get; set; }
+
+    [AllowedFileExtensions(new string[] { ".png", ".jpeg", ".jpg" })]
+    public IFormFile? PhotoFile { get; set; }
     public DateTime BirthDate { get; set; }
     public string PlaceofBirth { get; set; }
     public DateTime HireDate { get; set; }

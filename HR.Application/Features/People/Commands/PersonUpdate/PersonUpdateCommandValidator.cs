@@ -7,7 +7,7 @@ namespace HR.Application.Features.People.Commands.PersonUpdate
     {
         public PersonUpdateCommandValidator()
         {
-            RuleFor(x => x.Address).NotEmpty().WithMessage("Address is mandatory.");
+            RuleFor(x => x.Address).NotEmpty().WithMessage("Address is mandatory.").MinimumLength(5).WithMessage("Minimum length of adress must be 5.");
 
             RuleFor(x => x.PhoneNumber).NotEmpty().WithMessage("Phone number is mandatory.")
                                        .Must(IsPhoneNumber).WithMessage("Please enter a valid phone number.");
