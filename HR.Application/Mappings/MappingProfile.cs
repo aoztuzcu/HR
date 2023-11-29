@@ -18,10 +18,8 @@ public class MappingProfile:Profile
     public MappingProfile()
     {
         CreateMap<Person, PersonDetailVM>().ReverseMap();
-        CreateMap<Person, PersonUpdateCommand>().ReverseMap();
-        
+        CreateMap<Person, PersonUpdateCommand>().ReverseMap();        
         CreateMap<PersonDetailVM, PersonUpdateCommand>().ReverseMap();
-        
         CreateMap<Person, PersonVM>().ReverseMap();
         CreateMap<Department, DepartmentVM>().ReverseMap();
         CreateMap<Job, JobVM>().ReverseMap();

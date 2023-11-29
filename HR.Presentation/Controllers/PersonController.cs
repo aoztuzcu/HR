@@ -20,7 +20,7 @@ namespace HR.Presentation.Controllers
             this.mapper = mapper;
             this.webHostEnvironment = webHostEnvironment;
         }
-        public async Task<IActionResult> Index(GetPersonQuery query)
+        public async Task<IActionResult> Index(GetPersonByIdQuery query)
         {
             query.Id = Guid.Parse("78516AFA-1058-4808-8DA2-6B79DC0592FB");
             var result = await mediator.Send(query);
@@ -29,33 +29,31 @@ namespace HR.Presentation.Controllers
 
         public async Task<IActionResult> UpdatePerson(Guid id)
         {
-            GetPersonQuery query = new GetPersonQuery() { Id = id };
+            GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
             var result = await mediator.Send(query);
             return View(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdatePerson(PersonDetailVM personDetailVM)
+        public async Task<IActionResult> UpdatePerson(PersonUpdateCommand personUpdateCommand)
         {
-            GetPersonQuery query = new GetPersonQuery() { Id = personDetailVM.Id };
-            var result = await mediator.Send(query);
-            
-            var updateResult = mapper.Map<PersonUpdateCommand>(result);
-            updateResult.Id = personDetailVM.Id;
-            if (personDetailVM.PhotoFile !=null)
-            {
-                updateResult.Photo = FileOperation.ReturnFileName(personDetailVM.PhotoFile, "photos", webHostEnvironment);
-            }
-            updateResult.Address = personDetailVM.Address;
-            updateResult.PhoneNumber = personDetailVM.PhoneNumber;
-            
-            await mediator.Send(updateResult);
+            //GetPersonQuery query = new GetPersonQuery() { Id = personDetailVM.Id };
+            //var result = await mediator.Send(personUpdateCommand);
+
+            //var updateResult = mapper.Map<PersonUpdateCommand>(result);
+            //updateResult.Id = personDetailVM.Id;
+            if (personUpdateCommand.PhotoFile != null)
+                personUpdateCommand.Photo = FileOperation.ReturnFileName(personUpdateCommand.PhotoFile, "photos", webHostEnvironment);
+            //updateResult.Address = personDetailVM.Address;
+            //updateResult.PhoneNumber = personDetailVM.PhoneNumber;
+
+            await mediator.Send(personUpdateCommand);
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Detail(Guid id)
         {
-            GetPersonQuery query = new GetPersonQuery() { Id = id };
+            GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
             var result = await mediator.Send(query);
             return View(result);
         }

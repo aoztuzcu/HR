@@ -20,4 +20,9 @@
     <ProjectReference Include="..\HR.Infrastructure\HR.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Personnel\Data\" />
+    <Folder Include="Areas\Personnel\Models\" />
+  </ItemGroup>
+
 </Project>

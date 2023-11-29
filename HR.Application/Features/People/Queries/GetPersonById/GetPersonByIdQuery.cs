@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HR.Application.Features.People.Queries.GetPerson;
 
-public class GetPersonQuery : IRequest<PersonDetailVM>
+public class GetPersonByIdQuery : IRequest<PersonDetailVM>
 {
     public Guid Id { get; set; }
 }
