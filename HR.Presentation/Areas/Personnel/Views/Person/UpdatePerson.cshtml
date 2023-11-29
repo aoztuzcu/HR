@@ -35,7 +35,7 @@
                         <form class="forms-sample" asp-action="UpdatePerson" asp-controller="Person" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label asp-for="PhotoFile" class="control-label"></label>
-                                <input asp-for="PhotoFile" class="form-control" type="file" value="@Model.Photo" />
+                                <input id="fileInput" asp-for="PhotoFile" class="form-control" type="file" onchange="return validateFile();" value="@Model.Photo" />
                                 <span asp-validation-for="PhotoFile" class="text-danger"></span>
                             </div>
 
@@ -72,4 +72,33 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        function validateFile() {
+            var fileInput = document.getElementById('fileInput'); // İlgili input elementinin id'si
+            var fileName = fileInput.value;
+            var fileSize = fileInput.files[0].size; // Dosya boyutu bytes cinsinden
+
+            // Dosya türü kontrolü
+            var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+            if (!allowedExtensions.test(fileName)) {
+                alert('Hata: Sadece JPEG ve PNG dosyaları yükleyebilirsiniz.');
+                fileInput.value = '';
+                return false;
+            }
+
+            // Dosya boyutu kontrolü (25 MB)
+            var maxSize = 25 * 1024 * 1024; // 25 MB
+            if (fileSize > maxSize) {
+                alert('Hata: Dosya boyutu 25 MB\'dan büyük olamaz.');
+                fileInput.value = '';
+                return false;
+            }
+
+            // Bilgi mesajı
+            alert('Başarıyla yüklendi: ' + fileName);
+
+            // Geçerli dosya
+            return true;
+        }
+    </script>
 }
