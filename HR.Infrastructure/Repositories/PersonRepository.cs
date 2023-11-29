@@ -15,11 +15,15 @@ public class PersonRepository : BaseRepository<Person>, IPersonRepository
 
     public async Task<Person> UpdateAsyncByPerson(Person entity, CancellationToken token)
     {
-        await context.People.ExecuteUpdateAsync(s => s.SetProperty(b => b.Address, entity.Address));
-        await context.People.ExecuteUpdateAsync(s => s.SetProperty(b => b.PhoneNumber, entity.PhoneNumber));
+        var model = await context.People.FirstOrDefaultAsync(f => f.Id == entity.Id) ?? throw new ArgumentNullException("Entity not found.");
+        model.Address = entity.Address;
+        model.PhoneNumber = entity.PhoneNumber;
+
         if (entity.Photo is not null)
-            await context.People.ExecuteUpdateAsync(s => s.SetProperty(b => b.Photo, entity.Photo));   
+            model.Photo = entity.Photo;
+
+        context.Entry(model).State = EntityState.Modified;
         await context.SaveChangesAsync(token);
-        return entity;
+        return model;
     }
 }
