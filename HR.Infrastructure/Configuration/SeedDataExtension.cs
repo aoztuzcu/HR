@@ -85,6 +85,7 @@ public static class SeedDataExtension
                Name = "Elif",
                Surname = "Demir",
                SecondName = "Betül",
+               Gender = Domain.Enum.Gender.Female,
                PhoneNumber = "5226932145",
                CompanyName = "Google",
                Photo = "image_avatar-female.png",
@@ -95,21 +96,22 @@ public static class SeedDataExtension
              {
                  Id = Guid.NewGuid(),
                  CreatedDate = DateTime.Now,
-                 IdentityNumber = "65803196176",
+                 IdentityNumber = "58963214568",
                  Address = "Yenibosna/İstanbul",
-                 BirthDate = new DateTime(1990, 05, 22),
+                 BirthDate = new DateTime(2000, 05, 22),
                  HireDate = DateTime.Now,
                  Salary = 34000,
                  PlaceofBirth = "İstanbul",
                  Name = "Muhammet",
-                 Surname = "Coşkun",                 
+                 Surname = "Coşkun",
+                 Gender = Domain.Enum.Gender.Male,
                  PhoneNumber = "5226932145",
                  CompanyName = "Microsoft",
                  Photo = "image_avatar-female.png",
                  JobId = jobId2,
                  DepartmentId = departmantId2
              }
-        );
+        ) ;
     }
 
 }
