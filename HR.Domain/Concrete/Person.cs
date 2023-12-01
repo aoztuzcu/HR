@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Base;
+using HR.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ public class Person : BaseEntity
     public string? Mail { get; set; }
     public string Address { get; set; }
     public string PhoneNumber { get; set; }
+    public Gender Gender{ get; set; }
     public decimal Salary { get; set; }
     public string Photo { get; set; }
     public DateTime BirthDate { get; set; }
@@ -29,9 +31,12 @@ public class Person : BaseEntity
     public Guid DepartmentId { get; set; }
     public Department? Department { get; set; }
     public string CompanyName { get; set; }
+    public decimal? AnnualTakeAdvanceAmount { get; set; }
+    public float? AnnualPermissionDays { get; set; }
 
     // Navigation Properties
     public ICollection<AdvancePayment>? AdvancePayments{ get; set; }
+    public ICollection<PermissionRequest>? PermissonRequests { get; set; }
 }
 
 
