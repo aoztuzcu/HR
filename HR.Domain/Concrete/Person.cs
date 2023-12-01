@@ -29,6 +29,9 @@ public class Person : BaseEntity
     public Guid DepartmentId { get; set; }
     public Department? Department { get; set; }
     public string CompanyName { get; set; }
+
+    // Navigation Properties
+    public ICollection<AdvancePayment>? AdvancePayments{ get; set; }
 }
 
 
