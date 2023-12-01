@@ -13,13 +13,15 @@ public class PersonDetailVM
     public string Surname { get; set; }
     public string? SecondSurname { get; set; }
     public string Mail { get; set; }
-    [Required(ErrorMessage ="Telefon numarası boş geçilemez.")]
+    [Required(ErrorMessage = "Adres boş geçilemez.")]
     [MinLength(5, ErrorMessage ="Lütfen minimum 5 karakterden oluşan bir adres giriniz..")]
     public string Address { get; set; }
-    [Required(ErrorMessage = "Adres boş geçilemez.")]
+ 
     [MinLength(10,ErrorMessage ="Lütfen 10 haneli bir telefon numarası giriniz. ")]
     [MaxLength(10, ErrorMessage = "Lütfen 10 haneli bir telefon numarası giriniz. ")]
     [DataType(DataType.PhoneNumber)]
+    [Required(ErrorMessage = "Telefon numarası boş geçilemez.")]
+    [RegularExpression(@"^(5\d{9})$", ErrorMessage = "Lütfen geçerli bir cep telefonu numarası giriniz.")]
     public string PhoneNumber { get; set; }
     [AllowedFileExtensions(new string[] {".png",".jpeg",".jpg"})]
     public string? Photo { get; set; }

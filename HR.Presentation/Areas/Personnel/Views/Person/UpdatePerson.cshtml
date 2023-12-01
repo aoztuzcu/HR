@@ -29,12 +29,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Kullanıcı Bilgileri Güncelle</h4>
-                        <p class="card-description">
-                            Kullanıcı Bilgeleri Güncelle
-                        </p>
                         <form class="forms-sample" asp-action="UpdatePerson" asp-controller="Person" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label asp-for="PhotoFile" class="control-label"></label>
+                                <label asp-for="PhotoFile" class="control-label">Fotoğraf</label>
                                 <input id="fileInput" asp-for="PhotoFile" class="form-control" type="file" onchange="return validateFile();" value="@Model.Photo" />
                                 <span asp-validation-for="PhotoFile" class="text-danger"></span>
                             </div>
