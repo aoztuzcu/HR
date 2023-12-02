@@ -1,16 +1,18 @@
 ﻿using HR.Domain.Base;
 using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
+using HR.Domain.Concrete.User.Role;
 using HR.Persistence.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HR.Infrastructure.Persistence;
 
-public class HRContext : DbContext
+public class HRContext : IdentityDbContext<Person, PersonRole, Guid>
 {
     public HRContext(DbContextOptions<HRContext> options) : base(options) { }
 
     public DbSet<Department> Departments { get; set; }
-    public DbSet<Person> People { get; set; }
     public DbSet<Job> Jobs { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

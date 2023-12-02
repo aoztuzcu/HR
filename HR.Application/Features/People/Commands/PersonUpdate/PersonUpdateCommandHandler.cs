@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HR.Application.Contracts.Persistence.Repositories;
 using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
 using MediatR;
 
 namespace HR.Application.Features.People.Commands.PersonUpdate;

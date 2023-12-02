@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Base;
+using HR.Domain.Concrete.User;
 using HR.Domain.Enum;
 
 namespace HR.Domain.Concrete;

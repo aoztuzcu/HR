@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -14,7 +15,6 @@ namespace HR.Persistence.Configuration
         public void Configure(EntityTypeBuilder<Person> builder)
         {
 
-            builder.HasQueryFilter(x => x.IsActive);
             builder.HasKey(x => x.Id);
             builder.Property(x=>x.IdentityNumber).IsRequired().HasMaxLength(11).HasColumnType("varchar");
             builder.Property(x => x.Name).IsRequired().HasMaxLength(30).HasColumnType("varchar");
@@ -24,8 +24,6 @@ namespace HR.Persistence.Configuration
             builder.Property(x => x.Surname).IsRequired().HasMaxLength(30).HasColumnType("varchar");
 
             builder.Property(x => x.SecondSurname).HasMaxLength(30).HasColumnType("varchar");
-
-            builder.Property(x => x.Mail).HasMaxLength(60).HasColumnType("varchar");
 
             builder.Property(x => x.Address).IsRequired().HasMaxLength(60).HasColumnType("varchar");
 
