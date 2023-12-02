@@ -8,9 +8,9 @@ namespace HR.Presentation.Controllers
     public class LoginController : Controller
     {
 
-        private readonly SignInManager<Person> signInManager;
-        private readonly UserManager<Person> userManager;
-        public LoginController(SignInManager<Person> signInManager, UserManager<Person> userManager)
+        private readonly SignInManager<User> signInManager;
+        private readonly UserManager<User> userManager;
+        public LoginController(SignInManager<User> signInManager, UserManager<User> userManager)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;

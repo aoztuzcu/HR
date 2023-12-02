@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HR.Infrastructure.Persistence;
 
-public class HRContext : IdentityDbContext<Person, PersonRole, Guid>
+public class HRContext : IdentityDbContext<User, UserRole, Guid>
 {
     public HRContext(DbContextOptions<HRContext> options) : base(options) { }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HR.Domain.Concrete.User;
 
-public class Person : IdentityUser<Guid>
+public class User : IdentityUser<Guid>
 {
     public string IdentityNumber { get; set; }
     public string Name { get; set; }

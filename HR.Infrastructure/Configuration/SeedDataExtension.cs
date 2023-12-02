@@ -15,7 +15,7 @@ public static class SeedDataExtension
 {
     public static void Seed(this ModelBuilder modelBuilder)
     {
-        var hasher = new PasswordHasher<Person>();
+        var hasher = new PasswordHasher<User>();
         var departmantId = Guid.NewGuid();
         var departmantId2 = Guid.NewGuid();
         var jobId2 = Guid.NewGuid();
@@ -78,16 +78,16 @@ public static class SeedDataExtension
             CreatedDate = DateTime.Now,
             Name = "Industrial Engineer",
         });
-        modelBuilder.Entity<PersonRole>().HasData(
-            new PersonRole { Name="Personnel", Id= role, NormalizedName="PERSONNEL"}
+        modelBuilder.Entity<UserRole>().HasData(
+            new UserRole { Name="Personnel", Id= role, NormalizedName="PERSONNEL"}
             );
 
         modelBuilder.Entity<IdentityUserRole<Guid>>().HasData(
                   new IdentityUserRole<Guid> { RoleId = role, UserId = userId }
                   );
 
-        modelBuilder.Entity<Person>().HasData(
-           new Person
+        modelBuilder.Entity<User>().HasData(
+           new User
            {
                Id = userId,
                IdentityNumber = "65803196176",
@@ -118,7 +118,7 @@ public static class SeedDataExtension
                SecurityStamp= "D2C7BG653KANTFOB6NNHCOSN2R7GM27A"
 
 		   },
-             new Person
+             new User
              {
                  Id = userId2,
                  IdentityNumber = "58963214568",

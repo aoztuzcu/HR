@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace HR.Persistence.Configuration
 {
-    public class PersonConfiguration : IEntityTypeConfiguration<Person>
+    public class PersonConfiguration : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<Person> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
 
             builder.HasKey(x => x.Id);

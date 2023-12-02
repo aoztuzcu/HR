@@ -18,7 +18,7 @@ namespace HR.Presentation
             builder.Services.AddApplicationService();
             builder.Services.AddPersistenceService(builder.Configuration);
 
-			builder.Services.AddIdentity<Person, PersonRole>(x =>
+			builder.Services.AddIdentity<User, UserRole>(x =>
 			{
 				x.Password.RequireUppercase = false;
 				x.Password.RequireNonAlphanumeric = false;

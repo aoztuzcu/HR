@@ -7,7 +7,7 @@ namespace HR.Application.Contracts.Persistence.Repositories;
 
 public interface IPersonRepository 
 {
-    Task<Person> GetAsync(Expression<Func<Person, bool>> expression, CancellationToken token);
-    Task<Person> GetByIdAsync(Guid Id, CancellationToken token);
-    Task<Person> UpdateAsyncByPerson(Person entity, CancellationToken token);
+    Task<User> GetAsync(Expression<Func<User, bool>> expression, CancellationToken token);
+    Task<User> GetByIdAsync(Guid Id, CancellationToken token);
+    Task<User> UpdateAsyncByPerson(User entity, CancellationToken token);
 }

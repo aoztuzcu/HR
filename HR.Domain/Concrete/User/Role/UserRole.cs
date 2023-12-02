@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace HR.Domain.Concrete.User.Role;
 
-public class PersonRole: IdentityRole<Guid>
+public class UserRole: IdentityRole<Guid>
 {
 }

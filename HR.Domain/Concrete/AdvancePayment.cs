@@ -8,7 +8,7 @@ public class AdvancePayment : BaseEntity
 {
     // Navigation Property
     public Guid PersonId { get; set; }
-    public Person? Person { get; set; }
+    public User.User? Person { get; set; }
 
     // Entity Properties
     public AdvanceType AdvanceType { get; set; }
