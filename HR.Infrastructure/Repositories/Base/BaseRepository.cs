@@ -18,6 +18,17 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
     public BaseRepository(HRContext context)
         => this.context = context;
 
+    public async Task<T> AddAsync(T entity, CancellationToken token)
+    {
+        context.Entry(entity).State = EntityState.Added;
+        await context.Set<T>().AddAsync(entity, token);
+        await context.SaveChangesAsync(token);
+        return entity;
+    }
+
+    public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression, CancellationToken token)
+        => await context.Set<T>().Where(expression).ToListAsync(token);
+
     public async Task<T> GetAsync(Expression<Func<T, bool>> expression, CancellationToken token)
         => await context.Set<T>().FirstOrDefaultAsync(expression, token) ?? throw new Exception($"{nameof(T)} Data Not Found!");
 
