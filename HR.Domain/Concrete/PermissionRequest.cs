@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Base;
+using HR.Domain.Concrete.User;
 using HR.Domain.Enum;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,8 @@ public class PermissionRequest:BaseEntity
 {
     public Guid PersonId { get; set; }
     public Person? Person { get; set; }
-    public DateOnly StartDate { get; set; }
-    public DateOnly EndDate { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
     public float Days { get; set; }
     public ApprovalStatus ApprovalStatus { get; set; } = ApprovalStatus.ApprovalWaiting;
     public DateTime ApprovedDate { get; set; }

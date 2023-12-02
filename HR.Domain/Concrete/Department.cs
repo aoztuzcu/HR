@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Base;
+using HR.Domain.Concrete.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;

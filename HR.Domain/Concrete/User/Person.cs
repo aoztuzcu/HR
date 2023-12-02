@@ -1,25 +1,24 @@
 ﻿using HR.Domain.Base;
 using HR.Domain.Enum;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace HR.Domain.Concrete;
+namespace HR.Domain.Concrete.User;
 
-public class Person : BaseEntity
+public class Person : IdentityUser<Guid>
 {
     public string IdentityNumber { get; set; }
     public string Name { get; set; }
     public string? SecondName { get; set; }
     public string Surname { get; set; }
     public string? SecondSurname { get; set; }
-    public string? Mail { get; set; }
     public string Address { get; set; }
     public string PhoneNumber { get; set; }
-    public Gender Gender{ get; set; }
+    public Gender Gender { get; set; }
     public decimal Salary { get; set; }
     public string Photo { get; set; }
     public DateTime BirthDate { get; set; }
@@ -35,8 +34,6 @@ public class Person : BaseEntity
     public float? AnnualPermissionDays { get; set; }
 
     // Navigation Properties
-    public ICollection<AdvancePayment>? AdvancePayments{ get; set; }
+    public ICollection<AdvancePayment>? AdvancePayments { get; set; }
     public ICollection<PermissionRequest>? PermissonRequests { get; set; }
 }
-
-

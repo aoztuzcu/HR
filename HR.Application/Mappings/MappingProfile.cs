@@ -4,6 +4,7 @@ using HR.Application.Features.Jobs.ViewModels;
 using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.ViewModels;
 using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
 using System;
 using System.Collections.Generic;
 using System.Data;
