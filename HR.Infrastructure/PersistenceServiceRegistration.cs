@@ -1,8 +1,10 @@
 ﻿using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Contracts.Persistence.Repositories.Base;
+using HR.Application.Contracts.Persistence.Services;
 using HR.Infrastructure.Persistence;
 using HR.Persistence.Repositories;
 using HR.Persistence.Repositories.Base;
+using HR.Persistence.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +24,9 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IPersonRepository, PersonRepository>();
         services.AddScoped<IJobRepository, JobRepository>();    
         services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+
+        services.AddScoped<IAdvancePaymentRepository, AdvancePaymentRepository>();
+        services.AddScoped<ICurrencyService, CurrencyService>();
         return services;
     }
 }

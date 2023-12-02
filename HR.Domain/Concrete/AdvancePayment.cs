@@ -15,6 +15,6 @@ public class AdvancePayment : BaseEntity
     public decimal Amount { get; set; }
     public CurrencyType CurrencyType { get; set; }
     public ApprovalStatus ApprovalStatus { get; set; } = ApprovalStatus.ApprovalWaiting;
-    public DateTime ApprovalDate { get; set; }
+    public DateTime? ApprovalDate { get; set; }
     public string Description { get; set; } = null!;
 }

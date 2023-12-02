@@ -10,17 +10,14 @@
     <Compile Remove="Contracts\IRepository\**" />
     <Compile Remove="Contracts\IService\**" />
     <Compile Remove="CustomValidations\**" />
-    <Compile Remove="Services\**" />
     <Compile Remove="ViewModels\**" />
     <EmbeddedResource Remove="Contracts\IRepository\**" />
     <EmbeddedResource Remove="Contracts\IService\**" />
     <EmbeddedResource Remove="CustomValidations\**" />
-    <EmbeddedResource Remove="Services\**" />
     <EmbeddedResource Remove="ViewModels\**" />
     <None Remove="Contracts\IRepository\**" />
     <None Remove="Contracts\IService\**" />
     <None Remove="CustomValidations\**" />
-    <None Remove="Services\**" />
     <None Remove="ViewModels\**" />
   </ItemGroup>
 
@@ -40,6 +37,8 @@
 
   <ItemGroup>
     <Folder Include="Features\People\Commands\PersonCreate\" />
+    <Folder Include="Features\Permission\ViewModels\" />
+    <Folder Include="Features\Permission\Queries\" />
   </ItemGroup>
 
 </Project>
