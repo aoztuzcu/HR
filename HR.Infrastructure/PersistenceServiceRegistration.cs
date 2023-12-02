@@ -1,7 +1,5 @@
 ﻿using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Contracts.Persistence.Repositories.Base;
-using HR.Domain.Concrete.User;
-using HR.Domain.Concrete.User.Role;
 using HR.Infrastructure.Persistence;
 using HR.Persistence.Repositories;
 using HR.Persistence.Repositories.Base;
@@ -19,14 +17,6 @@ public static class PersistenceServiceRegistration
         services.AddDbContext<HRContext>(
                                  opt => opt.UseSqlServer(configuration.GetConnectionString("cstring"))
                                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
-       
-    
-        //services.AddIdentity<Person, PersonRole>(x =>
-        //{
-        //    x.Password.RequireUppercase = false;
-        //    x.Password.RequireNonAlphanumeric = false;
-        //})
-        //.AddEntityFrameworkStores<HRContext>();
 
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         services.AddScoped<IPersonRepository, PersonRepository>();
