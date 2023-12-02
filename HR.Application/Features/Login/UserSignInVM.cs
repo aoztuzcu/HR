@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HR.Application.Features.Login;
 
-public class PersonSignInVM
+public class UserSignInVM
 {
     [Required(ErrorMessage ="Lütfen mail adresinizi girin.")]
     public string Email { get; set; }

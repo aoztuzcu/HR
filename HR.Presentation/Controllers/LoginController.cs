@@ -21,7 +21,7 @@ namespace HR.Presentation.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login1(PersonSignInVM person)
+        public async Task<IActionResult> Login1(UserSignInVM person)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,6 @@ namespace HR.Presentation.Controllers
                 {
 					if (await userManager.IsInRoleAsync(user,"Personnel"))
                     {
-
                         return RedirectToAction("Detail", "Person", new { area = "Personnel" });
                     }
                     else if (await userManager.IsInRoleAsync(user, "Writer"))
