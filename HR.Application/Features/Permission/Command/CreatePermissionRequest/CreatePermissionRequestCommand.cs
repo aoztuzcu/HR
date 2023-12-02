@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
 using HR.Domain.Enum;
 using MediatR;
 using System;
