@@ -11,4 +11,6 @@ public class Permission:BaseEntity
 {
     public string Name { get; set; }
     public float? Days { get; set; }
+
+    public IEnumerable<PermissionRequest>? PermissionRequests { get; set; }
 }
