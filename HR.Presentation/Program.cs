@@ -24,7 +24,9 @@ namespace HR.Presentation
 				x.Password.RequireNonAlphanumeric = false;
 			})
 		   .AddEntityFrameworkStores<HRContext>();
-			var app = builder.Build();
+            builder.Services.AddHttpClient();
+
+            var app = builder.Build();
 
            
 

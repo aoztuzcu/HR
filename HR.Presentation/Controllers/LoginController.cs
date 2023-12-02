@@ -18,7 +18,8 @@ namespace HR.Presentation.Controllers
         }
         public IActionResult Login1()
         {
-            return View();
+            
+            return View(new UserSignInVM());
         }
         [HttpPost]
         public async Task<IActionResult> Login1(UserSignInVM person)
