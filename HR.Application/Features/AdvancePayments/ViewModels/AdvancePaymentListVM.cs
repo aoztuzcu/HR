@@ -1,14 +1,15 @@
-﻿using HR.Application.Features.AdvancePayments.ViewModels;
-using MediatR;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;
+namespace HR.Application.Features.AdvancePayments.ViewModels;
 
-public class CreateAdvancePaymentCommand : IRequest<CreateAdvancePaymentCommand>
+public class AdvancePaymentListVM
 {
-    Guid PersonId { get; set; }
+    public Guid Id { get; set; }
     public AdvanceTypeVM AdvanceType { get; set; }
     public decimal Amount { get; set; }
     public CurrencyTypeVM CurrencyType { get; set; }
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
+    public DateTime? ApprovalDate { get; set; }
     public string Description { get; set; } = null!;
+
 }

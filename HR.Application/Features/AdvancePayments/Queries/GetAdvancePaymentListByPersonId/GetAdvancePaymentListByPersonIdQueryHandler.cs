@@ -2,28 +2,23 @@
 using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Features.AdvancePayments.ViewModels;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR.Application.Features.AdvancePayments.Queries.GetAdvancePaymentListByPersonId;
 
-public class GetAdvancePaymentListByPersonIdQueryHandler : IRequestHandler<GetAdvancePaymentListByPersonIdQuery, IEnumerable<AdvancePaymentVM>>
+public class GetAdvancePaymentListByPersonIdQueryHandler : IRequestHandler<GetAdvancePaymentListByPersonIdQuery, IEnumerable<AdvancePaymentListVM>>
 {
     private readonly IAdvancePaymentRepository advancePaymentRepository;
     private readonly IMapper mapper;
 
     public GetAdvancePaymentListByPersonIdQueryHandler(IAdvancePaymentRepository advancePaymentRepository, IMapper mapper)
     {
-        this.advancePaymentRepository = advancePaymentRepository;
-        this.mapper = mapper;
+        this.advancePaymentRepository = advancePaymentRepository ?? throw new ArgumentNullException(nameof(advancePaymentRepository));
+        this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
-    public async Task<IEnumerable<AdvancePaymentVM>> Handle(GetAdvancePaymentListByPersonIdQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<AdvancePaymentListVM>> Handle(GetAdvancePaymentListByPersonIdQuery request, CancellationToken cancellationToken)
     {
-        //var list = await advancePaymentRepository.get
-        throw new NotImplementedException();
+        var list = await advancePaymentRepository.GetAllByPersonIdAsync(request.PersonId, cancellationToken);
+        return mapper.Map<IEnumerable<AdvancePaymentListVM>>(list);
     }
 }

@@ -14,7 +14,7 @@ public class AdvancePaymentRepository : BaseRepository<AdvancePayment>, IAdvance
 {
     public AdvancePaymentRepository(HRContext context) : base(context) { }
 
-    public async Task<IEnumerable<AdvancePayment>> GetAllByNameAsync(Guid id, CancellationToken token)
+    public async Task<IEnumerable<AdvancePayment>> GetAllByPersonIdAsync(Guid id, CancellationToken token)
         => await base.GetAllAsync(g => g.PersonId == id, token);
 
 }
