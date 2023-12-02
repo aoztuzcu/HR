@@ -21,7 +21,7 @@ public class PersonController : Controller
     }
     public async Task<IActionResult> Index(GetPersonByIdQuery query)
     {
-        query.Id = Guid.Parse("78516AFA-1058-4808-8DA2-6B79DC0592FB");
+        query.Id = Guid.Parse("8419D3FD-46C6-4467-BA01-F8B66A310959");
         var result = await mediator.Send(query);
         return View(result);
     }

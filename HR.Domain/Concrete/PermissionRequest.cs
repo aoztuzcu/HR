@@ -1,5 +1,4 @@
 ﻿using HR.Domain.Base;
-using HR.Domain.Concrete.User;
 using HR.Domain.Enum;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ namespace HR.Domain.Concrete;
 public class PermissionRequest:BaseEntity
 {
     public Guid PersonId { get; set; }
-    public User.User? Person { get; set; }
+    public Personnel? Person { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public float Days { get; set; }

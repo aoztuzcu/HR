@@ -4,6 +4,7 @@ using HR.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR.Persistence.Migrations
 {
     [DbContext(typeof(HRContext))]
-    partial class HRContextModelSnapshot : ModelSnapshot
+    [Migration("20231202164527_userEdit")]
+    partial class userEdit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,29 +102,29 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f44d1474-2db3-4d29-954b-bc49f689d34f"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8677),
+                            Id = new Guid("442a40e1-b09f-4a69-94ba-050ff3692f9d"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(3718),
                             IsActive = true,
                             Name = "Mechanical Design"
                         },
                         new
                         {
-                            Id = new Guid("df522ce1-7f1e-4fe7-b946-effe43e17ae7"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8696),
+                            Id = new Guid("1512eef0-1c66-440b-9f0c-5d01cc4fd4d8"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(3732),
                             IsActive = true,
                             Name = "HR"
                         },
                         new
                         {
-                            Id = new Guid("cefc4d34-ede7-4740-9b79-19d9cae99188"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8700),
+                            Id = new Guid("d1188aa2-2e45-4f33-abb6-d100f2ea90af"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(3739),
                             IsActive = true,
                             Name = "Accounting"
                         },
                         new
                         {
-                            Id = new Guid("d8011052-8221-49a1-ac29-5f4ee3f73cd5"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8706),
+                            Id = new Guid("f9c72d33-0f39-4a05-b33b-3a8b23a36a51"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(3744),
                             IsActive = true,
                             Name = "Information Technology"
                         });
@@ -157,36 +160,36 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8550bf77-4120-4fd6-8438-e135673995c4"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8863),
+                            Id = new Guid("ca5656df-a8d0-4f14-8719-0764a95a59bd"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(4041),
                             IsActive = true,
                             Name = "Software Developer"
                         },
                         new
                         {
-                            Id = new Guid("785f64cf-5b2d-4564-a95b-f3b3d696b800"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8868),
+                            Id = new Guid("1d70c7d5-476d-47f0-850d-f0bef6ac5416"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(4049),
                             IsActive = true,
                             Name = "FrontEnd Developer"
                         },
                         new
                         {
-                            Id = new Guid("4e93d9ca-da40-4caa-b31b-13194669bfae"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8871),
+                            Id = new Guid("a9c8a255-711f-4280-bcfe-83214d5cc12c"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(4056),
                             IsActive = true,
                             Name = "BackEnd Developer"
                         },
                         new
                         {
-                            Id = new Guid("c1fdee91-1ce6-41d7-91a2-8e157051cc8a"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8873),
+                            Id = new Guid("0af134c8-303b-4290-9e7f-fda5a093b038"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(4060),
                             IsActive = true,
                             Name = "Civil Engineer"
                         },
                         new
                         {
-                            Id = new Guid("2209fa01-1a30-4160-bae3-47eaae940375"),
-                            CreatedDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8880),
+                            Id = new Guid("b5ba6049-1025-4343-b894-4274bb9880fe"),
+                            CreatedDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(4067),
                             IsActive = true,
                             Name = "Industrial Engineer"
                         });
@@ -302,10 +305,6 @@ namespace HR.Persistence.Migrations
                     b.Property<Guid>("DepartmentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("FireDate")
                         .HasMaxLength(15)
                         .HasColumnType("date");
@@ -378,18 +377,17 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8419d3fd-46c6-4467-ba01-f8b66a310959"),
+                            Id = new Guid("fa1175b9-da8c-49d9-b7ea-106a9e3c072e"),
                             Address = "Kadıköy/İstanbul",
                             BirthDate = new DateTime(1990, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CompanyName = "Google",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DepartmentId = new Guid("d8011052-8221-49a1-ac29-5f4ee3f73cd5"),
-                            Email = "betul.demir@bilgeadamboost.com",
+                            DepartmentId = new Guid("f9c72d33-0f39-4a05-b33b-3a8b23a36a51"),
                             Gender = (byte)1,
-                            HireDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8977),
+                            HireDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(4208),
                             IdentityNumber = "65803196176",
                             IsActive = true,
-                            JobId = new Guid("8550bf77-4120-4fd6-8438-e135673995c4"),
+                            JobId = new Guid("ca5656df-a8d0-4f14-8719-0764a95a59bd"),
                             Name = "Elif",
                             PhoneNumber = "5226932145",
                             Photo = "image_avatar-female.png",
@@ -400,18 +398,17 @@ namespace HR.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d2feb5b1-8630-45b2-8bd4-75268d0e195f"),
+                            Id = new Guid("4fe6e866-de1a-4ad0-b809-efd6d288a05d"),
                             Address = "Yenibosna/İstanbul",
                             BirthDate = new DateTime(2000, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CompanyName = "Microsoft",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DepartmentId = new Guid("f44d1474-2db3-4d29-954b-bc49f689d34f"),
-                            Email = "muhammet.coskun@bilgeadamboost.com",
+                            DepartmentId = new Guid("442a40e1-b09f-4a69-94ba-050ff3692f9d"),
                             Gender = (byte)0,
-                            HireDate = new DateTime(2023, 12, 2, 19, 51, 59, 579, DateTimeKind.Local).AddTicks(8986),
+                            HireDate = new DateTime(2023, 12, 2, 19, 45, 27, 18, DateTimeKind.Local).AddTicks(4222),
                             IdentityNumber = "58963214568",
                             IsActive = true,
-                            JobId = new Guid("c1fdee91-1ce6-41d7-91a2-8e157051cc8a"),
+                            JobId = new Guid("0af134c8-303b-4290-9e7f-fda5a093b038"),
                             Name = "Muhammet",
                             PhoneNumber = "5226932145",
                             Photo = "image_avatar-female.png",
@@ -451,8 +448,8 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4eb3dd15-f85f-40fb-bb26-48f0badc7b61"),
-                            ConcurrencyStamp = "8a0f1e97-2c57-4a6b-99fa-9353d077a728",
+                            Id = new Guid("25549a56-8a84-4ccd-85f0-c647f3f83dae"),
+                            ConcurrencyStamp = "23e3ecf8-ebd3-4e1f-8ba2-a4334f871b8f",
                             Name = "Personnel",
                             NormalizedName = "PERSONNEL"
                         });

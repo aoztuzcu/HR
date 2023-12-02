@@ -1,5 +1,4 @@
 ﻿using HR.Domain.Concrete;
-using HR.Domain.Concrete.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -10,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace HR.Persistence.Configuration
 {
-    public class PersonConfiguration : IEntityTypeConfiguration<User>
+    public class PersonnelConfiguration : IEntityTypeConfiguration<Personnel>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Personnel> builder)
         {
 
             builder.HasKey(x => x.Id);

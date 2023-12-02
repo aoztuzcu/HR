@@ -8,12 +8,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HR.Infrastructure.Persistence;
 
-public class HRContext : IdentityDbContext<User, UserRole, Guid>
+public class HRContext : IdentityDbContext<User ,UserRole ,Guid>
 {
     public HRContext(DbContextOptions<HRContext> options) : base(options) { }
 
     public DbSet<Department> Departments { get; set; }
     public DbSet<Job> Jobs { get; set; }
+    public DbSet<Personnel> Personnels { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
@@ -49,7 +50,7 @@ public class HRContext : IdentityDbContext<User, UserRole, Guid>
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new PersonConfiguration())
+        modelBuilder.ApplyConfiguration(new PersonnelConfiguration())
                 .ApplyConfiguration(new DepartmentConfiguration())
                 .ApplyConfiguration(new JobConfiguration());
         modelBuilder.Seed();

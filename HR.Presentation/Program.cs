@@ -1,8 +1,9 @@
 using HR.Persistence;
 using HR.Application;
 using HR.Domain.Concrete.User.Role;
-using HR.Domain.Concrete.User;
 using HR.Infrastructure.Persistence;
+using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
 
 namespace HR.Presentation
 {
@@ -43,9 +44,9 @@ namespace HR.Presentation
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-               endpoints.MapControllerRoute(
-               name: "default",
-               pattern: "{controller=Login}/{action=Login1}/{id?}");
+               //endpoints.MapControllerRoute(
+               //name: "default",
+               //pattern: "{controller=Login}/{action=Login1}/{id?}");
 
                 endpoints.MapAreaControllerRoute(
                   name: "areaDefault",

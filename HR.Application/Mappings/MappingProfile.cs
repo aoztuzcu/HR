@@ -6,7 +6,6 @@ using HR.Application.Features.Jobs.ViewModels;
 using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.ViewModels;
 using HR.Domain.Concrete;
-using HR.Domain.Concrete.User;
 using HR.Domain.Enum;
 
 namespace HR.Application.Mappings;
@@ -15,10 +14,10 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<User, PersonDetailVM>().ReverseMap();
-        CreateMap<User, PersonUpdateCommand>().ReverseMap();        
+        CreateMap<Personnel, PersonDetailVM>().ReverseMap();
+        CreateMap<Personnel, PersonUpdateCommand>().ReverseMap();        
         CreateMap<PersonDetailVM, PersonUpdateCommand>().ReverseMap();
-        //CreateMap<Person, PersonVM>().ReverseMap();
+        CreateMap<Personnel, PersonVM>().ReverseMap();
         CreateMap<Department, DepartmentVM>().ReverseMap();
         CreateMap<Job, JobVM>().ReverseMap();
 

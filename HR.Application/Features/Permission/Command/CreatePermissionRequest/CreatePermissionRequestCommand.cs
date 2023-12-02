@@ -1,5 +1,4 @@
 ﻿using HR.Domain.Concrete;
-using HR.Domain.Concrete.User;
 using HR.Domain.Enum;
 using MediatR;
 using System;
@@ -14,7 +13,7 @@ namespace HR.Application.Features.Permission.Command.CreatePermissionRequest
     {
         public Guid Id { get; set; }
         public Guid PersonId { get; set; }
-        public User? Person { get; set; }
+        public Personnel? Person { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
         public float Days { get; set; }

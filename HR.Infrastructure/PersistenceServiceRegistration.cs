@@ -21,7 +21,7 @@ public static class PersistenceServiceRegistration
                                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-        services.AddScoped<IPersonRepository, PersonRepository>();
+        services.AddScoped<IPersonnelRepository, PersonnelRepository>();
         services.AddScoped<IJobRepository, JobRepository>();    
         services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 

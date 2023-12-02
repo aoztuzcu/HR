@@ -1,5 +1,4 @@
 ﻿using HR.Domain.Concrete;
-using HR.Domain.Concrete.User;
 using HR.Domain.Concrete.User.Role;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +14,7 @@ public static class SeedDataExtension
 {
     public static void Seed(this ModelBuilder modelBuilder)
     {
-        var hasher = new PasswordHasher<User>();
+        var hasher = new PasswordHasher<Personnel>();
         var departmantId = Guid.NewGuid();
         var departmantId2 = Guid.NewGuid();
         var jobId2 = Guid.NewGuid();
@@ -81,13 +80,8 @@ public static class SeedDataExtension
         modelBuilder.Entity<UserRole>().HasData(
             new UserRole { Name="Personnel", Id= role, NormalizedName="PERSONNEL"}
             );
-
-        modelBuilder.Entity<IdentityUserRole<Guid>>().HasData(
-                  new IdentityUserRole<Guid> { RoleId = role, UserId = userId }
-                  );
-
-        modelBuilder.Entity<User>().HasData(
-           new User
+        modelBuilder.Entity<Personnel>().HasData(
+           new Personnel
            {
                Id = userId,
                IdentityNumber = "65803196176",
@@ -104,21 +98,10 @@ public static class SeedDataExtension
                CompanyName = "Google",
                Photo = "image_avatar-female.png",
                JobId = jobId,
-               DepartmentId = departmantId,
-               UserName="betuldemir",
-               NormalizedUserName="BETULDEMIR",
-               Email="elifbetul.demir@bilgeadamboost.com",
-               NormalizedEmail="ELIFBETUL.DEMIR@BILGEADAMBOOST.COM",
-               EmailConfirmed=true,
-               PhoneNumberConfirmed=true,
-               TwoFactorEnabled=false,
-               LockoutEnabled=false,
-               AccessFailedCount=0,
-               PasswordHash = hasher.HashPassword(null,"betul12"),
-               SecurityStamp= "D2C7BG653KANTFOB6NNHCOSN2R7GM27A"
-
-		   },
-             new User
+               DepartmentId = departmantId,    
+               Email = "betul.demir@bilgeadamboost.com"
+           },
+             new Personnel
              {
                  Id = userId2,
                  IdentityNumber = "58963214568",
@@ -135,18 +118,8 @@ public static class SeedDataExtension
                  Photo = "image_avatar-female.png",
                  JobId = jobId2,
                  DepartmentId = departmantId2,
-                 UserName="muhammetcoskun",
-				 Email = "muhammet.coskun@bilgeadamboost.com",
-				 NormalizedEmail = "MUHAMMET.COSKUN@BILGEADAMBOOST.COM",
-				 EmailConfirmed = true,
-				 PhoneNumberConfirmed = true,
-				 TwoFactorEnabled = false,
-				 LockoutEnabled = false,
-				 AccessFailedCount = 0,
-				 PasswordHash = hasher.HashPassword(null, "mh123"),
-				 SecurityStamp = "D2C7BG653KANTFOB6NNHCOSN2R7GM27B"
-
-			 }
+                 Email = "muhammet.coskun@bilgeadamboost.com"
+             }
 		) ;
     }
 

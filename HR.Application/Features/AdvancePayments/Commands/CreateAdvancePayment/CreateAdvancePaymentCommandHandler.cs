@@ -10,11 +10,11 @@ namespace HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;
 public class CreateAdvancePaymentCommandHandler : IRequestHandler<CreateAdvancePaymentCommand, CreateAdvancePaymentCommand>
 {
     private readonly IAdvancePaymentRepository advancePaymentRepository;
-    private readonly IPersonRepository personRepository;
+    private readonly IPersonnelRepository personRepository;
     private readonly IMapper mapper;
     private readonly ICurrencyService currencyService;
 
-    public CreateAdvancePaymentCommandHandler(IAdvancePaymentRepository advancePaymentRepository, IMapper mapper, ICurrencyService currencyService, IPersonRepository personRepository)
+    public CreateAdvancePaymentCommandHandler(IAdvancePaymentRepository advancePaymentRepository, IMapper mapper, ICurrencyService currencyService, IPersonnelRepository personRepository)
     {
         this.advancePaymentRepository = advancePaymentRepository;
         this.mapper = mapper;

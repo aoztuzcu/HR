@@ -1,5 +1,4 @@
 ﻿using HR.Domain.Base;
-using HR.Domain.Concrete.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +9,6 @@ namespace HR.Domain.Concrete;
 
 public class Job:BaseEntity
 {    public string Name { get; set; }
-    public IEnumerable<User.User>? People { get; set; }
+    public IEnumerable<Personnel>? People { get; set; }
 
 }

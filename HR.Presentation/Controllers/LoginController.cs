@@ -1,4 +1,5 @@
 ﻿using HR.Application.Features.Login;
+using HR.Domain.Concrete;
 using HR.Domain.Concrete.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

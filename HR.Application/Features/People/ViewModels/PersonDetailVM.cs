@@ -12,7 +12,7 @@ public class PersonDetailVM
     public string? SecondName { get; set; }
     public string Surname { get; set; }
     public string? SecondSurname { get; set; }
-    public string Mail { get; set; }
+    public string EMail { get; set; }
     [Required(ErrorMessage = "Adres boş geçilemez.")]
     [MinLength(5, ErrorMessage ="Lütfen minimum 5 karakterden oluşan bir adres giriniz..")]
     public string Address { get; set; }

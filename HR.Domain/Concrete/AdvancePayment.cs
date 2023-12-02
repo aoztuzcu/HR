@@ -1,5 +1,4 @@
 ﻿using HR.Domain.Base;
-using HR.Domain.Concrete.User;
 using HR.Domain.Enum;
 
 namespace HR.Domain.Concrete;
@@ -8,7 +7,7 @@ public class AdvancePayment : BaseEntity
 {
     // Navigation Property
     public Guid PersonId { get; set; }
-    public User.User? Person { get; set; }
+    public Personnel? Person { get; set; }
 
     // Entity Properties
     public AdvanceType AdvanceType { get; set; }
