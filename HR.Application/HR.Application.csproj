@@ -39,7 +39,6 @@
     <Folder Include="Features\Expenditure\Commands\" />
     <Folder Include="Features\Expenditure\Queries\" />
     <Folder Include="Features\People\Commands\PersonCreate\" />
-    <Folder Include="Features\Permission\ViewModels\" />
     <Folder Include="Features\Permission\Queries\" />
   </ItemGroup>
 
