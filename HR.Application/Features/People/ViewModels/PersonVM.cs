@@ -21,4 +21,5 @@ public class PersonVM
     public Guid DepartmentId { get; set; }
     public DepartmentVM Department { get; set; }
     public JobVM Job { get; set; }
+    public GenderVM Gender { get; set; }
 }
