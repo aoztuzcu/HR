@@ -10,11 +10,11 @@ namespace HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;
 public class CreateAdvancePaymentCommandHandler : IRequestHandler<CreateAdvancePaymentCommand, CreateAdvancePaymentCommand>
 {
     private readonly IAdvancePaymentRepository advancePaymentRepository;
-    private readonly IPersonRepository personRepository;
+    private readonly IPersonnelRepository personRepository;
     private readonly IMapper mapper;
     private readonly ICurrencyService currencyService;
 
-    public CreateAdvancePaymentCommandHandler(IAdvancePaymentRepository advancePaymentRepository, IMapper mapper, ICurrencyService currencyService, IPersonRepository personRepository)
+    public CreateAdvancePaymentCommandHandler(IAdvancePaymentRepository advancePaymentRepository, IMapper mapper, ICurrencyService currencyService, IPersonnelRepository personRepository)
     {
         this.advancePaymentRepository = advancePaymentRepository;
         this.mapper = mapper;
@@ -49,22 +49,22 @@ public class CreateAdvancePaymentCommandHandler : IRequestHandler<CreateAdvanceP
         decimal totalAdvancesWithinYear = 0;
         var list = await advancePaymentRepository.GetAllAsync(f => f.PersonId == personId &&
                                                                    f.AdvanceType == AdvanceType.Personal &&
-                                                                   f.ApprovalStatus == ApprovalStatus.Approved &&
+                                                                   //f.ApprovalStatus == ApprovalStatus.Approved &&
                                                                    f.CreatedDate >= new DateTime(currentDate.Year, 1, 1) &&
                                                                    f.CreatedDate <= currentDate, cancellationToken);
 
         foreach (var item in list)
         {
-            decimal kur = 0;
+            decimal exchangeRate = 0;
             if (item.CurrencyType == CurrencyType.Dolar)
             {
-                kur = await currencyService.GetExchangeRateAsync("TRY", "USD", item.CreatedDate);
-                totalAdvancesWithinYear += item.Amount * kur;
+                exchangeRate = await currencyService.GetExchangeRateAsync("TRY", "USD", item.CreatedDate);
+                totalAdvancesWithinYear += item.Amount * exchangeRate;
             }
             else if (item.CurrencyType == CurrencyType.Euro)
             {
-                kur = await currencyService.GetExchangeRateAsync("TRY", "EUR", item.CreatedDate);
-                totalAdvancesWithinYear += item.Amount * kur;
+                exchangeRate = await currencyService.GetExchangeRateAsync("TRY", "EUR", item.CreatedDate);
+                totalAdvancesWithinYear += item.Amount * exchangeRate;
             }
             else
                 totalAdvancesWithinYear += item.Amount;

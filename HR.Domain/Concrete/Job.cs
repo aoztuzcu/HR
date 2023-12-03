@@ -9,6 +9,6 @@ namespace HR.Domain.Concrete;
 
 public class Job:BaseEntity
 {    public string Name { get; set; }
-    public IEnumerable<Person>? People { get; set; }
+    public IEnumerable<Personnel>? People { get; set; }
 
 }

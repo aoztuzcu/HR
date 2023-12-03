@@ -10,7 +10,5 @@ public class CreateAdvancePaymentCommand : IRequest<CreateAdvancePaymentCommand>
     public decimal Amount { get; set; }
     public CurrencyTypeVM CurrencyType { get; set; }
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
-    public DateTime ApprovalDate { get; set; }
     public string Description { get; set; } = null!;
-
 }

@@ -1,17 +1,25 @@
 ﻿using HR.Domain.Base;
 using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
+using HR.Domain.Concrete.User.Role;
 using HR.Persistence.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HR.Infrastructure.Persistence;
 
-public class HRContext : DbContext
+public class HRContext : IdentityDbContext<User ,UserRole ,Guid>
 {
     public HRContext(DbContextOptions<HRContext> options) : base(options) { }
 
     public DbSet<Department> Departments { get; set; }
-    public DbSet<Person> People { get; set; }
     public DbSet<Job> Jobs { get; set; }
+    public DbSet<Personnel> Personnels { get; set; }
+    public DbSet<Expenditure> Expenditures { get; set; }
+    public DbSet<ExpenditureType> ExpenditureTypes { get; set; }
+    public DbSet<AdvancePayment> AdvancePayments { get; set; }
+    public DbSet<Permission> Permissions { get; set; }
+    public DbSet<PermissionRequest> PermissionRequests { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
@@ -47,7 +55,7 @@ public class HRContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new PersonConfiguration())
+        modelBuilder.ApplyConfiguration(new PersonnelConfiguration())
                 .ApplyConfiguration(new DepartmentConfiguration())
                 .ApplyConfiguration(new JobConfiguration());
         modelBuilder.Seed();

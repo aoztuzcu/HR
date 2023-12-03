@@ -1,4 +1,6 @@
 ﻿using HR.Domain.Concrete;
+using HR.Domain.Concrete.User.Role;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,10 +14,14 @@ public static class SeedDataExtension
 {
     public static void Seed(this ModelBuilder modelBuilder)
     {
+        var hasher = new PasswordHasher<Personnel>();
         var departmantId = Guid.NewGuid();
         var departmantId2 = Guid.NewGuid();
         var jobId2 = Guid.NewGuid();
         var jobId = Guid.NewGuid();
+        var role = Guid.NewGuid();
+        var userId = Guid.NewGuid();
+        var userId2 = Guid.NewGuid();
         modelBuilder.Entity<Department>().HasData(
         new Department
         {
@@ -71,11 +77,13 @@ public static class SeedDataExtension
             CreatedDate = DateTime.Now,
             Name = "Industrial Engineer",
         });
-        modelBuilder.Entity<Person>().HasData(
-           new Person
+        modelBuilder.Entity<UserRole>().HasData(
+            new UserRole { Name="Personnel", Id= role, NormalizedName="PERSONNEL"}
+            );
+        modelBuilder.Entity<Personnel>().HasData(
+           new Personnel
            {
-               Id = Guid.NewGuid(),
-               CreatedDate = DateTime.Now,
+               Id = userId,
                IdentityNumber = "65803196176",
                Address = "Kadıköy/İstanbul",
                BirthDate = new DateTime(1990, 05, 22),
@@ -90,12 +98,12 @@ public static class SeedDataExtension
                CompanyName = "Google",
                Photo = "image_avatar-female.png",
                JobId = jobId,
-               DepartmentId = departmantId
+               DepartmentId = departmantId,    
+               Email = "betul.demir@bilgeadamboost.com"
            },
-             new Person
+             new Personnel
              {
-                 Id = Guid.NewGuid(),
-                 CreatedDate = DateTime.Now,
+                 Id = userId2,
                  IdentityNumber = "58963214568",
                  Address = "Yenibosna/İstanbul",
                  BirthDate = new DateTime(2000, 05, 22),
@@ -109,9 +117,10 @@ public static class SeedDataExtension
                  CompanyName = "Microsoft",
                  Photo = "image_avatar-female.png",
                  JobId = jobId2,
-                 DepartmentId = departmantId2
+                 DepartmentId = departmantId2,
+                 Email = "muhammet.coskun@bilgeadamboost.com"
              }
-        ) ;
+		) ;
     }
 
 }

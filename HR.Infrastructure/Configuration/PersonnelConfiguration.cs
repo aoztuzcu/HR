@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace HR.Persistence.Configuration
 {
-    public class PersonConfiguration : IEntityTypeConfiguration<Person>
+    public class PersonnelConfiguration : IEntityTypeConfiguration<Personnel>
     {
-        public void Configure(EntityTypeBuilder<Person> builder)
+        public void Configure(EntityTypeBuilder<Personnel> builder)
         {
 
-            builder.HasQueryFilter(x => x.IsActive);
             builder.HasKey(x => x.Id);
             builder.Property(x=>x.IdentityNumber).IsRequired().HasMaxLength(11).HasColumnType("varchar");
             builder.Property(x => x.Name).IsRequired().HasMaxLength(30).HasColumnType("varchar");
@@ -24,8 +23,6 @@ namespace HR.Persistence.Configuration
             builder.Property(x => x.Surname).IsRequired().HasMaxLength(30).HasColumnType("varchar");
 
             builder.Property(x => x.SecondSurname).HasMaxLength(30).HasColumnType("varchar");
-
-            builder.Property(x => x.Mail).HasMaxLength(60).HasColumnType("varchar");
 
             builder.Property(x => x.Address).IsRequired().HasMaxLength(60).HasColumnType("varchar");
 

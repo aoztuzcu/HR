@@ -1,5 +1,9 @@
 using HR.Persistence;
 using HR.Application;
+using HR.Domain.Concrete.User.Role;
+using HR.Infrastructure.Persistence;
+using HR.Domain.Concrete;
+using HR.Domain.Concrete.User;
 
 namespace HR.Presentation
 {
@@ -15,7 +19,17 @@ namespace HR.Presentation
             builder.Services.AddApplicationService();
             builder.Services.AddPersistenceService(builder.Configuration);
 
+			builder.Services.AddIdentity<User, UserRole>(x =>
+			{
+				x.Password.RequireUppercase = false;
+				x.Password.RequireNonAlphanumeric = false;
+			})
+		   .AddEntityFrameworkStores<HRContext>();
+            builder.Services.AddHttpClient();
+
             var app = builder.Build();
+
+           
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -24,20 +38,23 @@ namespace HR.Presentation
             }
             app.UseStaticFiles();
 
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+               //endpoints.MapControllerRoute(
+               //name: "default",
+               //pattern: "{controller=Login}/{action=Login1}/{id?}");
+
                 endpoints.MapAreaControllerRoute(
                   name: "areaDefault",
                   areaName: "Personnel",
                   pattern: "{area:exists}/{controller=Person}/{action=Index}/{id?}"
                 ); ;
 
-                endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Person}/{action=Index}/{id?}");
+               
             });
 
             app.Run();
