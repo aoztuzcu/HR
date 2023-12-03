@@ -27,55 +27,55 @@ public static class SeedDataExtension
         {
             Id = departmantId2,
             CreatedDate = DateTime.Now,
-            Name = "Mechanical Design"
+            Name = "Mekanik Tasarım"
         },
         new Department
         {
             Id = Guid.NewGuid(),
             CreatedDate = DateTime.Now,
-            Name = "HR"
+            Name = "İnsan Kaynakları"
         },
         new Department
         {
             Id = Guid.NewGuid(),
             CreatedDate = DateTime.Now,
-            Name = "Accounting"
+            Name = "Muhasebe"
         },
         new Department
         {
             Id = departmantId,
             CreatedDate = DateTime.Now,
-            Name = "Information Technology"
+            Name = "Bilişim Teknolojileri"
         }
         );
         modelBuilder.Entity<Job>().HasData(new Job
         {
             Id = jobId,
             CreatedDate = DateTime.Now,
-            Name = "Software Developer",
+            Name = "Yazılım Mühendisi",
 
         }, new Job
         {
             Id = Guid.NewGuid(),
             CreatedDate = DateTime.Now,
-            Name = "FrontEnd Developer",
+            Name = "FrontEnd Geliştici",
         }, new Job
         {
             Id = Guid.NewGuid(),
             CreatedDate = DateTime.Now,
-            Name = "BackEnd Developer",
+            Name = "BackEnd Geliştici",
         },
         new Job
         {
             Id = jobId2,
             CreatedDate = DateTime.Now,
-            Name = "Civil Engineer",
+            Name = "İnşaat Mühendisi",
         }
         , new Job
         {
             Id = Guid.NewGuid(),
             CreatedDate = DateTime.Now,
-            Name = "Industrial Engineer",
+            Name = "Endüstri Mühendisi",
         });
         modelBuilder.Entity<UserRole>().HasData(
             new UserRole { Name="Personnel", Id= role, NormalizedName="PERSONNEL"}
