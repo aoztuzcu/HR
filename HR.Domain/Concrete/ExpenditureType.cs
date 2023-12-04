@@ -10,6 +10,9 @@ namespace HR.Domain.Concrete;
 public class ExpenditureType : BaseEntity
 {
     public string Name { get; set; }
+    public decimal MinAmount { get; set; }
+    public decimal MaxAmount { get; set; }
+   
 
     public virtual IEnumerable<Expenditure> Expenditures { get; set; }
 }

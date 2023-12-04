@@ -2,6 +2,7 @@
 using HR.Domain.Concrete;
 using HR.Infrastructure.Persistence;
 using HR.Persistence.Repositories.Base;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,6 @@ public class ExpenditureRepository : BaseRepository<Expenditure>, IExpenditureRe
     public ExpenditureRepository(HRContext context) : base(context) { }
 
     public async Task<IEnumerable<Expenditure>> GetAllByPersonIdAsync(Guid personId, CancellationToken token)
-        => await base.GetAllAsync(g => g.PersonnelId == personId, token);
+        => await context.Expenditures.Include(x=>x.ExpenditureType).Where(x=>x.PersonnelId == personId).ToListAsync();
 
 }
