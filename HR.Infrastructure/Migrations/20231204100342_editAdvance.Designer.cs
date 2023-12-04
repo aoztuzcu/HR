@@ -4,6 +4,7 @@ using HR.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR.Persistence.Migrations
 {
     [DbContext(typeof(HRContext))]
-    partial class HRContextModelSnapshot : ModelSnapshot
+    [Migration("20231204100342_editAdvance")]
+    partial class editAdvance
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,29 +102,29 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c8e6d47e-1f77-4f06-8d65-ce6bd2aac20e"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9134),
+                            Id = new Guid("e03a2119-1b45-4817-9fa4-7fc27b110179"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9078),
                             IsActive = true,
                             Name = "Mekanik Tasarım"
                         },
                         new
                         {
-                            Id = new Guid("32869ac2-c371-4109-b25a-88868eb64b26"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9148),
+                            Id = new Guid("36776b4e-a03d-4cc0-9f38-cc653247abb9"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9095),
                             IsActive = true,
                             Name = "İnsan Kaynakları"
                         },
                         new
                         {
-                            Id = new Guid("7f6e8795-0bcf-4dc5-b6bc-cddbf7132b87"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9151),
+                            Id = new Guid("f8c86705-b6b7-4f68-8522-2c48db2c981f"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9098),
                             IsActive = true,
                             Name = "Muhasebe"
                         },
                         new
                         {
-                            Id = new Guid("e4c59894-6f74-4c37-847d-c23294018a55"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9152),
+                            Id = new Guid("fcbf38c4-d4a0-46cf-a876-9a11fd697d22"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9100),
                             IsActive = true,
                             Name = "Bilişim Teknolojileri"
                         });
@@ -241,36 +244,36 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("52e265ec-264d-4e78-8743-d911db132873"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9357),
+                            Id = new Guid("58987f9e-384e-4726-bcdb-00c22481ff93"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9353),
                             IsActive = true,
                             Name = "Yazılım Mühendisi"
                         },
                         new
                         {
-                            Id = new Guid("d8463e96-8918-45d9-9203-91198d70cad5"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9367),
+                            Id = new Guid("9dbfb1cf-bf3f-4a3d-affd-230f3cebb087"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9361),
                             IsActive = true,
                             Name = "FrontEnd Geliştici"
                         },
                         new
                         {
-                            Id = new Guid("66f9aa21-8c13-4350-b985-28e199b07219"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9370),
+                            Id = new Guid("5e01f709-53ae-4f32-96b0-aa9a1789f066"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9364),
                             IsActive = true,
                             Name = "BackEnd Geliştici"
                         },
                         new
                         {
-                            Id = new Guid("6829ee7f-0486-4b71-8e96-4f4743f7ec7b"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9372),
+                            Id = new Guid("4b64b4b1-b9d8-4e00-b8f5-e19a9ed24522"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9366),
                             IsActive = true,
                             Name = "İnşaat Mühendisi"
                         },
                         new
                         {
-                            Id = new Guid("ee4119ff-5e2d-4ccc-80f0-21cb21e29adf"),
-                            CreatedDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9374),
+                            Id = new Guid("065a8b47-43a5-4984-b979-d434a92fa89f"),
+                            CreatedDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9368),
                             IsActive = true,
                             Name = "Endüstri Mühendisi"
                         });
@@ -462,18 +465,18 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("33ccc344-64c0-4667-a5a0-e0b49031887b"),
+                            Id = new Guid("03c01409-dc14-4bbd-bd72-f895a53bb66c"),
                             Address = "Kadıköy/İstanbul",
                             BirthDate = new DateTime(1990, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CompanyName = "Google",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DepartmentId = new Guid("e4c59894-6f74-4c37-847d-c23294018a55"),
+                            DepartmentId = new Guid("fcbf38c4-d4a0-46cf-a876-9a11fd697d22"),
                             Email = "betul.demir@bilgeadamboost.com",
                             Gender = (byte)1,
-                            HireDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9441),
+                            HireDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9454),
                             IdentityNumber = "66047609514",
                             IsActive = true,
-                            JobId = new Guid("52e265ec-264d-4e78-8743-d911db132873"),
+                            JobId = new Guid("58987f9e-384e-4726-bcdb-00c22481ff93"),
                             Name = "Elif",
                             PhoneNumber = "5226932145",
                             Photo = "image_avatar-female.png",
@@ -484,18 +487,18 @@ namespace HR.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("911a1c08-5f37-4d89-a73c-568b044c0818"),
+                            Id = new Guid("e0fbe2ba-8712-4c03-91df-172e2f76e23c"),
                             Address = "Yenibosna/İstanbul",
                             BirthDate = new DateTime(2000, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CompanyName = "Microsoft",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DepartmentId = new Guid("c8e6d47e-1f77-4f06-8d65-ce6bd2aac20e"),
+                            DepartmentId = new Guid("e03a2119-1b45-4817-9fa4-7fc27b110179"),
                             Email = "muhammet.coskun@bilgeadamboost.com",
                             Gender = (byte)0,
-                            HireDate = new DateTime(2023, 12, 4, 13, 7, 39, 317, DateTimeKind.Local).AddTicks(9458),
+                            HireDate = new DateTime(2023, 12, 4, 13, 3, 42, 330, DateTimeKind.Local).AddTicks(9471),
                             IdentityNumber = "56555011244",
                             IsActive = true,
-                            JobId = new Guid("6829ee7f-0486-4b71-8e96-4f4743f7ec7b"),
+                            JobId = new Guid("4b64b4b1-b9d8-4e00-b8f5-e19a9ed24522"),
                             Name = "Muhammet",
                             PhoneNumber = "5226932145",
                             Photo = "image_avatar-female.png",
@@ -535,8 +538,8 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("25129f2f-a329-4f55-bd32-208deab56b88"),
-                            ConcurrencyStamp = "5bf2b7b9-507c-44ef-a437-f1e23f5dee14",
+                            Id = new Guid("06edd8f4-cb1b-4f04-9f66-d6fe55f63318"),
+                            ConcurrencyStamp = "48a145f7-68b2-4e70-8a40-0e2e7d7d3f09",
                             Name = "Personnel",
                             NormalizedName = "PERSONNEL"
                         });

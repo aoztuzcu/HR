@@ -18,7 +18,7 @@ public class GetAdvancePaymentListByPersonIdQueryHandler : IRequestHandler<GetAd
 
     public async Task<IEnumerable<AdvancePaymentListVM>> Handle(GetAdvancePaymentListByPersonIdQuery request, CancellationToken cancellationToken)
     {
-        var list = await advancePaymentRepository.GetAllByPersonIdAsync(request.PersonId, cancellationToken);
+        var list = await advancePaymentRepository.GetAllByPersonIdAsync(request.PersonnelId, cancellationToken);
         return mapper.Map<IEnumerable<AdvancePaymentListVM>>(list);
     }
 }

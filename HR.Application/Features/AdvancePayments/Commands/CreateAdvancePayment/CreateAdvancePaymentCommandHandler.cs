@@ -29,13 +29,29 @@ public class CreateAdvancePaymentCommandHandler : IRequestHandler<CreateAdvanceP
         // Bireysel Avans Talebi ise
         if (newEntity.AdvanceType == AdvanceType.Personal)
         {
-            decimal maxAllowedAdvance = GetMaxAllowedAdvance(newEntity.PersonId, cancellationToken);
-            decimal totalAdvancesWithinYear = await GetTotalAdvancesWithinYear(newEntity.PersonId, DateTime.Now, cancellationToken);
+            decimal maxAllowedAdvance = GetMaxAllowedAdvance(newEntity.PersonnelId, cancellationToken);
+            decimal totalAdvancesWithinYear = await GetTotalAdvancesWithinYear(newEntity.PersonnelId, DateTime.Now, cancellationToken);
+            decimal exchangeAmount = 0;
+            decimal rate = 0;
+            if (newEntity.CurrencyType == CurrencyType.Dolar)
+            {
+                rate = await currencyService.GetExchangeRateAsync("TRY", "USD", DateTime.Now);
+                exchangeAmount = newEntity.Amount * rate;
+            }
+            else if (newEntity.CurrencyType == CurrencyType.Euro)
+            {
+                rate = await currencyService.GetExchangeRateAsync("TRY", "EUR", DateTime.Now);
+                exchangeAmount = newEntity.Amount * rate;
+            }
+            else
+            { // TL cinsinden veri ekleniyorsa
+                exchangeAmount = newEntity.Amount;
+            }
 
-            if (totalAdvancesWithinYear + newEntity.Amount > maxAllowedAdvance)
+            if (totalAdvancesWithinYear + exchangeAmount > maxAllowedAdvance)
                 // Avans talebi reddedilebilir veya uygun bir işlem yapılabilir
                 throw new InvalidOperationException("Maksimum avans limiti aşıldı.");
-                // EN throw new InvalidOperationException("The maximum advance limit has been exceeded.");
+            // EN throw new InvalidOperationException("The maximum advance limit has been exceeded.");
         }
 
         var result = await advancePaymentRepository.AddAsync(newEntity, cancellationToken);
@@ -43,11 +59,11 @@ public class CreateAdvancePaymentCommandHandler : IRequestHandler<CreateAdvanceP
     }
 
 
-    private async Task<decimal> GetTotalAdvancesWithinYear(Guid personId, DateTime currentDate, CancellationToken cancellationToken)
+    private async Task<decimal> GetTotalAdvancesWithinYear(Guid personnelId, DateTime currentDate, CancellationToken cancellationToken)
     {
         // Belirli bir yıl içinde kullanıcının aldığı toplam avans miktarını hesapla
         decimal totalAdvancesWithinYear = 0;
-        var list = await advancePaymentRepository.GetAllAsync(f => f.PersonId == personId &&
+        var list = await advancePaymentRepository.GetAllAsync(f => f.PersonnelId == personnelId &&
                                                                    f.AdvanceType == AdvanceType.Personal &&
                                                                    f.ApprovalStatus != ApprovalStatus.Rejected &&
                                                                    f.CreatedDate >= new DateTime(currentDate.Year, 1, 1) &&
