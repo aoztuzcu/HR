@@ -1,4 +1,5 @@
 ﻿using HR.Application.Contracts.Persistence.Services;
+using System.Globalization;
 using System.Xml.Linq;
 
 namespace HR.Persistence.Services;
@@ -15,6 +16,16 @@ public class CurrencyService : ICurrencyService
 
     public async Task<decimal> GetExchangeRateAsync(string baseCurrency, string targetCurrency, DateTime date)
     {
+        // Eğer tarih cumartesi veya pazar ise geçmiş cuma gününe çevir
+        if (date.DayOfWeek == DayOfWeek.Saturday)
+        {
+            date = date.AddDays(-1);
+        }
+        else if (date.DayOfWeek == DayOfWeek.Sunday)
+        {
+            date = date.AddDays(-2);
+        }
+
         string url = $"https://www.tcmb.gov.tr/kurlar/{date:yyyyMM}/{date:ddMMyyyy}.xml";
 
         HttpResponseMessage response = await httpClient.GetAsync(url);
@@ -26,11 +37,12 @@ public class CurrencyService : ICurrencyService
 
             // XML'den döviz kuru bilgisini çek
             var rateElement = document.Descendants("Currency")
-                .Where(c => c.Element("CurrencyCode")?.Value == targetCurrency)
-                .FirstOrDefault()?.Element("ForexBuying");
+                                .Where(c => c.Attribute("CurrencyCode")?.Value == targetCurrency)
+                                .FirstOrDefault()?.Element("ForexBuying");
 
-            if (rateElement != null && decimal.TryParse(rateElement.Value, out decimal exchangeRate))
+            if (rateElement != null && decimal.TryParse(rateElement.Value, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal exchangeRate))
                 return exchangeRate;
+
             else
                 throw new Exception("Exchange rate data not found.");
         }

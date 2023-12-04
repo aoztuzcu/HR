@@ -23,23 +23,26 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         // Index sayfasında kullanıcıyı avans taleplerinin listelendiği sayfa karşılasın.
         public async Task<IActionResult> Index(Guid personId)
         {
+            personId = Guid.Parse("03C01409-DC14-4BBD-BD72-F895A53BB66C");
             GetAdvancePaymentListByPersonIdQuery query = new GetAdvancePaymentListByPersonIdQuery() { PersonId = personId };
             var list = await mediator.Send(query);
             return View(list);
         }
 
-        [HttpGet]
+        [HttpGet] //new AdvancePaymentCreateVM()
         public IActionResult CreateAdvancePayment()
         {
-            return View(new AdvancePaymentCreateVM());
+            return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateAdvancePayment(AdvancePaymentCreateVM advancePaymentCreateVM)
         {
+            advancePaymentCreateVM.PersonId = Guid.Parse("03C01409-DC14-4BBD-BD72-F895A53BB66C");
             var command = mapper.Map<CreateAdvancePaymentCommand>(advancePaymentCreateVM);
+            
             var result = await mediator.Send(command);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "AdvancePayment");
         }
     }
 }
