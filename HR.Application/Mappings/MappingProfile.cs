@@ -2,6 +2,8 @@
 using HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;
 using HR.Application.Features.AdvancePayments.ViewModels;
 using HR.Application.Features.Departments.ViewModels;
+using HR.Application.Features.Expenditures.Commands.CreateExpenditure;
+using HR.Application.Features.Expenditures.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
 using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.ViewModels;
@@ -24,6 +26,11 @@ public class MappingProfile : Profile
         CreateMap<AdvancePayment, CreateAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePaymentCreateVM, CreateAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePayment,AdvancePaymentListVM>().ReverseMap();
+
+        CreateMap<Expenditure,CreateExpenditureCommand >().ReverseMap();
+        CreateMap<ExpenditureCreateVM, CreateExpenditureCommand>().ReverseMap();
+        CreateMap<Expenditure, ExpenditureCreateVM>().ReverseMap();
+        CreateMap<Expenditure, ExpenditureListVM>().ReverseMap();
 
         //ViewModel Mappings
         CreateMap<ApprovalStatus, ApprovalStatusVM>().ReverseMap();
