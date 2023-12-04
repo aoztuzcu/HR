@@ -5,5 +5,5 @@ namespace HR.Application.Features.AdvancePayments.Queries.GetAdvancePaymentListB
 
 public class GetAdvancePaymentListByPersonIdQuery : IRequest<IEnumerable<AdvancePaymentListVM>>
 {
-    public Guid PersonId { get; set; }
+    public Guid PersonnelId { get; set; }
 }

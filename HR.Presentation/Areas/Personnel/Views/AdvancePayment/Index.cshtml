@@ -14,7 +14,7 @@
                 <table class="table table-hover" id="myTable">
                     <thead>
                         <tr>
-                            <th>
+                            <th hidden>
                                 @Html.DisplayNameFor(model => model.Id)
                             </th>
                             <th>
@@ -35,13 +35,14 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Description)
                             </th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>
+                                <td hidden>
                                     @Html.DisplayFor(modelItem => item.Id)
                                 </td>
                                 <td>
@@ -62,6 +63,12 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </td>
+                                <td>
+                                    @if (item.ApprovalStatus == ApprovalStatusVM.ApprovalWaiting)
+                                    {
+                                        <button href="#" onclick="deleteAdvancePayment('@item.Id')" class="btn btn-inverse-danger btn-icon"><i class="ti-trash"></i></button>
+                                    }
+                                </td>
                             </tr>
                         }
                     </tbody>
@@ -72,7 +79,18 @@
 </div>
 
 @section Scripts {
+
+
+
     <script type="text/javascript">
+        function deleteAdvancePayment(advancePaymentId) {
+            var confirmDelete = confirm("Bu avans talebini silmek istediğinizden emin misiniz?");
+
+            if (confirmDelete) {
+                window.location.href = '/Personnel/AdvancePayment/DeleteByIdAdvancePayment?advancePaymentId=' + advancePaymentId;
+            }
+        }
+
         $(document).ready(function () {
             $('#myTable').DataTable({
                 "language": {

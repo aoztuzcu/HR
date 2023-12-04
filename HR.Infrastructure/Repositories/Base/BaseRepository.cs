@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +25,19 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
         await context.Set<T>().AddAsync(entity, token);
         await context.SaveChangesAsync(token);
         return entity;
+    }
+
+    public async Task<T> DeleteByIdAsync(Guid id, CancellationToken token)
+    {
+        var entity = await context.Set<T>().FirstOrDefaultAsync(f => f.Id == id);
+        if (entity != null)
+        {
+            context.Entry(entity).State = EntityState.Modified;
+            entity.IsActive = false;
+            await context.SaveChangesAsync(token);
+            return entity;
+        }
+        throw new KeyNotFoundException($"Entity with ID {id} not found.");
     }
 
     public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression, CancellationToken token)

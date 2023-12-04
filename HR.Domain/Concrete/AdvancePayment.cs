@@ -6,8 +6,8 @@ namespace HR.Domain.Concrete;
 public class AdvancePayment : BaseEntity
 {
     // Navigation Property
-    public Guid PersonId { get; set; }
-    public Personnel? Person { get; set; }
+    public Guid PersonnelId { get; set; }
+    public Personnel? Personnel { get; set; }
 
     // Entity Properties
     public AdvanceType AdvanceType { get; set; }
