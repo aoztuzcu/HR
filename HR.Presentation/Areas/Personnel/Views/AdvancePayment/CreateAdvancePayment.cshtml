@@ -1,0 +1,78 @@
+﻿@using HR.Application.Features.AdvancePayments.ViewModels
+@using System.Globalization
+@model AdvancePaymentCreateVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "CreateAdvancePayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-6 offset-lg-3 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Avans Talebi Oluştur</h4>
+            <form asp-action="CreateAdvancePayment" class="forms-sample">
+
+                <div class="form-group" hidden>
+                    <label asp-for="PersonId">Kullanıcı ID</label>
+                    <input asp-for="PersonId" type="text" class="form-control" placeholder="Kullanıcı ID" />
+                    <span asp-validation-for="PersonId" class="text-danger"></span>
+                </div>
+
+                @*                 <div class="form-group">
+                <label asp-for="AdvanceType">Avans Türü</label>
+                <select asp-for="AdvanceType" asp-items="Html.GetEnumSelectList<AdvanceTypeVM>()"></select>
+                <span asp-validation-for="AdvanceType" class="text-danger"></span>
+                </div> *@
+
+                <div class="form-group">
+                    <label asp-for="AdvanceType">Avans Türü</label>
+                    <select asp-for="AdvanceType" asp-items="Html.GetEnumSelectList<AdvanceTypeVM>()" class="form-control custom-select"></select>
+                    <span asp-validation-for="AdvanceType" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Amount">Miktarı</label>
+                    @* <input asp-for="Amount" type="number" class="form-control" placeholder="Miktarı"> *@
+                    <input asp-for="Amount" type="number" step="0.01" class="form-control" placeholder="Miktarı">
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+                @*
+                <div class="form-group">
+                <label asp-for="CurrencyType">Para Birimi </label>
+                <select asp-for="CurrencyType" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()"></select>
+                <span asp-validation-for="CurrencyType" class="text-danger"></span>
+                </div> *@
+
+
+                <div class="form-group">
+                    <label asp-for="CurrencyType">Avans Türü</label>
+                    <select asp-for="CurrencyType" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()" class="form-control custom-select"></select>
+                    <span asp-validation-for="AdvanceType" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description">Açıklama</label>
+                    <input asp-for="Description" type="text" class="form-control" placeholder="Açıklama" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <input type="submit" value="Kaydet" class="btn btn-primary me-2"/>
+                <a asp-action="Index" class="btn btn-light">İptal</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+  
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

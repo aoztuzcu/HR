@@ -5,7 +5,7 @@ namespace HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;
 
 public class CreateAdvancePaymentCommand : IRequest<CreateAdvancePaymentCommand>
 {
-    Guid PersonId { get; set; }
+    public Guid PersonId { get; set; }
     public AdvanceTypeVM AdvanceType { get; set; }
     public decimal Amount { get; set; }
     public CurrencyTypeVM CurrencyType { get; set; }

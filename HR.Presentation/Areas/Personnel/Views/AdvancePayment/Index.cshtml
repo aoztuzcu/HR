@@ -1,0 +1,88 @@
+﻿@using HR.Application.Features.AdvancePayments.ViewModels
+@model IEnumerable<AdvancePaymentListVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Avans Talep Durumu</h4>
+            <div class="table-responsive">
+                <table class="table table-hover" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AdvanceType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Amount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CurrencyType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ApprovalStatus)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ApprovalDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AdvanceType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CurrencyType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ApprovalStatus)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ApprovalDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "url": '//cdn.datatables.net/plug-ins/1.13.7/i18n/tr.json',
+                },
+                "order": [[4, 'asc']],
+                "rowGroup": {
+                    "dataSrc": 4
+                }
+            });
+        });
+    </script>
+}

@@ -49,7 +49,7 @@ public class CreateAdvancePaymentCommandHandler : IRequestHandler<CreateAdvanceP
         decimal totalAdvancesWithinYear = 0;
         var list = await advancePaymentRepository.GetAllAsync(f => f.PersonId == personId &&
                                                                    f.AdvanceType == AdvanceType.Personal &&
-                                                                   //f.ApprovalStatus == ApprovalStatus.Approved &&
+                                                                   f.ApprovalStatus != ApprovalStatus.Rejected &&
                                                                    f.CreatedDate >= new DateTime(currentDate.Year, 1, 1) &&
                                                                    f.CreatedDate <= currentDate, cancellationToken);
 
