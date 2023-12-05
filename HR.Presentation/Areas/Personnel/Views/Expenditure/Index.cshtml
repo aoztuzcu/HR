@@ -1,0 +1,107 @@
+﻿@using HR.Application.Features.AdvancePayments.ViewModels;
+@using HR.Application.Features.Expenditures.ViewModels
+@model IEnumerable<ExpenditureListVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Harcama Talep Durumu</h4>
+            <div class="table-responsive">
+                <table class="table table-hover" id="myTable">
+                    <thead>
+                        <tr>
+                            <th hidden>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ExpenditureType.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Amount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CurrencyType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ApprovalStatus)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ApprovalDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Document)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td hidden>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ExpenditureType.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CurrencyType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ApprovalStatus)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ApprovalDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Document)
+                                </td>
+                                <td>
+                                    @if (item.ApprovalStatus == ApprovalStatusVM.ApprovalWaiting)
+                                    {
+                                        <button href="#" onclick="deleteExpenditure('@item.Id')" class="btn btn-inverse-danger btn-icon"><i class="ti-trash"></i></button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+
+
+    <script type="text/javascript">
+        function deleteExpenditure(expenditureId) {
+            var confirmDelete = confirm("Bu harcama talebini silmek istediğinizden emin misiniz?");
+
+            if (confirmDelete) {
+                window.location.href = '/Personnel/Expenditure/DeleteByIdExpenditure?expenditureId=' + expenditureId;
+            }
+        }
+
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "url": '//cdn.datatables.net/plug-ins/1.13.7/i18n/tr.json',
+                },
+                "order": [[4, 'asc']],
+                "rowGroup": {
+                    "dataSrc": 4
+                }
+            });
+        });
+    </script>
+}
