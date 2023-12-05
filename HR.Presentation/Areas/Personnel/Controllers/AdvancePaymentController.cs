@@ -28,11 +28,12 @@ namespace HR.Presentation.Areas.Personnel.Controllers
             var list = await mediator.Send(query);
             return View(list);
         }
+        
 
         [HttpGet] //new AdvancePaymentCreateVM()
         public IActionResult CreateAdvancePayment()
         {
-            return View();
+           return View();
         }
 
         [HttpPost]
