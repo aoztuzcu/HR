@@ -5,11 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Domain.Concrete.User;
+namespace HR.Domain.Concrete.Identity.Role;
 
-public class User : IdentityUser<Guid>
+public class UserRole : IdentityRole<Guid>
 {
-    public string Name { get; set; }
-    public string Surname { get; set; }
-
 }

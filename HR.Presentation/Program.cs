@@ -1,9 +1,10 @@
-using HR.Persistence;
 using HR.Application;
-using HR.Domain.Concrete.User.Role;
+using HR.Domain.Concrete.Identity;
+using HR.Domain.Concrete.Identity.Role;
 using HR.Infrastructure.Persistence;
-using HR.Domain.Concrete;
-using HR.Domain.Concrete.User;
+using HR.Persistence;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using System.Globalization;
 
 namespace HR.Presentation
@@ -17,15 +18,18 @@ namespace HR.Presentation
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+
             builder.Services.AddApplicationService();
             builder.Services.AddPersistenceService(builder.Configuration);
 
-			builder.Services.AddIdentity<User, UserRole>(x =>
-			{
-				x.Password.RequireUppercase = false;
-				x.Password.RequireNonAlphanumeric = false;
-			})
-		   .AddEntityFrameworkStores<HRContext>();
+            builder.Services.AddIdentity<User, UserRole>(x =>
+            {
+                x.Password.RequireUppercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+            })
+           .AddEntityFrameworkStores<HRContext>();
+
+            // CurrencyService
             builder.Services.AddHttpClient();
 
             var app = builder.Build();
@@ -47,25 +51,31 @@ namespace HR.Presentation
             }
             app.UseStaticFiles();
 
-            app.UseAuthentication();
             app.UseRouting();
 
+
+
+
+            app.UseAuthentication();
             app.UseAuthorization();
+
+
             app.UseEndpoints(endpoints =>
             {
-               //endpoints.MapControllerRoute(
-               //name: "default",
-               //pattern: "{controller=Login}/{action=Login1}/{id?}");
-
                 endpoints.MapAreaControllerRoute(
-                  name: "areaDefault",
+                  //name: "areaDefault",
+                  name: "Personnel",
                   areaName: "Personnel",
-                  pattern: "{area:exists}/{controller=Person}/{action=Index}/{id?}"
+                  pattern: "Personnel/{controller=Person}/{action=Index}"
+                //pattern: "{area:exists}/{controller=Person}/{action=Index}/{id?}"
                 ); ;
 
-               
-            });
 
+
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Login}/{action=Login1}/{id?}");
+            });
             app.Run();
         }
     }

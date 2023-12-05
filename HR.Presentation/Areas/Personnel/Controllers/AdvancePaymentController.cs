@@ -4,12 +4,14 @@ using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.AdvancePayments.Queries.GetAdvancePaymentListByPersonId;
 using HR.Application.Features.AdvancePayments.ViewModels;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace HR.Presentation.Areas.Personnel.Controllers
 {
     [Area("Personnel")]
+    [Authorize]
     public class AdvancePaymentController : Controller
     {
         private readonly IMediator mediator;
@@ -25,7 +27,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         // Index sayfasında kullanıcıyı avans taleplerinin listelendiği sayfa karşılasın.
         public async Task<IActionResult> Index(Guid personnelId)
         {
-            personnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
+            personnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
             GetAdvancePaymentListByPersonIdQuery query = new GetAdvancePaymentListByPersonIdQuery() { PersonnelId = personnelId };
             var list = await mediator.Send(query);
             return View(list);
@@ -61,7 +63,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
                 //throw new Exception("Model not correct");
             }
 
-            advancePaymentCreateVM.PersonnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
+            advancePaymentCreateVM.PersonnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
             var command = mapper.Map<CreateAdvancePaymentCommand>(advancePaymentCreateVM);
             var result = await mediator.Send(command);
             return RedirectToAction("Index", "AdvancePayment");

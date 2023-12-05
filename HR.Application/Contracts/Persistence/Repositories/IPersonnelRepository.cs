@@ -1,6 +1,6 @@
 ﻿using HR.Application.Contracts.Persistence.Repositories.Base;
 using HR.Domain.Concrete;
-using HR.Domain.Concrete.User;
+using HR.Domain.Concrete.Identity;
 using System.Linq.Expressions;
 
 namespace HR.Application.Contracts.Persistence.Repositories;

@@ -1,4 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@using HR.Domain.Concrete.Identity
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+@using System.Security.Claims
+@using HR.Domain.Concrete;
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var role = await UserManager.GetRolesAsync(user);
+    var userId = UserManager.GetUserId(User);
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -196,8 +211,8 @@
                                 <ul class="nav flex-column sub-menu">
                                     @*   <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/buttons.html">Buttons</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/typography.html">Typography</a></li>*@
-                                    <li class="nav-item"> <a class="nav-link" asp-action="Detail" asp-controller="Person" asp-route-id="33CCC344-64C0-4667-A5A0-E0B49031887B">Detay</a></li>
-                                    <li class="nav-item"> <a class="nav-link" asp-action="UpdatePerson" asp-controller="Person" asp-route-id="33CCC344-64C0-4667-A5A0-E0B49031887B">Güncelle</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="Detail" asp-controller="Person" asp-route-id="8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4">Detay</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="UpdatePerson" asp-controller="Person" asp-route-id="8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4">Güncelle</a></li>
                                 </ul>
                             </div>
                         </li>

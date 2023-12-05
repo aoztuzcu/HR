@@ -24,7 +24,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllPermissions(Guid personnelId)
         {
-            personnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
+            personnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
             GetPermissionRequestListByPersonIdQuery query = new GetPermissionRequestListByPersonIdQuery() { PersonnelId = personnelId };
             var list = await mediator.Send(query);
             return View(list);
@@ -37,7 +37,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePermissionRequest(PermissionRequestCreateVM permissionRequestVM)
         {
-            permissionRequestVM.PersonnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
+            permissionRequestVM.PersonnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
             var command = mapper.Map<CreatePermissionRequestCommand>(permissionRequestVM);
             var result = await mediator.Send(command);
             return RedirectToAction("GetAllPermissions", "Permission");

@@ -1,6 +1,7 @@
 ﻿using HR.Application.Features.Login;
 using HR.Domain.Concrete;
-using HR.Domain.Concrete.User;
+using HR.Domain.Concrete.Identity;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,7 +20,7 @@ namespace HR.Presentation.Controllers
         }
         public IActionResult Login1()
         {
-            
+
             return View(new UserSignInVM());
         }
         [HttpPost]
@@ -31,9 +32,9 @@ namespace HR.Presentation.Controllers
                 var result = await signInManager.PasswordSignInAsync(user.UserName, person.Password, false, true);
                 if (result.Succeeded)
                 {
-					if (await userManager.IsInRoleAsync(user,"Personnel"))
+                    if (await userManager.IsInRoleAsync(user, "Personnel"))
                     {
-                        return RedirectToAction("Detail", "Person", new { area = "Personnel" });
+                        return RedirectToAction("Index", "Person", new { area = "Personnel" });
                     }
                     else if (await userManager.IsInRoleAsync(user, "Writer"))
                     {
@@ -47,10 +48,10 @@ namespace HR.Presentation.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Login");
+                    return RedirectToAction("Index", "Login1");
                 }
             }
-            return View();
+            return RedirectToAction("Index", "Login1");
         }
         public IActionResult Login2()
         {
@@ -59,6 +60,14 @@ namespace HR.Presentation.Controllers
         public IActionResult Login3()
         {
             return View();
+        }
+
+
+        
+        public async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
+            return RedirectToAction("Login1");
         }
     }
 }

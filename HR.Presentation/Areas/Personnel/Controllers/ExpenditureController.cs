@@ -7,11 +7,13 @@ using HR.Application.Features.Expenditures.ViewModels;
 using HR.Domain.Concrete;
 using HR.Presentation.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HR.Presentation.Areas.Personnel.Controllers
 {
     [Area("Personnel")]
+    [Authorize(Roles = "Personnel")]
     public class ExpenditureController : Controller
     {
         private readonly IMediator mediator;
@@ -26,7 +28,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         }
         public async Task<IActionResult> Index(Guid personnelId)
         {
-            personnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
+            personnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
             GetExpenditureListByPersonIdQuery query = new GetExpenditureListByPersonIdQuery() { PersonnelId = personnelId };
             var list = await mediator.Send(query);
             return View(list);
@@ -50,7 +52,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         [HttpPost]
         public IActionResult DeleteByIdExpenditure(Guid id)
         {
-           // var result = await mediator.Send(new DeleteByIdAdvancePaymentCommand() { AdvancePaymentId = advancePaymentId });
+            // var result = await mediator.Send(new DeleteByIdAdvancePaymentCommand() { AdvancePaymentId = advancePaymentId });
             return RedirectToAction("Index", "Expenditure");
         }
     }

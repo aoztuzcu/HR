@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Base;
+using HR.Domain.Concrete.Identity;
 using HR.Domain.Enum;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -32,6 +33,9 @@ public class Personnel : BaseEntity
     public Department? Department { get; set; }
     public string CompanyName { get; set; }
     public float? AnnualPermissionDays { get; set; }
+
+    public  Guid UserId { get; set; }
+    public  User User { get; set; }
 
     // Navigation Properties
     public ICollection<AdvancePayment>? AdvancePayments { get; set; }

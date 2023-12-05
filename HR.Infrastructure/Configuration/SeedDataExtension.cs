@@ -1,12 +1,8 @@
 ﻿using HR.Domain.Concrete;
-using HR.Domain.Concrete.User.Role;
+using HR.Domain.Concrete.Identity;
+using HR.Domain.Concrete.Identity.Role;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR.Persistence.Configuration;
 
@@ -22,6 +18,27 @@ public static class SeedDataExtension
         var role = Guid.NewGuid();
         var userId = Guid.NewGuid();
         var userId2 = Guid.NewGuid();
+        var userIdendityId = Guid.NewGuid();
+
+        User user = new User()
+        {
+            Id = userIdendityId,
+            Name = "Betül",
+            Surname = "Demir",
+            UserName = "betuldemir",
+            NormalizedUserName = "BETULDEMIR",
+            Email = "betul.demir@bilgeadamboost.com",
+            NormalizedEmail = "BETUL.DEMIR@BILGEADAMBOOST.COM",
+            EmailConfirmed = true,
+            SecurityStamp = Guid.NewGuid().ToString(),
+        };
+        modelBuilder.Entity<User>().HasData(user);
+
+        var passwordHasher = new PasswordHasher<User>();
+        user.PasswordHash = passwordHasher.HashPassword(user, "Proje123");
+
+        modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = role, Name = "Personnel", NormalizedName = "PERSONNEL" });
+
         modelBuilder.Entity<Department>().HasData(
         new Department
         {
@@ -77,51 +94,48 @@ public static class SeedDataExtension
             CreatedDate = DateTime.Now,
             Name = "Endüstri Mühendisi",
         });
-        modelBuilder.Entity<UserRole>().HasData(
-            new UserRole { Name="Personnel", Id= role, NormalizedName="PERSONNEL"}
-            );
-        modelBuilder.Entity<Personnel>().HasData(
-           new Personnel
-           {
-               Id = userId,
-               IdentityNumber = "66047609514",
-               Address = "Kadıköy/İstanbul",
-               BirthDate = new DateTime(1990, 05, 22),
-               HireDate = DateTime.Now,
-               Salary = 34000,
-               PlaceofBirth = "İstanbul",
-               Name = "Elif",
-               Surname = "Demir",
-               SecondName = "Betül",
-               Gender = Domain.Enum.Gender.Female,
-               PhoneNumber = "5226932145",
-               CompanyName = "Google",
-               Photo = "image_avatar-female.png",
-               JobId = jobId,
-               DepartmentId = departmantId,    
-               Email = "betul.demir@bilgeadamboost.com"
-           },
-             new Personnel
-             {
-                 Id = userId2,
-                 IdentityNumber = "56555011244",
-                 Address = "Yenibosna/İstanbul",
-                 BirthDate = new DateTime(2000, 09, 25),
-                 HireDate = DateTime.Now,
-                 Salary = 34000,
-                 PlaceofBirth = "İstanbul",
-                 Name = "Muhammet",
-                 Surname = "Coşkun",
-                 Gender = Domain.Enum.Gender.Male,
-                 PhoneNumber = "5226932145",
-                 CompanyName = "Microsoft",
-                 Photo = "image_avatar-female.png",
-                 JobId = jobId2,
-                 DepartmentId = departmantId2,
-                 Email = "muhammet.coskun@bilgeadamboost.com"
-             }
-		); ;
+
+
+
+        //modelBuilder.Entity<Personnel>().HasData(
+        //   new Personnel
+        //   {
+        //       //Id = userId,
+        //       IdentityNumber = "66047609514",
+        //       Address = "Kadıköy/İstanbul",
+        //       BirthDate = new DateTime(1990, 05, 22),
+        //       HireDate = DateTime.Now,
+        //       Salary = 34000,
+        //       PlaceofBirth = "İstanbul",
+        //       Name = "Elif",
+        //       Surname = "Demir",
+        //       SecondName = "Betül",
+        //       Gender = Domain.Enum.Gender.Female,
+        //       PhoneNumber = "5226932145",
+        //       CompanyName = "Google",
+        //       Photo = "image_avatar-female.png",
+        //       JobId = jobId,
+        //       DepartmentId = departmantId,
+        //       Email = "betul.demir@bilgeadamboost.com"
+        //   },
+        //     new Personnel
+        //     {
+        //         Id = userId2,
+        //         IdentityNumber = "56555011244",
+        //         Address = "Yenibosna/İstanbul",
+        //         BirthDate = new DateTime(2000, 09, 25),
+        //         HireDate = DateTime.Now,
+        //         Salary = 34000,
+        //         PlaceofBirth = "İstanbul",
+        //         Name = "Muhammet",
+        //         Surname = "Coşkun",
+        //         Gender = Domain.Enum.Gender.Male,
+        //         PhoneNumber = "5226932145",
+        //         CompanyName = "Microsoft",
+        //         Photo = "image_avatar-female.png",
+        //         JobId = jobId2,
+        //         DepartmentId = departmantId2,
+        //         Email = "muhammet.coskun@bilgeadamboost.com"
+        //     });
     }
-
 }
-

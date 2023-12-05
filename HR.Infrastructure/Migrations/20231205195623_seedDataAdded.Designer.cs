@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HR.Persistence.Migrations
 {
     [DbContext(typeof(HRContext))]
-    [Migration("20231202121824_identityusername")]
-    partial class identityusername
+    [Migration("20231205195623_seedDataAdded")]
+    partial class seedDataAdded
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,10 +35,10 @@ namespace HR.Persistence.Migrations
                         .HasColumnType("tinyint");
 
                     b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal");
 
-                    b.Property<DateTime>("ApprovalDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("ApprovalDate")
+                        .HasColumnType("datetime");
 
                     b.Property<byte>("ApprovalStatus")
                         .HasColumnType("tinyint");
@@ -54,12 +54,13 @@ namespace HR.Persistence.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("PersonId")
+                    b.Property<Guid>("PersonnelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -67,9 +68,9 @@ namespace HR.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PersonId");
+                    b.HasIndex("PersonnelId");
 
-                    b.ToTable("AdvancePayment");
+                    b.ToTable("AdvancePayments");
                 });
 
             modelBuilder.Entity("HR.Domain.Concrete.Department", b =>
@@ -102,31 +103,246 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9013683a-3ccc-4c86-9077-2cbdd019532c"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9670),
+                            Id = new Guid("072672d9-d4ca-4d55-b61e-fac01d39a7a3"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8265),
                             IsActive = true,
-                            Name = "Mechanical Design"
+                            Name = "Mekanik Tasarım"
                         },
                         new
                         {
-                            Id = new Guid("f230ea80-2ecc-46db-ae41-680948e854dd"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9686),
+                            Id = new Guid("e4b93ee8-1196-41f4-b7f4-a34d0df2139e"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8284),
                             IsActive = true,
-                            Name = "HR"
+                            Name = "İnsan Kaynakları"
                         },
                         new
                         {
-                            Id = new Guid("1022a8d1-493f-4e45-8343-426d1c9ced0c"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9696),
+                            Id = new Guid("5e21e779-0ab0-4c8e-97f6-49295a0ee812"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8290),
                             IsActive = true,
-                            Name = "Accounting"
+                            Name = "Muhasebe"
                         },
                         new
                         {
-                            Id = new Guid("4e44f99a-8199-42c5-8c41-da7668410ba1"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9698),
+                            Id = new Guid("d88ecbc6-bff9-4786-a89c-ecb99d3e8dd3"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8293),
                             IsActive = true,
-                            Name = "Information Technology"
+                            Name = "Bilişim Teknolojileri"
+                        });
+                });
+
+            modelBuilder.Entity("HR.Domain.Concrete.Expenditure", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<byte>("ApprovalStatus")
+                        .HasColumnType("tinyint");
+
+                    b.Property<DateTime>("ApprovedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte>("CurrencyType")
+                        .HasColumnType("tinyint");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Document")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ExchangeAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("ExpenditureTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("PersonnelId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExpenditureTypeId");
+
+                    b.HasIndex("PersonnelId");
+
+                    b.ToTable("Expenditures");
+                });
+
+            modelBuilder.Entity("HR.Domain.Concrete.ExpenditureType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("MaxAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MinAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExpenditureTypes");
+                });
+
+            modelBuilder.Entity("HR.Domain.Concrete.Identity.Role.UserRole", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("6d386e90-74ab-4f16-ba38-459324a7225c"),
+                            ConcurrencyStamp = "e7c6c0c8-d661-4844-a15d-65a494ab55a4",
+                            Name = "Personnel",
+                            NormalizedName = "PERSONNEL"
+                        });
+                });
+
+            modelBuilder.Entity("HR.Domain.Concrete.Identity.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("24e20af5-8e56-4ba0-9ecb-8abe14917d9b"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "90b731cb-ad7a-4c3e-8a4b-199043c6b9c2",
+                            Email = "betul.demir@bilgeadamboost.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Betül",
+                            NormalizedEmail = "BETUL.DEMIR@BILGEADAMBOOST.COM",
+                            NormalizedUserName = "BETULDEMIR",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOgF/Po8zs5r1+euDG5Mu0VllwA9HBPhR/iUxhStxvYgv0X52etqj2BVNtr61d7pNw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "515f3052-2538-4a0c-bc81-a0d34be42d76",
+                            Surname = "Demir",
+                            TwoFactorEnabled = false,
+                            UserName = "betuldemir"
                         });
                 });
 
@@ -160,38 +376,38 @@ namespace HR.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7df113aa-d2bc-431c-a548-2b01e2747b2a"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9935),
+                            Id = new Guid("bbd6ab5b-e2ef-4b44-be69-96900f25627d"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8382),
                             IsActive = true,
-                            Name = "Software Developer"
+                            Name = "Yazılım Mühendisi"
                         },
                         new
                         {
-                            Id = new Guid("05cd27e7-f17d-4ca6-86e9-23fc1d5722a1"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9940),
+                            Id = new Guid("be57df39-b57e-43bb-af48-9052d3600ad1"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8391),
                             IsActive = true,
-                            Name = "FrontEnd Developer"
+                            Name = "FrontEnd Geliştici"
                         },
                         new
                         {
-                            Id = new Guid("ecf58c4a-cc11-465d-8042-861fd8db85ff"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9943),
+                            Id = new Guid("5ecf7a22-61ec-44be-8c25-3b09844e8a07"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8395),
                             IsActive = true,
-                            Name = "BackEnd Developer"
+                            Name = "BackEnd Geliştici"
                         },
                         new
                         {
-                            Id = new Guid("ef4d1260-4504-4f7a-b499-72c311ab38b0"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9946),
+                            Id = new Guid("4548cad9-76ad-4c6f-aa92-94814e0f7335"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8398),
                             IsActive = true,
-                            Name = "Civil Engineer"
+                            Name = "İnşaat Mühendisi"
                         },
                         new
                         {
-                            Id = new Guid("cc8fcab2-f7c0-41ed-9110-997aaaf2c5be"),
-                            CreatedDate = new DateTime(2023, 12, 2, 15, 18, 23, 871, DateTimeKind.Local).AddTicks(9955),
+                            Id = new Guid("91380c24-4dfd-4094-88a2-a85f0951cc1f"),
+                            CreatedDate = new DateTime(2023, 12, 5, 22, 56, 23, 132, DateTimeKind.Local).AddTicks(8402),
                             IsActive = true,
-                            Name = "Industrial Engineer"
+                            Name = "Endüstri Mühendisi"
                         });
                 });
 
@@ -222,7 +438,7 @@ namespace HR.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Permission");
+                    b.ToTable("Permissions");
                 });
 
             modelBuilder.Entity("HR.Domain.Concrete.PermissionRequest", b =>
@@ -255,7 +471,7 @@ namespace HR.Persistence.Migrations
                     b.Property<Guid>("PermissionTypeId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("PersonId")
+                    b.Property<Guid>("PersonnelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("StartDate")
@@ -268,19 +484,16 @@ namespace HR.Persistence.Migrations
 
                     b.HasIndex("PermissionTypeId");
 
-                    b.HasIndex("PersonId");
+                    b.HasIndex("PersonnelId");
 
-                    b.ToTable("PermissionRequest");
+                    b.ToTable("PermissionRequests");
                 });
 
-            modelBuilder.Entity("HR.Domain.Concrete.User.Person", b =>
+            modelBuilder.Entity("HR.Domain.Concrete.Personnel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -289,9 +502,6 @@ namespace HR.Persistence.Migrations
 
                     b.Property<float?>("AnnualPermissionDays")
                         .HasColumnType("real");
-
-                    b.Property<decimal?>("AnnualTakeAdvanceAmount")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("BirthDate")
                         .HasMaxLength(15)
@@ -302,19 +512,18 @@ namespace HR.Persistence.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("varchar");
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("DepartmentId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("FireDate")
                         .HasMaxLength(15)
@@ -332,38 +541,21 @@ namespace HR.Persistence.Migrations
                         .HasMaxLength(11)
                         .HasColumnType("varchar");
 
-                    b.Property<Guid>("JobId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("LockoutEnabled")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<Guid>("JobId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("varchar");
 
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("varchar");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Photo")
                         .IsRequired()
@@ -386,20 +578,16 @@ namespace HR.Persistence.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("varchar");
 
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("varchar");
 
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -407,106 +595,9 @@ namespace HR.Persistence.Migrations
 
                     b.HasIndex("JobId");
 
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
+                    b.HasIndex("UserId");
 
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("e6eda59d-c41f-40c7-98e2-a77f7e5de27d"),
-                            AccessFailedCount = 0,
-                            Address = "Kadıköy/İstanbul",
-                            BirthDate = new DateTime(1990, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CompanyName = "Google",
-                            ConcurrencyStamp = "b7b30bc4-8a06-47ac-af99-d08ca9182f4f",
-                            DepartmentId = new Guid("4e44f99a-8199-42c5-8c41-da7668410ba1"),
-                            EmailConfirmed = false,
-                            Gender = (byte)1,
-                            HireDate = new DateTime(2023, 12, 2, 15, 18, 23, 872, DateTimeKind.Local).AddTicks(81),
-                            IdentityNumber = "65803196176",
-                            JobId = new Guid("7df113aa-d2bc-431c-a548-2b01e2747b2a"),
-                            LockoutEnabled = false,
-                            Name = "Elif",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFYczEkibHVzbRnDLeKVevv9UNqK8MT568BN05VK+ulob5WEBL5I2WXrR4oRWDKGzA==",
-                            PhoneNumber = "5226932145",
-                            PhoneNumberConfirmed = false,
-                            Photo = "image_avatar-female.png",
-                            PlaceofBirth = "İstanbul",
-                            Salary = 34000,
-                            SecondName = "Betül",
-                            Surname = "Demir",
-                            TwoFactorEnabled = false,
-                            UserName = "betuldemir"
-                        },
-                        new
-                        {
-                            Id = new Guid("c6b7ef09-b210-4c45-808b-0b4ed8c672bb"),
-                            AccessFailedCount = 0,
-                            Address = "Yenibosna/İstanbul",
-                            BirthDate = new DateTime(2000, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CompanyName = "Microsoft",
-                            ConcurrencyStamp = "4c30db44-6a2a-4b10-a73f-bfa862e89ffa",
-                            DepartmentId = new Guid("9013683a-3ccc-4c86-9077-2cbdd019532c"),
-                            EmailConfirmed = false,
-                            Gender = (byte)0,
-                            HireDate = new DateTime(2023, 12, 2, 15, 18, 23, 885, DateTimeKind.Local).AddTicks(4031),
-                            IdentityNumber = "58963214568",
-                            JobId = new Guid("ef4d1260-4504-4f7a-b499-72c311ab38b0"),
-                            LockoutEnabled = false,
-                            Name = "Muhammet",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPDobBDXvslRT/Q4ldkMz0NpxB3xC2JGdC/LncyzAPMEgCWVU2XgGFeuyDcNCopnFg==",
-                            PhoneNumber = "5226932145",
-                            PhoneNumberConfirmed = false,
-                            Photo = "image_avatar-female.png",
-                            PlaceofBirth = "İstanbul",
-                            Salary = 34000,
-                            Surname = "Coşkun",
-                            TwoFactorEnabled = false,
-                            UserName = "muhammetcoskun"
-                        });
-                });
-
-            modelBuilder.Entity("HR.Domain.Concrete.User.Role.PersonRole", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("58a9985c-d04c-44d2-8853-e6c5c8e99930"),
-                            ConcurrencyStamp = "739fe878-870d-4daf-b030-af8a3cfe1752",
-                            Name = "Personnel"
-                        });
+                    b.ToTable("Personnels");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -591,13 +682,6 @@ namespace HR.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("c6b7ef09-b210-4c45-808b-0b4ed8c672bb"),
-                            RoleId = new Guid("58a9985c-d04c-44d2-8853-e6c5c8e99930")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -621,35 +705,54 @@ namespace HR.Persistence.Migrations
 
             modelBuilder.Entity("HR.Domain.Concrete.AdvancePayment", b =>
                 {
-                    b.HasOne("HR.Domain.Concrete.User.Person", "Person")
+                    b.HasOne("HR.Domain.Concrete.Personnel", "Personnel")
                         .WithMany("AdvancePayments")
-                        .HasForeignKey("PersonId")
+                        .HasForeignKey("PersonnelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Person");
+                    b.Navigation("Personnel");
+                });
+
+            modelBuilder.Entity("HR.Domain.Concrete.Expenditure", b =>
+                {
+                    b.HasOne("HR.Domain.Concrete.ExpenditureType", "ExpenditureType")
+                        .WithMany("Expenditures")
+                        .HasForeignKey("ExpenditureTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HR.Domain.Concrete.Personnel", "Personnel")
+                        .WithMany()
+                        .HasForeignKey("PersonnelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExpenditureType");
+
+                    b.Navigation("Personnel");
                 });
 
             modelBuilder.Entity("HR.Domain.Concrete.PermissionRequest", b =>
                 {
                     b.HasOne("HR.Domain.Concrete.Permission", "PermissionType")
-                        .WithMany()
+                        .WithMany("PermissionRequests")
                         .HasForeignKey("PermissionTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HR.Domain.Concrete.User.Person", "Person")
+                    b.HasOne("HR.Domain.Concrete.Personnel", "Personnel")
                         .WithMany("PermissonRequests")
-                        .HasForeignKey("PersonId")
+                        .HasForeignKey("PersonnelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("PermissionType");
 
-                    b.Navigation("Person");
+                    b.Navigation("Personnel");
                 });
 
-            modelBuilder.Entity("HR.Domain.Concrete.User.Person", b =>
+            modelBuilder.Entity("HR.Domain.Concrete.Personnel", b =>
                 {
                     b.HasOne("HR.Domain.Concrete.Department", "Department")
                         .WithMany("People")
@@ -663,14 +766,22 @@ namespace HR.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HR.Domain.Concrete.Identity.User", "User")
+                        .WithMany("Personnels")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Department");
 
                     b.Navigation("Job");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
-                    b.HasOne("HR.Domain.Concrete.User.Role.PersonRole", null)
+                    b.HasOne("HR.Domain.Concrete.Identity.Role.UserRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -679,7 +790,7 @@ namespace HR.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("HR.Domain.Concrete.User.Person", null)
+                    b.HasOne("HR.Domain.Concrete.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -688,7 +799,7 @@ namespace HR.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("HR.Domain.Concrete.User.Person", null)
+                    b.HasOne("HR.Domain.Concrete.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -697,13 +808,13 @@ namespace HR.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("HR.Domain.Concrete.User.Role.PersonRole", null)
+                    b.HasOne("HR.Domain.Concrete.Identity.Role.UserRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HR.Domain.Concrete.User.Person", null)
+                    b.HasOne("HR.Domain.Concrete.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -712,7 +823,7 @@ namespace HR.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("HR.Domain.Concrete.User.Person", null)
+                    b.HasOne("HR.Domain.Concrete.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -724,12 +835,27 @@ namespace HR.Persistence.Migrations
                     b.Navigation("People");
                 });
 
+            modelBuilder.Entity("HR.Domain.Concrete.ExpenditureType", b =>
+                {
+                    b.Navigation("Expenditures");
+                });
+
+            modelBuilder.Entity("HR.Domain.Concrete.Identity.User", b =>
+                {
+                    b.Navigation("Personnels");
+                });
+
             modelBuilder.Entity("HR.Domain.Concrete.Job", b =>
                 {
                     b.Navigation("People");
                 });
 
-            modelBuilder.Entity("HR.Domain.Concrete.User.Person", b =>
+            modelBuilder.Entity("HR.Domain.Concrete.Permission", b =>
+                {
+                    b.Navigation("PermissionRequests");
+                });
+
+            modelBuilder.Entity("HR.Domain.Concrete.Personnel", b =>
                 {
                     b.Navigation("AdvancePayments");
 
