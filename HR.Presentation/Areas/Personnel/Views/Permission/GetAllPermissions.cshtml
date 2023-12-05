@@ -1,6 +1,6 @@
-﻿@using HR.Application.Features.AdvancePayments.ViewModels
+﻿@using HR.Application.Features.Permission.ViewModels;
 @using HR.Application.Features.EnumViewModels;
-@model IEnumerable<AdvancePaymentListVM>
+@model IEnumerable<PermissionRequestListVM>
 
 @{
     ViewData["Title"] = "Index";
@@ -19,23 +19,23 @@
                                 @Html.DisplayNameFor(model => model.Id)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.AdvanceType)
+                                @Html.DisplayNameFor(model => model.PermissionType)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Amount)
+                                @Html.DisplayNameFor(model => model.StartDate)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.CurrencyType)
+                                @Html.DisplayNameFor(model => model.EndDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Days)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.ApprovalStatus)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.ApprovalDate)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Description)
-                            </th>
+                            </th>                        
                             <th></th>
                         </tr>
                     </thead>
@@ -47,22 +47,22 @@
                                     @Html.DisplayFor(modelItem => item.Id)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.AdvanceType)
+                                    @Html.DisplayFor(modelItem => item.PermissionType)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
+                                    @Html.DisplayFor(modelItem => item.StartDate)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.CurrencyType)
+                                    @Html.DisplayFor(modelItem => item.EndDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Days)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.ApprovalStatus)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.ApprovalDate)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Description)
                                 </td>
                                 <td>
                                     @if (item.ApprovalStatus == ApprovalStatusVM.ApprovalWaiting)
@@ -80,8 +80,6 @@
 </div>
 
 @section Scripts {
-
-
 
     <script type="text/javascript">
         function deleteAdvancePayment(advancePaymentId) {

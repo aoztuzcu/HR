@@ -1,5 +1,7 @@
 ﻿using FluentValidation.Validators;
 using System.ComponentModel.DataAnnotations;
+using HR.Application.Features.EnumViewModels;
+
 
 namespace HR.Application.Features.AdvancePayments.ViewModels;
 

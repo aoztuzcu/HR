@@ -1,15 +1,15 @@
-﻿using HR.Domain.Base;
+﻿using HR.Domain.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Domain.Concrete;
+namespace HR.Application.Features.Permission.ViewModels;
 
-public class Permission:BaseEntity
+public class PermissionTypeVM
 {
     public string Name { get; set; }
     public float? Days { get; set; }
-    public IEnumerable<PermissionRequest>? PermissionRequests { get; set; }
+    public IEnumerable<PermissionRequestVM>? PermissionRequests { get; set; }
 }
