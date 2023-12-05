@@ -1,4 +1,21 @@
 ﻿using HR.Application.Features.AdvancePayments.ViewModels;
+<<<<<<< HEAD
+using HR.Domain.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HR.Application.Features.Permission.ViewModels
+{
+    public class PermissionRequestListVM
+    {
+        public List<PermissionRequestCreateVM> ApprovalWaitingList { get; set; }
+        public List<PermissionRequestCreateVM> ApprovedList { get; set; }
+        public List<PermissionRequestCreateVM> RejectedList { get; set; }
+    }
+=======
 using HR.Application.Features.EnumViewModels;
 using System;
 using System.Collections.Generic;
@@ -28,4 +45,5 @@ public class PermissionRequestListVM
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
     [Display(Name = "Onay Tarihi")]
     public DateTime? ApprovalDate { get; set; }
+>>>>>>> main
 }

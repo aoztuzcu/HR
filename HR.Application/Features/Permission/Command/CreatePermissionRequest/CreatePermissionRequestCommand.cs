@@ -20,9 +20,13 @@ namespace HR.Application.Features.Permission.Command.CreatePermissionRequest
         public DateTime EndDate { get; set; }
         public float Days { get; set; }
         public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
-        public DateTime ApprovedDate { get; set; }
         public Guid PermissionTypeId { get; set; }
+<<<<<<< HEAD
+        
+       public PermissionVM PermissionType { get; set; }
+=======
        public PermissionTypeVM PermissionType { get; set; }
+>>>>>>> main
          
         
     }

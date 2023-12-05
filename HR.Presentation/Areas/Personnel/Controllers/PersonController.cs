@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.Queries.GetPerson;
+using HR.Application.Features.Permission.Command.CreatePermissionRequest;
+using HR.Application.Features.Permission.Queries;
+using HR.Application.Features.Permission.ViewModels;
 using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -57,6 +60,30 @@ public class PersonController : Controller
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
         var result = await mediator.Send(query);
         return View(result);
+    }
+    public async Task<IActionResult> PermissionRequestList(Guid id)
+    {
+        GetPermissionListQuery permissionList = new GetPermissionListQuery() { PersonelId = id };
+        var result = await mediator.Send(permissionList);
+        return View(result);
+    }
+    public async Task<IActionResult>CreatePermissionRequest(Guid id)
+    {
+    CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonId = id };
+        var result = await mediator.Send(command);
+
+        return View(command);
+    }
+    [HttpPost]
+    public async Task<IActionResult> CreatePermissionRequest(PermissionRequestCreateVM permissionRequestCreateVM)
+    {
+        if(ModelState.IsValid)
+        {
+
+
+            return RedirectToAction("İzin oluşturuldu.");
+        }
+        return View(permissionRequestCreateVM);
     }
 }
 
