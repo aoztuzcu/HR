@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.Expenditures.Commands.CreateExpenditure;
 using HR.Application.Features.Expenditures.Queries.GetExpenditureListByPersonId;
 using HR.Application.Features.Expenditures.Queries.GetExpenditureType;
@@ -25,6 +26,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         }
         public async Task<IActionResult> Index(Guid personnelId)
         {
+            personnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
             GetExpenditureListByPersonIdQuery query = new GetExpenditureListByPersonIdQuery() { PersonnelId = personnelId };
             var list = await mediator.Send(query);
             return View(list);
@@ -44,6 +46,12 @@ namespace HR.Presentation.Areas.Personnel.Controllers
             command.Document = FileOperation.ReturnFileName(vm.Document, "expenditureFile", hostEnvironment);
             await mediator.Send(command);
             return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public IActionResult DeleteByIdExpenditure(Guid id)
+        {
+           // var result = await mediator.Send(new DeleteByIdAdvancePaymentCommand() { AdvancePaymentId = advancePaymentId });
+            return RedirectToAction("Index", "Expenditure");
         }
     }
 }

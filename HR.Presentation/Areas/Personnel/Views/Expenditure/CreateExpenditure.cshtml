@@ -1,0 +1,72 @@
+﻿@using System.Globalization
+@using HR.Application.Features.AdvancePayments.ViewModels;
+@using HR.Application.Features.Expenditures.ViewModels;
+@model ExpenditureCreateVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "CreateExpenditure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-6 offset-lg-3 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Harcama Talebi Oluştur</h4>
+            <form asp-action="CreateExpenditure" class="forms-sample" enctype="multipart/form-data">
+
+                <div class="form-group" hidden>
+                    <label asp-for="PersonnelId">Kullanıcı ID</label>
+                    <input asp-for="PersonnelId" type="text" class="form-control" placeholder="Kullanıcı ID" />
+                    <span asp-validation-for="PersonnelId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ExpenditureTypes">Harcama Türü</label>
+                    <select asp-for="ExpenditureTypeId" class="form-control custom-select">
+                        <option value="">-- Harcama Türü Seçin --</option>
+                        @foreach (var expenditureType in Model.ExpenditureTypes)
+                        {
+                            <option value="@expenditureType.Id">@expenditureType.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ExpenditureTypes" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Amount">Miktarı</label>
+                    @* <input asp-for="Amount" type="number" class="form-control" placeholder="Miktarı"> *@
+                    <input asp-for="Amount" type="number" step="0.01" class="form-control" placeholder="Miktarı">
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrencyTypeVM">Para Birimi</label>
+                    <select asp-for="CurrencyTypeVM" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()" class="form-control custom-select"></select>
+                    <span asp-validation-for="CurrencyTypeVM" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Document">Belge</label>
+                    <input asp-for="Document" type="file" class="form-control" />
+                    <span asp-validation-for="Document" class="text-danger"></span>
+                </div>
+
+                <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
+                <a asp-action="Index" class="btn btn-light">İptal</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
