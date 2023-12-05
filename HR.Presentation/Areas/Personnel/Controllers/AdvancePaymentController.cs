@@ -5,7 +5,7 @@ using HR.Application.Features.AdvancePayments.Queries.GetAdvancePaymentListByPer
 using HR.Application.Features.AdvancePayments.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace HR.Presentation.Areas.Personnel.Controllers
 {
@@ -41,9 +41,25 @@ namespace HR.Presentation.Areas.Personnel.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAdvancePayment(AdvancePaymentCreateVM advancePaymentCreateVM)
         {
-            // CustomValidationAttribute için eklenmiştir.
-            //if (!ModelState.IsValid)
-            //    throw new Exception("Model not correct");
+                        
+            if (!ModelState.IsValid)
+            {
+                List<Tuple<string, string>> validationErrors = new List<Tuple<string, string>>();
+
+                // ModelState içindeki hataları döngüyle alıyoruz
+                foreach (var entry in ModelState)
+                {
+                    string propertyName = entry.Key;
+                    ModelErrorCollection errors = entry.Value.Errors;
+
+                    foreach (var error in errors)
+                    {
+                        validationErrors.Add(new Tuple<string, string>(propertyName, error.ErrorMessage));
+                    }
+                }
+                return View(advancePaymentCreateVM);
+                //throw new Exception("Model not correct");
+            }
 
             advancePaymentCreateVM.PersonnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
             var command = mapper.Map<CreateAdvancePaymentCommand>(advancePaymentCreateVM);

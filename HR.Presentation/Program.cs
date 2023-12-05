@@ -4,6 +4,7 @@ using HR.Domain.Concrete.User.Role;
 using HR.Infrastructure.Persistence;
 using HR.Domain.Concrete;
 using HR.Domain.Concrete.User;
+using System.Globalization;
 
 namespace HR.Presentation
 {
@@ -29,7 +30,15 @@ namespace HR.Presentation
 
             var app = builder.Build();
 
-           
+            // View'den Ondalýklý Deðer dönebilmesi için gerekli kod bloðu
+            app.Use(async (context, next) =>
+            {
+                var currentThreadCulture = (CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
+                currentThreadCulture.NumberFormat = NumberFormatInfo.InvariantInfo;
+                Thread.CurrentThread.CurrentCulture = currentThreadCulture;
+                Thread.CurrentThread.CurrentUICulture = currentThreadCulture;
+                await next();
+            });
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
