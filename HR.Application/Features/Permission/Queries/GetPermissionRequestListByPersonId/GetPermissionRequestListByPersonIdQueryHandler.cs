@@ -21,9 +21,9 @@ public class GetPermissionRequestListByPersonIdQueryHandler : IRequestHandler<Ge
         this.permissionRequestRepository = permissionRequestRepository ?? throw new ArgumentNullException(nameof(permissionRequestRepository));
         this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
-    public Task<IEnumerable<PermissionRequestListVM>> Handle(GetPermissionRequestListByPersonIdQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<PermissionRequestListVM>> Handle(GetPermissionRequestListByPersonIdQuery request, CancellationToken cancellationToken)
     {
         var list = await permissionRequestRepository.GetAllByPersonIdAsync(request.PersonnelId, cancellationToken);
-        return mapper.Map<IEnumerable<AdvancePaymentListVM>>(list);
+        return mapper.Map<IEnumerable<PermissionRequestListVM>>(list);
     }
 }

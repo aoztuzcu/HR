@@ -27,7 +27,7 @@ namespace HR.Application.Features.Permission.Command.CreatePermissionRequest
         public async Task<CreatePermissionRequestCommand> Handle(CreatePermissionRequestCommand request, CancellationToken cancellationToken)
         {
             var permissionRequest = mapper.Map<PermissionRequest>(request);
-            var gender = repository.GetByGender(permissionRequest.PersonId, cancellationToken);//cinsiyet geldi
+            var gender = repository.GetByGender(permissionRequest.PersonnelId, cancellationToken);//cinsiyet geldi
 
             //if (gender == 1)
             //{

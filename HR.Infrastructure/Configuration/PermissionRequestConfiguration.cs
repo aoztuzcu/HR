@@ -33,7 +33,7 @@ public class PermissionRequestConfiguration : IEntityTypeConfiguration<Permissio
         builder.Property(x => x.ApprovedDate).HasMaxLength(15).HasColumnType("datetime");
 
 
-        builder.HasOne(x => x.Person).WithMany(x => x.PermissonRequests).HasForeignKey(x => x.PersonId);
+        builder.HasOne(x => x.Personnel).WithMany(x => x.PermissonRequests).HasForeignKey(x => x.PersonnelId);
 
         builder.HasOne(x => x.PermissionType).WithMany(x => x.PermissionRequests).HasForeignKey(x => x.PermissionTypeId);
 

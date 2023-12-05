@@ -1,5 +1,6 @@
 ﻿using HR.Application.Features.AdvancePayments.ViewModels;
 using HR.Application.Features.EnumViewModels;
+using HR.Domain.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;

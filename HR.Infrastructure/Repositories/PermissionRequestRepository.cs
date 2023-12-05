@@ -18,7 +18,7 @@ namespace HR.Persistence.Repositories
         {
         }
 
-        public Task<IEnumerable<PermissionRequest>> GetAllByPersonIdAsync(Guid id, CancellationToken token)
+        public async Task<IEnumerable<PermissionRequest>> GetAllByPersonIdAsync(Guid id, CancellationToken token)
         =>  await base.GetAllAsync(g => g.PersonnelId == id, token);
 
         public Task<Gender> GetByGender(Guid personId, CancellationToken token)
