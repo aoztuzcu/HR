@@ -41,5 +41,5 @@ namespace HR.Application.Features.Permission.Queries
     //    {
     //        throw new NotImplementedException();
     //    }
-    }
+    //}
 }

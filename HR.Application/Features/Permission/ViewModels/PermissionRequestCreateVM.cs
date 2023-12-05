@@ -10,17 +10,19 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Application.Features.Permission.ViewModels;
-
-public class PermissionRequestVM
+namespace HR.Application.Features.Permission.ViewModels
 {
-<<<<<<< HEAD:HR.Application/Features/Permission/ViewModels/PermissionRequestCreateVM.cs
     public class PermissionRequestCreateVM
     {
-        public Guid PersonId { get; set; }
+        public Guid PersonnelId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public float Days { get; set; }
+        public float Days 
+        { 
+                get { return Days; }
+                set { Days = (float)(EndDate - StartDate).TotalDays; }
+            }
+        
         //public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
         //public DateTime ApprovedDate { get; set; }
         public Guid PermissionTypeId { get; set; }
@@ -29,18 +31,4 @@ public class PermissionRequestVM
         //public PermissionVM PermissionType { get; set; }
 
     }
-=======
-    public Guid PersonnelId { get; set; }
-    public PersonVM? Personnel { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public float Days 
-    {
-        get { return Days; }
-        set { Days = (float)(EndDate - StartDate).TotalDays; }
-    }  
-    public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
-    public Guid PermissionTypeId { get; set; }
-    public PermissionTypeVM PermissionType { get; set; }
->>>>>>> main:HR.Application/Features/Permission/ViewModels/PermissionRequestVM.cs
 }

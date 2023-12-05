@@ -35,7 +35,7 @@ namespace HR.Presentation.Areas.Personnel.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreatePermissionRequest(PermissionRequestVM permissionRequestVM)
+        public async Task<IActionResult> CreatePermissionRequest(PermissionRequestCreateVM permissionRequestVM)
         {
             permissionRequestVM.PersonnelId = Guid.Parse("33CCC344-64C0-4667-A5A0-E0B49031887B");
             var command = mapper.Map<CreatePermissionRequestCommand>(permissionRequestVM);

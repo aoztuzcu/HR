@@ -11,5 +11,5 @@ public class PermissionTypeVM
 {
     public string Name { get; set; }
     public float? Days { get; set; }
-    public IEnumerable<PermissionRequestVM>? PermissionRequests { get; set; }
+    public IEnumerable<PermissionRequestCreateVM>? PermissionRequests { get; set; }
 }
