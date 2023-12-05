@@ -17,6 +17,9 @@ public class AdvancePaymentListVM
     [Display(Name = "Para Birimi")]
     public CurrencyTypeVM CurrencyType { get; set; }
 
+    [Display(Name = "Talep Tarihi")]
+    public DateTime CreatedDate { get; set; }
+
     [Display(Name = "Onay Durumu")]
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
 

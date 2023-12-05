@@ -1,16 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HR.Application.Features.AdvancePayments.ViewModels.Validations;
+using System.ComponentModel.DataAnnotations;
 
 namespace HR.Application.Features.AdvancePayments.ViewModels;
 
-// CustomValidationAttribute için eklenmiştir.
-//[HR.Application.Features.AdvancePayments.ViewModels.Validations.CustomValidation]
 public class AdvancePaymentCreateVM
 {
-    public Guid PersonnelId { get; set; }
+    public Guid? PersonnelId { get; set; }
     public AdvanceTypeVM AdvanceType { get; set; }
 
     [Required(ErrorMessage = "Miktar boş geçilemez.")]
-    [Range(0, 50000.00, ErrorMessage = "Miktarı 50000'den küçük olmalıdır.")]
+    [Range(0, 125000.00, ErrorMessage = "Miktar alanına 0 ile 125000 arasında değer yazabilirsiniz.")]
+    [CustomAmountValidation]
     public decimal Amount { get; set; }
 
     public CurrencyTypeVM CurrencyType { get; set; }

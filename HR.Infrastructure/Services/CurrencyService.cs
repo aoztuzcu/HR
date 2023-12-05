@@ -8,7 +8,6 @@ public class CurrencyService : ICurrencyService
 {
     private readonly HttpClient httpClient;
 
-    // dependency injection ??
     public CurrencyService(HttpClient httpClient)
     {
         this.httpClient = httpClient;
@@ -46,8 +45,6 @@ public class CurrencyService : ICurrencyService
             else
                 throw new Exception("Exchange rate data not found.");
         }
-
-        // Hata durumunda varsayılan olarak 1 döndürülebilir.
         throw new Exception($"Failed to retrieve exchange rate data. Status code: {response.StatusCode}");
     }
 }
