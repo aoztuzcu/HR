@@ -31,8 +31,13 @@ namespace HR.Application.Features.Permission.Command.CreatePermissionRequest
 
         public async Task<CreatePermissionRequestCommand> Handle(CreatePermissionRequestCommand request, CancellationToken cancellationToken)
         {
+<<<<<<< HEAD
             var personel = await personnelRepository.GetByIdAsync(request.PersonId, cancellationToken);
             var gender = personel.Gender;
+=======
+            var permissionRequest = mapper.Map<PermissionRequest>(request);
+            var gender = repository.GetByGender(permissionRequest.PersonnelId, cancellationToken);//cinsiyet geldi
+>>>>>>> main
 
                
 

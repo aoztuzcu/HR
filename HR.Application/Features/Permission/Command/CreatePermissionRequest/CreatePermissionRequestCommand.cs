@@ -1,6 +1,7 @@
 ﻿using HR.Application.Features.AdvancePayments.ViewModels;
 using HR.Application.Features.People.ViewModels;
 using HR.Application.Features.Permission.ViewModels;
+using HR.Application.Features.EnumViewModels;
 using HR.Domain.Concrete;
 using HR.Domain.Enum;
 using MediatR;
@@ -20,8 +21,12 @@ namespace HR.Application.Features.Permission.Command.CreatePermissionRequest
         public float Days { get; set; }
         public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
         public Guid PermissionTypeId { get; set; }
+<<<<<<< HEAD
         
        public PermissionVM PermissionType { get; set; }
+=======
+       public PermissionTypeVM PermissionType { get; set; }
+>>>>>>> main
          
         
     }

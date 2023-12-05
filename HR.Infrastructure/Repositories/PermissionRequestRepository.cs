@@ -17,6 +17,10 @@ namespace HR.Persistence.Repositories
         public PermissionRequestRepository(HRContext context) : base(context)
         {
         }
+
+        public async Task<IEnumerable<PermissionRequest>> GetAllByPersonIdAsync(Guid id, CancellationToken token)
+        =>  await base.GetAllAsync(g => g.PersonnelId == id, token);
+
         public Task<Gender> GetByGender(Guid personId, CancellationToken token)
         {
             // dbsetten sonra sorgu atılacak

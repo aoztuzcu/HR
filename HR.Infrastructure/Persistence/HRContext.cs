@@ -57,7 +57,8 @@ public class HRContext : IdentityDbContext<User ,UserRole ,Guid>
     {
         modelBuilder.ApplyConfiguration(new PersonnelConfiguration())
                 .ApplyConfiguration(new DepartmentConfiguration())
-                .ApplyConfiguration(new JobConfiguration());
+                .ApplyConfiguration(new JobConfiguration())
+                .ApplyConfiguration(new AdvancePaymentConfiguration());
         modelBuilder.Seed();
         base.OnModelCreating(modelBuilder);
     }

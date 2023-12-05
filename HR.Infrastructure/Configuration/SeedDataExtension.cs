@@ -84,7 +84,7 @@ public static class SeedDataExtension
            new Personnel
            {
                Id = userId,
-               IdentityNumber = "65803196176",
+               IdentityNumber = "66047609514",
                Address = "Kadıköy/İstanbul",
                BirthDate = new DateTime(1990, 05, 22),
                HireDate = DateTime.Now,
@@ -104,9 +104,9 @@ public static class SeedDataExtension
              new Personnel
              {
                  Id = userId2,
-                 IdentityNumber = "58963214568",
+                 IdentityNumber = "56555011244",
                  Address = "Yenibosna/İstanbul",
-                 BirthDate = new DateTime(2000, 05, 22),
+                 BirthDate = new DateTime(2000, 09, 25),
                  HireDate = DateTime.Now,
                  Salary = 34000,
                  PlaceofBirth = "İstanbul",
@@ -120,7 +120,7 @@ public static class SeedDataExtension
                  DepartmentId = departmantId2,
                  Email = "muhammet.coskun@bilgeadamboost.com"
              }
-		) ;
+		); ;
     }
 
 }

@@ -1,0 +1,53 @@
+﻿@using HR.Application.Features.Permission.ViewModels
+@using System.Globalization
+@model PermissionRequestVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "CreateAdvancePayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-6 offset-lg-3 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Avans Talebi Oluştur</h4>
+            <form asp-action="CreateAdvancePayment" class="forms-sample">
+
+                <div class="form-group" hidden>
+                    <label asp-for="PersonnelId">Kullanıcı ID</label>
+                    <input asp-for="PersonnelId" type="text" class="form-control" placeholder="Kullanıcı ID" />
+                    <span asp-validation-for="PersonnelId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StartDate">Başlangıç Tarihi</label>
+                    <input asp-for="StartDate" type="number" step="0.01" class="form-control" placeholder="Başlangıç Tarihi">
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EndDate">Bitiş Tarihi</label>
+                    <input asp-for="EndDate" type="number" step="0.01" class="form-control" placeholder="Bitiş Tarihi">
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+            @*    <div class="form-group">
+                    <label asp-for="PermissionType">Avans Türü</label>
+                    <select asp-for="PermissionType" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()" class="form-control custom-select"></select>
+                    <span asp-validation-for="PermissionType" class="text-danger"></span>
+                </div>*@
+
+                <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
+                <a asp-action="Index" class="btn btn-light">İptal</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+

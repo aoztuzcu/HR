@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;
+using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.AdvancePayments.ViewModels;
 using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.Expenditures.Commands.CreateExpenditure;
+using HR.Application.Features.EnumViewModels;
 using HR.Application.Features.Expenditures.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
 using HR.Application.Features.People.Commands.PersonUpdate;
@@ -24,8 +26,10 @@ public class MappingProfile : Profile
         CreateMap<Job, JobVM>().ReverseMap();
 
         CreateMap<AdvancePayment, CreateAdvancePaymentCommand>().ReverseMap();
+        CreateMap<AdvancePayment, DeleteByIdAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePaymentCreateVM, CreateAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePayment,AdvancePaymentListVM>().ReverseMap();
+
 
         CreateMap<Expenditure,CreateExpenditureCommand >().ReverseMap();
         CreateMap<ExpenditureCreateVM, CreateExpenditureCommand>().ReverseMap();
