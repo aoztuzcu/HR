@@ -1,4 +1,5 @@
 ﻿using HR.Application.Features.AdvancePayments.ViewModels;
+using HR.Application.Features.EnumViewModels;
 using MediatR;
 
 namespace HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;

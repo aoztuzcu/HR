@@ -1,4 +1,5 @@
 ﻿using HR.Application.Features.AdvancePayments.ViewModels;
+using HR.Application.Features.EnumViewModels;
 using MediatR;
 using System;
 using System.Collections.Generic;

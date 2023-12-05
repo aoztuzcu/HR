@@ -4,6 +4,7 @@ using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.AdvancePayments.ViewModels;
 using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.Expenditures.Commands.CreateExpenditure;
+using HR.Application.Features.EnumViewModels;
 using HR.Application.Features.Expenditures.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
 using HR.Application.Features.People.Commands.PersonUpdate;

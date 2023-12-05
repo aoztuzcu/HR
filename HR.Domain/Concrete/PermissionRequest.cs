@@ -10,8 +10,8 @@ namespace HR.Domain.Concrete;
 
 public class PermissionRequest:BaseEntity
 {
-    public Guid PersonId { get; set; }
-    public Personnel? Person { get; set; }
+    public Guid PersonnelId { get; set; }
+    public Personnel? Personnel { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public float Days { get; set; }
