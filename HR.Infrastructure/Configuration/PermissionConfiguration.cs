@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 namespace HR.Persistence.Configuration;
 
 
-public class PermissionConfiguration : IEntityTypeConfiguration<Permission>
+public class PermissionConfiguration : IEntityTypeConfiguration<PermissionType>
 
 {
-    public void Configure(EntityTypeBuilder<Permission> builder)
+    public void Configure(EntityTypeBuilder<PermissionType> builder)
     {
         builder.HasQueryFilter(x => x.IsActive);
         builder.HasKey(x => x.Id);
