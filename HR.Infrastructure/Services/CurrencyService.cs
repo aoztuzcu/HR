@@ -24,6 +24,16 @@ public class CurrencyService : ICurrencyService
         {
             date = date.AddDays(-2);
         }
+        //DateTime date = DateTime.Now;
+
+        // eğer saat 15:30'den önce ise bir önceki kur ile hesapla
+        // Merkez Bankası günlük kuru 15.30 gibi açıklıyor. Bu saatten sonra veri doluyor.
+        // Aksi halde page not found hatası veriyor MB'nin sitesi.
+        if (DateTime.Now.TimeOfDay < new TimeSpan(15, 30, 0))
+        {
+            // Eğer şart sağlanıyorsa bir gün çıkartın
+            date = DateTime.Now.AddDays(-1);
+        }
 
         string url = $"https://www.tcmb.gov.tr/kurlar/{date:yyyyMM}/{date:ddMMyyyy}.xml";
 
