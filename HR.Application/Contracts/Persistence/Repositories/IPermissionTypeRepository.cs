@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace HR.Application.Contracts.Persistence.Repositories;
 
-public interface IPermissionTypeRepository:IBaseRepository<Permission>
+public interface IPermissionTypeRepository:IBaseRepository<PermissionType>
 {
-    Task<IEnumerable<Permission>> GetAllAsync();
+    Task<IEnumerable<PermissionType>> GetAllAsync();
 
 }

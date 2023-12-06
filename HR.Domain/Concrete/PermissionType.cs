@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HR.Domain.Concrete;
 
-public class Permission:BaseEntity
+public class PermissionType:BaseEntity
 {
     public string Name { get; set; }
     public float? Days { get; set; }

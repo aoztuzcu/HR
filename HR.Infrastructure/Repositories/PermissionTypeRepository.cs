@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace HR.Persistence.Repositories;
 
-public class PermissionTypeRepository : BaseRepository<Permission>, IPermissionTypeRepository
+public class PermissionTypeRepository : BaseRepository<PermissionType>, IPermissionTypeRepository
 {
     public PermissionTypeRepository(HRContext context) : base(context)
     {
     }
 
-    public async Task<IEnumerable<Permission>> GetAllAsync()
+    public async Task<IEnumerable<PermissionType>> GetAllAsync()
       => await context.Permissions.ToListAsync();
 }
