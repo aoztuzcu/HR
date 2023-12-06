@@ -44,22 +44,13 @@ public class PersonController : Controller
 	[HttpPost]
 	public async Task<IActionResult> UpdatePerson(PersonUpdateCommand personUpdateCommand)
 	{
-		//GetPersonQuery query = new GetPersonQuery() { Id = personDetailVM.Id };
-		//var result = await mediator.Send(personUpdateCommand);
-
-		//var updateResult = mapper.Map<PersonUpdateCommand>(result);
-		//updateResult.Id = personDetailVM.Id;
 		if (personUpdateCommand.PhotoFile != null)
 		{
 			personUpdateCommand.Photo = FileOperation.ReturnFileName(personUpdateCommand.PhotoFile, "photos", webHostEnvironment);
 		}
-		//updateResult.Address = personDetailVM.Address;
-		//updateResult.PhoneNumber = personDetailVM.PhoneNumber;
-
 		await mediator.Send(personUpdateCommand);
 		return RedirectToAction("Index");
 	}
-
 	public async Task<IActionResult> Detail(Guid id)
 	{
 		GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
@@ -76,7 +67,6 @@ public class PersonController : Controller
 	{
 		CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonId = id };
 		var result = await mediator.Send(command);
-
 		return View(command);
 	}
 	[HttpPost]
@@ -84,8 +74,6 @@ public class PersonController : Controller
 	{
 		if (ModelState.IsValid)
 		{
-
-
 			return RedirectToAction("İzin oluşturuldu.");
 		}
 		return View(permissionRequestCreateVM);

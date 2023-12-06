@@ -9,6 +9,7 @@ namespace HR.Application.Features.Permission.ViewModels;
 
 public class PermissionTypeVM
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
     public float? Days { get; set; }
     public IEnumerable<PermissionRequestCreateVM>? PermissionRequests { get; set; }

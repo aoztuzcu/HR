@@ -27,7 +27,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IPermissionRequestRepository, PermissionRequestRepository>();
         services.AddScoped<IExpenditureRepository, ExpenditureRepository>();
         services.AddScoped<IExpenditureTypeRepository, ExpenditureTypeRepository>();
-
+        services.AddScoped<IPermissionRequestRepository,PermissionRequestRepository>();
+        services.AddScoped<IPermissionTypeRepository, PermissionTypeRepository>();
         services.AddScoped<IAdvancePaymentRepository, AdvancePaymentRepository>();
         services.AddScoped<ICurrencyService, CurrencyService>();
         return services;
