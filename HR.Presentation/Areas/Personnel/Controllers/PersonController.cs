@@ -29,7 +29,7 @@ public class PersonController : Controller
 	}
 	public async Task<IActionResult> Index(GetPersonByIdQuery query)
 	{
-		query.Id = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
+		query.Id = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
 		var result = await mediator.Send(query);
 		return View(result);
 	}
@@ -65,7 +65,7 @@ public class PersonController : Controller
 	}
 	public async Task<IActionResult> CreatePermissionRequest(Guid id)
 	{
-		CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonId = id };
+		CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonnelId = id };
 		var result = await mediator.Send(command);
 		return View(command);
 	}

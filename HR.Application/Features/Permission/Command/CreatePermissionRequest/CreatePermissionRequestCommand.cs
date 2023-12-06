@@ -6,14 +6,14 @@ namespace HR.Application.Features.Permission.Command.CreatePermissionRequest;
 
 public class CreatePermissionRequestCommand : IRequest<CreatePermissionRequestCommand>
 {
-    public Guid PersonId { get; set; }
+    public Guid PersonnelId { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
-    public float Days { get; set; }
-    public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
-    public DateTime ApprovedDate { get; set; }
+    public float Days { get; set; } = 0; // Revize edilecek
+    //public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
+    public DateTime? ApprovedDate { get; set; }
     public Guid PermissionTypeId { get; set; }
-   public PermissionTypeVM PermissionType { get; set; }
-     
-    
+    //public PermissionTypeVM? PermissionType { get; set; }
+
+
 }

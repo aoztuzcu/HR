@@ -21,7 +21,7 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<Personnel, PersonDetailVM>().ReverseMap();
-        CreateMap<Personnel, PersonUpdateCommand>().ReverseMap();        
+        CreateMap<Personnel, PersonUpdateCommand>().ReverseMap();
         CreateMap<PersonDetailVM, PersonUpdateCommand>().ReverseMap();
         CreateMap<Personnel, PersonVM>().ReverseMap();
         CreateMap<Department, DepartmentVM>().ReverseMap();
@@ -30,17 +30,21 @@ public class MappingProfile : Profile
         CreateMap<AdvancePayment, CreateAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePayment, DeleteByIdAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePaymentCreateVM, CreateAdvancePaymentCommand>().ReverseMap();
-        CreateMap<AdvancePayment,AdvancePaymentListVM>().ReverseMap();
+        CreateMap<AdvancePayment, AdvancePaymentListVM>().ReverseMap();
 
 
-        CreateMap<Expenditure,CreateExpenditureCommand >().ReverseMap();
+        CreateMap<Expenditure, CreateExpenditureCommand>().ReverseMap();
         CreateMap<ExpenditureCreateVM, CreateExpenditureCommand>().ReverseMap();
         CreateMap<Expenditure, ExpenditureCreateVM>().ReverseMap();
         CreateMap<Expenditure, ExpenditureListVM>().ReverseMap();
 
+        
+        CreateMap<PermissionRequest, PermissionRequestListVM>().ReverseMap();
+
+
+
         CreateMap<PermissionRequestCreateVM, CreatePermissionRequestCommand>().ReverseMap();
         CreateMap<PermissionRequest, CreatePermissionRequestCommand>().ReverseMap();
-        CreateMap<PermissionRequest, PermissionRequestListVM>().ReverseMap();
         CreateMap<PermissionType, PermissionTypeVM>().ReverseMap();
 
         //ViewModel Mappings

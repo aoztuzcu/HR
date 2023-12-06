@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HR.Domain.Concrete;
 
-public class PermissionRequest:BaseEntity
+public class PermissionRequest : BaseEntity
 {
     public Guid PersonnelId { get; set; }
     public Personnel? Personnel { get; set; }

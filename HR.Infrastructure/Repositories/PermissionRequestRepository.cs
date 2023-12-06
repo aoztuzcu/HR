@@ -4,6 +4,7 @@ using HR.Domain.Concrete;
 using HR.Domain.Enum;
 using HR.Infrastructure.Persistence;
 using HR.Persistence.Repositories.Base;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,14 @@ using System.Threading.Tasks;
 
 namespace HR.Persistence.Repositories
 {
-    public class PermissionRequestRepository : BaseRepository<PermissionRequest>,IPermissionRequestRepository
+    public class PermissionRequestRepository : BaseRepository<PermissionRequest>, IPermissionRequestRepository
     {
         public PermissionRequestRepository(HRContext context) : base(context)
         {
         }
 
         public async Task<IEnumerable<PermissionRequest>> GetAllByPersonIdAsync(Guid id, CancellationToken token)
-        =>  await base.GetAllAsync(g => g.PersonnelId == id, token);
+        => await context.PermissionRequests.Include(x => x.PermissionType).Where(g => g.PersonnelId == id).ToListAsync();//await base.GetAllAsync(g => g.PersonnelId == id, token);
 
         public Task<Gender> GetByGender(Guid personId, CancellationToken token)
         {
