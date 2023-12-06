@@ -11,6 +11,8 @@ using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.ViewModels;
 using HR.Domain.Concrete;
 using HR.Domain.Enum;
+using HR.Application.Features.Permission.ViewModels;
+using HR.Application.Features.Permission.Command.CreatePermissionRequest;
 
 namespace HR.Application.Mappings;
 
@@ -35,6 +37,11 @@ public class MappingProfile : Profile
         CreateMap<ExpenditureCreateVM, CreateExpenditureCommand>().ReverseMap();
         CreateMap<Expenditure, ExpenditureCreateVM>().ReverseMap();
         CreateMap<Expenditure, ExpenditureListVM>().ReverseMap();
+
+        CreateMap<PermissionRequestCreateVM, CreatePermissionRequestCommand>().ReverseMap();
+        CreateMap<PermissionRequest, CreatePermissionRequestCommand>().ReverseMap();
+        CreateMap<PermissionRequest, PermissionRequestListVM>().ReverseMap();
+        CreateMap<Permission, PermissionTypeVM>().ReverseMap();
 
         //ViewModel Mappings
         CreateMap<ApprovalStatus, ApprovalStatusVM>().ReverseMap();
