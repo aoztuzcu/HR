@@ -60,7 +60,7 @@ public class HRContext : IdentityDbContext<User, UserRole, Guid>
         .ApplyConfiguration(new DepartmentConfiguration())
         .ApplyConfiguration(new JobConfiguration())
         .ApplyConfiguration(new AdvancePaymentConfiguration());
-        modelBuilder.Seed();
+        //modelBuilder.Seed();
 
         modelBuilder.Entity<Personnel>().HasOne(x => x.User).WithMany(x => x.Personnels).HasForeignKey(x => x.UserId);
 

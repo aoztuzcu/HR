@@ -40,10 +40,10 @@ public class LoginController : Controller
                 {
                     return RedirectToAction("Index", "Dashboard", new { area = "Writer" });
                 }
-                else
-                {
-                    return RedirectToAction("Index", "Blog");
-                }
+                //else
+                //{
+                //    return RedirectToAction("Index", "Blog");
+                //}
 
             }
             else
