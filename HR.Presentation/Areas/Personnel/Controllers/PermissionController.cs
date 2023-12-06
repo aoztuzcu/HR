@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HR.Presentation.Areas.Personnel.Controllers;
 
 [Area("Personnel")]
-[Authorize]
+[Authorize(Roles = "Personnel")]
 public class PermissionController : Controller
 {
     private readonly IMediator mediator;
@@ -26,7 +26,7 @@ public class PermissionController : Controller
     [HttpGet]
     public async Task<IActionResult> GetAllPermissions(Guid personnelId)
     {
-        personnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
+        personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
         GetPermissionRequestListByPersonIdQuery query = new GetPermissionRequestListByPersonIdQuery() { PersonnelId = personnelId };
         var list = await mediator.Send(query);
         return View(list);
@@ -35,15 +35,16 @@ public class PermissionController : Controller
     {
         var list = await permissionTypeRepository.GetAllAsync();
         var permissionList = mapper.Map<IEnumerable<PermissionTypeVM>>(list);
-        var permissionRequestVM = new PermissionRequestCreateVM { PermissionList= permissionList };
+        var permissionRequestVM = new PermissionRequestCreateVM { PermissionList = permissionList };
         return View(permissionRequestVM);
     }
+
     [HttpPost]
-    public async Task<IActionResult> CreatePermissionRequest(PermissionRequestCreateVM permissionRequestVM)
+    public IActionResult CreatePermissionRequest(PermissionRequestCreateVM permissionCreateVM)
     {
-        permissionRequestVM.PersonnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
-        var command = mapper.Map<CreatePermissionRequestCommand>(permissionRequestVM);
-        var result = await mediator.Send(command);
-        return RedirectToAction("GetAllPermissions", "Permission");
+        permissionCreateVM.PersonnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
+        var command = mapper.Map<CreatePermissionRequestCommand>(permissionCreateVM);
+        var result = mediator.Send(command);
+        return RedirectToAction("GetAllPermissions");
     }
 }

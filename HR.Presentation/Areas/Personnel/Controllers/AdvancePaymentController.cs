@@ -27,7 +27,7 @@ public class AdvancePaymentController : Controller
     // Index sayfasında kullanıcıyı avans taleplerinin listelendiği sayfa karşılasın.
     public async Task<IActionResult> Index(Guid personnelId)
     {
-        personnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
+        personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
         GetAdvancePaymentListByPersonIdQuery query = new GetAdvancePaymentListByPersonIdQuery() { PersonnelId = personnelId };
         var list = await mediator.Send(query);
         return View(list);
@@ -63,7 +63,7 @@ public class AdvancePaymentController : Controller
             //throw new Exception("Model not correct");
         }
 
-        advancePaymentCreateVM.PersonnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
+        advancePaymentCreateVM.PersonnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
         var command = mapper.Map<CreateAdvancePaymentCommand>(advancePaymentCreateVM);
         var result = await mediator.Send(command);
         return RedirectToAction("Index", "AdvancePayment");

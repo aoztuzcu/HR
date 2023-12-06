@@ -20,8 +20,8 @@ public class CreatePermissionRequestCommandHandler : IRequestHandler<CreatePermi
 
     public async Task<CreatePermissionRequestCommand> Handle(CreatePermissionRequestCommand request, CancellationToken cancellationToken)
     {
-        var permissionrequest = mapper.Map<PermissionRequest>(request);
-        var result = await repository.AddAsync(permissionrequest, cancellationToken);
+        var permissionRequest = mapper.Map<PermissionRequest>(request);
+        var result = await repository.AddAsync(permissionRequest, cancellationToken);
         return mapper.Map<CreatePermissionRequestCommand>(result);
     }   
 }

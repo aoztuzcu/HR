@@ -28,7 +28,7 @@ public class ExpenditureController : Controller
     }
     public async Task<IActionResult> Index(Guid personnelId)
     {
-        personnelId = Guid.Parse("8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4");
+        personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
         GetExpenditureListByPersonIdQuery query = new GetExpenditureListByPersonIdQuery() { PersonnelId = personnelId };
         var list = await mediator.Send(query);
         return View(list);
