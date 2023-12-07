@@ -18,11 +18,17 @@ public static class SeedDataExtension
         var role = Guid.NewGuid();
         var userId = Guid.NewGuid();
         var userId2 = Guid.NewGuid();
-        var userIdendityId = Guid.NewGuid();
 
-        User user = new User()
+        var idendityIdUser = Guid.NewGuid();
+        var idendityIdUser2 = Guid.NewGuid();
+        var idendityIduser3 = Guid.NewGuid();
+        var idendityIduser4 = Guid.NewGuid();
+
+        #region AspNetUserSeedData
+
+        User user1 = new User()
         {
-            Id = userIdendityId,
+            Id = idendityIdUser,
             Name = "Betül",
             Surname = "Demir",
             UserName = "betuldemir",
@@ -32,71 +38,99 @@ public static class SeedDataExtension
             EmailConfirmed = true,
             SecurityStamp = Guid.NewGuid().ToString(),
         };
-        modelBuilder.Entity<User>().HasData(user);
+
+        User user2 = new User()
+        {
+            Id = idendityIdUser2,
+            Name = "Muhammet",
+            Surname = "Coşkun",
+            UserName = "muhammetcoskun",
+            NormalizedUserName = "MUHAMMETCOSKUN",
+            Email = "muhammet.coskun@bilgeadamboost.com",
+            NormalizedEmail = "MUHAMMET.COSKUN@BILGEADAM.COM",
+            EmailConfirmed = true,
+            SecurityStamp = Guid.NewGuid().ToString(),
+        };
+
+        User user3 = new User()
+        {
+            Id = idendityIduser3,
+            Name = "Mehmet Ali",
+            Surname = "Mert",
+            UserName = "mehmetalimert",
+            NormalizedUserName = "MEHMETALIMERT",
+            Email = "mehmetali.mert@bilgeadamboost.com",
+            NormalizedEmail = "MEHMETALI.MERT@BILGEADAM.COM",
+            EmailConfirmed = true,
+            SecurityStamp = Guid.NewGuid().ToString(),
+        };
+
+        User user4 = new User()
+        {
+            Id = idendityIduser4,
+            Name = "Abdülkadir",
+            Surname = "Öztuzcu",
+            UserName = "abdulkadiroztuzcu",
+            NormalizedUserName = "ABDULKADIROZTUZCU",
+            Email = "abdulkadir.oztuzcu@bilgeadamboost.com",
+            NormalizedEmail = "ABDULKADIR.OZTUZCU@BILGEADAM.COM",
+            EmailConfirmed = true,
+            SecurityStamp = Guid.NewGuid().ToString(),
+        };
+
+        modelBuilder.Entity<User>().HasData(user1, user2);
 
         var passwordHasher = new PasswordHasher<User>();
-        user.PasswordHash = passwordHasher.HashPassword(user, "Proje123");
+        user1.PasswordHash = passwordHasher.HashPassword(user1, "Proje123");
+        user2.PasswordHash = passwordHasher.HashPassword(user2, "Proje123");
+        user3.PasswordHash = passwordHasher.HashPassword(user3, "Proje123");
+        user4.PasswordHash = passwordHasher.HashPassword(user4, "Proje123");
+        #endregion
 
+        #region RoleSeedData
         modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = role, Name = "Personnel", NormalizedName = "PERSONNEL" });
 
+        #endregion
+
+        #region DepartmentSeedData
         modelBuilder.Entity<Department>().HasData(
-        new Department
-        {
-            Id = departmantId2,
-            CreatedDate = DateTime.Now,
-            Name = "Mekanik Tasarım"
-        },
-        new Department
-        {
-            Id = Guid.NewGuid(),
-            CreatedDate = DateTime.Now,
-            Name = "İnsan Kaynakları"
-        },
-        new Department
-        {
-            Id = Guid.NewGuid(),
-            CreatedDate = DateTime.Now,
-            Name = "Muhasebe"
-        },
-        new Department
-        {
-            Id = departmantId,
-            CreatedDate = DateTime.Now,
-            Name = "Bilişim Teknolojileri"
-        }
-        );
-        modelBuilder.Entity<Job>().HasData(new Job
-        {
-            Id = jobId,
-            CreatedDate = DateTime.Now,
-            Name = "Yazılım Mühendisi",
+                                                    new Department { Id = departmantId2, CreatedDate = DateTime.Now, Name = "Mekanik Tasarım" },
+                                                    new Department { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "İnsan Kaynakları" },
+                                                    new Department { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Muhasebe" },
+                                                    new Department { Id = departmantId, CreatedDate = DateTime.Now, Name = "Bilişim Teknolojileri" }
+                                                    );
+        #endregion
 
-        }, new Job
-        {
-            Id = Guid.NewGuid(),
-            CreatedDate = DateTime.Now,
-            Name = "FrontEnd Geliştici",
-        }, new Job
-        {
-            Id = Guid.NewGuid(),
-            CreatedDate = DateTime.Now,
-            Name = "BackEnd Geliştici",
-        },
-        new Job
-        {
-            Id = jobId2,
-            CreatedDate = DateTime.Now,
-            Name = "İnşaat Mühendisi",
-        }
-        , new Job
-        {
-            Id = Guid.NewGuid(),
-            CreatedDate = DateTime.Now,
-            Name = "Endüstri Mühendisi",
-        });
+        #region JobSeedData
+        modelBuilder.Entity<Job>().HasData(
+                                        new Job { Id = jobId, CreatedDate = DateTime.Now, Name = "Yazılım Mühendisi", },
+                                        new Job { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "FrontEnd Geliştici", },
+                                        new Job { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "BackEnd Geliştici", },
+                                        new Job { Id = jobId2, CreatedDate = DateTime.Now, Name = "İnşaat Mühendisi", },
+                                        new Job { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Endüstri Mühendisi", }
+                                        );
+        #endregion
 
+        #region PermissionTypeSeedData
+        modelBuilder.Entity<PermissionType>().HasData(
+                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Yıllık İzin", },
+                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Babalık İzni", Days = 5 },
+                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Evlilik İzni", Days = 3 },
+                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Doğum İzni", Days = 112 },
+                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Ölüm İzni", Days = 3 }
+                                       );
+        #endregion
 
+        #region ExpenditureTypeSeedData
+        modelBuilder.Entity<ExpenditureType>().HasData(
+                                                       new ExpenditureType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Seyahat", MinAmount = 100, MaxAmount = 5000 },
+                                                       new ExpenditureType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Gıda", MinAmount = 100, MaxAmount = 1500 },
+                                                       new ExpenditureType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Ulaşım", MinAmount = 50, MaxAmount = 3000 },
+                                                       new ExpenditureType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Sağlık", MinAmount = 50, MaxAmount = 6000 }
+                                                       );
+        #endregion
 
+        #region NotUsed
         //modelBuilder.Entity<Personnel>().HasData(
         //   new Personnel
         //   {
@@ -136,6 +170,7 @@ public static class SeedDataExtension
         //         JobId = jobId2,
         //         DepartmentId = departmantId2,
         //         Email = "muhammet.coskun@bilgeadamboost.com"
-        //     });
+        //     }); 
+        #endregion
     }
 }
