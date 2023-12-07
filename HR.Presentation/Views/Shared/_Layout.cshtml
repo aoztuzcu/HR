@@ -7,11 +7,11 @@
 }
 @using System.Security.Claims
 @using HR.Domain.Concrete;
-@{
+@*@{
     var user = await UserManager.GetUserAsync(User);
     var role = await UserManager.GetRolesAsync(user);
     var userId = UserManager.GetUserId(User);
-}
+}*@
 
 <!DOCTYPE html>
 <html lang="en">
@@ -209,8 +209,6 @@
                             </a>
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
-                                    @*   <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/buttons.html">Buttons</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/typography.html">Typography</a></li>*@
                                     <li class="nav-item"> <a class="nav-link" asp-action="Detail" asp-controller="Person" asp-route-id="93CFE4FE-5E7C-462E-9655-350A1C87B53D">Detay</a></li>
                                     <li class="nav-item"> <a class="nav-link" asp-action="UpdatePerson" asp-controller="Person" asp-route-id="93CFE4FE-5E7C-462E-9655-350A1C87B53D">Güncelle</a></li>
                                 </ul>
@@ -231,12 +229,12 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#talep" aria-expanded="false" aria-controls="talep">
                                 <i class="ti-user menu-icon"></i>
                                 <span class="menu-title">Taleplerim</span>
                                 <i class="menu-arrow"></i>
                             </a>
-                            <div class="collapse" id="auth">
+                            <div class="collapse" id="talep">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"> <a class="nav-link" asp-action="GetAllPermissions" asp-controller="Permission" asp-route-id="8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4"> İzin Taleplerim </a></li>
                                     <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="AdvancePayment" asp-route-id="8ECFEF55-CDF7-4D14-9B23-F6DB64FEC8B4"> Avans Taleplerim </a></li>
