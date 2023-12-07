@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HR.Application.Features.Permission.Queries
 {
-    public class GetPermissionListQuery :IRequest<PermissionRequestListVM>
+    public class GetPermissionListQuery : IRequest<PermissionRequestListVM>
     {
         public Guid PersonelId { get; set; }
     }

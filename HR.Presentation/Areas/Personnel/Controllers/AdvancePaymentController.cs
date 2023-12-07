@@ -25,25 +25,24 @@ public class AdvancePaymentController : Controller
 
     [HttpGet]
     // Index sayfasında kullanıcıyı avans taleplerinin listelendiği sayfa karşılasın.
-    public async Task<IActionResult> Index(Guid personnelId)
+    public async Task<IActionResult> Index()//Guid personnelId)
     {
-        personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
-        GetAdvancePaymentListByPersonIdQuery query = new GetAdvancePaymentListByPersonIdQuery() { PersonnelId = personnelId };
+        GetAdvancePaymentListByPersonIdQuery query = new GetAdvancePaymentListByPersonIdQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
         return View(list);
     }
-    
+
 
     [HttpGet] //new AdvancePaymentCreateVM()
     public IActionResult CreateAdvancePayment()
     {
-       return View();
+        return View();
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateAdvancePayment(AdvancePaymentCreateVM advancePaymentCreateVM)
     {
-                    
+
         if (!ModelState.IsValid)
         {
             List<Tuple<string, string>> validationErrors = new List<Tuple<string, string>>();
@@ -63,7 +62,9 @@ public class AdvancePaymentController : Controller
             //throw new Exception("Model not correct");
         }
 
-        advancePaymentCreateVM.PersonnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
+        // Session'dan KullanıcıId çekildi
+        advancePaymentCreateVM.PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId"));
+        //advancePaymentCreateVM.PersonnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
         var command = mapper.Map<CreateAdvancePaymentCommand>(advancePaymentCreateVM);
         var result = await mediator.Send(command);
         return RedirectToAction("Index", "AdvancePayment");
