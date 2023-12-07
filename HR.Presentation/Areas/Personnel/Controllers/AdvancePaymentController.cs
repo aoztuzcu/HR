@@ -62,9 +62,8 @@ public class AdvancePaymentController : Controller
             //throw new Exception("Model not correct");
         }
 
-        // Session'dan KullanıcıId çekildi
+        // Session'dan PersonnelId çekildi
         advancePaymentCreateVM.PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId"));
-        //advancePaymentCreateVM.PersonnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
         var command = mapper.Map<CreateAdvancePaymentCommand>(advancePaymentCreateVM);
         var result = await mediator.Send(command);
         return RedirectToAction("Index", "AdvancePayment");

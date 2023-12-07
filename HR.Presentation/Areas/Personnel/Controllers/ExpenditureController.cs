@@ -26,10 +26,11 @@ public class ExpenditureController : Controller
         this.mapper = mapper;
         this.hostEnvironment = hostEnvironment;
     }
-    public async Task<IActionResult> Index(Guid personnelId)
+    public async Task<IActionResult> Index() //Guid personnelId)
     {
-        personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
-        GetExpenditureListByPersonIdQuery query = new GetExpenditureListByPersonIdQuery() { PersonnelId = personnelId };
+        //personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
+        //GetExpenditureListByPersonIdQuery query = new GetExpenditureListByPersonIdQuery() { PersonnelId = personnelId };
+        GetExpenditureListByPersonIdQuery query = new GetExpenditureListByPersonIdQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
         return View(list);
     }
