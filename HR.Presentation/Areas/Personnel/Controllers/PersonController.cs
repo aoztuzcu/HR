@@ -27,6 +27,7 @@ public class PersonController : Controller
         this.mapper = mapper;
         this.webHostEnvironment = webHostEnvironment;
     }
+
     public async Task<IActionResult> Index()//GetPersonByIdQuery query)
     {
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
@@ -35,9 +36,10 @@ public class PersonController : Controller
         return View(result);
     }
 
-    public async Task<IActionResult> UpdatePerson(Guid id)
+    public async Task<IActionResult> UpdatePerson()//Guid id)
     {
-        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
+        //GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(query);
         return View(result);
     }
@@ -52,21 +54,24 @@ public class PersonController : Controller
         await mediator.Send(personUpdateCommand);
         return RedirectToAction("Index");
     }
-    public async Task<IActionResult> Detail(Guid id)
+    public async Task<IActionResult> Detail()//Guid id)
     {
-        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
+        //GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(query);
         return View(result);
     }
-    public async Task<IActionResult> PermissionRequestList(Guid id)
+    public async Task<IActionResult> PermissionRequestList()//Guid id)
     {
-        GetPermissionListQuery permissionList = new GetPermissionListQuery() { PersonelId = id };
+        //GetPermissionListQuery permissionList = new GetPermissionListQuery() { PersonelId = id };
+        GetPermissionListQuery permissionList = new GetPermissionListQuery() { PersonelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(permissionList);
         return View(result);
     }
-    public async Task<IActionResult> CreatePermissionRequest(Guid id)
+    public async Task<IActionResult> CreatePermissionRequest()//Guid id)
     {
-        CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonnelId = id };
+        //CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonnelId = id };
+        CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(command);
         return View(command);
     }

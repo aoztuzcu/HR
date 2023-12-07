@@ -24,10 +24,11 @@ public class PermissionController : Controller
         this.permissionTypeRepository = permissionTypeRepository;
     }
     [HttpGet]
-    public async Task<IActionResult> GetAllPermissions(Guid personnelId)
+    public async Task<IActionResult> GetAllPermissions()//Guid personnelId)
     {
-        personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
-        GetPermissionRequestListByPersonIdQuery query = new GetPermissionRequestListByPersonIdQuery() { PersonnelId = personnelId };
+        //personnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
+        //GetPermissionRequestListByPersonIdQuery query = new GetPermissionRequestListByPersonIdQuery() { PersonnelId = personnelId };
+        GetPermissionRequestListByPersonIdQuery query = new GetPermissionRequestListByPersonIdQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
         return View(list);
     }
@@ -42,7 +43,8 @@ public class PermissionController : Controller
     [HttpPost]
     public IActionResult CreatePermissionRequest(PermissionRequestCreateVM permissionCreateVM)
     {
-        permissionCreateVM.PersonnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
+        //permissionCreateVM.PersonnelId = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
+        permissionCreateVM.PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId"));
         var command = mapper.Map<CreatePermissionRequestCommand>(permissionCreateVM);
         var result = mediator.Send(command);
         return RedirectToAction("GetAllPermissions");
