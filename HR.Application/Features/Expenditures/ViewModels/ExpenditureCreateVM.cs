@@ -13,7 +13,7 @@ public class ExpenditureCreateVM
 {
     public Guid PersonnelId { get; set; }
     public IEnumerable<ExpenditureType> ExpenditureTypes { get; set; }
-    public ExpenditureType ExpenditureTypeId { get; set; }
+    public Guid ExpenditureTypeId { get; set; }
     public decimal Amount { get; set; }
     public CurrencyTypeVM CurrencyTypeVM { get; set; }
     public IFormFile Document { get; set; }

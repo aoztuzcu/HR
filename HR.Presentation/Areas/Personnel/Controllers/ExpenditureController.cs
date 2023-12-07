@@ -45,6 +45,7 @@ public class ExpenditureController : Controller
     public async Task<IActionResult> CreateExpenditure(ExpenditureCreateVM vm)
     {
         var command = mapper.Map<CreateExpenditureCommand>(vm);
+        command.PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId"));
         command.Document = FileOperation.ReturnFileName(vm.Document, "expenditureFile", hostEnvironment);
         await mediator.Send(command);
         return RedirectToAction("Index");
