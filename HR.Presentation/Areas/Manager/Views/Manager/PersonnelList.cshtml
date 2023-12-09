@@ -36,7 +36,6 @@
 
     .person-title {
         font-size: 18px;
-        color: #BFD9D7;
     }
 
     .person-tcno {
@@ -73,33 +72,85 @@
         {
             <div class="col-md-3">
                 <div class="person-card">
-                    <a asp-action="PersonnelDetail" asp-route-id="@item.Id">
-                        <div class="avatar">
-                            <img src="~/photos/@item.Photo" alt="..."
-                                 class="rounded-circle img-fluid" style="width: 100px;">
 
-                        </div>
-                        <div class="person-name">
-                            <span>@item.Name.ToUpper() @(string.IsNullOrEmpty(item.SecondName) ? "" : item.SecondName.ToUpper()) @item.Surname.ToUpper()@(string.IsNullOrEmpty(item.SecondSurname) ? "" : item.SecondSurname.ToUpper())</span>
-                        </div>
+                    <div class="avatar">
+                        <img src="~/photos/@item.Photo" alt="..."
+                             class="rounded-circle img-fluid" style="width: 100px;">
 
-                        <div class="person-title">
-                            <span>Pozisyon:</span>
-                            <span>@item.Department.Name</span>
-                        </div>
-                        <div class="person-tcno">
-                            <span>Telefon:</span>
-                            <span>@item.PhoneNumber</span>
-                        </div>
+                    </div>
+                    <div class="person-name">
+                        <span>@item.Name.ToUpper() @(string.IsNullOrEmpty(item.SecondName) ? "" : item.SecondName.ToUpper()) @item.Surname.ToUpper()@(string.IsNullOrEmpty(item.SecondSurname) ? "" : item.SecondSurname.ToUpper())</span>
+                    </div>
+
+                    <div class="person-title">
+                        <span>Pozisyon:</span>
+                        <span>@item.Department.Name</span>
+                    </div>
+                    <div class="person-tcno">
+                        <span>Meslek:</span>
+                        <span>@item.Job.Name</span>
+                    </div>
+                    <!-- Update Button -->
+                    <a type="button" class="btn btn-primary" asp-action="PersonnelUpdate" asp-controller="Manager" asp-route-id="@item.Id">
+                        Güncelle
                     </a>
+
+                    <!-- Details Button -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal_@item.Id">
+                        Detay
+                    </button>
+
+                    <div class="modal fade" id="exampleModal_@item.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Detay Sayfası</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span>@item.Name</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">
+                                        Kapat
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
+
         }
+
+    </div>
+</div>
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalLabel">Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Your details modal content here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
-
 @section Scripts {
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
