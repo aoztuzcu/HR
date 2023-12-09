@@ -48,9 +48,10 @@ public class LoginController : Controller
                     HttpContext.Session.SetString("PersonnelId", personnel.Id.ToString());
                     return RedirectToAction("Index", "Person", new { area = "Personnel" });
                 }
-                else if (await userManager.IsInRoleAsync(user, "Writer"))
+                // Rolü yönetici ise
+                else if (await userManager.IsInRoleAsync(user, "Manager"))
                 {
-                    return RedirectToAction("Index", "Dashboard", new { area = "Writer" });
+                    return RedirectToAction("Index", "Manager", new { area = "Manager" });
                 }
                 //else
                 //{
