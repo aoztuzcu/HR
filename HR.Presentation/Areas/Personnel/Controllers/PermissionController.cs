@@ -2,6 +2,7 @@
 using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Features.Permission.Command.CreatePermissionRequest;
 using HR.Application.Features.Permission.Queries.GetPermissionRequestListByPersonId;
+using HR.Application.Features.Permission.Queries.GetPermissionTypesList;
 using HR.Application.Features.Permission.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -34,10 +35,9 @@ public class PermissionController : Controller
     }
     public async Task<IActionResult> CreatePermissionRequest()
     {
-        var list = await permissionTypeRepository.GetAllAsync();
-        var permissionList = mapper.Map<IEnumerable<PermissionTypeVM>>(list);
-        var permissionRequestVM = new PermissionRequestCreateVM { PermissionList = permissionList };
-        return View(permissionRequestVM);
+        GetPermissionTypesListQuery query = new GetPermissionTypesListQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var list = await mediator.Send(query);
+        return View(new PermissionRequestCreateVM { PermissionList=list});
     }
 
     [HttpPost]

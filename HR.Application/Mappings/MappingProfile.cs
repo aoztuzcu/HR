@@ -45,7 +45,7 @@ public class MappingProfile : Profile
 
         CreateMap<PermissionRequestCreateVM, CreatePermissionRequestCommand>().ReverseMap();
         CreateMap<PermissionRequest, CreatePermissionRequestCommand>().ReverseMap();
-        CreateMap<PermissionType, PermissionTypeVM>().ReverseMap();
+        CreateMap<Permissions, PermissionTypeVM>().ReverseMap();
 
         //ViewModel Mappings
         CreateMap<ApprovalStatus, ApprovalStatusVM>().ReverseMap();

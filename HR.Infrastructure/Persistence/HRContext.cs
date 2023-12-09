@@ -18,7 +18,7 @@ public class HRContext : IdentityDbContext<User, UserRole, Guid>
     public DbSet<Expenditure> Expenditures { get; set; }
     public DbSet<ExpenditureType> ExpenditureTypes { get; set; }
     public DbSet<AdvancePayment> AdvancePayments { get; set; }
-    public DbSet<PermissionType> Permissions { get; set; }
+    public DbSet<Permissions> Permissions { get; set; }
     public DbSet<PermissionRequest> PermissionRequests { get; set; }
     public DbSet<User> Users { get; set; }
 
