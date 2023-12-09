@@ -1,12 +1,15 @@
 ﻿using HR.Application.Features.People.Commands.PersonUpdate;
+using HR.Application.Features.People.Queries.GetlAllPerson;
 using HR.Application.Features.People.Queries.GetPerson;
 using HR.Presentation.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HR.Presentation.Areas.Manager.Controllers
 {
     [Area("Manager")]
+    [Authorize(Roles ="Manager")]
     public class ManagerController : Controller
     {
         private readonly IMediator mediator;
@@ -55,7 +58,13 @@ namespace HR.Presentation.Areas.Manager.Controllers
             ViewBag.UserProfileId = result.Id;
             return View(result);
         }
-
+        [HttpGet]
+        public async Task<IActionResult> PersonnelList()
+        {
+            GetAllPersonQuery query = new GetAllPersonQuery();
+            var result = await mediator.Send(query); 
+            return View(result);
+        }
 
     }
 }

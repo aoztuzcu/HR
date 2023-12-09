@@ -38,6 +38,12 @@ public class LoginController : Controller
         if (ModelState.IsValid)
         {
             var user = await userManager.FindByEmailAsync(person.Email);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "Parola veya mail yanlış.";
+                return RedirectToAction("Login1", "Login");
+            }
+              
             var result = await signInManager.PasswordSignInAsync(user.UserName, person.Password, false, true);
             if (result.Succeeded)
             {
@@ -59,10 +65,12 @@ public class LoginController : Controller
             }
             else
             {
-                return RedirectToAction("Index", "Login1");
+				TempData["ErrorMessage"] = "Parola veya mail yanlış.";
+				return RedirectToAction("Login1", "Login");
             }
         }
-        return RedirectToAction("Index", "Login1");
+		TempData["ErrorMessage"] = "Parola veya mail yanlış.";
+		return  RedirectToAction("Login1", "Login");
     }
     public IActionResult Login2()
     {

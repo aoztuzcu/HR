@@ -1,4 +1,5 @@
 ﻿using HR.Domain.Base;
+using HR.Domain.Concrete;
 using System.Linq.Expressions;
 
 namespace HR.Application.Contracts.Persistence.Repositories.Base;
