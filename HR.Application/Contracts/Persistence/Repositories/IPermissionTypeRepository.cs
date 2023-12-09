@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace HR.Application.Contracts.Persistence.Repositories;
 
-public interface IPermissionTypeRepository:IBaseRepository<PermissionType>
+public interface IPermissionTypeRepository:IBaseRepository<Permissions>
 {
-    Task<IEnumerable<PermissionType>> GetAllAsync();
-
+    Task<IEnumerable<Permissions>> GetAllAsyncByFemale(CancellationToken cancellationToken);
+    Task<IEnumerable<Permissions>> GetAllAsyncByMale(CancellationToken cancellationToken);
 }

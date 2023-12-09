@@ -13,6 +13,9 @@ public class PersonnelRepository : BaseRepository<Personnel>, IPersonnelReposito
     {
     }
 
+    public async Task<IEnumerable<Personnel>> GetAllIncludeAsync()
+         => await context.Personnels.Include(x=>x.Department).Include(y=>y.Job).ToListAsync();
+
     public async Task<Personnel> GetByIdAsync(Guid Id, CancellationToken token)
          => await context.Personnels.Include(x => x.Department).Include(y => y.Job).FirstOrDefaultAsync(f => f.Id == Id, token);
     public async Task<Personnel> UpdateAsyncByPerson(Personnel entity, CancellationToken token)

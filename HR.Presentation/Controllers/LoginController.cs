@@ -38,32 +38,39 @@ public class LoginController : Controller
         if (ModelState.IsValid)
         {
             var user = await userManager.FindByEmailAsync(person.Email);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "Parola veya mail yanlış.";
+                return RedirectToAction("Login1", "Login");
+            }
+              
             var result = await signInManager.PasswordSignInAsync(user.UserName, person.Password, false, true);
             if (result.Succeeded)
             {
+                var personnel = await personnelRepository.GetAsync(f => f.UserId == user.Id, new CancellationToken());
+                HttpContext.Session.SetString("PersonnelId", personnel.Id.ToString());
                 if (await userManager.IsInRoleAsync(user, "Personnel"))
                 {
-                    var personnel = await personnelRepository.GetAsync(f => f.UserId == user.Id, new CancellationToken());
-                    //
-                    HttpContext.Session.SetString("PersonnelId", personnel.Id.ToString());
                     return RedirectToAction("Index", "Person", new { area = "Personnel" });
                 }
-                else if (await userManager.IsInRoleAsync(user, "Writer"))
+                // Rolü yönetici ise
+                else if (await userManager.IsInRoleAsync(user, "Manager"))
                 {
-                    return RedirectToAction("Index", "Dashboard", new { area = "Writer" });
+                    return RedirectToAction("Index", "Manager", new { area = "Manager" });
                 }
                 //else
                 //{
                 //    return RedirectToAction("Index", "Blog");
                 //}
-
             }
             else
             {
-                return RedirectToAction("Index", "Login1");
+				TempData["ErrorMessage"] = "Parola veya mail yanlış.";
+				return RedirectToAction("Login1", "Login");
             }
         }
-        return RedirectToAction("Index", "Login1");
+		TempData["ErrorMessage"] = "Parola veya mail yanlış.";
+		return  RedirectToAction("Login1", "Login");
     }
     public IActionResult Login2()
     {
@@ -73,8 +80,6 @@ public class LoginController : Controller
     {
         return View();
     }
-
-
 
     public async Task<IActionResult> LogOut()
     {
