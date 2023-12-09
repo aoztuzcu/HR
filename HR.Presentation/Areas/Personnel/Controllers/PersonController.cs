@@ -9,6 +9,7 @@ using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HR.Presentation.Areas.Person.Controllers;
 
@@ -49,7 +50,7 @@ public class PersonController : Controller
     {
         if (personUpdateCommand.PhotoFile != null)
         {
-            personUpdateCommand.Photo = FileOperation.ReturnFileName(personUpdateCommand.PhotoFile, "photos", webHostEnvironment);
+			personUpdateCommand.Photo = FileOperation.ReturnFileName(personUpdateCommand.PhotoFile, "photos", webHostEnvironment);
         }
         await mediator.Send(personUpdateCommand);
         return RedirectToAction("Index");
