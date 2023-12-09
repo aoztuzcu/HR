@@ -41,11 +41,10 @@ public class LoginController : Controller
             var result = await signInManager.PasswordSignInAsync(user.UserName, person.Password, false, true);
             if (result.Succeeded)
             {
+                var personnel = await personnelRepository.GetAsync(f => f.UserId == user.Id, new CancellationToken());
+                HttpContext.Session.SetString("PersonnelId", personnel.Id.ToString());
                 if (await userManager.IsInRoleAsync(user, "Personnel"))
                 {
-                    var personnel = await personnelRepository.GetAsync(f => f.UserId == user.Id, new CancellationToken());
-                    //
-                    HttpContext.Session.SetString("PersonnelId", personnel.Id.ToString());
                     return RedirectToAction("Index", "Person", new { area = "Personnel" });
                 }
                 // Rolü yönetici ise
@@ -57,7 +56,6 @@ public class LoginController : Controller
                 //{
                 //    return RedirectToAction("Index", "Blog");
                 //}
-
             }
             else
             {
@@ -74,8 +72,6 @@ public class LoginController : Controller
     {
         return View();
     }
-
-
 
     public async Task<IActionResult> LogOut()
     {
