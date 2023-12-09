@@ -11,10 +11,9 @@ public class CreatePermissionRequestValidator : AbstractValidator<CreatePermissi
                                 .WithMessage("Başlangıç tarihi girilmek zorundadır.")
                                 .GreaterThanOrEqualTo(DateTime.Now.Date.AddDays(1))
                                 .WithMessage("Başlangıç tarihi en erken yarın olabilir.");
+        RuleFor(x => x.Days)
+            .NotEmpty()
+            .GreaterThan(0);
 
-        RuleFor(x => x.EndDate)
-                                .NotEmpty().WithMessage("Bitiş tarihi girilmek zorundadır.")
-                                .GreaterThanOrEqualTo(x => x.StartDate)
-                                .WithMessage("İzin bitiş tarihi, başlangıç tarihinden büyük olmalıdır.");
     }
 }

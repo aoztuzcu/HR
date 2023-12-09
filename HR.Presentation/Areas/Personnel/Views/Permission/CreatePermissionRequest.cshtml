@@ -6,7 +6,6 @@
     ViewData["Title"] = "İzin Talebi Oluştur";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="col-lg-6 offset-lg-3 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -18,19 +17,6 @@
                     <input asp-for="PersonnelId" type="text" class="form-control" placeholder="Kullanıcı ID" />
                     <span asp-validation-for="PersonnelId" class="text-danger"></span>
                 </div>
-
-                <div class="form-group">
-                    <label asp-for="StartDate">Başlangıç Tarihi</label>
-                    <input asp-for="StartDate" type="date" class="form-control custom-select" />
-                    <span asp-validation-for="StartDate" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="EndDate">Bitiş Tarihi</label>
-                    <input asp-for="EndDate" type="date" class="form-control custom-select" />
-                    <span asp-validation-for="EndDate" class="text-danger"></span>
-                </div>
-
                 <div class="form-group">
                     <label asp-for="PermissionTypeId">İzin Türü</label>
                     <select asp-for="PermissionTypeId" class="form-control">
@@ -41,14 +27,67 @@
                     </select>
                     <span asp-validation-for="PermissionTypeId" class="text-danger"></span>
                 </div>
+
+                <div class="form-group">
+                    <label asp-for="StartDate">Başlangıç Tarihi</label>
+                    <input asp-for="StartDate" type="date" class="form-control custom-select" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" required/>
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Days">Gün</label>
+                    <input asp-for="Days" type="text" class="form-control custom-select" required />
+                    <span asp-validation-for="Days" class="text-danger"></span>
+                </div>
+               
                 <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
             </form>
         </div>
     </div>
 </div>
 
-
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // İzin türü değiştikçe çağrılacak fonksiyon
+            $("#PermissionTypeId").change(function () {
+                setDayCount();
+            });
+
+            // Sayfa yüklendiğinde çağrılacak fonksiyon
+            setDayCount();
+        });
+
+        function setDayCount() {
+            // Seçilen izin türünü al
+            var permissionType = $("#PermissionTypeId").val();
+
+            // Eğer izin türü "Doğum İzni" ise gün sayısını 112 olarak ayarla
+            if (permissionType === "35040a1a-4e5f-438e-8eba-af2e82dfd1ae") {
+                $("#Days").val(112);
+                $("#Days").prop("disabled", true); // Gün sayısı input'unu devre dışı bırak
+            }
+            else if (permissionType === "6262bbcc-c007-4a95-8194-d70d8477a25b") {
+                $("#Days").val(3);
+                $("#Days").prop("disabled", true); // Gün sayısı input'unu devre dışı bırak
+            }
+            else if (permissionType === "4b7018c2-a031-4da5-a32b-010169e4bc1b") {
+                $("#Days").val(3);
+                $("#Days").prop("disabled", true); // Gün sayısı input'unu devre dışı bırak
+            }
+            else if (permissionType === "8ba143ca-5ef7-42bd-b4b5-0c419903f48d") {
+                $("#Days").val(5);
+                $("#Days").prop("disabled", true); // Gün sayısı input'unu devre dışı bırak
+            }
+            else {
+                // Diğer izin türlerinde gün sayısını kullanıcıya bırak
+                $("#Days").val("");
+                $("#Days").prop("disabled", false); // Gün sayısı input'unu aktif hale getir
+            }
+        }
+
+    </script>
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
