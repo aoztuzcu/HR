@@ -9,7 +9,6 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace HR.Presentation.Areas.Person.Controllers;
 
 [Authorize(Roles = "Personnel")]
