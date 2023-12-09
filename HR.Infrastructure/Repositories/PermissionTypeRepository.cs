@@ -12,12 +12,15 @@ using System.Threading.Tasks;
 
 namespace HR.Persistence.Repositories;
 
-public class PermissionTypeRepository : BaseRepository<PermissionType>, IPermissionTypeRepository
+public class PermissionTypeRepository : BaseRepository<Permissions>, IPermissionTypeRepository
 {
     public PermissionTypeRepository(HRContext context) : base(context)
     {
     }
 
-    public async Task<IEnumerable<PermissionType>> GetAllAsync()
-      => await context.Permissions.ToListAsync();
+    public async Task<IEnumerable<Permissions>> GetAllAsyncByFemale(CancellationToken cancellationToken)
+    => await context.Set<Permissions>().Where(x => x.Name != "Babalık İzni").ToListAsync(cancellationToken);
+
+    public async Task<IEnumerable<Permissions>> GetAllAsyncByMale(CancellationToken cancellationToken)
+    => await context.Set<Permissions>().Where(x => x.Name != "Doğum İzni").ToListAsync(cancellationToken);
 }

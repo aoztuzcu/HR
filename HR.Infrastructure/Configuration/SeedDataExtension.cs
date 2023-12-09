@@ -122,12 +122,12 @@ public static class SeedDataExtension
         #endregion
 
         #region PermissionTypeSeedData
-        modelBuilder.Entity<PermissionType>().HasData(
-                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Yıllık İzin", },
-                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Babalık İzni", Days = 5 },
-                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Evlilik İzni", Days = 3 },
-                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Doğum İzni", Days = 112 },
-                                       new PermissionType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Ölüm İzni", Days = 3 }
+        modelBuilder.Entity<Permissions>().HasData(
+                                       new Permissions { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Yıllık İzin", },
+                                       new Permissions { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Babalık İzni", Days = 5 },
+                                       new Permissions { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Evlilik İzni", Days = 3 },
+                                       new Permissions { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Doğum İzni", Days = 112 },
+                                       new Permissions { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Ölüm İzni", Days = 3 }
                                        );
         #endregion
 
