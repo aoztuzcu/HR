@@ -43,6 +43,9 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
     public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression, CancellationToken token)
         => await context.Set<T>().Where(expression).ToListAsync(token);
 
+    public async Task<IEnumerable<T>> GetAllAsync(CancellationToken token)
+        => await context.Set<T>().ToListAsync(token);
+
     public async Task<T> GetAsync(Expression<Func<T, bool>> expression, CancellationToken token)
         => await context.Set<T>().FirstOrDefaultAsync(expression, token) ?? throw new Exception($"{nameof(T)} Data Not Found!");
 

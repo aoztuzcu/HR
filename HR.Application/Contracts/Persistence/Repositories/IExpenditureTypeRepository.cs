@@ -10,5 +10,5 @@ namespace HR.Application.Contracts.Persistence.Repositories;
 
 public interface IExpenditureTypeRepository : IBaseRepository<ExpenditureType>
 {
-    Task<IEnumerable<ExpenditureType>> GetAllAsync(CancellationToken token);
+   // Task<IEnumerable<ExpenditureType>> GetAllAsync(CancellationToken token);
 }

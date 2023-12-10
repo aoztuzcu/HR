@@ -11,4 +11,5 @@ public interface IBaseRepository<T> where T : BaseEntity, new()
     Task<T> DeleteByIdAsync(Guid id, CancellationToken token);
     Task<T> GetAsync(Expression<Func<T, bool>> expression, CancellationToken token);
     Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression, CancellationToken token);
+    Task<IEnumerable<T>> GetAllAsync(CancellationToken token);
 }

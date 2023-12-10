@@ -14,6 +14,7 @@ using HR.Domain.Enum;
 using HR.Application.Features.Permission.ViewModels;
 using HR.Application.Features.Permission.Command.CreatePermissionRequest;
 using HR.Application.Features.Permission.Command.DeleteByIdPermissionRequest;
+using HR.Application.Features.People.Commands.PersonCreate;
 
 namespace HR.Application.Mappings;
 
@@ -51,5 +52,7 @@ public class MappingProfile : Profile
         CreateMap<ApprovalStatus, ApprovalStatusVM>().ReverseMap();
         CreateMap<CurrencyType, CurrencyTypeVM>().ReverseMap();
         CreateMap<AdvanceType, AdvanceTypeVM>().ReverseMap();
+        CreateMap<PersonCreateVM,PersonCreateCommand>().ReverseMap();
+        CreateMap<Personnel,PersonCreateCommand>().ReverseMap();
     }
 }
