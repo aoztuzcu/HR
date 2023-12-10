@@ -3,7 +3,7 @@
 @model IEnumerable<PermissionRequestListVM>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetAllPermissions";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -80,13 +80,12 @@
 </div>
 
 @section Scripts {
-
     <script type="text/javascript">
-        function deletePermissionRequest(permissionRequestid) {
+        function deletePermissionRequest(permissionRequestId) {
             var confirmDelete = confirm("Bu izin talebini silmek istediğinizden emin misiniz?");
 
             if (confirmDelete) {
-                window.location.href = '/Personnel/Permission/DeleteByIdPermissionRequest?permissionRequestId=' + permissionRequestid;
+                window.location.href = '/Personnel/Permission/DeleteByIdPermissionRequest?permissionRequestId=' + permissionRequestId;
             }
         }
 
@@ -116,6 +115,6 @@
                     return "";
             }
         }
-    });
+    }
     </script>
 }
