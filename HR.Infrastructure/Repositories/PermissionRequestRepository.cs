@@ -20,17 +20,6 @@ namespace HR.Persistence.Repositories
         }
 
         public async Task<IEnumerable<PermissionRequest>> GetAllByPersonIdAsync(Guid id, CancellationToken token)
-        => await context.PermissionRequests.Include(x => x.PermissionType).Where(g => g.PersonnelId == id).ToListAsync();//await base.GetAllAsync(g => g.PersonnelId == id, token);
-
-        public Task<Gender> GetByGender(Guid personId, CancellationToken token)
-        {
-            // dbsetten sonra sorgu atılacak
-            throw new NotImplementedException();
-        }
-
-        public Task<PermissionRequest> GetByIdAsync(Guid Id, CancellationToken token)
-        {
-            throw new NotImplementedException();
-        }
+        => await context.PermissionRequests.Include(x => x.PermissionType).Where(g => g.PersonnelId == id && g.IsActive==true).ToListAsync();//await base.GetAllAsync(g => g.PersonnelId == id, token);
     }
 }

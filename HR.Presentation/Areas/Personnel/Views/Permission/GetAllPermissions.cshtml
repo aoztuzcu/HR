@@ -67,7 +67,7 @@
                                 <td>
                                     @if (item.ApprovalStatus == ApprovalStatusVM.ApprovalWaiting)
                                     {
-                                        <button href="#" onclick="deleteAdvancePayment('@item.Id')" class="btn btn-inverse-danger btn-icon"><i class="ti-trash"></i></button>
+                                        <button href="#" onclick="deletePermissionRequest('@item.Id')" class="btn btn-inverse-danger btn-icon"><i class="ti-trash"></i></button>
                                     }
                                 </td>
                             </tr>
@@ -82,11 +82,11 @@
 @section Scripts {
 
     <script type="text/javascript">
-        function deleteAdvancePayment(advancePaymentId) {
+        function deletePermissionRequest(permissionRequestid) {
             var confirmDelete = confirm("Bu izin talebini silmek istediğinizden emin misiniz?");
 
             if (confirmDelete) {
-                window.location.href = '/Personnel/AdvancePayment/DeleteByIdAdvancePayment?advancePaymentId=' + advancePaymentId;
+                window.location.href = '/Personnel/Permission/DeleteByIdPermissionRequest?permissionRequestId=' + permissionRequestid;
             }
         }
 

@@ -8,8 +8,6 @@ public class CreatePermissionRequestCommand : IRequest<CreatePermissionRequestCo
 {
     public Guid PersonnelId { get; set; }
     public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
     public float Days { get; set; } = 0; 
-    public DateTime? ApprovedDate { get; set; }
     public Guid PermissionTypeId { get; set; }
 }

@@ -13,6 +13,7 @@ using HR.Domain.Concrete;
 using HR.Domain.Enum;
 using HR.Application.Features.Permission.ViewModels;
 using HR.Application.Features.Permission.Command.CreatePermissionRequest;
+using HR.Application.Features.Permission.Command.DeleteByIdPermissionRequest;
 
 namespace HR.Application.Mappings;
 
@@ -40,12 +41,11 @@ public class MappingProfile : Profile
 
         
         CreateMap<PermissionRequest, PermissionRequestListVM>().ReverseMap();
-
-
-
         CreateMap<PermissionRequestCreateVM, CreatePermissionRequestCommand>().ReverseMap();
         CreateMap<PermissionRequest, CreatePermissionRequestCommand>().ReverseMap();
         CreateMap<Permissions, PermissionTypeVM>().ReverseMap();
+        CreateMap<PermissionRequest, DeleteByIdPermissionRequestCommand>().ReverseMap();
+
 
         //ViewModel Mappings
         CreateMap<ApprovalStatus, ApprovalStatusVM>().ReverseMap();
