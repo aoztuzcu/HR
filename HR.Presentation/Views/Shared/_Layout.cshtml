@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]  HRMS</title>
+    <title>@ViewData["Title"]  İKİZLEME</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TestTemplate.styles.css" asp-append-version="true" />
@@ -48,7 +48,9 @@
                     <img style=" width: 100%;" src="~/photos/WhatsApp Görsel 2023-11-27 saat 20.39.11_7ebe0465.jpg" class="me-2" alt="logo" />
                     </a>*@
                     @*<a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Person"><img style=" width:200px " src="~/photos/Ekran görüntüsü 2023-11-27 205649.png" alt="logo" /></a>*@
-                    <a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Person"><img style="width:max-content;" src="~/photos/Ekran görüntüsü 2023-11-27 220712.png" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Person">
+                        <img style="width: 100px; height: auto;" src="~/photos/Adsız tasarım (1).png" alt="logo" />
+                    </a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -190,7 +192,7 @@
             <!-- partial -->
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
-                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#BFD9D7">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#5D54A4">
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" asp-action="Index" asp-controller="Person">
@@ -287,7 +289,7 @@
                 </nav>
                 <!-- partial -->
                 <div class="main-panel">
-                    <div class="content-wrapper">
+                    <div class="content-wrapper style=background-color:#D6D5F1">
                         <div class="container">
                             @RenderBody()
                         </div>

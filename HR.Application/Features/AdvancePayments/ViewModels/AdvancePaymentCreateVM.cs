@@ -9,7 +9,7 @@ public class AdvancePaymentCreateVM
     public AdvanceTypeVM AdvanceType { get; set; }
 
     [Required(ErrorMessage = "Miktar boş geçilemez.")]
-    [Range(0, 125000.00, ErrorMessage = "Miktar alanına 0 ile 125000 arasında değer yazabilirsiniz.")]
+    [Range(1000.00, 125000.00, ErrorMessage = "Miktar alanına 1000 ile 125000 arasında değer yazabilirsiniz.")]
     [CustomAmountValidation]
     public decimal Amount { get; set; }
 
