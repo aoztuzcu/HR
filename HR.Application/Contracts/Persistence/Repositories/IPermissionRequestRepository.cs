@@ -12,8 +12,5 @@ namespace HR.Application.Contracts.Persistence.Repositories;
 
 public interface IPermissionRequestRepository :IBaseRepository<PermissionRequest>
 {
-    Task<PermissionRequest> GetByIdAsync(Guid Id, CancellationToken token);   
-    Task<Gender> GetByGender(Guid personId, CancellationToken token);
     Task<IEnumerable<PermissionRequest>> GetAllByPersonIdAsync(Guid id, CancellationToken token);
-
 }

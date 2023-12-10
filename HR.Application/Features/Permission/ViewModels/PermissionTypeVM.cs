@@ -14,6 +14,4 @@ public class PermissionTypeVM
 
     [Display(Name = "İzin Türü")]
     public string Name { get; set; }
-    //public float? Days { get; set; }
-    //public IEnumerable<PermissionRequestCreateVM>? PermissionRequests { get; set; }
 }
