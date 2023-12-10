@@ -3,12 +3,13 @@ using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.Queries.GetPerson;
 using HR.Application.Features.Permission.Command.CreatePermissionRequest;
 using HR.Application.Features.Permission.Queries;
+using HR.Application.Features.Permission.Queries.GetPermissionTypesList;
 using HR.Application.Features.Permission.ViewModels;
 using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Security.Claims;
 
 namespace HR.Presentation.Areas.Person.Controllers;
 
@@ -49,7 +50,7 @@ public class PersonController : Controller
     {
         if (personUpdateCommand.PhotoFile != null)
         {
-            personUpdateCommand.Photo = FileOperation.ReturnFileName(personUpdateCommand.PhotoFile, "photos", webHostEnvironment);
+			personUpdateCommand.Photo = FileOperation.ReturnFileName(personUpdateCommand.PhotoFile, "photos", webHostEnvironment);
         }
         await mediator.Send(personUpdateCommand);
         return RedirectToAction("Index");
@@ -64,7 +65,7 @@ public class PersonController : Controller
     public async Task<IActionResult> PermissionRequestList()//Guid id)
     {
         //GetPermissionListQuery permissionList = new GetPermissionListQuery() { PersonelId = id };
-        GetPermissionListQuery permissionList = new GetPermissionListQuery() { PersonelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        GetPermissionTypesListQuery permissionList = new GetPermissionTypesListQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(permissionList);
         return View(result);
     }
