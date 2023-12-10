@@ -105,12 +105,35 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Detay Sayfası</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Kişi Bilgileri</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <span>@item.Name</span>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <!-- Sol Sütun -->
+                                        <div class="col-md-6">
+                                            <div class="modal-body">
+                                                <p><strong>Ad:</strong> @item.Name</p>
+                                                <p><strong>İkinci Ad:</strong> @(item.SecondName != null ? item.SecondName : "")</p>
+                                                <p><strong>Soyad:</strong> @item.Surname</p>
+                                                <p><strong>İkinci Soyad:</strong> @(item.SecondSurname != null ? item.SecondSurname : "")</p>
+                                                <p><strong>E-Posta:</strong> @item.EMail</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sağ Sütun -->
+                                        <div class="col-md-6">
+                                            <div class="modal-body">
+                                                <p><strong>Adres:</strong> @item.Address</p>
+                                                <p><strong>Telefon Numarası:</strong> @item.PhoneNumber</p>
+                                                <p><strong>İş:</strong> @item.Job.Name</p>
+                                                <p><strong>Departman:</strong> @item.Department.Name</p>
+                                                <p><strong>Cinsiyet:</strong> @Enum.GetName(typeof(GenderVM), item.Gender)</p>
+                                                <span asp-validation-for="@item.Gender" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -130,27 +153,10 @@
 
     </div>
 </div>
-<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="detailsModalLabel">Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Your details modal content here -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 @section Scripts {
-
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
