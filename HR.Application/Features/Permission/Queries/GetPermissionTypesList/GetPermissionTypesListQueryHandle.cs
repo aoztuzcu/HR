@@ -32,7 +32,7 @@ public class GetPermissionTypesListQueryHandle : IRequestHandler<GetPermissionTy
         }
         else
         {
-            var permissionTypeList = permissionTypeRepository.GetAllAsyncByMale(cancellationToken);
+            var permissionTypeList = await permissionTypeRepository.GetAllAsyncByMale(cancellationToken);
             return mapper.Map<IEnumerable<PermissionTypeVM>>(permissionTypeList);
         }
     }
