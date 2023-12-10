@@ -10,6 +10,7 @@ namespace HR.Application.Features.Departments.ViewModels;
 
 public class DepartmentVM
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
     public IEnumerable<PersonVM>? People { get; set; }
 }

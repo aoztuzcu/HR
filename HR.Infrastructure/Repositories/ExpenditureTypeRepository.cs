@@ -17,8 +17,8 @@ public class ExpenditureTypeRepository : BaseRepository<ExpenditureType>, IExpen
     {
     }
 
-    public async Task<IEnumerable<ExpenditureType>> GetAllAsync(CancellationToken token)
-    {
-        return await context.ExpenditureTypes.ToListAsync(token);
-    }
+    //public async Task<IEnumerable<ExpenditureType>> GetAllAsync(CancellationToken token)
+    //{
+    //    return await context.ExpenditureTypes.ToListAsync(token);
+    //}
 }

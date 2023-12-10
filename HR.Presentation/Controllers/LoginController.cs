@@ -47,6 +47,10 @@ public class LoginController : Controller
             var result = await signInManager.PasswordSignInAsync(user.UserName, person.Password, false, true);
             if (result.Succeeded)
             {
+                //if (Email confirm edilmediyse aşağıda tasarlanacak sayfaya yönlendir)
+                //{
+
+                //}
                 var personnel = await personnelRepository.GetAsync(f => f.UserId == user.Id, new CancellationToken());
                 HttpContext.Session.SetString("PersonnelId", personnel.Id.ToString());
                 if (await userManager.IsInRoleAsync(user, "Personnel"))

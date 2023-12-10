@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace HR.Application.Features.Jobs.ViewModels;
 public class JobVM
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
     public IEnumerable<PersonVM>? People { get; set; }
 }
