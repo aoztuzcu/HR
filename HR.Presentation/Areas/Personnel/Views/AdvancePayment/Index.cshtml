@@ -61,7 +61,7 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CreatedDate)
                                 </td>
-                                <td>
+                                <td class="@GetApprovalStatusClass(item.ApprovalStatus)">
                                     @Html.DisplayFor(modelItem => item.ApprovalStatus)
                                 </td>
                                 <td>
@@ -109,5 +109,22 @@
                 }
             });
         });
+
+        @functions {
+        string GetApprovalStatusClass(ApprovalStatusVM status)
+        {
+            switch (status)
+            {
+                case ApprovalStatusVM.ApprovalWaiting:
+                    return "onay-bekliyor";
+                case ApprovalStatusVM.Approved:
+                    return "onaylandi";
+                case ApprovalStatusVM.Rejected:
+                    return "reddedildi";
+                default:
+                    return "";
+            }
+        }
+    }
     </script>
 }

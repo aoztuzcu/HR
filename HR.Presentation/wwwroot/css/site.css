@@ -16,3 +16,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+.onay-bekliyor {
+    color:royalblue;
+}
+
+.onaylandi {
+    color: darkgreen;
+}
+
+.reddedildi {
+    color: darkred;
+}
