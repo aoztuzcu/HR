@@ -23,6 +23,6 @@ public class PermissionRequestListVM
         [Display(Name = "Onay Durumu")]
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
     
-    [Display(Name = "Onay Tarihi")]
+    [Display(Name = "Cevaplanma Tarihi")]
     public DateTime? ApprovalDate { get; set; }
 }
