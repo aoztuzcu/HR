@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.Expenditures.Commands.CreateExpenditure;
 using HR.Application.Features.Expenditures.Queries.GetExpenditureListByPersonId;
@@ -22,12 +23,15 @@ public class ExpenditureController : Controller
     private readonly IMediator mediator;
     private readonly IMapper mapper;
     private readonly IWebHostEnvironment hostEnvironment;
+    private readonly IExpenditureTypeRepository expenditureTypeRepository;
 
-    public ExpenditureController(IMediator mediator, IMapper mapper, IWebHostEnvironment hostEnvironment)
+
+    public ExpenditureController(IMediator mediator, IMapper mapper, IWebHostEnvironment hostEnvironment, IExpenditureTypeRepository expenditureTypeRepository)
     {
         this.mediator = mediator;
         this.mapper = mapper;
         this.hostEnvironment = hostEnvironment;
+        this.expenditureTypeRepository = expenditureTypeRepository;
     }
     public async Task<IActionResult> Index() //Guid personnelId)
     {
@@ -82,5 +86,19 @@ public class ExpenditureController : Controller
             }
         }
         return NotFound(); 
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> ControlAmount(string amountParam, string typeIdParam)
+    {
+        var result = await expenditureTypeRepository.GetAsync(x => x.Id == Guid.Parse(typeIdParam), new CancellationToken());
+        var amount = Decimal.Parse(amountParam);
+        var returnStr = string.Empty;
+
+        if (result.MaxAmount < amount || result.MinAmount > amount)
+        {
+            returnStr = $"{result.Name} türündeki harcamalar için girebileceğiniz miktar en az {result.MinAmount} ve en fazla {result.MaxAmount}arasında olmalıdır.";
+        }
+        return Json(returnStr);
     }
 }

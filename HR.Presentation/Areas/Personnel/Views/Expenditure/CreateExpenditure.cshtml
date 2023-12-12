@@ -35,9 +35,8 @@
 
                 <div class="form-group">
                     <label asp-for="Amount">Miktarı</label>
-                    @* <input asp-for="Amount" type="number" class="form-control" placeholder="Miktarı"> *@
                     <input asp-for="Amount" type="number" class="form-control" placeholder="Miktarı">
-                    <span asp-validation-for="Amount" class="text-danger"></span>
+                    <span asp-validation-for="Amount" id="validationField" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
@@ -62,11 +61,42 @@
 
 @section Scripts {
 
+    <script>
+
+        $(document).ready(function () {
+            $("#Amount").blur(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Personnel/Expenditure/ControlAmount',
+                    data: { amountParam: $(this).val(), typeIdParam: $("#ExpenditureTypeId").val() },
+                    success: function (result) {
+                        $('#validationField').text(result);
+
+                        // Kontrol mesajına göre formu gönderme veya göndermeme
+                        var isValid = result.trim() === ""; // Hata mesajı yoksa geçerli kabul et
+                        $("form").data("isValid", isValid); // form üzerinde geçerlilik durumunu sakla
+                    },
+                    error: function (error) {
+                        console.error('Hata oluştu: ' + error.responseText);
+                        $('#validationField').text(""); // Hata durumunda mesajı temizle
+                    }
+                });
+            });
+
+            // Form submit event'i
+            $("form").submit(function (e) {
+                // formun geçerli olup olmadığını kontrol et
+                var isValid = $(this).data("isValid");
+                if (!isValid) {
+                    e.preventDefault(); // formu gönderme
+                }
+            });
+        });
+
+    </script>
 
 
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
 }
-
-
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

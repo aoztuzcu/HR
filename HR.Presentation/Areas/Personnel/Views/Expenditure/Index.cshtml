@@ -88,8 +88,6 @@
 
 @section Scripts {
 
-
-
     <script type="text/javascript">
         function deleteExpenditure(expenditureId) {
             var confirmDelete = confirm("Bu harcama talebini silmek istediğinizden emin misiniz?");
@@ -110,21 +108,22 @@
                 }
             });
         });
+
         @functions {
-            string GetApprovalStatusClass(ApprovalStatusVM status)
+        string GetApprovalStatusClass(ApprovalStatusVM status)
+        {
+            switch (status)
             {
-                switch (status)
-                {
-                    case ApprovalStatusVM.ApprovalWaiting:
-                        return "onay-bekliyor";
-                    case ApprovalStatusVM.Approved:
-                        return "onaylandi";
-                    case ApprovalStatusVM.Rejected:
-                        return "reddedildi";
-                    default:
-                        return "";
-                }
+                case ApprovalStatusVM.ApprovalWaiting:
+                    return "onay-bekliyor";
+                case ApprovalStatusVM.Approved:
+                    return "onaylandi";
+                case ApprovalStatusVM.Rejected:
+                    return "reddedildi";
+                default:
+                    return "";
             }
+        }
     });
-    </script>
+</script>
 }
