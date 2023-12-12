@@ -18,7 +18,7 @@ public class ExpenditureCreateVM
     public Guid ExpenditureTypeId { get; set; }
 	[Required(ErrorMessage = "Miktar boş geçilemez.")]
 	[Range(1, 20000.00, ErrorMessage = "Miktar alanına 0 ile 20000 arasında değer yazabilirsiniz.")]
-	[CustomAmountValidation]
+	//[CustomAmountValidation]
 	public decimal Amount { get; set; }
     public CurrencyTypeVM CurrencyTypeVM { get; set; }
     public IFormFile Document { get; set; }
