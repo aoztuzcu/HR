@@ -3,11 +3,12 @@ using HR.Application.Features.AdvancePayments.Commands.CreateAdvancePayment;
 using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.AdvancePayments.Queries.GetAdvancePaymentListByPersonId;
 using HR.Application.Features.AdvancePayments.ViewModels;
+using HR.Application.Features.People.Queries.GetPerson;
+using HR.Domain.Concrete;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-
 namespace HR.Presentation.Areas.Personnel.Controllers;
 
 [Area("Personnel")]
@@ -29,13 +30,19 @@ public class AdvancePaymentController : Controller
     {
         GetAdvancePaymentListByPersonIdQuery query = new GetAdvancePaymentListByPersonIdQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
+        GetPersonByIdQuery query2 = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query2);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
         return View(list);
     }
 
 
     [HttpGet] //new AdvancePaymentCreateVM()
-    public IActionResult CreateAdvancePayment()
+    public async Task<IActionResult> CreateAdvancePayment()
     {
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
         return View();
     }
 
@@ -73,6 +80,9 @@ public class AdvancePaymentController : Controller
     public async Task<IActionResult> DeleteByIdAdvancePayment(Guid advancePaymentId)
     {
         var result = await mediator.Send(new DeleteByIdAdvancePaymentCommand() { AdvancePaymentId = advancePaymentId });
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
         return RedirectToAction("Index", "AdvancePayment");
     }
 }

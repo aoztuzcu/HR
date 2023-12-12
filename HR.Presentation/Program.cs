@@ -3,6 +3,7 @@ using HR.Domain.Concrete.Identity;
 using HR.Domain.Concrete.Identity.Role;
 using HR.Infrastructure.Persistence;
 using HR.Persistence;
+using HR.Presentation.Controllers;
 using System.Globalization;
 
 namespace HR.Presentation;
@@ -18,6 +19,7 @@ public class Program
 
         builder.Services.AddApplicationService();
         builder.Services.AddPersistenceService(builder.Configuration);
+        
 
         builder.Services.AddIdentity<User, UserRole>(x =>
         {
@@ -56,6 +58,7 @@ public class Program
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
+
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapAreaControllerRoute(
