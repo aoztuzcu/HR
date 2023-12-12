@@ -1,6 +1,8 @@
 ﻿using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Features.Login;
+using HR.Application.Features.People.Queries.GetPerson;
 using HR.Domain.Concrete.Identity;
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -76,14 +78,6 @@ public class LoginController : Controller
         TempData["ErrorMessage"] = "Parola veya mail yanlış.";
         return RedirectToAction("Login1", "Login");
     }
-    public IActionResult Login2()
-    {
-        return View();
-    }
-    public IActionResult Login3()
-    {
-        return View();
-    }
 
     [HttpGet]
     public IActionResult UpdatePassword()
@@ -138,4 +132,10 @@ public class LoginController : Controller
         await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
         return RedirectToAction("Login1", "Login");
     }
+    //public async static Task<string> GetUserProfilePicturePath()
+    //{
+    //    var personnel = await personnelRepository.GetAsync(f => f.UserId == userId, new CancellationToken());
+    //    return personnel.Photo;
+    //}
+ 
 }
