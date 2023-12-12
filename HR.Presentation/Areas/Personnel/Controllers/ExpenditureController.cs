@@ -8,7 +8,9 @@ using HR.Domain.Concrete;
 using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace HR.Presentation.Areas.Personnel.Controllers;
 
@@ -54,7 +56,24 @@ public class ExpenditureController : Controller
     [HttpPost]
     public IActionResult DeleteByIdExpenditure(Guid id)
     {
-        // var result = await mediator.Send(new DeleteByIdAdvancePaymentCommand() { AdvancePaymentId = advancePaymentId });
         return RedirectToAction("Index", "Expenditure");
+    }
+    public IActionResult DownloadDocument(string documentPath)
+    {
+        if (!string.IsNullOrEmpty(documentPath))
+        {
+            string filePath = Path.Combine(hostEnvironment.WebRootPath, "expenditureFile", documentPath);
+            if (System.IO.File.Exists(filePath))
+            {
+                byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+                string fileName = documentPath;
+                return File(fileBytes, "application/octet-stream", fileName);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        return NotFound(); 
     }
 }
