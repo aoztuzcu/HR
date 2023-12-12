@@ -66,6 +66,12 @@
                                     @Html.DisplayFor(modelItem => item.Document)
                                 </td>
                                 <td>
+                                    @if (!string.IsNullOrEmpty(item.Document))
+                                    {
+                                        <a href="@Url.Action("DownloadDocument", "Expenditure", new { documentPath = item.Document })" class="btn btn-primary btn-icon"><i class="ti-download"></i></a>
+                                    }
+                                </td>
+                                <td>
                                     @if (item.ApprovalStatus == ApprovalStatusVM.ApprovalWaiting)
                                     {
                                         <button href="#" onclick="deleteExpenditure('@item.Id')" class="btn btn-inverse-danger btn-icon"><i class="ti-trash"></i></button>
