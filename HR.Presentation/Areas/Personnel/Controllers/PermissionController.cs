@@ -2,6 +2,7 @@
 using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.AdvancePayments.ViewModels;
+using HR.Application.Features.People.Queries.GetPerson;
 using HR.Application.Features.Permission.Command.CreatePermissionRequest;
 using HR.Application.Features.Permission.Command.DeleteByIdPermissionRequest;
 using HR.Application.Features.Permission.Queries.GetPermissionRequestListByPersonId;
@@ -33,6 +34,9 @@ public class PermissionController : Controller
     {   
         GetPermissionRequestListByPersonIdQuery query = new GetPermissionRequestListByPersonIdQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
+        GetPersonByIdQuery query2 = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query2);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
         return View(list);
     }
     [HttpGet]
@@ -40,6 +44,9 @@ public class PermissionController : Controller
     {
         GetPermissionTypesListQuery query = new GetPermissionTypesListQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
+       GetPersonByIdQuery query2 = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query2);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
         return View(new PermissionRequestCreateVM { PermissionList=list});
     }
 
@@ -79,6 +86,9 @@ public class PermissionController : Controller
     public async Task<IActionResult> DeleteByIdPermissionRequest(Guid permissionRequestId)
     {
         var result = await mediator.Send(new DeleteByIdPermissionRequestCommand() { PermissionRequestId = permissionRequestId });
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
         return RedirectToAction("GetAllPermissions", "Permission");
     }
 }

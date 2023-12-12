@@ -1,5 +1,6 @@
 ﻿@using HR.Domain.Concrete.Identity
 @using Microsoft.AspNetCore.Identity
+@using HR.Presentation.Areas.Personnel;
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 @{
@@ -7,12 +8,11 @@
 }
 @using System.Security.Claims
 @using HR.Domain.Concrete;
-@*@{
+@{
     var user = await UserManager.GetUserAsync(User);
     var role = await UserManager.GetRolesAsync(user);
     var userId = UserManager.GetUserId(User);
-}*@
-
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,14 +71,14 @@
                         *@
                     </ul>
                     <ul class="navbar-nav navbar-nav-right">
-                        @*
-                        <li class="nav-item dropdown me-1">
+                        
+                      @*  <li class="nav-item dropdown me-1">
                         <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
                         <i class="ti-email mx-0"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-                        <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                        <a class="dropdown-item">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">*@
+                      @*   <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>*@
+@*                       <a class="dropdown-item">
                         <div class="item-thumbnail">
                         <img src="~/template/images/faces/face4.jpg" alt="image" class="profile-pic">
                         </div>
@@ -166,23 +166,21 @@
                         </div>
                         </a>
                         </div>
-                        </li>
+                        </li>*@
                         <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                        <img src="~/template/images/faces/face28.jpg" alt="profile" />
+                                <img src="~/photos/@ViewBag.PersonnelProfilePicture" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item">
-                        <i class="ti-settings text-primary"></i>
-                        Settings
+                        <a class="dropdown-item" asp-controller="Person" asp-action="Detail" asp-area="Personnel">
+                                    <i class="ti-user menu-icon text-warning"></i>
+                        Kullanıcı Bilgilerim
                         </a>
-                        <a class="dropdown-item">
-                        <i class="ti-power-off text-primary"></i>
-                        Logout
-                        </a>
+                         <a asp-controller="Login" asp-action="LogOut" asp-area="default" class="dropdown-item">
+                        <i class="ti-power-off text-danger"></i>Çıkış Yap </a>
                         </div>
                         </li>
-                        *@
+                        
                     </ul>
                     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                         <span class="ti-view-list"></span>
@@ -196,8 +194,8 @@
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" asp-action="Index" asp-controller="Person">
-                                <i class="ti-shield menu-icon"></i>
-                                <span class="menu-title">Anasayfa</span>
+                                <i class="ti-shield menu-icon" style="color:mediumpurple; font-weight:bold"></i>
+                                <span class="menu-title" style="color:indigo; font-weight:bold">Anasayfa</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -205,8 +203,8 @@
                                 @*  <i class="ti-palette menu-icon"></i>
                                 <span class="menu-title">UI Elements</span>
                                 <i class="menu-arrow"></i>*@
-                                <i class="ti-palette menu-icon"></i>
-                                <span class="menu-title">Personel Bilgileri</span>
+                                <i class="ti-palette menu-icon" style="color:mediumpurple; font-weight:bold"></i>
+                                <span class="menu-title" style="font-weight: bold; color:indigo">Personel Bilgileri</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="ui-basic">
@@ -218,8 +216,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                                <i class="ti-user menu-icon"></i>
-                                <span class="menu-title">Talep İşlemleri</span>
+                                <i class="ti-user menu-icon" style="color:mediumpurple; font-weight:bold"></i>
+                                <span class="menu-title " style="font-weight: bold; color:indigo">Talep İşlemleri</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="auth">
@@ -232,8 +230,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#talep" aria-expanded="false" aria-controls="talep">
-                                <i class="ti-user menu-icon"></i>
-                                <span class="menu-title">Taleplerim</span>
+                                <i class="ti-user menu-icon " style="color:mediumpurple; font-weight:bold"></i>
+                                <span class="menu-title" style="font-weight: bold; color:indigo">Taleplerim</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="talep">

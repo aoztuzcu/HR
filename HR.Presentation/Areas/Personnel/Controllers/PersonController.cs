@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using HR.Application.Features.People.Commands.PersonUpdate;
 using HR.Application.Features.People.Queries.GetPerson;
+using HR.Application.Features.People.ViewModels;
 using HR.Application.Features.Permission.Command.CreatePermissionRequest;
 using HR.Application.Features.Permission.Queries;
 using HR.Application.Features.Permission.Queries.GetPermissionTypesList;
 using HR.Application.Features.Permission.ViewModels;
+using HR.Domain.Concrete;
 using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -33,15 +35,22 @@ public class PersonController : Controller
     {
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         //query.Id = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
-        var result = await mediator.Send(query);
-        return View(result);
+        var personnel = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
+        return View(personnel);
     }
-
+    public async Task GetProfilePicturePath()
+    {
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
+    }
     public async Task<IActionResult> UpdatePerson()//Guid id)
     {
         //GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = result.Photo;
         return View(result);
     }
 
@@ -60,6 +69,7 @@ public class PersonController : Controller
         //GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = id };
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = result.Photo;
         return View(result);
     }
     public async Task<IActionResult> PermissionRequestList()//Guid id)
@@ -67,6 +77,7 @@ public class PersonController : Controller
         //GetPermissionListQuery permissionList = new GetPermissionListQuery() { PersonelId = id };
         GetPermissionTypesListQuery permissionList = new GetPermissionTypesListQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(permissionList);
+        GetProfilePicturePath();
         return View(result);
     }
     public async Task<IActionResult> CreatePermissionRequest()//Guid id)
@@ -74,6 +85,7 @@ public class PersonController : Controller
         //CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonnelId = id };
         CreatePermissionRequestCommand command = new CreatePermissionRequestCommand() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var result = await mediator.Send(command);
+        GetProfilePicturePath();
         return View(command);
     }
     [HttpPost]
