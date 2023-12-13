@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HR.Application.Contracts.Persistence.Services;
+using HR.Application.Features.AdvancePayments.ViewModels;
 using HR.Application.Features.Departments.Queries.GetAllDepartmens;
 using HR.Application.Features.Jobs.Queries.GetAllJobQuery;
 using HR.Application.Features.People.Commands.PersonCreate;
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PasswordGenerator;
 using System.Security.Claims;
 
@@ -97,6 +99,14 @@ namespace HR.Presentation.Areas.Manager.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePersonnel(PersonCreateVM vm)
         {
+            if (!ModelState.IsValid)
+            {
+                vm.Departments = await mediator.Send(new GetAllDepartmenQuery());
+                vm.Jobs = await mediator.Send(new GetAllJobQuery());
+                return View(vm);
+                //throw new Exception("Model not correct");
+            }
+
             var email = vm.Name.ToLower() + "." + vm.Surname.ToLower() + "@bilgeadamboost.com";
 
             // E-posta adresi zaten kullanımda mı kontrol et
@@ -139,7 +149,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
                 //mail gönderilicek
                 var managerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var manager = await userManager.FindByIdAsync(managerId.ToString());
-                await emailService.SendConfirmMail(recordUser.Email , password ,$"{manager.Name} {manager.Surname}");
+                await emailService.SendConfirmMail(recordUser.Email, password, $"{manager.Name} {manager.Surname}");
                 return RedirectToAction("PersonnelList", "Manager");
             }
             else
