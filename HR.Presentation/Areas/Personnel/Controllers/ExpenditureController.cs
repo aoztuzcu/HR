@@ -2,10 +2,12 @@
 using HR.Application.Contracts.Persistence.Repositories;
 using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.Expenditures.Commands.CreateExpenditure;
+using HR.Application.Features.Expenditures.Commands.DeleteByIdExpenditure;
 using HR.Application.Features.Expenditures.Queries.GetExpenditureListByPersonId;
 using HR.Application.Features.Expenditures.Queries.GetExpenditureType;
 using HR.Application.Features.Expenditures.ViewModels;
 using HR.Application.Features.People.Queries.GetPerson;
+using HR.Application.Features.Permission.Command.DeleteByIdPermissionRequest;
 using HR.Domain.Concrete;
 using HR.Presentation.Models;
 using MediatR;
@@ -64,11 +66,6 @@ public class ExpenditureController : Controller
         await mediator.Send(command);
         return RedirectToAction("Index");
     }
-    [HttpPost]
-    public IActionResult DeleteByIdExpenditure(Guid id)
-    {
-        return RedirectToAction("Index", "Expenditure");
-    }
     public IActionResult DownloadDocument(string documentPath)
     {
         if (!string.IsNullOrEmpty(documentPath))
@@ -100,5 +97,14 @@ public class ExpenditureController : Controller
             returnStr = $"{result.Name} türündeki harcamalar için girebileceğiniz miktar en az {result.MinAmount} ve en fazla {result.MaxAmount}arasında olmalıdır.";
         }
         return Json(returnStr);
+    }
+    [HttpGet]
+    public async Task<IActionResult> DeleteByIdExpenditure(Guid expenditureId)
+    {
+        var result = await mediator.Send(new DeleteByIdExpenditureCommand() { ExpenditureId = expenditureId });
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var personnel = await mediator.Send(query);
+        ViewBag.PersonnelProfilePicture = personnel.Photo;
+        return RedirectToAction("Index", "Expenditure");
     }
 }
