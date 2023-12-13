@@ -1,6 +1,7 @@
 ﻿using HR.Application.Exceptions;
 using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
+using HR.Domain.Enum;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 namespace HR.Application.Features.People.ViewModels;
@@ -38,4 +39,8 @@ public class PersonDetailVM
     public JobVM Job { get; set; }
     public string CompanyName { get; set; }
     public decimal Salary { get; set; }
+
+    // Olması Gerekenler Ekstra
+    public Guid UserId { get; set; }
+    public Gender Gender { get; set; }
 }
