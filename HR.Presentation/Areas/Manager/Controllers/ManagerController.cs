@@ -5,6 +5,7 @@ using HR.Application.Features.Departments.Queries.GetAllDepartmens;
 using HR.Application.Features.Jobs.Queries.GetAllJobQuery;
 using HR.Application.Features.People.Commands.PersonCreate;
 using HR.Application.Features.People.Commands.PersonUpdate;
+using HR.Application.Features.People.Commands.PersonUpdateByManager;
 using HR.Application.Features.People.Queries.GetlAllPerson;
 using HR.Application.Features.People.Queries.GetPerson;
 using HR.Application.Features.People.ViewModels;
@@ -163,6 +164,50 @@ namespace HR.Presentation.Areas.Manager.Controllers
                 return View();
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> PersonnelUpdateByManager(Guid id)
+        {
+            var result = await mediator.Send(new GetPersonByIdQuery() { Id = id });
+            var updatePersonnelByManagerVM = mapper.Map<PersonUpdateByManagerVM>(result);
+            updatePersonnelByManagerVM.Jobs = await mediator.Send(new GetAllJobQuery());
+            updatePersonnelByManagerVM.Departments = await mediator.Send(new GetAllDepartmenQuery());
+            return View(updatePersonnelByManagerVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PersonnelUpdateByManager(PersonUpdateByManagerVM vm)
+        {
+            if (!ModelState.IsValid)
+            {
+                List<Tuple<string, string>> validationErrors = new List<Tuple<string, string>>();
+
+                // ModelState içindeki hataları döngüyle alıyoruz
+                foreach (var entry in ModelState)
+                {
+                    string propertyName = entry.Key;
+                    ModelErrorCollection errors = entry.Value.Errors;
+
+                    foreach (var error in errors)
+                    {
+                        validationErrors.Add(new Tuple<string, string>(propertyName, error.ErrorMessage));
+                    }
+                }
+                vm.Departments = await mediator.Send(new GetAllDepartmenQuery());
+                vm.Jobs = await mediator.Send(new GetAllJobQuery());
+                return View(vm);
+                //throw new Exception("Model not correct");
+            }
+
+            if (vm.PhotoFile != null)
+            {
+                vm.Photo = FileOperation.ReturnFileName(vm.PhotoFile, "photos", webHostEnvironment);
+            }
+            var entity = mapper.Map<PersonUpdateByManagerCommand>(vm);
+            var result = await mediator.Send(entity);
+            return RedirectToAction("PersonnelList", "Manager");
+        }
+
         //[HttpGet]
         //public async Task<IActionResult> MailAt()
         //{
