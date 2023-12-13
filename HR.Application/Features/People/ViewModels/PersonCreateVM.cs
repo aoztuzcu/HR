@@ -1,5 +1,6 @@
 ﻿using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
+using HR.Application.Features.People.ViewModels.Validations;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,6 +11,7 @@ public class PersonCreateVM
     [Required(ErrorMessage = "TC Kimlik Numarası zorunludur.")]
     [StringLength(11, MinimumLength = 11, ErrorMessage = "TC Kimlik Numarası 11 karakter olmalıdır.")]
     [RegularExpression("^[0-9]*$", ErrorMessage = "TC Kimlik Numarası sadece rakam içermelidir.")]
+    [CustomIdentityNumberValidation]
     public string IdentityNumber { get; set; }
 
     [Required(ErrorMessage = "Ad zorunludur.")]
@@ -60,12 +62,12 @@ public class PersonCreateVM
     [Required(ErrorMessage = "Meslek zorunludur.")]
     public Guid JobId { get; set; }
 
-    public IEnumerable<JobVM> Jobs { get; set; }
+    public IEnumerable<JobVM>? Jobs { get; set; }
 
     [Required(ErrorMessage = "Departman zorunludur.")]
     public Guid DepartmentId { get; set; }
 
-    public IEnumerable<DepartmentVM> Departments { get; set; }
+    public IEnumerable<DepartmentVM>? Departments { get; set; }
 
     [Required(ErrorMessage = "Şirket Adı zorunludur.")]
     public string CompanyName { get; set; }
