@@ -16,6 +16,6 @@ public class ExpenditureRepository : BaseRepository<Expenditure>, IExpenditureRe
     public ExpenditureRepository(HRContext context) : base(context) { }
 
     public async Task<IEnumerable<Expenditure>> GetAllByPersonIdAsync(Guid personId, CancellationToken token)
-        => await context.Expenditures.Include(x=>x.ExpenditureType).Where(x=>x.PersonnelId == personId).ToListAsync();
+        => await context.Expenditures.Include(x=>x.ExpenditureType).Where(x=>x.PersonnelId == personId && x.IsActive==true).ToListAsync();
 
 }
