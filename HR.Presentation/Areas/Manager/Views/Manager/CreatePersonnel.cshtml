@@ -1,104 +1,165 @@
 ﻿@model HR.Application.Features.People.ViewModels.PersonCreateVM
 
 @{
-    ViewData["Title"] = "CreatePersonnel";
+    ViewData["Title"] = "Personel Ekle";
 }
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
 
-<h1>Create Personnel</h1>
+    .container {
+        margin-top: 50px;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-<h4>PersonCreateVM</h4>
-<hr />
-@*<a asp-action="MailAt" asp-controller="Manager">mail</a>*@
-<div class="container-fluid">
-    <div class="row">
-        <form asp-action="CreatePersonnel" class="needs-validation" enctype="multipart/form-data" novalidate>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    h1 {
+        color: #007bff;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .alert-danger {
+        margin-top: 20px;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        color: #721c24;
+        padding: 10px;
+    }
+</style>
+<h1 class="text-center">Personel Ekle</h1>
+
+<div class="container">
+    <form asp-action="CreatePersonnel" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="Photo" class="control-label">Fotoğraf</label>
                     <input asp-for="Photo" type="file" class="form-control" required />
                     <span asp-validation-for="Photo" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="IdentityNumber" class="control-label">Identity Number:</label>
+                    <label asp-for="IdentityNumber" class="control-label">TC Kimlik Numarası:</label>
                     <input asp-for="IdentityNumber" class="form-control" required />
                     <span asp-validation-for="IdentityNumber" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Name" class="control-label">Name:</label>
+                    <label asp-for="Name" class="control-label">Ad:</label>
                     <input asp-for="Name" class="form-control" required />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="SecondName" class="control-label">Second Name:</label>
+                    <label asp-for="SecondName" class="control-label">İkinci Ad:</label>
                     <input asp-for="SecondName" class="form-control" />
                     <span asp-validation-for="SecondName" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Surname" class="control-label">Surname:</label>
+                    <label asp-for="Surname" class="control-label">Soyad:</label>
                     <input asp-for="Surname" class="form-control" required />
                     <span asp-validation-for="Surname" class="text-danger"></span>
                 </div>
 
-
                 <div class="form-group">
-                    <label asp-for="SecondSurname" class="control-label">Second Surname:</label>
+                    <label asp-for="SecondSurname" class="control-label">İkinci Soyad:</label>
                     <input asp-for="SecondSurname" class="form-control" />
                     <span asp-validation-for="SecondSurname" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Address" class="control-label">Address:</label>
+                    <label asp-for="Address" class="control-label">Adres:</label>
                     <input asp-for="Address" class="form-control" />
                     <span asp-validation-for="Address" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="PhoneNumber" class="control-label">Phone Number:</label>
+                    <label asp-for="PhoneNumber" class="control-label">Telefon Numarası:</label>
                     <input asp-for="PhoneNumber" class="form-control" />
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="Gender">Cinsiyet</label>
                     <select asp-for="Gender" asp-items="Html.GetEnumSelectList<GenderVM>()" class="form-control custom-select"></select>
                     <span asp-validation-for="Gender" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="Salary" class="control-label">Salary:</label>
+                    <label asp-for="Salary" class="control-label">Maaş:</label>
                     <input asp-for="Salary" class="form-control" />
                     <span asp-validation-for="Salary" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="BirthDate" class="control-label">Birth Date:</label>
-                    <input asp-for="BirthDate" class="form-control" />
+                    <label asp-for="BirthDate" class="control-label">Doğum Tarihi:</label>
+                    <input asp-for="BirthDate" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
                     <span asp-validation-for="BirthDate" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="PlaceofBirth" class="control-label">Place of Birth:</label>
+                    <label asp-for="PlaceofBirth" class="control-label">Doğum Yeri:</label>
                     <input asp-for="PlaceofBirth" class="form-control" />
                     <span asp-validation-for="PlaceofBirth" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="HireDate" class="control-label">Hire Date:</label>
-                    <input asp-for="HireDate" class="form-control" />
+                    <label asp-for="HireDate" class="control-label">İşe Giriş Tarihi:</label>
+                    <input asp-for="HireDate" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
                     <span asp-validation-for="HireDate" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="FireDate" class="control-label">Fire Date:</label>
-                    <input asp-for="FireDate" class="form-control" />
+                    <label asp-for="FireDate" class="control-label">İşten Çıkış Tarihi:</label>
+                    <input asp-for="FireDate" type="date" class="form-control" />
                     <span asp-validation-for="FireDate" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="JobId">Meslekler</label>
+                    <label asp-for="JobId">Meslek</label>
                     <select asp-for="JobId" class="form-control custom-select">
                         <option value="">-- Meslek Seçin --</option>
                         @foreach (var item in Model.Jobs)
@@ -108,8 +169,9 @@
                     </select>
                     <span asp-validation-for="Jobs" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="DepartmentId">Departmanlar</label>
+                    <label asp-for="DepartmentId">Departman</label>
                     <select asp-for="DepartmentId" class="form-control custom-select">
                         <option value="">-- Departman Seçin --</option>
                         @foreach (var item in Model.Departments)
@@ -119,15 +181,17 @@
                     </select>
                     <span asp-validation-for="Departments" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
-                    <label asp-for="CompanyName" class="control-label">Company Name:</label>
+                    <label asp-for="CompanyName" class="control-label">Şirket Adı:</label>
                     <input asp-for="CompanyName" class="form-control" />
                     <span asp-validation-for="CompanyName" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                <div class="form-group text-center">
+                    <input type="submit" value="Oluştur" class="btn btn-primary" />
                 </div>
+
                 @if (TempData["ErrorMessage"] != null)
                 {
                     <div class="alert alert-danger">
@@ -135,13 +199,14 @@
                     </div>
                 }
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="PersonnelList" asp-controller="Manager" asp-area="Manager" class="btn btn-secondary">Listeye Geri Dön</a>
 </div>
+
 
 @section Scripts {
     @{

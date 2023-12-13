@@ -45,7 +45,7 @@
 
     h3 {
         text-align: center;
-        color: #BFD9D7;
+        color: blue;
         font-weight: bold;
         margin-top: 20px;
         font-size: 28px;
@@ -119,6 +119,7 @@
                                                 <p><strong>Soyad:</strong> @item.Surname</p>
                                                 <p><strong>İkinci Soyad:</strong> @(item.SecondSurname != null ? item.SecondSurname : "")</p>
                                                 <p><strong>E-Posta:</strong> @item.EMail</p>
+                                                <p><strong>Maaş:</strong> @item.Salary</p>
                                             </div>
                                         </div>
 
@@ -129,7 +130,7 @@
                                                 <p><strong>Telefon Numarası:</strong> @item.PhoneNumber</p>
                                                 <p><strong>İş:</strong> @item.Job.Name</p>
                                                 <p><strong>Departman:</strong> @item.Department.Name</p>
-                                                <p><strong>Cinsiyet:</strong> @Enum.GetName(typeof(GenderVM), item.Gender)</p>
+                                                <p><strong>Cinsiyet:</strong> @Html.DisplayFor(modelItem => item.Gender)</p>
                                                 <span asp-validation-for="@item.Gender" class="text-danger"></span>
                                             </div>
                                         </div>

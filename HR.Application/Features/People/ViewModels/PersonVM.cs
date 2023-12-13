@@ -24,4 +24,5 @@ public class PersonVM
     public DepartmentVM Department { get; set; }
     public JobVM Job { get; set; }
     public GenderVM Gender { get; set; }
+    public decimal Salary { get; set; }
 }
