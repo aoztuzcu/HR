@@ -1,18 +1,14 @@
 ﻿using AutoMapper;
 using HR.Application.Contracts.Persistence.Repositories;
-using HR.Application.Features.AdvancePayments.Commands.DeleteByIdAdvancePayment;
 using HR.Application.Features.Expenditures.Commands.CreateExpenditure;
 using HR.Application.Features.Expenditures.Commands.DeleteByIdExpenditure;
 using HR.Application.Features.Expenditures.Queries.GetExpenditureListByPersonId;
 using HR.Application.Features.Expenditures.Queries.GetExpenditureType;
 using HR.Application.Features.Expenditures.ViewModels;
 using HR.Application.Features.People.Queries.GetPerson;
-using HR.Application.Features.Permission.Command.DeleteByIdPermissionRequest;
-using HR.Domain.Concrete;
 using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
 

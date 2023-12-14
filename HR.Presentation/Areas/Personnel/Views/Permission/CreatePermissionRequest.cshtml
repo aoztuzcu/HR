@@ -20,6 +20,7 @@
                 <div class="form-group">
                     <label asp-for="PermissionTypeId">İzin Türü</label>
                     <select asp-for="PermissionTypeId" class="form-control">
+                        <option value="" disabled selected>-- İzin Türü Seçin --</option>
                         @foreach (var permission in Model.PermissionList)
                         {
                             <option value="@permission.Id"> @permission.Name </option>
@@ -30,7 +31,7 @@
 
                 <div class="form-group">
                     <label asp-for="StartDate">Başlangıç Tarihi</label>
-                    <input asp-for="StartDate" type="date" class="form-control custom-select" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" required/>
+                    <input asp-for="StartDate" type="date" class="form-control custom-select" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" required />
                     <span id="startDateError" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -38,7 +39,7 @@
                     <input asp-for="Days" type="text" class="form-control custom-select" />
                     <span asp-validation-for="Days" class="text-danger"></span>
                 </div>
-               
+
                 <input type="submit" value="Talep Oluştur" class="btn btn-primary me-2" />
             </form>
         </div>
@@ -60,8 +61,8 @@
                 setDate();
             });
         });
-      
-        function setDate(){
+
+        function setDate() {
             var selectedDate = $("#StartDate").val();
             var tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate());
@@ -84,15 +85,15 @@
             }
             else if (permissionType === "6262bbcc-c007-4a95-8194-d70d8477a25b") {
                 $("#Days").val(3);
-                $("#Days").prop("disabled", true); 
+                $("#Days").prop("disabled", true);
             }
             else if (permissionType === "4b7018c2-a031-4da5-a32b-010169e4bc1b") {
                 $("#Days").val(3);
-                $("#Days").prop("disabled", true); 
+                $("#Days").prop("disabled", true);
             }
             else if (permissionType === "8ba143ca-5ef7-42bd-b4b5-0c419903f48d") {
                 $("#Days").val(5);
-                $("#Days").prop("disabled", true); 
+                $("#Days").prop("disabled", true);
             }
             else {
                 // Diğer izin türlerinde gün sayısını kullanıcıya bırak

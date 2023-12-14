@@ -4,11 +4,9 @@ using System.Globalization;
 
 namespace HR.Application.Features.People.ViewModels.Validations;
 
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter,
-    AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
 public class CustomIdentityNumberValidationAttribute : ValidationAttribute
 {
-
     private const int IdentityNumberLength = 11;
 
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)

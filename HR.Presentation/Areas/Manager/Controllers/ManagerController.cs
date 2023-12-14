@@ -83,6 +83,12 @@ namespace HR.Presentation.Areas.Manager.Controllers
         [HttpGet]
         public async Task<IActionResult> PersonnelList()
         {
+            // Navbar Sağ üst köşe giriş yapan kullanıcının profil resmi
+            GetPersonByIdQuery queryPerson = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+            var resultPerson = await mediator.Send(queryPerson);
+            ViewBag.UserProfilePicture = resultPerson.Photo;
+            ViewBag.UserProfileId = resultPerson.Id;
+
             GetAllPersonQuery query = new GetAllPersonQuery();
             var result = await mediator.Send(query);
             return View(result);
@@ -90,6 +96,12 @@ namespace HR.Presentation.Areas.Manager.Controllers
         [HttpGet]
         public async Task<IActionResult> CreatePersonnel()
         {
+            // Navbar Sağ üst köşe giriş yapan kullanıcının profil resmi
+            GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+            var result = await mediator.Send(query);
+            ViewBag.UserProfilePicture = result.Photo;
+            ViewBag.UserProfileId = result.Id;
+
             GetAllDepartmenQuery departmenQuery = new GetAllDepartmenQuery();
             GetAllJobQuery jobQuery = new GetAllJobQuery();
             PersonCreateVM vm = new PersonCreateVM();

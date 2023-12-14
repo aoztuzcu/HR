@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <label asp-for="ExpenditureTypeId">Harcama Türü</label>
                     <select asp-for="ExpenditureTypeId" class="form-control custom-select">
-                        <option value="">-- Harcama Türü Seçin --</option>
+                        <option value="" disabled selected>-- Harcama Türü Seçin --</option>
                         @foreach (var expenditureType in Model.ExpenditureTypes)
                         {
                             <option value="@expenditureType.Id">@expenditureType.Name</option>
@@ -39,9 +39,21 @@
                     <span asp-validation-for="Amount" id="validationField" class="text-danger"></span>
                 </div>
 
+                @* <div class="form-group">
+                <label asp-for="CurrencyTypeVM">Para Birimi</label>
+                <select asp-for="CurrencyTypeVM" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()" class="form-control custom-select"></select>
+                <span asp-validation-for="CurrencyTypeVM" class="text-danger"></span>
+                </div> *@
+
                 <div class="form-group">
                     <label asp-for="CurrencyTypeVM">Para Birimi</label>
-                    <select asp-for="CurrencyTypeVM" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()" class="form-control custom-select"></select>
+                    <select asp-for="CurrencyTypeVM" class="form-control custom-select">
+                        <option value="" disabled selected>-- Para Birimi Seçin --</option>
+                        @foreach (var currency in Enum.GetValues(typeof(CurrencyTypeVM)))
+                        {
+                            <option value="@currency">@currency</option>
+                        }
+                    </select>
                     <span asp-validation-for="CurrencyTypeVM" class="text-danger"></span>
                 </div>
 
