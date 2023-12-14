@@ -31,7 +31,7 @@ public class PermissionController : Controller
     }
     [HttpGet]
     public async Task<IActionResult> GetAllPermissions()
-    {   
+    {
         GetPermissionRequestListByPersonIdQuery query = new GetPermissionRequestListByPersonIdQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
         GetPersonByIdQuery query2 = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
@@ -44,10 +44,10 @@ public class PermissionController : Controller
     {
         GetPermissionTypesListQuery query = new GetPermissionTypesListQuery() { PersonnelId = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var list = await mediator.Send(query);
-       GetPersonByIdQuery query2 = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        GetPersonByIdQuery query2 = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var personnel = await mediator.Send(query2);
         ViewBag.PersonnelProfilePicture = personnel.Photo;
-        return View(new PermissionRequestCreateVM { PermissionList=list});
+        return View(new PermissionRequestCreateVM { PermissionList = list });
     }
 
     [HttpPost]
@@ -55,7 +55,7 @@ public class PermissionController : Controller
     {
         if (permissionCreateVM.Days == 0)
         {
-            var permissionType= await permissionTypeRepository.GetByIdAsync(permissionCreateVM.PermissionTypeId);
+            var permissionType = await permissionTypeRepository.GetByIdAsync(permissionCreateVM.PermissionTypeId);
             permissionCreateVM.Days = (float)permissionType.Days;
         }
         if (!ModelState.IsValid)
