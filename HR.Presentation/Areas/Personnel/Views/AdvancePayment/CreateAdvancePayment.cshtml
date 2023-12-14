@@ -1,5 +1,6 @@
 ﻿@using HR.Application.Features.AdvancePayments.ViewModels
 @using System.Globalization
+@using HR.Presentation.Models
 @model AdvancePaymentCreateVM
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
@@ -12,7 +13,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Avans Talebi Oluştur</h4>
-            <form asp-action="CreateAdvancePayment" class="forms-sample" >
+            <form asp-action="CreateAdvancePayment" class="forms-sample">
 
                 <div class="form-group" hidden>
                     <label asp-for="PersonnelId">Kullanıcı ID</label>
@@ -20,9 +21,21 @@
                     <span asp-validation-for="PersonnelId" class="text-danger"></span>
                 </div>
 
+                @* <div class="form-group">
+                <label asp-for="AdvanceType">Avans Türü</label>
+                <select asp-for="AdvanceType" asp-items="Html.GetEnumSelectList<AdvanceTypeVM>()" class="form-control custom-select"></select>
+                <span asp-validation-for="AdvanceType" class="text-danger"></span>
+                </div> *@
                 <div class="form-group">
                     <label asp-for="AdvanceType">Avans Türü</label>
-                    <select asp-for="AdvanceType" asp-items="Html.GetEnumSelectList<AdvanceTypeVM>()" class="form-control custom-select"></select>
+                    <select asp-for="AdvanceType" class="form-control custom-select">
+                        <option value="" disabled selected>-- Avans Türünü Seçin --</option>
+                        @foreach (var advance in Enum.GetValues(typeof(AdvanceTypeVM)))
+                        {
+                            var displayName = EnumHelper.GetDisplayName((Enum)advance);
+                            <option value="@advance">@displayName</option>
+                        }
+                    </select>
                     <span asp-validation-for="AdvanceType" class="text-danger"></span>
                 </div>
 
@@ -33,11 +46,24 @@
                     <span asp-validation-for="Amount" class="text-danger"></span>
                 </div>
 
+                @*           <div class="form-group">
+                <label asp-for="CurrencyType">Para Birimi</label>
+                <select asp-for="CurrencyType" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()" class="form-control custom-select"></select>
+                <span asp-validation-for="CurrencyType" class="text-danger"></span>
+                </div> *@
+
                 <div class="form-group">
-                    <label asp-for="CurrencyType">Avans Türü</label>
-                    <select asp-for="CurrencyType" asp-items="Html.GetEnumSelectList<CurrencyTypeVM>()" class="form-control custom-select"></select>
-                    <span asp-validation-for="AdvanceType" class="text-danger"></span>
+                    <label asp-for="CurrencyType">Para Birimi</label>
+                    <select asp-for="CurrencyType" class="form-control custom-select">
+                        <option value="" disabled selected>-- Para Birimi Seçin --</option>
+                        @foreach (var currency in Enum.GetValues(typeof(CurrencyTypeVM)))
+                        {
+                            <option value="@currency">@currency</option>
+                        }
+                    </select>
+                    <span asp-validation-for="CurrencyType" class="text-danger"></span>
                 </div>
+
 
                 <div class="form-group">
                     <label asp-for="Description">Açıklama</label>
