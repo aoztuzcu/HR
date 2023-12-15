@@ -21,6 +21,7 @@ public class AdvancePaymentListVM
 
     [Display(Name = "Talep Tarihi")]
     public DateTime CreatedDate { get; set; }
+    public string? FormattedCreatedDate => CreatedDate.ToString("dd/MM/yyyy");
 
     [Display(Name = "Onay Durumu")]
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;

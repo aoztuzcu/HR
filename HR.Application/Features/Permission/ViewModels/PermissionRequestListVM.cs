@@ -12,10 +12,13 @@ public class PermissionRequestListVM
     public PermissionTypeVM? PermissionType { get; set; }
 
     [Display(Name = "Başlangıç Tarihi")]
-    public DateTime StartDate { get; set; }
 
-        [Display(Name = "Bitiş Tarihi")]
+    public DateTime StartDate { get; set; }
+    public string? FormattedStartDate => StartDate.ToString("dd/MM/yyyy");
+
+    [Display(Name = "Bitiş Tarihi")]
     public DateTime EndDate { get; set; }
+    public string? FormattedEndDate => EndDate.ToString("dd/MM/yyyy");
 
     [Display(Name = "İzin Sayısı")]
     public float Days { get; set; }
