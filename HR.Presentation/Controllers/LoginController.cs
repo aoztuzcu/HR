@@ -35,7 +35,7 @@ public class LoginController : Controller
     [HttpPost]
     public async Task<IActionResult> Login1(UserSignInVM person)
     {
-        
+
         if (ModelState.IsValid)
         {
             var user = await userManager.FindByEmailAsync(person.Email);
@@ -88,6 +88,11 @@ public class LoginController : Controller
     [HttpPost]
     public async Task<IActionResult> UpdatePassword(UserPasswordUpdateVM userPasswordUpdateVM)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(userPasswordUpdateVM);
+        }
+
         // Kullanıcının kimlik doğrulamasını kontrol et
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         var user = await userManager.FindByIdAsync(userId.ToString());
@@ -137,5 +142,5 @@ public class LoginController : Controller
     //    var personnel = await personnelRepository.GetAsync(f => f.UserId == userId, new CancellationToken());
     //    return personnel.Photo;
     //}
- 
+
 }

@@ -120,7 +120,10 @@ namespace HR.Presentation.Areas.Manager.Controllers
                 //throw new Exception("Model not correct");
             }
 
-            var email = vm.Name.ToLower() + "." + vm.Surname.ToLower() + "@bilgeadamboost.com";
+            // Kullanıcı isim ve soyismindeki Türkçe karakterleri (ıöüğşç) ingilizce karakterlere (iougsc)
+            // dönüştürmemiz gerekiyor.
+            var email = CharacterFix.Fix(vm.Name) + "." + CharacterFix.Fix(vm.Surname) + "@bilgeadamboost.com";
+            //var email = vm.Name.ToLower() + "." + vm.Surname.ToLower() + "@bilgeadamboost.com";
 
             // E-posta adresi zaten kullanımda mı kontrol et
             var existingUser = await userManager.FindByEmailAsync(email);
