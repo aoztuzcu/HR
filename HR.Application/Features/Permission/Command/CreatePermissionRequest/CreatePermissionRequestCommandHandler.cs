@@ -32,7 +32,12 @@ public class CreatePermissionRequestCommandHandler : IRequestHandler<CreatePermi
             var availablePermissionAmount = await GetAmountofAnnualAvailablePermission(personnel, cancellationToken);
             if (request.Days > availablePermissionAmount)
                 throw new InvalidOperationException("Kullanılabilir izin limitinden fazla izin talep edilemez!");
-        }      
+        }
+        var isSameDay = await repository.GetAllAsync(x => x.PersonnelId == request.PersonnelId && x.StartDate == request.StartDate, cancellationToken);
+        if (isSameDay.Any())
+        {
+            throw new InvalidOperationException("Aynı günde farklı bir izin talebi oluşturulamaz. Lütfen tekrar deneyin.");
+        }
         var permissionRequest = mapper.Map<PermissionRequest>(request);
         permissionRequest.EndDate = permissionRequest.StartDate.AddDays(permissionRequest.Days);
         var result = await repository.AddAsync(permissionRequest, cancellationToken);
