@@ -75,10 +75,48 @@ public class ExpenditureController : Controller
             }
             else
             {
+                return NotFound("Belge bulunamadı.");
+            }
+        }
+        return NotFound();
+    }
+    public IActionResult ViewDocument(string documentPath)
+    {
+        if (!string.IsNullOrEmpty(documentPath))
+        {
+            string filePath = Path.Combine(hostEnvironment.WebRootPath, "expenditureFile", documentPath);
+            if (System.IO.File.Exists(filePath))
+            {
+                byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+                string contentType = GetContentType(documentPath); // Belge türüne bağlı olarak MIME türünü al
+                string fileName = Path.GetFileName(documentPath);
+
+                return File(fileBytes, contentType);
+            }
+            else
+            {
                 return NotFound();
             }
         }
-        return NotFound(); 
+        return NotFound();
+    }
+
+    private string GetContentType(string fileName)
+    {
+        string ext = Path.GetExtension(fileName)?.ToLowerInvariant();
+        switch (ext)
+        {
+            case ".pdf":
+                return "application/pdf";
+            case ".jpg":
+                return "image/jpeg";
+            case ".jpeg":
+                return "image/jpeg";
+            case ".png":
+                return "image/png";
+            default:
+                return "application/octet-stream"; // Varsayılan MIME türü
+        }
     }
 
     [HttpPost]
