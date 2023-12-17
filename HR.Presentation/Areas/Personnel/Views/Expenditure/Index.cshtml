@@ -64,12 +64,21 @@
                                     @Html.DisplayFor(modelItem => item.ApprovalDate)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Document)
+                                    @if (!string.IsNullOrEmpty(item.Document))
+                                    {
+                                        <a href="@Url.Action("ViewDocument", "Expenditure", new { documentPath = item.Document })" class="btn btn-icon" target="_blank" style="display: flex; align-items: center; padding: 5px;">
+                                            <i class="ti-eye" style="margin-right: 5px; font-size: 1.2em;"></i>
+                                            <span style="font-size: 1em;">Görüntüle</span>
+                                        </a>
+                                    }
                                 </td>
                                 <td>
                                     @if (!string.IsNullOrEmpty(item.Document))
                                     {
-                                        <a href="@Url.Action("DownloadDocument", "Expenditure", new { documentPath = item.Document })" class="btn btn-primary btn-icon"><i class="ti-download"></i></a>
+                                        <a href="@Url.Action("DownloadDocument", "Expenditure", new { documentPath = item.Document })" class="btn btn-icon" style="display: flex; align-items: center; padding: 5px;">
+                                            <i class="ti-download" style="margin-right: 5px; font-size: 1.2em;"></i>
+                                            <span style="font-size: 1em;">İndir</span>
+                                        </a>
                                     }
                                 </td>
                                 <td>
