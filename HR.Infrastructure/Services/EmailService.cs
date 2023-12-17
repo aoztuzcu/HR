@@ -34,6 +34,7 @@ public class EmailService : IEmailService
             await smtpClient.SendAsync(mimeMessage);
             await smtpClient.DisconnectAsync(true);
         }
+
     }
 
 }
