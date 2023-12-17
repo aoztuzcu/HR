@@ -17,6 +17,8 @@ using HR.Application.Features.Permission.Command.DeleteByIdPermissionRequest;
 using HR.Application.Features.People.Commands.PersonCreate;
 using HR.Application.Features.Expenditures.Commands.DeleteByIdExpenditure;
 using HR.Application.Features.People.Commands.PersonUpdateByManager;
+using HR.Application.Features.Permission.Command.ApprovePermissionRequest;
+using HR.Application.Features.Permission.Command.RejectPermissionRequest;
 
 namespace HR.Application.Mappings;
 
@@ -50,6 +52,9 @@ public class MappingProfile : Profile
         CreateMap<PermissionRequest, CreatePermissionRequestCommand>().ReverseMap();
         CreateMap<Permissions, PermissionTypeVM>().ReverseMap();
         CreateMap<PermissionRequest, DeleteByIdPermissionRequestCommand>().ReverseMap();
+        CreateMap<PermissionRequest, ApprovePermissionRequestCommand>().ReverseMap();
+        CreateMap<PermissionRequest, RejectPermissionRequestCommand>().ReverseMap();
+        CreateMap<PermissionRequest, PermissionRequestApproveListVM>().ReverseMap();
 
 
 

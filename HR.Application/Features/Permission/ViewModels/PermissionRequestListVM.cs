@@ -8,7 +8,7 @@ public class PermissionRequestListVM
     public Guid Id { get; set; }
 
     public Guid PermissionTypeId { get; set; }
-   
+
     public PermissionTypeVM? PermissionType { get; set; }
 
     [Display(Name = "Başlangıç Tarihi")]
@@ -23,9 +23,10 @@ public class PermissionRequestListVM
     [Display(Name = "İzin Sayısı")]
     public float Days { get; set; }
 
-        [Display(Name = "Onay Durumu")]
+    [Display(Name = "Onay Durumu")]
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
-    
+
     [Display(Name = "Cevaplanma Tarihi")]
-    public DateTime? ApprovalDate { get; set; }
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+    public DateTime? ApprovedDate { get; set; }
 }
