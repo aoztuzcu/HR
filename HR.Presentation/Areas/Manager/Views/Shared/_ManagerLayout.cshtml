@@ -38,8 +38,12 @@
     <link rel="shortcut icon" href="~/template/images/favicon.png" />
 
     <!-- inject:datatablescss -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+
+
+
     <!-- endinject -->
+
 
 </head>
 <body>
@@ -223,20 +227,20 @@
                                 </ul>
                             </div>
                         </li>
-                        @* <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                        <i class="ti-user menu-icon"></i>
-                        <span class="menu-title">Talep İşlemleri</span>
-                        <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="auth">
-                        <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" asp-action="#" asp-controller="Manager">İzin Talep Listesi </a></li>
-                        <li class="nav-item"> <a class="nav-link" asp-action="#" asp-controller="Manager">Avans Talep Listesi</a></li>
-                        <li class="nav-item"> <a class="nav-link" asp-action="#" asp-controller="Manager">Harcama Talep Listesi</a></li>
-                        </ul>
-                        </div>
-                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                                <i class="ti-user menu-icon"></i>
+                                <span class="menu-title">Talep İşlemleri</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="auth">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" asp-action="PermissionRequestApprove" asp-controller="Request">İzin Talep Listesi </a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="#" asp-controller="Request">Avans Talep Listesi</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="#" asp-controller="Request">Harcama Talep Listesi</a></li>
+                                </ul>
+                            </div>
+                        </li>
 
                         @*<li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#talep" aria-expanded="false" aria-controls="talep">
@@ -342,8 +346,9 @@
     <!-- inject:datatable.net -->
     <script src="//code.jquery.com/jquery-3.7.0.js"></script>
     <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="//cdn.datatables.net/rowgroup/1.4.1/js/dataTables.rowGroup.min.js"></script>
-    <!-- endinject -->
+    @* <script src="//cdn.datatables.net/rowgroup/1.4.1/js/dataTables.rowGroup.min.js"></script> *@
+
+       <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="js/dashboard.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

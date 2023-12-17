@@ -34,7 +34,7 @@
                                @Html.DisplayNameFor(model => model.ApprovalStatus)
                            </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.ApprovalDate)
+                                @Html.DisplayNameFor(model => model.ApprovedDate)
                             </th>
                             <th></th>
                         </tr>
@@ -62,7 +62,7 @@
                                     @Html.DisplayFor(modelItem => item.ApprovalStatus)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.ApprovalDate)
+                                    @Html.DisplayFor(modelItem => item.ApprovedDate)
                                 </td>
                                 <td>
                                     @if (item.ApprovalStatus == ApprovalStatusVM.ApprovalWaiting)
