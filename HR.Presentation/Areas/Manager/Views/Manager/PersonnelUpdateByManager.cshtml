@@ -204,11 +204,8 @@
                     <label asp-for="UserId" class="control-label">Email</label>
                     <input asp-for="UserId" class="form-control" required />
                     <span asp-validation-for="UserId" class="text-danger"></span>
-                </div>
-
-                <div class="form-group text-center">
-                    <input type="submit" value="Kaydet" class="btn btn-primary" />
-                </div>
+                </div>       
+              
 
                 @if (TempData["ErrorMessage"] != null)
                 {
@@ -221,6 +218,11 @@
     </form>
 </div>
 
+<div class="form-group">
+    <div class="text-center">
+        <input type="submit" value="Kaydet" class="btn btn-primary" HorizontalAlignment="Center" />
+    </div>
+</div>
 <div class="text-center mt-3">
     <a asp-action="PersonnelList" asp-controller="Manager" asp-area="Manager" class="btn btn-secondary">Listeye Geri Dön</a>
 </div>

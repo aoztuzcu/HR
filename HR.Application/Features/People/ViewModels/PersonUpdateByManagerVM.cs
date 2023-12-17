@@ -27,20 +27,26 @@ public class PersonUpdateByManagerVM
 
     [Required(ErrorMessage = "Ad zorunludur.")]
     [StringLength(50, ErrorMessage = "Ad en fazla 50 karakter olmalıdır.")]
+    [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "Ad alanına sadece karakter girişi yapılabilir.")]
     public string Name { get; set; }
 
     [StringLength(50, ErrorMessage = "İkinci Ad en fazla 50 karakter olmalıdır.")]
+    [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "İkinci Ad alanına sadece karakter girişi yapılabilir.")]
     public string? SecondName { get; set; }
 
     [Required(ErrorMessage = "Soyad zorunludur.")]
     [StringLength(50, ErrorMessage = "Soyad en fazla 50 karakter olmalıdır.")]
+    [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "Soyad alanına sadece karakter girişi yapılabilir.")]
     public string Surname { get; set; }
 
     [StringLength(50, ErrorMessage = "İkinci Soyad en fazla 50 karakter olmalıdır.")]
+    [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "İkinci Soyad alanına sadece karakter girişi yapılabilir.")]
     public string? SecondSurname { get; set; }
     public string Email { get; set; }
 
     [Required(ErrorMessage = "Adres zorunludur.")]
+    [MaxLength(200, ErrorMessage = "Adres alanı en fazla {1} karakter olmalıdır.")]
+    [MinLength(20, ErrorMessage = "Adres alanı en az {1} karakter olmalıdır.")]
     public string Address { get; set; }
 
     [Required(ErrorMessage = "Telefon Numarası zorunludur.")]
@@ -55,6 +61,8 @@ public class PersonUpdateByManagerVM
 
     [Required(ErrorMessage = "Doğum Tarihi zorunludur.")]
     [DataType(DataType.Date)]
+    [Display(Name = "Doğum Tarihi")]
+    [MinimumAge(18, ErrorMessage = "Kişi en az 18 yaşında olmalıdır.")]
     public DateTime BirthDate { get; set; }
 
     [Required(ErrorMessage = "Doğum Yeri zorunludur.")]
@@ -77,7 +85,7 @@ public class PersonUpdateByManagerVM
     public string CompanyName { get; set; }
 
     [Required(ErrorMessage = "Maaş zorunludur.")]
-    [Range(0, double.MaxValue, ErrorMessage = "Geçerli bir maaş giriniz.")]
+    [Range(11402.32, double.MaxValue, ErrorMessage = "Maaş alanına minimum asgari ücret miktarını girmelisiniz.")]
     public decimal Salary { get; set; }
 
     public Guid UserId { get; set; }
