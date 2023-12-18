@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace HR.Application.Contracts.Persistence.Repositories;
 
-public interface IPermissionRequestRepository : IBaseRepository<PermissionRequest>, IApproveRequest, IRejectRequest
+public interface IPermissionRequestRepository : IBaseRepository<PermissionRequest>, IApproveRequest<PermissionRequest>, IRejectRequest<PermissionRequest>
 {
     Task<IEnumerable<PermissionRequest>> GetAllByPersonIdAsync(Guid id, CancellationToken token);
     Task<Permissions> Find(Expression<Func<Permissions, bool>> expression);

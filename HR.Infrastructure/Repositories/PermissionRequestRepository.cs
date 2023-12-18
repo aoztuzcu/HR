@@ -16,9 +16,7 @@ namespace HR.Persistence.Repositories;
 
 public class PermissionRequestRepository : BaseRepository<PermissionRequest>, IPermissionRequestRepository
 {
-    public PermissionRequestRepository(HRContext context) : base(context)
-    {
-    }
+    public PermissionRequestRepository(HRContext context) : base(context) { }
 
     public async Task<PermissionRequest> ApproveByIdAsync(Guid id, CancellationToken token)
     {
@@ -39,7 +37,7 @@ public class PermissionRequestRepository : BaseRepository<PermissionRequest>, IP
     => await context.PermissionRequests.Include(x => x.PermissionType).Where(g => g.PersonnelId == id && g.IsActive == true).ToListAsync();//await base.GetAllAsync(g => g.PersonnelId == id, token);
 
     public async Task<IEnumerable<PermissionRequest>> GetAllIncludeAsync(CancellationToken cancellationToken)
-        => await context.PermissionRequests.Include(x => x.Personnel).Include(y => y.PermissionType).Where(w=>w.IsActive).ToListAsync(cancellationToken);
+        => await context.PermissionRequests.Include(x => x.Personnel).Include(y => y.PermissionType).Where(w => w.IsActive).ToListAsync(cancellationToken);
 
     public async Task<PermissionRequest> RejectByIdAsync(Guid id, CancellationToken token)
     {

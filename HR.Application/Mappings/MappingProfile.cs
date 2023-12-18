@@ -19,6 +19,8 @@ using HR.Application.Features.Expenditures.Commands.DeleteByIdExpenditure;
 using HR.Application.Features.People.Commands.PersonUpdateByManager;
 using HR.Application.Features.Permission.Command.ApprovePermissionRequest;
 using HR.Application.Features.Permission.Command.RejectPermissionRequest;
+using HR.Application.Features.Expenditures.Commands.ApproveExpenditureRequest;
+using HR.Application.Features.Expenditures.Commands.RejectExpenditureRequest;
 
 namespace HR.Application.Mappings;
 
@@ -44,7 +46,9 @@ public class MappingProfile : Profile
         CreateMap<Expenditure, ExpenditureCreateVM>().ReverseMap();
         CreateMap<Expenditure, ExpenditureListVM>().ReverseMap();
         CreateMap<Expenditure, DeleteByIdExpenditureCommand>().ReverseMap();
-
+        CreateMap<Expenditure, ApproveExpenditureRequestCommand>().ReverseMap();
+        CreateMap<Expenditure, RejectExpenditureRequestCommand>().ReverseMap();
+        CreateMap<Expenditure, ExpenditureApproveListVM>().ReverseMap();
 
 
         CreateMap<PermissionRequest, PermissionRequestListVM>().ReverseMap();

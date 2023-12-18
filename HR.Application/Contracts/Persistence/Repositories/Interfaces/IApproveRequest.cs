@@ -1,14 +1,9 @@
-﻿using HR.Domain.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HR.Domain.Base;
 
 namespace HR.Application.Contracts.Persistence.Repositories.Interfaces;
 
-public interface IApproveRequest
+public interface IApproveRequest<T> where T : BaseEntity, new()
 {
-    Task<PermissionRequest> ApproveByIdAsync(Guid id, CancellationToken token);
+    Task<T> ApproveByIdAsync(Guid id, CancellationToken token);
 
 }
