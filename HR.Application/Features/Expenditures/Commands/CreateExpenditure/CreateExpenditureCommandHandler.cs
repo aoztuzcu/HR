@@ -29,7 +29,7 @@ public class CreateExpenditureCommandHandler : IRequestHandler<CreateExpenditure
     public async Task<CreateExpenditureCommand> Handle(CreateExpenditureCommand request, CancellationToken cancellationToken)
     {
         var entity = mapper.Map<Expenditure>(request);
-        entity.ExchangeAmount = await GetAmountToTl(request.Amount, request.CurrencyTypeVM);
+        entity.ExchangeAmount = await GetAmountToTl(request.Amount, request.CurrencyType);
         var result = await expenditureRepository.AddAsync(entity, cancellationToken);
         return mapper.Map<CreateExpenditureCommand>(result);
     }
@@ -39,12 +39,12 @@ public class CreateExpenditureCommandHandler : IRequestHandler<CreateExpenditure
         switch (currencyType)
         {
             case CurrencyTypeVM.Dolar:
-                var usdToTryRate = await currencyService.GetExchangeRateAsync("USD", "TRY", DateTime.Now);
+                var usdToTryRate = await currencyService.GetExchangeRateAsync("TRY", "USD", DateTime.Now);
                 return amount * usdToTryRate;
 
 
             case CurrencyTypeVM.Euro:
-                var euroToTryRate = await currencyService.GetExchangeRateAsync("EUR", "TRY", DateTime.Now);
+                var euroToTryRate = await currencyService.GetExchangeRateAsync("TRY", "EUR", DateTime.Now);
                 return amount * euroToTryRate;
 
 

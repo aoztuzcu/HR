@@ -40,9 +40,9 @@ public class MappingProfile : Profile
         CreateMap<AdvancePaymentCreateVM, CreateAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePayment, AdvancePaymentListVM>().ReverseMap();
 
-
-        CreateMap<Expenditure, CreateExpenditureCommand>().ReverseMap();
         CreateMap<ExpenditureCreateVM, CreateExpenditureCommand>().ReverseMap();
+        CreateMap<Expenditure, CreateExpenditureCommand>().ReverseMap();
+        
         CreateMap<Expenditure, ExpenditureCreateVM>().ReverseMap();
         CreateMap<Expenditure, ExpenditureListVM>().ReverseMap();
         CreateMap<Expenditure, DeleteByIdExpenditureCommand>().ReverseMap();

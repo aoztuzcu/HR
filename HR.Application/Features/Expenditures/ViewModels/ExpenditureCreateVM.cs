@@ -20,7 +20,7 @@ public class ExpenditureCreateVM
 	[Range(1, 20000.00, ErrorMessage = "Miktar alanına 0 ile 20000 arasında değer yazabilirsiniz.")]
 	//[CustomAmountValidation]
 	public decimal Amount { get; set; }
-    public CurrencyTypeVM CurrencyTypeVM { get; set; }
+    public CurrencyTypeVM CurrencyType { get; set; }
     public IFormFile Document { get; set; }
 }
 
