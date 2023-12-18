@@ -17,7 +17,7 @@ public class CreateExpenditureCommand : IRequest<CreateExpenditureCommand>
     public CurrencyTypeVM CurrencyTypeVM { get; set; }
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
     public decimal Amount { get; set; }
-    public DateTime ApprovedDate { get; set; }
+    public DateTime? ApprovedDate { get; set; }
     public string? Document { get; set; }
 
 }

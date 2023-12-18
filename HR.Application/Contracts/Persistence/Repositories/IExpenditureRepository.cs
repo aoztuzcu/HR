@@ -1,14 +1,13 @@
 ﻿using HR.Application.Contracts.Persistence.Repositories.Base;
+using HR.Application.Contracts.Persistence.Repositories.Interfaces;
 using HR.Domain.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR.Application.Contracts.Persistence.Repositories;
 
-public interface IExpenditureRepository : IBaseRepository<Expenditure>
+public interface IExpenditureRepository : IBaseRepository<Expenditure>,
+                                          IApproveRequest<Expenditure>,
+                                          IRejectRequest<Expenditure>,
+                                          IGetAllIncludeAsync<Expenditure>
 {
-    Task<IEnumerable<Expenditure>> GetAllByPersonIdAsync(Guid personId , CancellationToken cancellationToken);
+    Task<IEnumerable<Expenditure>> GetAllByPersonIdAsync(Guid personId, CancellationToken cancellationToken);
 }
