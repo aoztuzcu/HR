@@ -46,15 +46,15 @@
                 </div> *@
 
                 <div class="form-group">
-                    <label asp-for="CurrencyTypeVM">Para Birimi</label>
-                    <select asp-for="CurrencyTypeVM" class="form-control custom-select">
+                    <label asp-for="CurrencyType">Para Birimi</label>
+                    <select asp-for="CurrencyType" class="form-control custom-select">
                         <option value="" disabled selected>-- Para Birimi Seçin --</option>
                         @foreach (var currency in Enum.GetValues(typeof(CurrencyTypeVM)))
                         {
                             <option value="@currency">@currency</option>
                         }
                     </select>
-                    <span asp-validation-for="CurrencyTypeVM" class="text-danger"></span>
+                    <span asp-validation-for="CurrencyType" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
