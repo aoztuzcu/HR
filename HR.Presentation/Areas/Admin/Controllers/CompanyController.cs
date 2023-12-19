@@ -18,8 +18,11 @@ public class CompanyController : Controller
         this.webHostEnvironment = webHostEnvironment;
     }
 
-    public IActionResult Index()
+    public IActionResult Index() //Şİrket listele
     {
+
         return View();
     }
+
+   
 }

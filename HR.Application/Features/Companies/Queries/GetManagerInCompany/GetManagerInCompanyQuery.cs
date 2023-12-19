@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Application.Features.Company.Queries.GetAllCompany
+namespace HR.Application.Features.Companies.Queries.GetManagerInCompany;
+
+public class GetManagerInCompanyQuery
 {
-    internal class GetAllCompanyQueryHandler
-    {
-    }
+
+
 }
