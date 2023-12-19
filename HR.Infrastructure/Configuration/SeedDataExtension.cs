@@ -94,7 +94,10 @@ public static class SeedDataExtension
         #endregion
 
         #region RoleSeedData
-        modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = Guid.NewGuid(), Name = "Personnel", NormalizedName = "PERSONNEL" });
+        modelBuilder.Entity<UserRole>().HasData(
+                                                new UserRole { Id = Guid.NewGuid(), Name = "Personnel", NormalizedName = "PERSONNEL" },
+                                                new UserRole { Id = Guid.NewGuid(), Name = "Manager", NormalizedName = "MANAGER" },
+                                                new UserRole { Id = Guid.NewGuid(), Name = "Admin", NormalizedName = "ADMIN" });
 
         #endregion
 
@@ -139,6 +142,71 @@ public static class SeedDataExtension
                                                        new ExpenditureType { Id = Guid.NewGuid(), CreatedDate = DateTime.Now, Name = "Sağlık", MinAmount = 50, MaxAmount = 6000 }
                                                        );
         #endregion
+
+
+
+        #region CompanySeedData
+
+        modelBuilder.Entity<Company>().HasData(
+                                                 new Company
+                                                 {
+                                                     Id = Guid.NewGuid(),
+                                                     Name = "ABC Company",
+                                                     Type = "Technology",
+                                                     PhoneNumber = "555-1234",
+                                                     Email = "abc@example.com",
+                                                     ContractStartDate = new DateTime(2022, 1, 1),
+                                                     ContractEndDate = new DateTime(2023, 12, 31),
+                                                     MersisNo = "123456789",
+                                                     TaxNo = "987654321",
+                                                     TaxOffice = "City Tax Office",
+                                                     LogoUrl = "https://example.com/logo1.png",
+                                                     Address = "123 Main Street, Cityville",
+                                                     EmployeesCount = 100,
+                                                     EstablishmentYear = 2000
+                                                 },
+
+                                                new Company
+                                                {
+                                                    Id = Guid.NewGuid(),
+                                                    Name = "XYZ Corporation",
+                                                    Type = "Finance",
+                                                    PhoneNumber = "555-5678",
+                                                    Email = "xyz@example.com",
+                                                    ContractStartDate = new DateTime(2021, 5, 15),
+                                                    ContractEndDate = new DateTime(2024, 6, 30),
+                                                    MersisNo = "987654321",
+                                                    TaxNo = "123456789",
+                                                    TaxOffice = "Downtown Tax Office",
+                                                    LogoUrl = "https://example.com/logo2.png",
+                                                    Address = "456 Oak Avenue, Townsville",
+                                                    EmployeesCount = 250,
+                                                    EstablishmentYear = 1995
+                                                },
+
+                                                // 3. Şirket
+                                                new Company
+                                                {
+                                                    Id = Guid.NewGuid(),
+                                                    Name = "LMN Solutions",
+                                                    Type = "Consulting",
+                                                    PhoneNumber = "555-9876",
+                                                    Email = "lmn@example.com",
+                                                    ContractStartDate = new DateTime(2023, 3, 10),
+                                                    ContractEndDate = new DateTime(2025, 2, 28),
+                                                    MersisNo = "456789012",
+                                                    TaxNo = "654321987",
+                                                    TaxOffice = "Suburb Tax Office",
+                                                    LogoUrl = "https://example.com/logo3.png",
+                                                    Address = "789 Pine Street, Villagetown",
+                                                    EmployeesCount = 50,
+                                                    EstablishmentYear = 2010
+                                                }
+
+                                               );
+        #endregion
+
+
 
         #region NotUsed
         //var hasher = new PasswordHasher<Personnel>();
