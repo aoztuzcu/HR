@@ -1,0 +1,101 @@
+﻿@using HR.Application.Features.People.ViewModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model PersonDetailVM
+@{
+    ViewData["Title"] = "UpdateAdmin";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="~/photos/@Model.Photo" alt="..."
+                             class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">@Model.Name @Model.SecondName @Model.Surname @Model.SecondSurname</h5>
+                        <p class="text-muted mb-1">@Model.Job.Name</p>
+                        <p class="text-muted mb-4">@Model.Department.Name</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <a asp-action="UpdateAdmin" asp-controller="Admin" class="btn btn-primary">Güncelle</a>
+                            <a asp-action="DetailAdmin" asp-controller="Admin" asp-route-id="@Model.Id" class="btn btn-outline-primary ms-1">Detay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Kullanıcı Bilgileri Güncelle</h4>
+                        <form class="forms-sample" asp-action="UpdatePerson" asp-controller="Person" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label asp-for="PhotoFile" class="control-label">Fotoğraf</label>
+                                <input id="fileInput" asp-for="PhotoFile" class="form-control" type="file" onchange="return validateFile();" value="@Model.Photo" />
+                                <span asp-validation-for="PhotoFile" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber">Telefon Numarası</label>
+                                <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="(___) ___-____">
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Address">Adres</label>
+                                <textarea asp-for="Address" class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                <label asp-for="Id" class="control-label"></label>
+                                <input asp-for="Id" class="form-control" />
+                                <span asp-validation-for="Id" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
+                                <a asp-action="Index" class="btn btn-light">İptal</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function validateFile() {
+            var fileInput = document.getElementById('fileInput'); // İlgili input elementinin id'si
+            var fileName = fileInput.value;
+            var fileSize = fileInput.files[0].size; // Dosya boyutu bytes cinsinden
+
+            // Dosya türü kontrolü
+            var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+            if (!allowedExtensions.test(fileName)) {
+                alert('Hata: Sadece JPEG ve PNG dosyaları yükleyebilirsiniz.');
+                fileInput.value = '';
+                return false;
+            }
+
+            // Dosya boyutu kontrolü (25 MB)
+            var maxSize = 25 * 1024 * 1024; // 25 MB
+            if (fileSize > maxSize) {
+                alert('Hata: Dosya boyutu 25 MB\'dan büyük olamaz.');
+                fileInput.value = '';
+                return false;
+            }
+
+            // Bilgi mesajı
+            alert('Başarıyla yüklendi: ' + fileName);
+
+            // Geçerli dosya
+            return true;
+        }
+    </script>
+}

@@ -34,7 +34,6 @@ public class PersonController : Controller
     public async Task<IActionResult> Index()//GetPersonByIdQuery query)
     {
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
-        //query.Id = Guid.Parse("93CFE4FE-5E7C-462E-9655-350A1C87B53D");
         var personnel = await mediator.Send(query);
         ViewBag.PersonnelProfilePicture = personnel.Photo;
         return View(personnel);
