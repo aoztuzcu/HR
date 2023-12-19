@@ -172,7 +172,7 @@
                                 <img src="~/photos/@ViewBag.AdminProfilePicture" alt="profile" />
                             </a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                                <a class="dropdown-item" asp-controller="Person" asp-action="Detail" asp-area="Personnel">
+                                <a class="dropdown-item" asp-controller="Admin" asp-action="DetailAdmin" asp-area="Admin">
                                     <i class="ti-user menu-icon text-warning"></i>
                                     Kullanıcı Bilgilerim
                                 </a>
@@ -191,29 +191,30 @@
             <!-- partial -->
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
-                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:darkslategrey">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:crimson">
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" asp-action="Index" asp-controller="Admin">
-                                <i class="ti-shield menu-icon" style="color:mediumpurple; font-weight:bold"></i>
-                                <span class="menu-title" style="color:indigo; font-weight:bold">Anasayfa</span>
+                                <i class="ti-shield menu-icon" style="color:crimson; font-weight:bold"></i>
+                                <span class="menu-title" style="color:darkblue; font-weight:bold">Anasayfa</span>
                             </a>
                         </li>
-                         <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                         <i class="ti-palette menu-icon"></i>
-                        <span class="menu-title">UI Elements</span>
-                        <i class="menu-arrow"></i>
-                         <i class="ti-palette menu-icon" style="color:mediumpurple; font-weight:bold"></i>
-                        <span class="menu-title" style="font-weight: bold; color:indigo">Personel Bilgileri</span>
-                        <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-basic">
-                        <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" asp-action="Detail" asp-controller="Person">Detay</a></li>
-                        <li class="nav-item"> <a class="nav-link" asp-action="UpdatePerson" asp-controller="Person">Güncelle</a></li>
-                        </ul>
-                        </div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                               @* <i class="ti-palette menu-icon"></i>*@
+                               @* <span class="menu-title">UI Elements</span>
+                                <i class="menu-arrow"></i>*@
+                                <i class="ti-palette menu-icon" style="color:crimson; font-weight:bold"></i>
+                                <span class="menu-title" style="font-weight: bold; color:darkblue ">Hesap Ayarlarım</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="ui-basic">
+                                <ul class="nav flex-column sub-menu" style="color: crimson">
+                                    <li class="nav-item"> <a class="nav-link" style="color:darkblue" asp-action="DetailAdmin" asp-controller="Admin">Kullanıcı Bilgilerim</a></li>
+                                    <li class="nav-item"> <a class="nav-link" style="color:darkblue" asp-action="UpdateAdmin" asp-controller="Admin">Güncelle</a></li>
+                                </ul>
+                            </div>
                         </li>
 
                         @*<li class="nav-item">
