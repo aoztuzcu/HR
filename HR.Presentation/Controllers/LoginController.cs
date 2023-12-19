@@ -64,6 +64,10 @@ public class LoginController : Controller
                 {
                     return RedirectToAction("Index", "Manager", new { area = "Manager" });
                 }
+                else if (await userManager.IsInRoleAsync(user, "Admin"))
+                {
+                    return RedirectToAction("Index", "Admin", new { area = "Admin" });
+                }
                 //else
                 //{
                 //    return RedirectToAction("Index", "Blog");

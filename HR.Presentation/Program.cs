@@ -66,7 +66,13 @@ public class Program
                               areaName: "Manager",
                               pattern: "Manager/{controller=Manager}/{action=Index}"
                                             );
-            
+
+            endpoints.MapAreaControllerRoute(
+                              name: "Admin",
+                              areaName: "Admin",
+                              pattern: "Admin/{controller=Admin}/{action=Index}"
+                                            );
+
             endpoints.MapAreaControllerRoute(
               //name: "areaDefault",
               name: "Personnel",
