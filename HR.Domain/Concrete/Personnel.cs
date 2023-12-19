@@ -25,9 +25,9 @@ public class Personnel : BaseEntity
     public Job? Job { get; set; }
     public Guid DepartmentId { get; set; }
     public Department? Department { get; set; }
-    public Company Company { get; set; }
+    public string? CompanyName { get; set; }
     public Guid CompanyId { get; set; }
-
+    public Company Company { get; set; }
     public float? AnnualPermissionDays { get; set; }
 
     public  Guid UserId { get; set; }
