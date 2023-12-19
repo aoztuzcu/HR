@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Application.Features.Company.Commands.CreateCompany
+namespace HR.Application.Features.Companies.Commands.UpdateCompany;
+
+public class UpdateCompanyCommandHandler
 {
-    internal class CreateCompanyCommandHandler
-    {
-    }
 }

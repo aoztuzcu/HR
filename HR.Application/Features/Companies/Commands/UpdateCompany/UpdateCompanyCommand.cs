@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Application.Features.Company.Queries.GetAllCompany
+namespace HR.Application.Features.Companies.Commands.UpdateCompany;
+
+public class UpdateCompanyCommand
 {
-    internal class GetAllCompanyQuery
-    {
-    }
 }
