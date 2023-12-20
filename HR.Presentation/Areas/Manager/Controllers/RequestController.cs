@@ -1,15 +1,17 @@
 ﻿using AutoMapper;
+using HR.Application.Features.AdvancePayments.Commands.ApproveAdvancePayment;
+using HR.Application.Features.AdvancePayments.Commands.RejectAdvancePayment;
+using HR.Application.Features.AdvancePayments.Queries.GetAdvancePaymentListByCompanyId;
 using HR.Application.Features.Expenditures.Commands.ApproveExpenditureRequest;
 using HR.Application.Features.Expenditures.Commands.RejectExpenditureRequest;
-using HR.Application.Features.Expenditures.Queries.GetExpenditureRequestList;
+using HR.Application.Features.Expenditures.Queries.GetExpenditureRequestListByCompanyId;
 using HR.Application.Features.People.Queries.GetPerson;
 using HR.Application.Features.Permission.Command.ApprovePermissionRequest;
 using HR.Application.Features.Permission.Command.RejectPermissionRequest;
-using HR.Application.Features.Permission.Queries.GetPermissionRequestList;
+using HR.Application.Features.Permission.Queries.GetPermissionRequestListByCompanyId;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
 
 namespace HR.Presentation.Areas.Manager.Controllers
 {
@@ -37,7 +39,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
             ViewBag.UserProfilePicture = result.Photo;
             //ViewBag.UserProfileId = result.Id;
 
-            var list = await mediator.Send(new GetPermissionRequestListQuery());
+            var list = await mediator.Send(new GetPermissionRequestListByCompanyIdQuery() { CompanyId = result.CompanyId });
             return View(list);
         }
 
@@ -64,7 +66,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
             ViewBag.UserProfilePicture = result.Photo;
             //ViewBag.UserProfileId = result.Id;
 
-            var list = await mediator.Send(new GetExpenditureRequestListQuery());
+            var list = await mediator.Send(new GetExpenditureRequestListByCompanyIdQuery() { CompanyId = result.CompanyId });
             return View(list);
         }
 
@@ -118,6 +120,32 @@ namespace HR.Presentation.Areas.Manager.Controllers
                 default:
                     return "application/octet-stream"; // Varsayılan MIME türü
             }
+        }
+
+        // Avans Talep Onay İşlemleri
+        public async Task<IActionResult> AdvancePaymentRequestApprove()
+        {
+            GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+            var result = await mediator.Send(query);
+            ViewBag.UserProfilePicture = result.Photo;
+            //ViewBag.UserProfileId = result.Id;
+
+            var list = await mediator.Send(new GetAdvancePaymentListByCompanyIdQuery() { CompanyId = result.CompanyId });
+            return View(list);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ApproveByIdAdvancePaymentRequest(Guid advancePaymentId)
+        {
+            var result = await mediator.Send(new ApproveAdvancePaymentCommand() { AdvancePaymentId = advancePaymentId });
+            return RedirectToAction("AdvancePaymentRequestApprove");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RejectByIdAdvancePaymentRequest(Guid advancePaymentId)
+        {
+            var result = await mediator.Send(new RejectAdvancePaymentCommand() { AdvancePaymentId = advancePaymentId });
+            return RedirectToAction("AdvancePaymentRequestApprove");
         }
     }
 }

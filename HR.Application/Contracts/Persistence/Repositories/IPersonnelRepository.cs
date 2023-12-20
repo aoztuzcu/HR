@@ -10,5 +10,6 @@ public interface IPersonnelRepository : IBaseRepository<Personnel>
     Task<Personnel> GetByIdAsync(Guid Id, CancellationToken token);
     Task<Personnel> UpdateAsyncByPerson(Personnel personnel, CancellationToken token);
     Task<IEnumerable<Personnel>> GetAllIncludeAsync();
+    Task<IEnumerable<Personnel>> GetAllManagers();
 
 }
