@@ -1,20 +1,22 @@
 ﻿using HR.Application.Contracts.Persistence.Repositories;
 using HR.Domain.Concrete;
+using HR.Domain.Concrete.Identity;
 using HR.Domain.Enum;
 using HR.Infrastructure.Persistence;
 using HR.Persistence.Repositories.Base;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR.Persistence.Repositories;
 
 public class ExpenditureRepository : BaseRepository<Expenditure>, IExpenditureRepository
 {
-    public ExpenditureRepository(HRContext context) : base(context) { }
+    private readonly UserManager<User> userManager;
+
+    public ExpenditureRepository(HRContext context, UserManager<User> userManager) : base(context)
+    {
+        this.userManager = userManager;
+    }
 
     public async Task<Expenditure> ApproveByIdAsync(Guid id, CancellationToken token)
     {
@@ -29,8 +31,41 @@ public class ExpenditureRepository : BaseRepository<Expenditure>, IExpenditureRe
     public async Task<IEnumerable<Expenditure>> GetAllByPersonIdAsync(Guid personId, CancellationToken token)
         => await context.Expenditures.Include(x => x.ExpenditureType).Where(x => x.PersonnelId == personId && x.IsActive == true).ToListAsync();
 
-    public async Task<IEnumerable<Expenditure>> GetAllIncludeAsync(CancellationToken cancellationToken)
-        => await context.Expenditures.Include(x => x.ExpenditureType).Include(y => y.Personnel).Where(w => w.IsActive == true).ToListAsync();
+    public async Task<IEnumerable<Expenditure>> GetAllByCompanyIdIncludeAsync(Guid companyId, CancellationToken cancellationToken)
+    {
+        var list = await context.Expenditures.Include(x => x.ExpenditureType).Include(y => y.Personnel).Where(w => w.IsActive == true && w.Personnel.CompanyId == companyId).ToListAsync();
+        return list;
+
+        #region Solution-Linq-Join
+        //var result = await context.Expenditures.Include(x => x.ExpenditureType).Include(y => y.Personnel)
+        //                                      .Join(context.Personnels, e => e.PersonnelId, p => p.Id, (e, p) => new { e, p })
+        //                                      .Join(context.Users, p => p.p.UserId, u => u.Id, (p, u) => new { p, u })
+        //                                      .Join(context.UserRoles, u => u.u.Id, ur => ur.UserId, (u, ur) => new { u, ur })
+        //                                      .Join(context.Roles, f => f.ur.RoleId, r => r.Id, (f, r) => new { f, r })
+        //                                      .Where(w => w.r.NormalizedName == ("PERSONNEL") && w.f.u.p.p.CompanyId == companyId)
+        //                                      .Select(joined => new Expenditure()
+        //                                      {
+        //                                          Id = joined.f.u.p.e.Id,
+        //                                          Amount = joined.f.u.p.e.Amount,
+        //                                          ApprovalStatus = joined.f.u.p.e.ApprovalStatus,
+        //                                          ApprovedDate = joined.f.u.p.e.ApprovedDate,
+        //                                          CurrencyType = joined.f.u.p.e.CurrencyType,
+        //                                          CreatedDate = joined.f.u.p.e.CreatedDate,
+        //                                          DeletedDate = joined.f.u.p.e.DeletedDate,
+        //                                          Document = joined.f.u.p.e.Document,
+        //                                          ExchangeAmount = joined.f.u.p.e.ExchangeAmount,
+        //                                          ExpenditureTypeId = joined.f.u.p.e.ExpenditureTypeId,
+        //                                          ExpenditureType = joined.f.u.p.e.ExpenditureType,
+        //                                          IsActive = joined.f.u.p.e.IsActive,
+        //                                          UpdatedDate = joined.f.u.p.e.UpdatedDate,
+        //                                          PersonnelId = joined.f.u.p.p.Id,
+        //                                          Personnel = joined.f.u.p.e.Personnel
+        //                                          // Diğer alanları ekleyin
+        //                                      })
+        //                                      .ToListAsync(cancellationToken);
+        //return result; 
+        #endregion
+    }
 
     public async Task<Expenditure> RejectByIdAsync(Guid id, CancellationToken token)
     {

@@ -4,10 +4,10 @@ using HR.Domain.Concrete;
 
 namespace HR.Application.Contracts.Persistence.Repositories;
 
-public interface IExpenditureRepository : IBaseRepository<Expenditure>,
-                                          IApproveRequest<Expenditure>,
-                                          IRejectRequest<Expenditure>,
-                                          IGetAllIncludeAsync<Expenditure>
+public interface IExpenditureRepository : IBaseRepository<Expenditure>
+                                        , IApproveRequest<Expenditure>
+                                        , IRejectRequest<Expenditure>
+                                        , IGetAllByCompanyIdIncludeAsync<Expenditure>
 {
     Task<IEnumerable<Expenditure>> GetAllByPersonIdAsync(Guid personId, CancellationToken cancellationToken);
 }

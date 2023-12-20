@@ -21,6 +21,8 @@ using HR.Application.Features.Permission.Command.ApprovePermissionRequest;
 using HR.Application.Features.Permission.Command.RejectPermissionRequest;
 using HR.Application.Features.Expenditures.Commands.ApproveExpenditureRequest;
 using HR.Application.Features.Expenditures.Commands.RejectExpenditureRequest;
+using HR.Application.Features.AdvancePayments.Commands.ApproveAdvancePayment;
+using HR.Application.Features.AdvancePayments.Commands.RejectAdvancePayment;
 using HR.Application.Features.Companies.ViewModels;
 
 namespace HR.Application.Mappings;
@@ -40,10 +42,13 @@ public class MappingProfile : Profile
         CreateMap<AdvancePayment, DeleteByIdAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePaymentCreateVM, CreateAdvancePaymentCommand>().ReverseMap();
         CreateMap<AdvancePayment, AdvancePaymentListVM>().ReverseMap();
+        CreateMap<AdvancePayment, ApproveAdvancePaymentCommand>().ReverseMap();
+        CreateMap<AdvancePayment, RejectAdvancePaymentCommand>().ReverseMap();
+        CreateMap<AdvancePayment, AdvancePaymentApproveListVM>().ReverseMap();
+
 
         CreateMap<ExpenditureCreateVM, CreateExpenditureCommand>().ReverseMap();
         CreateMap<Expenditure, CreateExpenditureCommand>().ReverseMap();
-        
         CreateMap<Expenditure, ExpenditureCreateVM>().ReverseMap();
         CreateMap<Expenditure, ExpenditureListVM>().ReverseMap();
         CreateMap<Expenditure, DeleteByIdExpenditureCommand>().ReverseMap();
