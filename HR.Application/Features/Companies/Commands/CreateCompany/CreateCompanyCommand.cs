@@ -9,8 +9,7 @@ namespace HR.Application.Features.Companies.Commands.CreateCompany;
 
 public class CreateCompanyCommand :IRequest<CreateCompanyCommand>
 {
-
-     public string Name { get; set; }
+    public string Name { get; set; }
     public string Type { get; set; }
     public string PhoneNumber { get; set; }
     public string Email { get; set; }

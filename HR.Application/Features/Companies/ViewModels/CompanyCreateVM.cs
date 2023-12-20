@@ -1,6 +1,7 @@
 ﻿using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.People.ViewModels;
 using HR.Domain.Concrete;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ public class CompanyCreateVM
     public string TaxNo { get; set; }
     public string TaxOffice { get; set; }
     public string LogoUrl { get; set; }
+    public IFormFile Logo { get; set; }
     public string Address { get; set; }
     public int EmployeesCount { get; set; }
     public int EstablishmentYear { get; set; }
