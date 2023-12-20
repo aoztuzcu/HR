@@ -1,0 +1,139 @@
+﻿@model IEnumerable<HR.Application.Features.Companies.ViewModels.ManagerInCompaniesVM>
+
+@{
+    ViewData["Title"] = "ListCompanyManagers";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .person-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+        text-align: center;
+        margin: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .person-card a {
+            text-decoration: none;
+        }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        background-color: #BFD9D7;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 32px;
+        margin: 0 auto;
+    }
+
+    .person-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .person-title {
+        font-size: 18px;
+    }
+
+    .person-tcno {
+        font-size: 16px;
+        color: #555;
+    }
+
+    h3 {
+        text-align: center;
+        color: blue;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    #nameFilter {
+        margin-top: 20px;
+    }
+
+    #personCardsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch; /* This ensures all items have the same height */
+        justify-content: center; /* Center the items horizontally */
+    }
+
+    .col-md-3 {
+        flex: 0 0 30%; /* Örnek: Genişliği artırmak için yüzdeyi artırabilirsiniz */
+        max-width: 30%; /* Maksimum genişliği artırabilirsiniz */
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="display-4 float-left">Yöneticiler</h3>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <input class="form-control" id="nameFilter" placeholder="Ad Giriniz" />
+        </div>
+    </div>
+    <div class="row mt-2 d-flex justify-content-center " id="personCardsContainer">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="person-card">
+
+                    <div class="avatar">
+                        <img src="~/photos/@item.Photo" alt="..."
+                             class="rounded-circle img-fluid" style="width: 100px;">
+                    </div>
+                    <div class="person-name">
+                        <span>@item.FullName.ToUpper() @item.Surname.ToUpper() </span>
+                    </div>
+
+                    <div class="person-title">
+                        <span>Şirket:</span>
+                        <span>@item.Company.Name</span>
+                    </div>
+                    <div class="person-tcno">
+                        <span>@item.Email</span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#nameFilter").on("input", function () {
+                var filterValue = $(this).val().toLowerCase();
+                $("#personCardsContainer .person-card").each(function () {
+                    var personName = $(this).find(".person-name span").text().toLowerCase();
+                    if (personName.includes(filterValue)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+

@@ -1,4 +1,5 @@
-﻿using HR.Application.Features.People.ViewModels;
+﻿using HR.Application.Features.Companies.ViewModels;
+using HR.Application.Features.People.ViewModels;
 using HR.Domain.Concrete;
 using MediatR;
 using System;

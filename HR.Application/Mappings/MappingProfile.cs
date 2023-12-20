@@ -21,6 +21,7 @@ using HR.Application.Features.Permission.Command.ApprovePermissionRequest;
 using HR.Application.Features.Permission.Command.RejectPermissionRequest;
 using HR.Application.Features.Expenditures.Commands.ApproveExpenditureRequest;
 using HR.Application.Features.Expenditures.Commands.RejectExpenditureRequest;
+using HR.Application.Features.Companies.ViewModels;
 
 namespace HR.Application.Mappings;
 
@@ -69,6 +70,11 @@ public class MappingProfile : Profile
         CreateMap<PersonUpdateByManagerCommand, PersonUpdateByManagerVM>().ReverseMap();
         CreateMap<PersonUpdateByManagerCommand, Personnel>().ReverseMap();
 
+
+        CreateMap<Personnel, ManagerInCompaniesVM>().ReverseMap();
+
+
+        CreateMap<Company, CompanyVM>().ReverseMap();
 
 
         //ViewModel Mappings
