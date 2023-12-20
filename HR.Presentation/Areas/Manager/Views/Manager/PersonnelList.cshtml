@@ -9,8 +9,20 @@
         text-align: center;
         margin: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 
+    .person-card-content {
+        flex-grow: 1;
+    }
+
+    .person-card-buttons {
+        margin-top: 10px;
+    }
         .person-card a {
             text-decoration: none;
         }
@@ -43,16 +55,18 @@
         color: #555;
     }
 
-    h3 {
-        text-align: center;
-        color: blue;
-        font-weight: bold;
-        margin-top: 20px;
-        font-size: 28px;
+    .modal-body p {
+        margin-bottom: 8px;
     }
 
-    #nameFilter {
-        margin-top: 20px;
+    .btn-group {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: auto;
+    }
+
+    .btn {
+        flex: 1;
     }
 </style>
 
@@ -70,8 +84,9 @@
     <div class="row mt-2 d-flex justify-content-center " id="personCardsContainer">
         @foreach (var item in Model)
         {
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="person-card">
+                    <div class="person-card-content">
 
                     <div class="avatar">
                         <img src="~/photos/@item.Photo" alt="..."
@@ -90,6 +105,7 @@
                         <span>Meslek:</span>
                         <span>@item.Job.Name</span>
                     </div>
+                        <div class="person-card-buttons">
                     <!-- Update Button -->
                     <a type="button" class="btn btn-primary" asp-action="PersonnelUpdateByManager" asp-controller="Manager" asp-route-id="@item.Id">
                         Güncelle
@@ -100,7 +116,7 @@
                             data-bs-target="#exampleModal_@item.Id">
                         Detay
                     </button>
-
+                    </div>
                     <div class="modal fade" id="exampleModal_@item.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -142,10 +158,11 @@
                                         Kapat
                                     </button>
                                 </div>
+                          
                             </div>
                         </div>
                     </div>
-
+                    </div>
 
                 </div>
             </div>
