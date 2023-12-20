@@ -38,6 +38,7 @@ public class PersonDetailVM
     public DepartmentVM Department { get; set; }
     public JobVM Job { get; set; }
     public string CompanyName { get; set; }
+    public Guid CompanyId { get; set; }
     public decimal Salary { get; set; }
 
     // Olması Gerekenler Ekstra

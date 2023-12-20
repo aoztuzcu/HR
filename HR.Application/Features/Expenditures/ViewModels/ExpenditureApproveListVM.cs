@@ -23,10 +23,11 @@ public class ExpenditureApproveListVM
     [Display(Name = "Para Birimi")]
     public CurrencyTypeVM CurrencyType { get; set; }
 
+    [Display(Name = "TL Karşılığı")]
     public decimal ExchangeAmount { get; set; }
+
     [Display(Name = "Belge")]
     public string Document { get; set; }
-
 
     [Display(Name = "Cevaplanma Tarihi")]
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
