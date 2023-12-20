@@ -30,6 +30,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IPermissionRequestRepository,PermissionRequestRepository>();
         services.AddScoped<IPermissionTypeRepository, PermissionTypeRepository>();
         services.AddScoped<IAdvancePaymentRepository, AdvancePaymentRepository>();
+        services.AddScoped<ICompanyRepository, CompanyRepository>();
         services.AddScoped<ICurrencyService, CurrencyService>();
         services.AddScoped<IEmailService, EmailService>();
 
