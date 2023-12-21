@@ -1,0 +1,195 @@
+﻿@model HR.Application.Features.People.ViewModels.PersonCreateVM
+
+@{
+    ViewData["Title"] = "Personel Ekle";
+}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        margin-top: 50px;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #007bff;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .alert-danger {
+        margin-top: 20px;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        color: #721c24;
+        padding: 10px;
+    }
+</style>
+<h1 class="text-center">Yönetici Ekle</h1>
+
+<div class="container">
+    <form asp-action="CreateManager" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label">Fotoğraf</label>
+                    <input asp-for="Photo" type="file" class="form-control" required />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IdentityNumber" class="control-label">TC Kimlik Numarası:</label>
+                    <input asp-for="IdentityNumber" class="form-control" required />
+                    <span asp-validation-for="IdentityNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Ad:</label>
+                    <input asp-for="Name" class="form-control" required />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SecondName" class="control-label">İkinci Ad:</label>
+                    <input asp-for="SecondName" class="form-control" />
+                    <span asp-validation-for="SecondName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Surname" class="control-label">Soyad:</label>
+                    <input asp-for="Surname" class="form-control" required />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SecondSurname" class="control-label">İkinci Soyad:</label>
+                    <input asp-for="SecondSurname" class="form-control" />
+                    <span asp-validation-for="SecondSurname" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label">Adres:</label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Gender">Cinsiyet</label>
+                    <select asp-for="Gender" asp-items="Html.GetEnumSelectList<GenderVM>()" class="form-control custom-select"></select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="BirthDate" class="control-label">Doğum Tarihi:</label>
+                    <input asp-for="BirthDate" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PlaceofBirth" class="control-label">Doğum Yeri:</label>
+                    <input asp-for="PlaceofBirth" class="form-control" />
+                    <span asp-validation-for="PlaceofBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="JobId">Meslek</label>
+                    <select asp-for="JobId" class="form-control custom-select">
+                        <option value="" disabled selected>-- Meslek Seçin --</option>
+                        @foreach (var item in Model.Jobs)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="JobId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DepartmentId">Departman</label>
+                    <select asp-for="DepartmentId" class="form-control custom-select">
+                        <option value="" disabled selected>-- Departman Seçin --</option>
+                        @foreach (var item in Model.Departments)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" hidden>
+                    <label asp-for="CompanyName" class="control-label">Şirket Adı:</label>
+                    <input asp-for="CompanyName" class="form-control" value="@ViewBag.UserCompanyName" />
+                    <span asp-validation-for="CompanyName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label">Telefon Numarası:</label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["ErrorMessage"]
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="text-center">
+                <input type="submit" value="Oluştur" class="btn btn-primary" HorizontalAlignment="Center" />
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -92,7 +92,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
 
             GetAllPersonQuery query = new GetAllPersonQuery();
             var result = await mediator.Send(query);
-            var pagination = result.ToPagedList(page, 8);
+            var pagination = result.ToPagedList(page, 1);
             return View(pagination);
         }
         [HttpGet]
