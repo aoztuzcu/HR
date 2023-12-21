@@ -24,6 +24,7 @@ namespace HR.Application.Features.Companies.ViewModels
         public string Address { get; set; }
         public int EmployeesCount { get; set; }
         public int EstablishmentYear { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }
