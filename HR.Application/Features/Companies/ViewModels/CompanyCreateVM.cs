@@ -29,7 +29,11 @@ public class CompanyCreateVM
     [Required(ErrorMessage = "E-posta adresi boş geçilemez!")]
 
     public string Email { get; set; }
+    [Required(ErrorMessage = "Sözleşme başlangıç tarihi boş geçilemez!")]
+
     public DateTime ContractStartDate { get; set; }
+    [Required(ErrorMessage = "Sözleşme bitiş tarihi boş geçilemez!")]
+
     public DateTime ContractEndDate { get; set; }
 
     [RegularExpression(@"^\d{11}000\d{2}$", ErrorMessage = "MERSİS numarası 16 haneli olmalı ve son 5 hanesi '000XX' formatında olmalıdır.")]
@@ -44,6 +48,8 @@ public class CompanyCreateVM
     [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "Uygun formatta giriniz!")]
     public string TaxOffice { get; set; }
     public string LogoUrl { get; set; }
+    [Required(ErrorMessage = "Logo boş geçilemez!")]
+
     public IFormFile Logo { get; set; }
     [MinLength(10, ErrorMessage ="Adres en az 10 karakterden oluşmalıdır.")]
     [Required(ErrorMessage = "Şirket adresi boş geçilemez!")]
@@ -52,6 +58,8 @@ public class CompanyCreateVM
     [Range(1, int.MaxValue, ErrorMessage = "En az 1 çalışan olmalıdır.")]
     [Required(ErrorMessage = "Çalışan sayısı boş geçilemez!")]
     public int EmployeesCount { get; set; }
+    [Required(ErrorMessage = "Kuruluş yılı boş geçilemez!")]
+
     public int EstablishmentYear { get; set; }
 
 }
