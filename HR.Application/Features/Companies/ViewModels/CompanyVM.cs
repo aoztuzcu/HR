@@ -12,6 +12,7 @@ namespace HR.Application.Features.Companies.ViewModels;
 
 public class CompanyVM
 {
+    public Guid Id { get; set; }
     [DisplayName("Şirket Adı")]
     public string Name { get; set; }
     public string Type { get; set; }
