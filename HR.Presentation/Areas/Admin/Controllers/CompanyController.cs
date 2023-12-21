@@ -84,6 +84,15 @@ public class CompanyController : Controller
         return View(result);
     }
     [HttpGet]
+    public async Task<IActionResult> CompanyDetail(Guid id)
+    {
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var user = await mediator.Send(query);
+        ViewBag.AdminProfilePicture = user.Photo;
+        var company = await mediator.Send( new GetCompanyByIdQuery() { Id = id });
+        return View(company);
+    }
+    [HttpGet]
     public async Task<IActionResult> CreateManager()
     {
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
