@@ -7,10 +7,10 @@
     .person-card {
         border: 1px solid #ddd;
         border-radius: 10px;
-        padding: 30px;
+        padding: 20px;
         background-color: #fff;
         text-align: center;
-        margin: 20px;
+        margin: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
@@ -130,11 +130,12 @@
                         <img src="~/photos/@item.Photo" alt="..."
                              class="rounded-circle img-fluid" style="width: 100px;">
 
-                    </div>
+                    </div
+                    <br />
+                    <br />
                     <div class="person-name">
                         <span>@item.Name.ToUpper() @(string.IsNullOrEmpty(item.SecondName) ? "" : item.SecondName.ToUpper()) @item.Surname.ToUpper()@(string.IsNullOrEmpty(item.SecondSurname) ? "" : item.SecondSurname.ToUpper())</span>
                     </div>
-
                     <div class="person-title">
                         <span>Pozisyon:</span>
                         <span>@item.Department.Name</span>
@@ -143,6 +144,7 @@
                         <span>Meslek:</span>
                         <span>@item.Job.Name</span>
                     </div>
+                    <br />
                     <div class="button-group">
                         <!-- Update Button -->
                         <a type="button" class="btn btn-primary" asp-action="PersonnelUpdateByManager" asp-controller="Manager" asp-route-id="@item.Id">Güncelle</a>
