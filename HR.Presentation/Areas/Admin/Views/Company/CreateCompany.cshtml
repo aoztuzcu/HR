@@ -119,10 +119,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="form-group">
-                        <label asp-for="TaxNo" class="control-label">Vergi Numarası</label>
-                        <input asp-for="TaxNo" class="form-control" />
-                        <span asp-validation-for="TaxNo" class="text-danger"></span>
+                        <label asp-for="MersisNo" class="control-label">Mersis Numarası</label>
+                        <input asp-for="MersisNo" class="form-control" id="MersisNo" />
+                        <span asp-validation-for="MersisNo" class="text-danger"></span>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TaxNo" class="control-label">Vergi Numarası</label>
+                    <input asp-for="TaxNo" class="form-control" id="TaxNo" />
+                    <span asp-validation-for="TaxNo" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
@@ -131,12 +136,7 @@
                     <span asp-validation-for="TaxOffice" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="MersisNo" class="control-label">Mersis Numarası</label>
-                    <input asp-for="MersisNo" class="form-control" />
-                    <span asp-validation-for="MersisNo" class="text-danger"></span>
-                </div>
-
+             
                 <div class="form-group">
                     <label asp-for="Address" class="control-label">Adres</label>
                     <input asp-for="Address" class="form-control" />
@@ -207,6 +207,37 @@
             // Geçerli dosya
             return true;
         }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // TaxNo input alanına bir input olay dinleyicisi ekle
+            $('#TaxNo').on('input click', function () {
+                // TaxNo input değerini al
+                var taxNoDegeri = $(this).val();
+                var mersisNoDegeri = $('#MersisNo').val();
+                // TaxNo'nun 10 karakterden uzun olup olmadığını kontrol et
+                if (taxNoDegeri.length == 10) {
+                    // TaxNo'dan gerekli kısmı (2. karakterden 11. kataktere kadar) çıkar
+                    var cikarilanKisim = mersisNoDegeri.substring(1, 11);
+
+                    // MersisNo'nun içinde çıkarılan kısım var mı diye kontrol et
+                    if (cikarilanKisim == taxNoDegeri) {
+                        // Geçerli, UI'yi buna göre güncelle
+                        $('#TaxNo').removeClass('input-validation-error');
+                        $('#TaxNo').next('.text-danger').text('');
+                    } else {
+                        // Geçersiz, hata mesajını göstermek için UI'yi güncelle
+                        $('#TaxNo').addClass('input-validation-error');
+                        $('#TaxNo').next('.text-danger').text('VVergi numarası MERSIS numarasına uygun değildir.');
+                    }
+                } else {
+                    // Eğer TaxNo 10 karakter değilse, doğrulamayı sıfırla
+                    $('#TaxNo').removeClass('input-validation-error');
+                    $('#TaxNo').next('.text-danger').text('Vergi Numarası 10 karakter olmalıdır.');
+                }
+            });
+        });
     </script>
 
 }

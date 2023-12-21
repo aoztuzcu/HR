@@ -38,6 +38,7 @@ public class CompanyCreateVM
 
     [VergiNoValidation("MersisNo", ErrorMessage = "Vergi numarası MERSIS numarasına uygun değildir.")]
     [Required(ErrorMessage = "Vergi Numarası boş geçilemez!")]
+    [MaxLength(10, ErrorMessage ="Vergi Numarası 10 rakamdan oluşmalıdır!")]
     public string TaxNo { get; set; }
     [Required(ErrorMessage = "Vergi Dairesi boş geçilemez!")]
     [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "Uygun formatta giriniz!")]
