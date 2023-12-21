@@ -117,7 +117,7 @@
     </div>
     <div class="row mt-2">
         <div class="col-md-12">
-            <input class="form-control" id="nameFilter" placeholder="Ad Giriniz" />
+            <input type="text" class="form-control" id="nameFilter" placeholder="Ad Giriniz" value="@ViewBag.Filter" />
         </div>
     </div>
     <div class="row mt-2 d-flex justify-content-center " id="personCardsContainer">
@@ -228,6 +228,8 @@
                         $(this).hide();
                     }
                 });
+
+                updatePager();
             });
 
             // Kartları sıralamak için kullanılan fonksiyon
@@ -242,11 +244,20 @@
                     return nameA.localeCompare(nameB);
                 });
 
-                // Sıralanmış kartları konteynere ekle
                 container.html(cards);
 
-                // Kartlara col-md-3 sınıfını ekle
                 cards.addClass("col-md-3");
+            }
+            function updatePager() {
+                var pageUrl = '@Url.Action("PersonnelList")' + '?page=' + '@Model.PageNumber';
+
+                var filter = $("#nameFilter").val();
+                if (filter) {
+                    pageUrl += '&filter=' + filter;
+                }
+                if (window.location.href !== pageUrl) {
+                    window.location.href = pageUrl;
+                }
             }
         });
     </script>
