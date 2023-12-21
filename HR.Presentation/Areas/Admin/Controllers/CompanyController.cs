@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HR.Application.Features.Companies.Commands.CreateCompany;
+using HR.Application.Features.Companies.Queries.GetAllCompany;
 using HR.Application.Features.Companies.Queries.GetManagerInCompany;
 using HR.Application.Features.Companies.ViewModels;
 using HR.Application.Features.People.Queries.GetlAllPerson;
@@ -27,10 +28,12 @@ public class CompanyController : Controller
         this.mapper = mapper;
     }
 
-    public IActionResult Index() //Şİrket listele
+    public async Task<IActionResult> Index() //Şİrket listele
     {
+     
+        var companies = await mediator.Send(new GetAllCompanyQuery());       
+        return View(companies);
 
-        return View();
     }
 
     [HttpGet]
@@ -39,7 +42,7 @@ public class CompanyController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult CreateCompany(CompanyCreateVM vm)
+    public async Task<IActionResult> CreateCompany(CompanyCreateVM vm)
     {
         if (vm.Logo != null)
         {
@@ -47,7 +50,7 @@ public class CompanyController : Controller
         }
 
         var command = mapper.Map<CreateCompanyCommand>(vm);
-        mediator.Send(command);
+       await mediator.Send(command);
         return View();
     }
     [HttpGet]

@@ -18,6 +18,14 @@ public class CreateCompanyCommandHandler : IRequestHandler<CreateCompanyCommand,
     public async Task<CreateCompanyCommand> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
     {
         var entity = mapper.Map<HR.Domain.Concrete.Company>(request);
+        if (entity.ContractEndDate > DateTime.Now && entity.ContractStartDate<DateTime.Now)
+        {
+            entity.IsActive = true;
+        }
+        else
+        {
+            entity.IsActive = false;
+        }
         var result = await repository.AddAsync(entity, cancellationToken);
         return mapper.Map<CreateCompanyCommand>(result);
     }

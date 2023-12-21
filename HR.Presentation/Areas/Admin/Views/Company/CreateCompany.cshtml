@@ -151,7 +151,7 @@
 
                 <div class="form-group">
                     <label asp-for="EstablishmentYear" class="control-label">Kuruluş Yılı</label>
-                    <input asp-for="EstablishmentYear" type="date" class="form-control" />
+                    <input asp-for="EstablishmentYear"  class="form-control" />
                     <span asp-validation-for="EstablishmentYear" class="text-danger"></span>
                 </div>
             
@@ -163,14 +163,15 @@
                 }
             </div>
         </div>
+        <div class="form-group">
+            <div class="text-center">
+                <input type="submit" value="Oluştur" class="btn btn-primary" HorizontalAlignment="Center" />
+            </div>
+        </div>
+
     </form>
 </div>
 
-<div class="form-group">
-    <div class="text-center">
-        <input type="submit" value="Oluştur" class="btn btn-primary" HorizontalAlignment="Center" />
-    </div>
-</div>
 
 
 @section Scripts {
