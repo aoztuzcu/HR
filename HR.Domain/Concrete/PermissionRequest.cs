@@ -16,7 +16,7 @@ public class PermissionRequest : BaseEntity
     public DateTime EndDate { get; set; }
     public float Days { get; set; }
     public ApprovalStatus ApprovalStatus { get; set; } = ApprovalStatus.ApprovalWaiting;
-    public DateTime ApprovedDate { get; set; }
+    public DateTime? ApprovedDate { get; set; }
     public Guid PermissionTypeId { get; set; }
     public Permissions? PermissionType { get; set; }
 }

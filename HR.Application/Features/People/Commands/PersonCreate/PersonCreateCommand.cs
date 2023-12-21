@@ -31,5 +31,6 @@ public class PersonCreateCommand : IRequest<PersonCreateCommand>
     public Guid JobId { get; set; }
     public Guid DepartmentId { get; set; }
     public string CompanyName { get; set; }
+    public Guid CompanyId { get; set; }
     public Guid UserId { get; set; }
 }

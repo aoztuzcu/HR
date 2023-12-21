@@ -31,7 +31,7 @@ public class ExpenditureApproveListVM
 
     [Display(Name = "Cevaplanma Tarihi")]
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-    public DateTime ApprovedDate { get; set; }
+    public DateTime? ApprovedDate { get; set; }
 
     [Display(Name = "Onay Durumu")]
     public ApprovalStatusVM ApprovalStatus { get; set; }
