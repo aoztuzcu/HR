@@ -50,7 +50,7 @@ public class CreatePermissionRequestCommandHandler : IRequestHandler<CreatePermi
         var permissionType = await permissionTypeRepository.Find(x => x.Name == "Yıllık İzin");
         var permissionRequestList = await repository.GetAllAsync(f => f.PersonnelId == personnelId &&
                                                                       f.ApprovalStatus != ApprovalStatus.Rejected && f.PermissionTypeId== permissionType.Id, cancellationToken);
-        var totalAnnualPermissionDaysCount = permissionRequestList.Where(x=>x.ApprovedDate.Year==DateTime.Now.Year).Sum(x => x.Days);
+        var totalAnnualPermissionDaysCount = permissionRequestList.Where(x=>x.ApprovedDate?.Year==DateTime.Now.Year).Sum(x => x.Days);
         return totalAnnualPermissionDaysCount;
     }
 

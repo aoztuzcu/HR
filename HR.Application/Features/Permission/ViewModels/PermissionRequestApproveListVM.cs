@@ -35,7 +35,7 @@ public class PermissionRequestApproveListVM
 
     [Display(Name = "Cevaplanma Tarihi")]
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-    public DateTime ApprovedDate { get; set; }
+    public DateTime? ApprovedDate { get; set; }
 
     public Guid PermissionTypeId { get; set; }
 

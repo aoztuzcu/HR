@@ -1,7 +1,9 @@
 ﻿using HR.Application.Exceptions;
+using HR.Application.Features.Companies.ViewModels;
 using HR.Application.Features.Departments.ViewModels;
 using HR.Application.Features.Jobs.ViewModels;
 using HR.Application.Features.People.ViewModels.Validations;
+using HR.Domain.Concrete;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
@@ -21,7 +23,7 @@ public class PersonCreateVM
     public string Name { get; set; }
 
     [StringLength(50, ErrorMessage = "İkinci Ad en fazla 50 karakter olmalıdır.")]
-    [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "İkinci Ad alanına sadece karakter girişi yapılabilir.")] 
+    [RegularExpression("^[a-zA-ZğüşıöçĞÜŞİÖÇ]+$", ErrorMessage = "İkinci Ad alanına sadece karakter girişi yapılabilir.")]
     public string? SecondName { get; set; }
 
     [Required(ErrorMessage = "Soyad zorunludur.")]
@@ -46,7 +48,7 @@ public class PersonCreateVM
     public GenderVM Gender { get; set; }
 
     [Required(ErrorMessage = "Maaş zorunludur.")]
-    [Range(11402.32,double.MaxValue, ErrorMessage = "Maaş alanına minimum asgari ücret miktarını girmelisiniz.")]
+    [Range(11402.32, double.MaxValue, ErrorMessage = "Maaş alanına minimum asgari ücret miktarını girmelisiniz.")]
     public decimal Salary { get; set; }
 
     [Required(ErrorMessage = "Fotoğraf zorunludur.")]
@@ -79,8 +81,14 @@ public class PersonCreateVM
 
     public IEnumerable<DepartmentVM>? Departments { get; set; }
 
-    [Required(ErrorMessage = "Şirket Adı zorunludur.")]
-    public string CompanyName { get; set; }
+
+    [Required(ErrorMessage = "Şirket zorunludur.")]
+    public Guid CompanyId { get; set; }
+
+    public IEnumerable<CompanyListVM>? Companies { get; set; }
+
+    //[Required(ErrorMessage = "Şirket Adı zorunludur.")]
+    public string? CompanyName { get;  set; }
 
     public Guid UserId { get; set; }
 }

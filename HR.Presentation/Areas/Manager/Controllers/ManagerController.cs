@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HR.Application.Contracts.Persistence.Services;
 using HR.Application.Features.AdvancePayments.ViewModels;
+using HR.Application.Features.Companies.Queries.GetAllCompany;
 using HR.Application.Features.Departments.Queries.GetAllDepartmens;
 using HR.Application.Features.Jobs.Queries.GetAllJobQuery;
 using HR.Application.Features.People.Commands.PersonCreate;
@@ -101,12 +102,16 @@ namespace HR.Presentation.Areas.Manager.Controllers
             var result = await mediator.Send(query);
             ViewBag.UserProfilePicture = result.Photo;
             ViewBag.UserProfileId = result.Id;
+            ViewBag.UserCompanyId = result.CompanyId;
 
-            GetAllDepartmenQuery departmenQuery = new GetAllDepartmenQuery();
-            GetAllJobQuery jobQuery = new GetAllJobQuery();
-            PersonCreateVM vm = new PersonCreateVM();
-            vm.Departments = await mediator.Send(departmenQuery);
-            vm.Jobs = await mediator.Send(jobQuery);
+            PersonCreateVM vm = new PersonCreateVM()
+            {
+                Companies = await mediator.Send(new GetAllCompanyQuery()),
+                Departments = await mediator.Send(new GetAllDepartmenQuery()),
+                Jobs = await mediator.Send(new GetAllJobQuery()),
+                CompanyId = result.CompanyId,
+            };
+            ViewBag.UserCompanyName = vm.Companies?.FirstOrDefault(f => f.Id == result.CompanyId)?.Name;
             return View(vm);
         }
         [HttpPost]
@@ -116,6 +121,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
             {
                 vm.Departments = await mediator.Send(new GetAllDepartmenQuery());
                 vm.Jobs = await mediator.Send(new GetAllJobQuery());
+                vm.Companies = await mediator.Send(new GetAllCompanyQuery());
                 return View(vm);
                 //throw new Exception("Model not correct");
             }

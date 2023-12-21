@@ -14,7 +14,7 @@ public class Expenditure : BaseEntity
     public decimal ExchangeAmount { get; set; }
     public CurrencyType CurrencyType { get; set; }
     public ApprovalStatus ApprovalStatus { get; set; } = ApprovalStatus.ApprovalWaiting;
-    public DateTime ApprovedDate { get; set; }
+    public DateTime? ApprovedDate { get; set; }
     public string? Document { get; set; }
 
     // Nav Property

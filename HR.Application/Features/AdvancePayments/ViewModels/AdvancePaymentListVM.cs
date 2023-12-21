@@ -27,6 +27,7 @@ public class AdvancePaymentListVM
     public ApprovalStatusVM ApprovalStatus { get; set; } = ApprovalStatusVM.ApprovalWaiting;
 
     [Display(Name = "Cevaplanma Tarihi")]
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
     public DateTime? ApprovalDate { get; set; }
 
     [Display(Name = "Açıklama")]

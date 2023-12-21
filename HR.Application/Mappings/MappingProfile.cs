@@ -35,6 +35,7 @@ public class MappingProfile : Profile
         CreateMap<Personnel, PersonUpdateCommand>().ReverseMap();
         CreateMap<PersonDetailVM, PersonUpdateCommand>().ReverseMap();
         CreateMap<Personnel, PersonVM>().ReverseMap();
+        
         CreateMap<Department, DepartmentVM>().ReverseMap();
         CreateMap<Job, JobVM>().ReverseMap();
 
@@ -67,19 +68,16 @@ public class MappingProfile : Profile
         CreateMap<PermissionRequest, PermissionRequestApproveListVM>().ReverseMap();
 
 
-
         CreateMap<PersonCreateVM, PersonCreateCommand>().ReverseMap();
         CreateMap<Personnel, PersonCreateCommand>().ReverseMap();
-
         CreateMap<PersonDetailVM, PersonUpdateByManagerVM>().ReverseMap();
         CreateMap<PersonUpdateByManagerCommand, PersonUpdateByManagerVM>().ReverseMap();
         CreateMap<PersonUpdateByManagerCommand, Personnel>().ReverseMap();
-
-
         CreateMap<Personnel, ManagerInCompaniesVM>().ReverseMap();
 
 
         CreateMap<Company, CompanyVM>().ReverseMap();
+        CreateMap<Company, CompanyListVM>().ReverseMap();
 
 
         //ViewModel Mappings
