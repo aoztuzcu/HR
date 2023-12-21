@@ -1,14 +1,20 @@
-﻿@model IEnumerable<PersonVM>
+﻿
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<PersonVM>
 
 <style>
     .person-card {
         border: 1px solid #ddd;
         border-radius: 10px;
-        padding: 20px;
+        padding: 30px;
         background-color: #fff;
         text-align: center;
-        margin: 10px;
+        margin: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
         .person-card a {
@@ -54,6 +60,53 @@
     #nameFilter {
         margin-top: 20px;
     }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px; 
+    }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+        .pagination li {
+            margin-right: 5px;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #007bff;
+            padding: 8px 12px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+            .pagination a:hover {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+        .pagination .active a {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+    .button-group {
+        margin-top: auto;
+    }
 </style>
 
 <div class="container">
@@ -70,7 +123,7 @@
     <div class="row mt-2 d-flex justify-content-center " id="personCardsContainer">
         @foreach (var item in Model)
         {
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <div class="person-card">
 
                     <div class="avatar">
@@ -90,16 +143,13 @@
                         <span>Meslek:</span>
                         <span>@item.Job.Name</span>
                     </div>
-                    <!-- Update Button -->
-                    <a type="button" class="btn btn-primary" asp-action="PersonnelUpdateByManager" asp-controller="Manager" asp-route-id="@item.Id">
-                        Güncelle
-                    </a>
+                    <div class="button-group">
+                        <!-- Update Button -->
+                        <a type="button" class="btn btn-primary" asp-action="PersonnelUpdateByManager" asp-controller="Manager" asp-route-id="@item.Id">Güncelle</a>
 
-                    <!-- Details Button -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal_@item.Id">
-                        Detay
-                    </button>
+                        <!-- Details Button -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_@item.Id">Detay</button>
+                    </div>
 
                     <div class="modal fade" id="exampleModal_@item.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -154,6 +204,8 @@
 
     </div>
 </div>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("PersonnelList",new {page}))
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
@@ -161,6 +213,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
+            // Sayfa yüklendiğinde kartları sırala
+            sortPersonCards();
+
             $("#nameFilter").on("input", function () {
                 var filterValue = $(this).val().toLowerCase();
                 $("#personCardsContainer .person-card").each(function () {
@@ -172,7 +227,25 @@
                     }
                 });
             });
+
+            // Kartları sıralamak için kullanılan fonksiyon
+            function sortPersonCards() {
+                var container = $("#personCardsContainer");
+                var cards = container.find(".person-card");
+
+                // Kartları sırala
+                cards.sort(function (a, b) {
+                    var nameA = $(a).find(".person-name span").text().toLowerCase();
+                    var nameB = $(b).find(".person-name span").text().toLowerCase();
+                    return nameA.localeCompare(nameB);
+                });
+
+                // Sıralanmış kartları konteynere ekle
+                container.html(cards);
+
+                // Kartlara col-md-3 sınıfını ekle
+                cards.addClass("col-md-3");
+            }
         });
     </script>
 }
-

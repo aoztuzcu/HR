@@ -15,7 +15,7 @@ using HR.Presentation.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-
+using X.PagedList;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PasswordGenerator;
@@ -82,7 +82,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
             return View(result);
         }
         [HttpGet]
-        public async Task<IActionResult> PersonnelList()
+        public async Task<IActionResult> PersonnelList(int page = 1)
         {
             // Navbar Sağ üst köşe giriş yapan kullanıcının profil resmi
             GetPersonByIdQuery queryPerson = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
@@ -92,7 +92,8 @@ namespace HR.Presentation.Areas.Manager.Controllers
 
             GetAllPersonQuery query = new GetAllPersonQuery();
             var result = await mediator.Send(query);
-            return View(result);
+            var pagination = result.ToPagedList(page, 8);
+            return View(pagination);
         }
         [HttpGet]
         public async Task<IActionResult> CreatePersonnel()
