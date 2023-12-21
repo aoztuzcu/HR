@@ -47,6 +47,9 @@ namespace HR.Presentation.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateAdmin(PersonUpdateCommand personUpdateCommand)
         {
+            GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+            var result = await mediator.Send(query);
+            ViewBag.AdminProfilePicture = result.Photo;
             if (personUpdateCommand.PhotoFile != null)
             {
                 personUpdateCommand.Photo = FileOperation.ReturnFileName(personUpdateCommand.PhotoFile, "photos",webHostEnvironment);
