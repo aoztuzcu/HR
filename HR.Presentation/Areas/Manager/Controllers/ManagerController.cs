@@ -82,7 +82,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
             return View(result);
         }
         [HttpGet]
-        public async Task<IActionResult> PersonnelList(int page = 1)
+        public async Task<IActionResult> PersonnelList(int page = 1, string filter = "")
         {
             // Navbar Sağ üst köşe giriş yapan kullanıcının profil resmi
             GetPersonByIdQuery queryPerson = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
@@ -92,7 +92,21 @@ namespace HR.Presentation.Areas.Manager.Controllers
 
             GetAllPersonQuery query = new GetAllPersonQuery();
             var result = await mediator.Send(query);
+
+            // Apply filtering if the filter parameter is provided
+            if (!string.IsNullOrEmpty(filter))
+            {
+                result = result.Where(p => p.Name.ToLower().Contains(filter.ToLower()) ||
+                                            p.Surname.ToLower().Contains(filter.ToLower()) ||
+                                            p.Department.Name.ToLower().Contains(filter.ToLower()))
+                               .ToList();
+            }
+
             var pagination = result.ToPagedList(page, 1);
+
+            // Add filter value to ViewBag for use in the view
+            ViewBag.Filter = filter;
+
             return View(pagination);
         }
         [HttpGet]
