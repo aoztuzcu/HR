@@ -56,7 +56,6 @@ namespace HR.Presentation.Areas.Manager.Controllers
 
         public async Task<IActionResult> UpdateManager()//Guid id)
         {
-
             GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
             var result = await mediator.Send(query);
             ViewBag.UserProfilePicture = result.Photo;
