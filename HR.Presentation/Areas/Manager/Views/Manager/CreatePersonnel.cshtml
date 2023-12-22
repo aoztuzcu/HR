@@ -1,7 +1,7 @@
 ﻿@model HR.Application.Features.People.ViewModels.PersonCreateVM
 
 @{
-    ViewData["Title"] = "Personel Ekle";
+    ViewData["Title"] = "Yeni Personel Kayıt";
 }
 <style>
     body {
@@ -16,7 +16,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
+    h2 {
         color: #764640;
     }
 
@@ -36,13 +36,18 @@
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
+        
     }
 
-        .btn-primary:hover {
+        .btn-primary:hover{
             /* background-color: #0056b3; */
             background-color: #dcb9ac;
         }
 
+        .btn-primary:click {
+            /* background-color: #0056b3; */
+            background-color: #dcb9ac;
+        }
     .btn-secondary {
         background-color: #6c757d;
         border: none;
@@ -65,7 +70,7 @@
         padding: 10px;
     }
 </style>
-<h1 class="text-center">Personel Ekle</h1>
+<h2 class="text-center">Yeni Personel Kayıt</h2>
 
 <div class="container">
     <form asp-action="CreatePersonnel" class="needs-validation" enctype="multipart/form-data" novalidate>
@@ -223,6 +228,9 @@
                 <input type="submit" value="Oluştur" class="btn btn-primary" HorizontalAlignment="Center" />
             </div>
         </div>
+        <div class="text-center mt-3">
+            <a asp-action="PersonnelList" asp-controller="Manager" asp-area="Manager" class="btn btn-primary">Personel Listesini Görüntüle</a>
+        </div>
 
     </form>
 </div>
@@ -230,9 +238,6 @@
 
 
 
-<div class="text-center mt-3">
-    <a asp-action="PersonnelList" asp-controller="Manager" asp-area="Manager" class="btn btn-secondary">Listeye Geri Dön</a>
-</div>
 
 
 @section Scripts {
