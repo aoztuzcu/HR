@@ -57,7 +57,7 @@
                     </a>*@
                     @*<a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Person"><img style=" width:200px " src="~/photos/Ekran görüntüsü 2023-11-27 205649.png" alt="logo" /></a>*@
                     @* <a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Manager"><img style="width:max-content;" src="~/photos/Ekran görüntüsü 2023-11-27 220712.png" alt="logo" /></a> *@
-                    <a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Manager"><img style="width: 100px; height: auto;" src="~/photos/Adsız tasarım (1).png" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Manager"><img style="width: 100px; height: auto;" src="~/photos/managerLayoutLogo.png" alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -201,14 +201,15 @@
             <!-- partial -->
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
-                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#c2bfd9">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#cabfbc">
+                    @* önceki renk c2bfd9 *@
                     @* denemelik #c2bfd9 #F2AFA0"> *@
                     @* orijinal style="background-color:#BFD9D7" *@
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" asp-action="Index" asp-controller="Manager">
-                                <i class="ti-shield menu-icon"></i>
-                                <span class="menu-title">Dashboard</span>
+                                <i class="ti-shield menu-icon" style="color:saddlebrown; font-weight:bold"></i>
+                                <span class="menu-title" style="color:saddlebrown; font-weight:bold">Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -216,28 +217,28 @@
                                 @*  <i class="ti-palette menu-icon"></i>
                                 <span class="menu-title">UI Elements</span>
                                 <i class="menu-arrow"></i>*@
-                                <i class="ti-palette menu-icon"></i>
-                                <span class="menu-title">Personel İşlemleri</span>
-                                <i class="menu-arrow"></i>
+                                <i class="ti-palette menu-icon" style="color:saddlebrown; font-weight:bold"></i>
+                                <span class="menu-title" style="color:saddlebrown; font-weight:bold">Personel İşlemleri</span>
+                                <i class="menu-arrow" style="color:saddlebrown; font-weight:bold"></i>
                             </a>
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" asp-action="CreatePersonnel" asp-controller="Manager">Personel Kayıt</a></li>
-                                    <li class="nav-item"> <a class="nav-link" asp-action="PersonnelList" asp-controller="Manager">Personelleri Listele</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="CreatePersonnel" asp-controller="Manager" style="color:saddlebrown">Personel Kayıt</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="PersonnelList" asp-controller="Manager" style="color:saddlebrown">Personelleri Listele</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                                <i class="ti-user menu-icon"></i>
-                                <span class="menu-title">Talep İşlemleri</span>
-                                <i class="menu-arrow"></i>
+                                <i class="ti-user menu-icon" style="color:saddlebrown; font-weight:bold"></i>
+                                <span class="menu-title" style="color:saddlebrown; font-weight:bold">Talep İşlemleri</span>
+                                <i class="menu-arrow" style="color:saddlebrown; font-weight:bold"></i>
                             </a>
                             <div class="collapse" id="auth">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" asp-action="PermissionRequestApprove" asp-controller="Request">İzin Talep Listesi </a></li>
-                                    <li class="nav-item"> <a class="nav-link" asp-action="AdvancePaymentRequestApprove" asp-controller="Request">Avans Talep Listesi</a></li>
-                                    <li class="nav-item"> <a class="nav-link" asp-action="ExpenditureRequestApprove" asp-controller="Request">Harcama Talep Listesi</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="PermissionRequestApprove" asp-controller="Request" style="color:saddlebrown">İzin Talep Listesi </a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="AdvancePaymentRequestApprove" asp-controller="Request" style="color:saddlebrown">Avans Talep Listesi</a></li>
+                                    <li class="nav-item"> <a class="nav-link" asp-action="ExpenditureRequestApprove" asp-controller="Request" style="color:saddlebrown">Harcama Talep Listesi</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -348,7 +349,7 @@
     <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     @* <script src="//cdn.datatables.net/rowgroup/1.4.1/js/dataTables.rowGroup.min.js"></script> *@
 
-       <!-- endinject -->
+    <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="js/dashboard.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
