@@ -1,94 +1,78 @@
 ﻿@using HR.Application.Features.Companies.ViewModels;
 @model IEnumerable<CompanyListVM>
-<style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        font-family: sans-serif;
-        font-size: 16px;
-    }
 
-    th, td {
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-
-    th {
-        background-color: #f0f0f0;
-    }
-
-    .logo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .company-name {
-        font-weight: bold;
-    }
-
-    .company-type,
-    .company-phone,
-    .company-email {
-        text-align: center;
-    }
-
-    .active-company {
-        background-color: #BDBDBD;
-    }
-
-    .passive-company {
-        background-color: #D32F2F;
-    }
-
-</style>
-<div class="container">
-    <h2>Aktif Şirketler</h2>
-    <table class="table table-bordered active-company" >
-        <thead>
-            <tr>
-                <th>Logo:</th>
-                <th>Ad:</th>
-                <th>Ünvan:</th>
-                <th>Telefon:</th>
-                <th>Mail Adresi:</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var company in Model.Where(x => x.IsActive).ToList())
-            {
-                <tr>
-                    <td class="logo"><img src="~/photos/@company.LogoUrl"></td>
-                    <td class="company-name">@company.Name</td>
-                    <td class="company-type">@company.Type</td>
-                    <td class="company-phone">@company.PhoneNumber</td>
-                    <td class="company-email">@company.Email</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <h2>Pasif Şirketler</h2>
-    <table class="table table-bordered passive-company">
-        <thead>
-            <tr>
-                <th>Logo:</th>
-                <th>Ad:</th>
-                <th>Ünvan:</th>
-                <th>Telefon:</th>
-                <th>Mail Adresi:</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var company in Model.Where(x => x.IsActive == false).ToList())
-            {
-                <tr>
-                    <td class="logo"><img src="~/photos/@company.LogoUrl"></td>
-                    <td class="company-name">@company.Name</td>
-                    <td class="company-type">@company.Type</td>
-                    <td class="company-phone">@company.PhoneNumber</td>
-                    <td class="company-email">@company.Email</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="btn-group btn-md mb-3">
+    <button type="button" class="btn btn-inverse-info" onclick="showCompanies('active-companies')">Aktif Şirketler</button>
+    <button type="button" class="btn btn-inverse-danger" onclick="showCompanies('passive-companies')">Pasif Şirketler</button>
 </div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-header">Aktif Şirketler</div>
+        <table class="table table-bordered active-companies" style="display: block;">
+            <thead>
+                <tr>
+                    <th>Logo:</th>
+                    <th>Ad:</th>
+                    <th>Ünvan:</th>
+                    <th>Telefon:</th>
+                    <th>Mail Adresi:</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var company in Model.Where(x => x.IsActive).ToList())
+                {
+                    <tr>
+                        <td class="logo"><img src="~/photos/@company.LogoUrl"></td>
+                        <td class="company-name">@company.Name</td>
+                        <td class="company-type">@company.Type</td>
+                        <td class="company-phone">@company.PhoneNumber</td>
+                        <td class="company-email">@company.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-header">Pasif Şirketler</div>
+        <table class="table table-bordered passive-companies" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Logo:</th>
+                    <th>Ad:</th>
+                    <th>Ünvan:</th>
+                    <th>Telefon:</th>
+                    <th>Mail Adresi:</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var company in Model.Where(x => x.IsActive == false).ToList())
+                {
+                    <tr>
+                        <td class="logo"><img src="~/photos/@company.LogoUrl"></td>
+                        <td class="company-name">@company.Name</td>
+                        <td class="company-type">@company.Type</td>
+                        <td class="company-phone">@company.PhoneNumber</td>
+                        <td class="company-email">@company.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        function showCompanies(type) {
+            const activeCompaniesTable = document.querySelector('.active-companies');
+            const passiveCompaniesTable = document.querySelector('.passive-companies');
+
+            activeCompaniesTable.style.display = type === 'active-companies' ? 'block' : 'none';
+            passiveCompaniesTable.style.display = type === 'passive-companies' ? 'block' : 'none';
+        }
+    </script>
+}
