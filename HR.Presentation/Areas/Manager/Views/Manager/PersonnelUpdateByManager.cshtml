@@ -16,8 +16,8 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
-        color: #007bff;
+    h2 {
+        color: #764640;
     }
 
     .form-group label {
@@ -30,7 +30,7 @@
     }
 
     .btn-primary {
-        background-color: #007bff;
+        background-color: #cabfbc;
         border: none;
         border-radius: 5px;
         padding: 10px 20px;
@@ -39,11 +39,11 @@
     }
 
         .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: #dcb9ac;
         }
 
     .btn-secondary {
-        background-color: #6c757d;
+        background-color: #cabfbc;
         border: none;
         border-radius: 5px;
         padding: 10px 20px;
@@ -52,7 +52,7 @@
     }
 
         .btn-secondary:hover {
-            background-color: #5a6268;
+            background-color: #dcb9ac;
         }
 
     .alert-danger {
@@ -64,7 +64,7 @@
         padding: 10px;
     }
 </style>
-<h1 class="text-center">Personel Bilgilerini Güncelle</h1>
+<h2 class="text-center">Personel Bilgilerini Güncelle</h2>
 
 <div class="container">
     <form asp-action="PersonnelUpdateByManager" class="needs-validation" enctype="multipart/form-data" novalidate>
@@ -215,17 +215,18 @@
                 }
             </div>
         </div>
+        <div class="form-group">
+            <div class="text-center">
+                <input type="submit" value="Kaydet" class="btn btn-primary" HorizontalAlignment="Center" />
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a asp-action="PersonnelList" asp-controller="Manager" asp-area="Manager" class="btn btn-secondary">Listeye Geri Dön</a>
+        </div>
     </form>
 </div>
 
-<div class="form-group">
-    <div class="text-center">
-        <input type="submit" value="Kaydet" class="btn btn-primary" HorizontalAlignment="Center" />
-    </div>
-</div>
-<div class="text-center mt-3">
-    <a asp-action="PersonnelList" asp-controller="Manager" asp-area="Manager" class="btn btn-secondary">Listeye Geri Dön</a>
-</div>
+
 
 
 @section Scripts {

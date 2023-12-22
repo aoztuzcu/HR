@@ -5,7 +5,17 @@
     ViewData["Title"] = "Şirket Yöneticisi - Anasayfa";
     Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
 }
+<style>
+   
+    .btn-secondary {
+        background-color: #cabfbc;
+       
+    }
 
+        .btn-secondary:hover {
+            background-color: #dcb9ac;
+        }
+</style>
 <section>
     <div class="container py-5">
         <div class="row">
@@ -19,7 +29,7 @@
                         <p class="text-muted mb-4">@Model.Department.Name</p>
                         <div class="d-flex justify-content-center mb-2">
                             <a asp-action="UpdateManager" asp-area="Manager" asp-controller="Manager" asp-route-id="@Model.Id" class="btn btn-secondary">Güncelle</a>
-                            <a asp-action="DetailManager" asp-area="Manager" asp-controller="Manager" asp-route-id="@Model.Id" class="btn btn-outline-secondary ms-1">Detay</a>
+                            <a asp-action="DetailManager" asp-area="Manager" asp-controller="Manager" asp-route-id="@Model.Id" class="btn btn-secondary ms-1">Detay</a>
                         </div>
                     </div>
                 </div>
