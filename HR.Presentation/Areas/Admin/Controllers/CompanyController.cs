@@ -46,15 +46,20 @@ public class CompanyController : Controller
 
     public async Task<IActionResult> Index() //Şİrket listele
     {
-
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var result = await mediator.Send(query);
+        ViewBag.AdminProfilePicture = result.Photo;
         var companies = await mediator.Send(new GetAllCompanyQuery());
         return View(companies);
-
     }
 
     [HttpGet]
-    public IActionResult CreateCompany()
+    public async Task<IActionResult> CreateCompany()
     {
+
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var result = await mediator.Send(query);
+        ViewBag.AdminProfilePicture = result.Photo;
         return View();
     }
     [HttpPost]
@@ -67,7 +72,7 @@ public class CompanyController : Controller
 
         var command = mapper.Map<CreateCompanyCommand>(vm);
         await mediator.Send(command);
-        return View();
+        return RedirectToAction("ListCompanyManagers", "Company");
     }
     [HttpGet]
     public async Task<IActionResult> ListCompanyManagers()
@@ -79,8 +84,20 @@ public class CompanyController : Controller
         return View(result);
     }
     [HttpGet]
+    public async Task<IActionResult> CompanyDetail(Guid id)
+    {
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var user = await mediator.Send(query);
+        ViewBag.AdminProfilePicture = user.Photo;
+        var company = await mediator.Send( new GetCompanyByIdQuery() { Id = id });
+        return View(company);
+    }
+    [HttpGet]
     public async Task<IActionResult> CreateManager()
     {
+        GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
+        var result = await mediator.Send(query);
+        ViewBag.AdminProfilePicture = result.Photo;
         PersonCreateVM vm = new PersonCreateVM()
         {
             Companies = await mediator.Send(new GetAllCompanyQuery()),
