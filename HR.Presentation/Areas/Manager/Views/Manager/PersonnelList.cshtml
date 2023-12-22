@@ -107,6 +107,15 @@
     .button-group {
         margin-top: auto;
     }
+      .custom-modal-column {
+    width: 50%;
+    padding: 0 10px; 
+    text-align: left;
+}
+
+.custom-modal-column p {
+    margin: 5px 0;
+}
 </style>
 
 <div class="container">
@@ -161,30 +170,36 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                 </div>
-                                <div class="container-fluid">
+                                  <div class="modal-body custom-modal-body">
                                     <div class="row">
                                         <!-- Sol Sütun -->
-                                        <div class="col-md-6">
-                                            <div class="modal-body">
+                                        <div class="custom-modal-column">
+                                           
                                                 <p><strong>Ad:</strong> @item.Name</p>
-                                                <p><strong>İkinci Ad:</strong> @(item.SecondName != null ? item.SecondName : "")</p>
+                                                @if (!string.IsNullOrEmpty(item.SecondSurname))
+                                                  {
+                                                <p><strong>İkinci Ad:</strong> @(item.SecondName ?? "")</p>
+                                                  }
                                                 <p><strong>Soyad:</strong> @item.Surname</p>
-                                                <p><strong>İkinci Soyad:</strong> @(item.SecondSurname != null ? item.SecondSurname : "")</p>
+                                               @if (!string.IsNullOrEmpty(item.SecondSurname))
+                                                  {
+                                                    <p><strong>İkinci Soyad:</strong> @item.SecondSurname</p>
+                                                  }
                                                 <p><strong>E-Posta:</strong> @item.EMail</p>
                                                 <p><strong>Maaş:</strong> @item.Salary</p>
-                                            </div>
+
                                         </div>
 
                                         <!-- Sağ Sütun -->
-                                        <div class="col-md-6">
-                                            <div class="modal-body">
+                                        <div class="custom-modal-column">
+                                            
                                                 <p><strong>Adres:</strong> @item.Address</p>
                                                 <p><strong>Telefon Numarası:</strong> @item.PhoneNumber</p>
                                                 <p><strong>İş:</strong> @item.Job.Name</p>
                                                 <p><strong>Departman:</strong> @item.Department.Name</p>
                                                 <p><strong>Cinsiyet:</strong> @Html.DisplayFor(modelItem => item.Gender)</p>
                                                 <span asp-validation-for="@item.Gender" class="text-danger"></span>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
