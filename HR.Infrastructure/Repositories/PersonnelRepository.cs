@@ -16,18 +16,25 @@ public class PersonnelRepository : BaseRepository<Personnel>, IPersonnelReposito
     {
     }
 
+    public async Task<IEnumerable<Personnel>> GetAllByCompanyIdIncludeAsync(Guid companyId)
+    {
+        var role = await context.Roles.FirstOrDefaultAsync(x => x.Name == "Personnel");
+        var rolemanager = context.UserRoles.Where(x => x.RoleId == role.Id).Select(x => x.UserId);
+        return await context.Personnels.Where(x => rolemanager.Contains(x.UserId) && x.CompanyId == companyId).Include(x => x.Department).Include(y => y.Job).ToListAsync();
+    }
+
     public async Task<IEnumerable<Personnel>> GetAllIncludeAsync()
     {
         var role = await context.Roles.FirstOrDefaultAsync(x => x.Name == "Personnel");
         var rolemanager = context.UserRoles.Where(x => x.RoleId == role.Id).Select(x => x.UserId);
-        return await context.Personnels.Where(x=>rolemanager.Contains(x.UserId)).Include(x => x.Department).Include(y => y.Job).ToListAsync();
+        return await context.Personnels.Where(x => rolemanager.Contains(x.UserId)).Include(x => x.Department).Include(y => y.Job).ToListAsync();
     }
 
     public async Task<IEnumerable<Personnel>> GetAllManagers()
     {
-       var role =await context.Roles.FirstOrDefaultAsync(x => x.Name == "Manager");
-       var rolemanager = context.UserRoles.Where(x =>x.RoleId==role.Id).Select(x=>x.UserId);
-       return await context.Personnels.Where(x=>rolemanager.Contains(x.UserId)).Include(x=>x.Company).ToListAsync();
+        var role = await context.Roles.FirstOrDefaultAsync(x => x.Name == "Manager");
+        var rolemanager = context.UserRoles.Where(x => x.RoleId == role.Id).Select(x => x.UserId);
+        return await context.Personnels.Where(x => rolemanager.Contains(x.UserId)).Include(x => x.Company).ToListAsync();
     }
 
     public async Task<Personnel> GetByIdAsync(Guid Id, CancellationToken token)

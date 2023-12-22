@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PasswordGenerator;
 using System.Security.Claims;
+using HR.Application.Features.People.Queries.GetAllPersonByCompanyId;
 
 namespace HR.Presentation.Areas.Manager.Controllers
 {
@@ -90,8 +91,8 @@ namespace HR.Presentation.Areas.Manager.Controllers
             ViewBag.UserProfilePicture = resultPerson.Photo;
             ViewBag.UserProfileId = resultPerson.Id;
 
-            GetAllPersonQuery query = new GetAllPersonQuery();
-            var result = await mediator.Send(query);
+            //GetAllPersonQuery query = new GetAllPersonQuery();
+            var result = await mediator.Send(new GetAllPersonByCompanyIdQuery() { CompanyId = resultPerson.CompanyId });
 
             // Apply filtering if the filter parameter is provided
             if (!string.IsNullOrEmpty(filter))
