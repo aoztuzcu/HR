@@ -6,10 +6,24 @@
     ViewData["Title"] = "İzin Talebi Oluştur";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    
+     .btn-primary {
+        background-color: #5D54A4;
+        border-color: mediumpurple;
+        color: black;
+    }
+
+        .btn-primary:hover {
+            background-color: mediumpurple;
+            border-color: mediumpurple;
+        }
+
+</style>
 <div class="col-lg-6 offset-lg-3 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">İzin Talebi Oluştur</h4>
+            <h4 class="card-title" style="color : #5D54A4;">İzin Talebi Oluştur</h4>
             <form asp-action="CreatePermissionRequest" class="forms-sample">
 
                 <div class="form-group" hidden>
