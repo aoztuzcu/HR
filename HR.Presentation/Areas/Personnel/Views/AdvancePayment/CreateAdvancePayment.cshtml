@@ -8,11 +8,34 @@
     ViewData["Title"] = "Avans Talebi Oluşturma";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
 
+    .btn-primary {
+        background-color: #5D54A4;
+        border-color: mediumpurple;
+        color: black;
+    }
+
+        .btn-primary:hover {
+            background-color: mediumpurple;
+            border-color: mediumpurple;
+        }
+
+    .btn-outline-primary {
+        border-color: mediumpurple;
+        color: #5D54A4;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: #5D54A4;
+            border-color: mediumpurple;
+            color: black;
+        }
+</style>
 <div class="col-lg-6 offset-lg-3 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Avans Talebi Oluştur</h4>
+            <h4 class="card-title" style="color : #5D54A4;">Avans Talebi Oluştur</h4>
             <form asp-action="CreateAdvancePayment" class="forms-sample">
 
                 <div class="form-group" hidden>
@@ -72,7 +95,7 @@
                 </div>
 
                 <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
-                <a asp-action="Index" class="btn btn-light">İptal</a>
+                <a asp-action="Index" class="btn btn-outline-primary">İptal</a>
 
             </form>
         </div>

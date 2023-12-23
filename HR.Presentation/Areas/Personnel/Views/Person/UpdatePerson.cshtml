@@ -5,6 +5,29 @@
     ViewData["Title"] = "UpdatePerson";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+
+    .btn-primary {
+        background-color: #5D54A4;
+        border-color: mediumpurple;
+        color: black;
+    }
+
+        .btn-primary:hover {
+            background-color: mediumpurple;
+            border-color: mediumpurple;
+        }
+
+    .btn-outline-primary{
+        border-color:mediumpurple;
+        color: #5D54A4;
+    }
+    .btn-outline-primary:hover{
+            background-color: #5D54A4;
+            border-color: mediumpurple;
+            color: black;
+    }
+</style>
 
 <section>
     <div class="container py-5">
@@ -28,7 +51,7 @@
             <div class="col-lg-8 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Kullanıcı Bilgileri Güncelle</h4>
+                        <h4 class="card-title" style="color : #5D54A4;">Kullanıcı Bilgileri Güncelle</h4>
                         <form class="forms-sample" asp-action="UpdatePerson" asp-controller="Person" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label asp-for="PhotoFile" class="control-label">Fotoğraf</label>
@@ -56,7 +79,7 @@
 
                             <div class="form-group">
                                 <input type="submit" value="Kaydet" class="btn btn-primary me-2" />
-                                <a asp-action="Index" class="btn btn-light">İptal</a>
+                                <a asp-action="Index" class="btn btn-outline-primary">İptal</a>
                             </div>
                         </form>
                     </div>
