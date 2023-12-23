@@ -25,6 +25,7 @@ using HR.Application.Features.AdvancePayments.Commands.ApproveAdvancePayment;
 using HR.Application.Features.AdvancePayments.Commands.RejectAdvancePayment;
 using HR.Application.Features.Companies.ViewModels;
 using HR.Application.Features.Companies.Commands.CreateCompany;
+using HR.Application.Features.Companies.Commands.UpdateCompany;
 
 namespace HR.Application.Mappings;
 
@@ -82,6 +83,10 @@ public class MappingProfile : Profile
         CreateMap<Company, CompanyCreateVM>().ReverseMap();
         CreateMap<CreateCompanyCommand, CompanyCreateVM>().ReverseMap();
         CreateMap<CreateCompanyCommand, Company>().ReverseMap();
+        CreateMap<CompanyVM, CompanyUpdateVM>().ReverseMap();
+
+        CreateMap<Company, UpdateCompanyCommand>().ReverseMap();
+        CreateMap<CompanyUpdateVM, UpdateCompanyCommand>().ReverseMap();
 
 
 
