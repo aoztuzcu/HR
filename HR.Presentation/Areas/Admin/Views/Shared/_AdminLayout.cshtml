@@ -49,7 +49,7 @@
                     </a>*@
                     @*<a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Person"><img style=" width:200px " src="~/photos/Ekran görüntüsü 2023-11-27 205649.png" alt="logo" /></a>*@
                     <a class="navbar-brand brand-logo-me-5" asp-action="Index" asp-controller="Admin">
-                        <img style="width: 100px; height: auto;" src="~/photos/adminLayoutLogo.png" alt="logo" />
+                        <img style="width: 100px; height: auto;" src="~/photos/adminLogoYeniRenk.png" alt="logo" />
                     </a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -191,12 +191,12 @@
             <!-- partial -->
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
-                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#6a75af">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#AA2C4A">
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" asp-action="Index" asp-controller="Admin">
-                                <i class="ti-shield menu-icon" style="color:#060644; font-weight:bold"></i>
-                                <span class="menu-title" style="color:#060644; font-weight:bold">Anasayfa</span>
+                                <i class="ti-shield menu-icon" style="color:#F489A3; font-weight:bold"></i>
+                                <span class="menu-title" style="color:#F489A3; font-weight:bold">Anasayfa</span>
                             </a>
                         </li>
 
@@ -205,28 +205,28 @@
                                 @* <i class="ti-palette menu-icon"></i>*@
                                 @* <span class="menu-title">UI Elements</span>
                                 <i class="menu-arrow"></i>*@
-                                <i class="ti-settings menu-icon" style="color:#060644; font-weight:bold"></i>
-                                <span class="menu-title" style="font-weight: bold; color:#060644">Hesap Ayarlarım</span>
-                                <i class="menu-arrow"></i>
+                                <i class="ti-settings menu-icon" style="color:#E596A9; font-weight:bold"></i>
+                                <span class="menu-title" style="font-weight: bold; color:#E596A9">Hesap Ayarlarım</span>
+                                <i class="menu-arrow" style="color:#AA2C4A"></i>
                             </a>
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu" style="color: #060644">
-                                    <li class="nav-item"> <a class="nav-link" style="color:#060644" asp-action="DetailAdmin" asp-controller="Admin">Kullanıcı Bilgilerim</a></li>
-                                    <li class="nav-item"> <a class="nav-link" style="color:#060644" asp-action="UpdateAdmin" asp-controller="Admin">Güncelle</a></li>
+                                    <li class="nav-item"> <a class="nav-link" style="color: black;" asp-action="DetailAdmin" asp-controller="Admin">Kullanıcı Bilgilerim</a></li>
+                                    <li class="nav-item"> <a class="nav-link" style="color:black;" asp-action="UpdateAdmin" asp-controller="Admin">Güncelle</a></li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                                <i class="ti-direction-alt menu-icon" style="color:#060644; font-weight:bold"></i>
-                                <span class="menu-title " style="font-weight: bold; color:#060644 ">Şirket İşlemleri</span>
-                                <i class="menu-arrow"></i>
+                                <i class="ti-direction-alt menu-icon" style="color:#F489A3; font-weight:bold"></i>
+                                <span class="menu-title " style="font-weight: bold; color:#F489A3">Şirket İşlemleri</span>
+                                <i class="menu-arrow" style="color:#AA2C4A"></i>
                             </a>
                             <div class="collapse" id="auth">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" asp-action="CreateCompany" asp-controller="Company" asp-area="Admin"> Şirket Ekle </a></li>
-                                    <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Company" asp-area="Admin"> Şirketler </a></li>
+                                    <li class="nav-item"> <a class="nav-link" style="color:black;" asp-action="CreateCompany" asp-controller="Company" asp-area="Admin"> Şirket Ekle </a></li>
+                                    <li class="nav-item"> <a class="nav-link" style="color:black;" asp-action="Index" asp-controller="Company" asp-area="Admin"> Şirketler </a></li>
 
 @*                                    <li class="nav-item"> <a class="nav-link" asp-action="CreateAdvancePayment" asp-controller="AdvancePayment"> Avans Talep </a></li>
                                     <li class="nav-item"> <a class="nav-link" asp-action="CreateExpenditure" asp-controller="Expenditure"> Harcama Talep </a></li>*@
@@ -236,14 +236,14 @@
 
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#companyManager" aria-expanded="false" aria-controls="companyManager">
-                                <i class="ti-user menu-icon" style="color:#060644; font-weight:bold"></i>
-                                <span class="menu-title " style="font-weight: bold; color:#060644">Şirket Yöneticisi İşlemleri</span>
-                                <i class="menu-arrow"></i>
+                                <i class="ti-user menu-icon" style="color:#F489A3; font-weight:bold"></i>
+                                <span class="menu-title " style="font-weight: bold; color:#F489A3">Yönetici İşlemleri</span>
+                                <i class="menu-arrow" style="color:#AA2C4A"></i>
                             </a>
                             <div class="collapse" id="companyManager">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" asp-action="CreateManager" asp-controller="Company" asp-area="Admin" style=" color:#060644"> Yönetici Ekle </a></li>
-                                    <li class="nav-item"> <a class="nav-link" asp-action="listCompanyManagers" asp-controller="Company" asp-area="Admin" style=" color:#060644"> Yöneticiler </a></li>
+                                    <li class="nav-item"> <a class="nav-link" style=" color:black;" asp-action="CreateManager" asp-controller="Company" asp-area="Admin"> Yönetici Ekle </a></li>
+                                    <li class="nav-item"> <a class="nav-link" style=" color:black;" asp-action="listCompanyManagers" asp-controller="Company" asp-area="Admin"> Yöneticiler </a></li>
                                     @*<li class="nav-item"> <a class="nav-link" asp-action="CreateExpenditure" asp-controller="Expenditure"> Harcama Talep </a></li>*@
                                 </ul>
                             </div>

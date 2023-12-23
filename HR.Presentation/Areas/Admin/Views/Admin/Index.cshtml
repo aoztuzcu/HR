@@ -5,7 +5,20 @@
     ViewData["Title"] = "Site Yöneticisi - Anasayfa";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+<style>
+ .btn-primary {
+        background-color: #AA2C4A;
+        border-color:#F489A3;
+        color: black;
 
+
+    }
+
+        .btn-primary:hover {
+            background-color: #F489A3;
+            border-color: #F489A3;
+        }
+</style>
 <section>
     <div class="container py-5">
         <div class="row">
@@ -19,7 +32,7 @@
                         <p class="text-muted mb-4">@Model.Department.Name</p>
                         <div class="d-flex justify-content-center mb-2">
                             <a asp-action="UpdateAdmin" asp-area="Admin" asp-controller="Admin" asp-route-id="@Model.Id" class="btn btn-primary">Güncelle</a>
-                            <a asp-action="DetailAdmin" asp-area="Admin" asp-controller="Admin" asp-route-id="@Model.Id" class="btn btn-outline-primary ms-1">Detay</a>
+                            <a asp-action="DetailAdmin" asp-area="Admin" asp-controller="Admin" asp-route-id="@Model.Id" class="btn btn-primary ms-1">Detay</a>
                         </div>
                     </div>
                 </div>
