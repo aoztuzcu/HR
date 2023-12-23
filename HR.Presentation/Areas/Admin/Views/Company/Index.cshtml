@@ -1,48 +1,28 @@
 ﻿@using HR.Application.Features.Companies.ViewModels;
 @model IEnumerable<CompanyListVM>
 
-<style>
-    .btn-primary {
-        background-color: #AA2C4A;
-        border-color: #F489A3;
-        color: black;
-    }
-
-        .btn-primary:hover {
-            background-color: #F489A3;
-            border-color: #F489A3;
-        }
-
-    .btn-success {
-        background-color: #F489A3;
-        border-color: #AA2C4A;
-        color: black;
-    }
-
-       .btn-success:hover {
-        background-color: #F489A3;
-            border-color: #AA2C4A;
-    }
-</style>
-<div class="btn-group btn-md mb-3">
-    <button type="button" class="btn btn-inverse-info" onclick="showCompanies('active-companies')">Aktif Şirketler</button>
-    <button type="button" class="btn btn-inverse-danger" onclick="showCompanies('passive-companies')">Pasif Şirketler</button>
-</div>
 
 <div class="col-lg-12 grid-margin stretch-card">
+
     <div class="card">
-        <div class="card-header">Aktif Şirketler</div>
-        <table class="table table-bordered active-companies" style="display: block;">
+
+        <div class="btn-group btn-md mb-3">
+            <button type="button" class="btn btn-inverse-info" onclick="showCompanies('active-companies')">Aktif Şirketler</button>
+            <button type="button" class="btn btn-inverse-danger" onclick="showCompanies('passive-companies')">Pasif Şirketler</button>
+        </div>
+        <div class="card-header" style="background-color:#6a75af">Aktif Şirketler </div>
+        <table class="table table-bordered active-companies table-responsive" id="myTable" style="max-width: 100%; border-collapse: collapse; border: 1px solid black;">
+
+
             <thead>
                 <tr>
-                    <th>Logo:</th>
-                    <th>Ad:</th>
-                    <th>Ünvan:</th>
-                    <th>Telefon:</th>
-                    <th>Mail Adresi:</th>
-                    <th></th>
-                    <th></th>
-
+                    <th width="auto">Logo:</th>
+                    <th width="auto">Ad:</th>
+                    <th width="auto">Ünvan:</th>
+                    <th width="auto">Telefon:</th>
+                    <th width="auto">Mail Adresi:</th>
+                    <th>Detay</th>
+                    <th>Güncelle</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,12 +34,8 @@
                         <td class="company-type">@company.Type</td>
                         <td class="company-phone">@company.PhoneNumber</td>
                         <td class="company-email">@company.Email</td>
-                        <td>
-                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-primary" >Detay</a>
-                        </td>
-                        <td>
-                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-success">Güncelle</a>
-                        </td>
+                        <td><a type="button" class="btn btn-info" asp-action="CompanyDetail" asp-controller="Company" asp-route-id="@company.Id">Detay</a></td>
+                        <td><a type="button" class="btn btn-primary" asp-action="CompanyUpdate" asp-controller="Company" asp-route-id="@company.Id">Güncelle</a></td>
                     </tr>
                 }
             </tbody>
@@ -69,8 +45,8 @@
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
-        <div class="card-header">Pasif Şirketler</div>
-        <table class="table table-bordered passive-companies" style="display: none;">
+        <div class="card-header" style="background-color:#ff4747">Pasif Şirketler</div>
+        <table class="table table-bordered passive-companies table-responsive" id="myTable2" style="max-width: 100%; border-collapse: collapse; border: 1px solid black;">
             <thead>
                 <tr>
                     <th>Logo:</th>
@@ -78,9 +54,8 @@
                     <th>Ünvan:</th>
                     <th>Telefon:</th>
                     <th>Mail Adresi:</th>
-                    <th></th>
-                    <th></th>
-
+                    <th>Detay</th>
+                    <th>Güncelle</th>
                 </tr>
             </thead>
             <tbody>
@@ -92,12 +67,8 @@
                         <td class="company-type">@company.Type</td>
                         <td class="company-phone">@company.PhoneNumber</td>
                         <td class="company-email">@company.Email</td>
-                        <td>
-                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-primary">Detay</a>
-                        </td>
-                        <td>
-                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-success">Güncelle</a>
-                        </td>
+                        <td><a type="button" class="btn btn-info" asp-action="CompanyDetail" asp-controller="Company" asp-route-id="@company.Id">Detay</a></td>
+                        <td><a type="button" class="btn btn-primary" asp-action="CompanyUpdate" asp-controller="Company" asp-route-id="@company.Id">Güncelle</a></td>
                     </tr>
                 }
             </tbody>
@@ -108,6 +79,27 @@
 
 @section Scripts {
     <script>
+
+
+        var table;
+
+
+        $(document).ready(function () {
+            table = $('#myTable').DataTable({
+                "language": {
+                    "url": '//cdn.datatables.net/plug-ins/1.13.7/i18n/tr.json',
+                }
+            });
+
+            var table2 = $('#myTable2').DataTable({
+                "language": {
+                    "url": '//cdn.datatables.net/plug-ins/1.13.7/i18n/tr.json',
+                }
+            });
+
+        });
+
+
         function showCompanies(type) {
             const activeCompaniesTable = document.querySelector('.active-companies');
             const passiveCompaniesTable = document.querySelector('.passive-companies');

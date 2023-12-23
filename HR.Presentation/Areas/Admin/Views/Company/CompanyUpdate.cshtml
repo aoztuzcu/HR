@@ -1,0 +1,144 @@
+﻿@model HR.Application.Features.Companies.ViewModels.CompanyUpdateVM
+
+@{
+	ViewData["Title"] = "Şirket Güncelleme";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+	}
+
+
+	.form-group {
+		margin-bottom: 15px;
+	}
+
+	.form-control {
+		border: 1px solid #ccc;
+		background-color: #fff;
+	}
+
+	.form-control:focus {
+			border: 1px solid #2196F3;
+			box-shadow: 0 0 5px rgba(33, 150, 243, 0.2);
+	}
+
+	.btn-primary {
+		background-color: #2196F3;
+		border-color: #2196F3;
+	}
+
+	.text-danger {
+		color: #dc3545;
+	}
+
+</style>
+
+<h3 class="text-center">Şirket Bilgilerini Güncelle </h3>
+
+<hr />
+<div class="container">
+	<form asp-action="CompanyUpdate" asp-controller="Company" asp-area="Admin" enctype="multipart/form-data">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="row">
+			<div class="col-md-6">
+
+
+				<input type="hidden" asp-for="LogoUrl" />
+				<div class="form-group " hidden>
+					<label asp-for="Id" class="control-label"></label>
+					<input asp-for="Id" class="form-control" />
+					<span asp-validation-for="Id" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Name" class="control-label"></label>
+					<input asp-for="Name" class="form-control" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Type" class="control-label"></label>
+					<input asp-for="Type" class="form-control" />
+					<span asp-validation-for="Type" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="PhoneNumber" class="control-label"></label>
+					<input asp-for="PhoneNumber" class="form-control" />
+					<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Email" class="control-label"></label>
+					<input asp-for="Email" class="form-control" />
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="ContractStartDate" class="control-label"></label>
+					<input asp-for="ContractStartDate" class="form-control" />
+					<span asp-validation-for="ContractStartDate" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="ContractEndDate" class="control-label"></label>
+					<input asp-for="ContractEndDate" class="form-control" />
+					<span asp-validation-for="ContractEndDate" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="MersisNo" class="control-label"></label>
+					<input asp-for="MersisNo" class="form-control" />
+					<span asp-validation-for="MersisNo" class="text-danger"></span>
+				</div>
+
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label asp-for="TaxNo" class="control-label"></label>
+					<input asp-for="TaxNo" class="form-control" />
+					<span asp-validation-for="TaxNo" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="TaxOffice" class="control-label"></label>
+					<input asp-for="TaxOffice" class="form-control" />
+					<span asp-validation-for="TaxOffice" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Logo" class="control-label"></label>
+					<input asp-for="Logo" class="form-control" />
+					<span asp-validation-for="Logo" class="text-danger"></span>
+
+				</div>
+				<div class="form-group">
+					<label asp-for="Address" class="control-label"></label>
+					<input asp-for="Address" class="form-control" />
+					<span asp-validation-for="Address" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="EmployeesCount" class="control-label"></label>
+					<input asp-for="EmployeesCount" class="form-control" />
+					<span asp-validation-for="EmployeesCount" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="EstablishmentYear" class="control-label"></label>
+					<input asp-for="EstablishmentYear" class="form-control" />
+					<span asp-validation-for="EstablishmentYear" class="text-danger"></span>
+				</div>
+			</div>
+
+		</div>
+		<div class="form-group">
+			<div class="text-center">
+				<input type="submit" value="Kaydet" class="btn btn-primary" HorizontalAlignment="Center" />
+			</div>
+		</div>
+		<div class="text-center mt-3">
+			<a asp-action="Index" asp-controller="Company" asp-area="Admin" class="btn btn-secondary">Listeye Geri Dön</a>
+		</div>
+	</form>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

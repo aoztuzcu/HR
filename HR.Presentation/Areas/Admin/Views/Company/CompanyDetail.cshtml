@@ -29,8 +29,8 @@
                              class="rounded-circle img-fluid" style="width: 150px;">
                         <h5 class="my-3">@Model.Name </h5>
                         <div class="d-flex justify-content-center mb-2">
-                            <a asp-action="UpdateAdmin" asp-controller="Admin" class="btn btn-primary">Güncelle</a>
-                            <a asp-action="Index" asp-controller="Company" asp-area="Admin" class="btn btn-primary ms-1"> Listeye Dön</a>
+                            <a asp-action="CompanyUpdate" asp-controller="Company" asp-area="Admin" asp-route-id="@Model.Id" class="btn btn-primary">Güncelle</a>
+                            <a asp-action="Index" asp-controller="Company" asp-area="Admin" class="btn btn-outline-primary ms-1"> Listeye Dön</a>
                         </div>
                     </div>
                 </div>

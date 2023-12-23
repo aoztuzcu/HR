@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HR.Application.Contracts.Persistence.Services;
 using HR.Application.Features.Companies.Commands.CreateCompany;
+using HR.Application.Features.Companies.Commands.UpdateCompany;
 using HR.Application.Features.Companies.Queries.GetAllCompany;
 using HR.Application.Features.Companies.Queries.GetCompanyById;
 using HR.Application.Features.Companies.Queries.GetManagerInCompany;
@@ -11,6 +12,7 @@ using HR.Application.Features.People.Commands.PersonCreate;
 using HR.Application.Features.People.Queries.GetlAllPerson;
 using HR.Application.Features.People.Queries.GetPerson;
 using HR.Application.Features.People.ViewModels;
+using HR.Domain.Concrete;
 using HR.Domain.Concrete.Identity;
 using HR.Presentation.Models;
 using MediatR;
@@ -89,7 +91,7 @@ public class CompanyController : Controller
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var user = await mediator.Send(query);
         ViewBag.AdminProfilePicture = user.Photo;
-        var company = await mediator.Send( new GetCompanyByIdQuery() { Id = id });
+        var company = await mediator.Send(new GetCompanyByIdQuery() { Id = id });
         return View(company);
     }
     [HttpGet]
@@ -166,4 +168,34 @@ public class CompanyController : Controller
             return View();
         }
     }
+    [HttpGet]
+    public async Task<IActionResult> CompanyUpdate(Guid id)
+    {
+        var result = await mediator.Send(new GetCompanyByIdQuery() { Id = id });
+        var companyUpdateVM=mapper.Map<CompanyUpdateVM>(result);    
+        ViewBag.CompanyLogoPicture = result.LogoUrl;
+        return View(companyUpdateVM);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CompanyUpdate(CompanyUpdateVM companyUpdateVM)
+    {
+        if (companyUpdateVM.Logo != null)
+        {
+
+            companyUpdateVM.LogoUrl = FileOperation.ReturnFileName(companyUpdateVM.Logo, "photos", webHostEnvironment);
+
+        }
+
+        var command = mapper.Map<UpdateCompanyCommand>(companyUpdateVM);
+        await mediator.Send(command);
+
+
+        return RedirectToAction("Index");
+    }
+
+
+
+
+
 }
