@@ -4,7 +4,20 @@
 @{
     ViewData["Title"] = "Detail";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
-}
+}<style>
+ .btn-primary {
+        background-color: #AA2C4A;
+        border-color:#F489A3;
+        color: black;
+
+
+    }
+
+        .btn-primary:hover {
+            background-color: #F489A3;
+            border-color: #F489A3;
+        }
+</style>
 
 <section>
     <div class="container py-5">
@@ -17,7 +30,7 @@
                         <h5 class="my-3">@Model.Name </h5>
                         <div class="d-flex justify-content-center mb-2">
                             <a asp-action="UpdateAdmin" asp-controller="Admin" class="btn btn-primary">Güncelle</a>
-                            <a asp-action="Index" asp-controller="Company" asp-area="Admin" class="btn btn-outline-primary ms-1"> Listeye Dön</a>
+                            <a asp-action="Index" asp-controller="Company" asp-area="Admin" class="btn btn-primary ms-1"> Listeye Dön</a>
                         </div>
                     </div>
                 </div>

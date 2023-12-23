@@ -1,6 +1,29 @@
 ﻿@using HR.Application.Features.Companies.ViewModels;
 @model IEnumerable<CompanyListVM>
 
+<style>
+    .btn-primary {
+        background-color: #AA2C4A;
+        border-color: #F489A3;
+        color: black;
+    }
+
+        .btn-primary:hover {
+            background-color: #F489A3;
+            border-color: #F489A3;
+        }
+
+    .btn-success {
+        background-color: #F489A3;
+        border-color: #AA2C4A;
+        color: black;
+    }
+
+       .btn-success:hover {
+        background-color: #F489A3;
+            border-color: #AA2C4A;
+    }
+</style>
 <div class="btn-group btn-md mb-3">
     <button type="button" class="btn btn-inverse-info" onclick="showCompanies('active-companies')">Aktif Şirketler</button>
     <button type="button" class="btn btn-inverse-danger" onclick="showCompanies('passive-companies')">Pasif Şirketler</button>
@@ -17,6 +40,9 @@
                     <th>Ünvan:</th>
                     <th>Telefon:</th>
                     <th>Mail Adresi:</th>
+                    <th></th>
+                    <th></th>
+
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +54,12 @@
                         <td class="company-type">@company.Type</td>
                         <td class="company-phone">@company.PhoneNumber</td>
                         <td class="company-email">@company.Email</td>
+                        <td>
+                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-primary" >Detay</a>
+                        </td>
+                        <td>
+                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-success">Güncelle</a>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -46,6 +78,9 @@
                     <th>Ünvan:</th>
                     <th>Telefon:</th>
                     <th>Mail Adresi:</th>
+                    <th></th>
+                    <th></th>
+
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +92,12 @@
                         <td class="company-type">@company.Type</td>
                         <td class="company-phone">@company.PhoneNumber</td>
                         <td class="company-email">@company.Email</td>
+                        <td>
+                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-primary">Detay</a>
+                        </td>
+                        <td>
+                            <a asp-area="Admin" asp-controller="Company" asp-route-id="@company.Id" asp-action="CompanyDetail" class="btn btn-success">Güncelle</a>
+                        </td>
                     </tr>
                 }
             </tbody>
