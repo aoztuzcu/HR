@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PasswordGenerator;
 using System.Security.Claims;
+using X.PagedList;
 
 namespace HR.Presentation.Areas.Admin.Controllers;
 
@@ -77,13 +78,25 @@ public class CompanyController : Controller
         return RedirectToAction("ListCompanyManagers", "Company");
     }
     [HttpGet]
-    public async Task<IActionResult> ListCompanyManagers()
+    public async Task<IActionResult> ListCompanyManagers(int page = 1, string filter = "")
     {
         GetPersonByIdQuery query = new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) };
         var user = await mediator.Send(query);
         ViewBag.AdminProfilePicture = user.Photo;
         var result = await mediator.Send(new GetManagerInCompanyQuery());
-        return View(result);
+        if (!string.IsNullOrEmpty(filter))
+        {
+            result = result.Where(p => p.Name.ToLower().Contains(filter.ToLower()) ||
+                                        p.Surname.ToLower().Contains(filter.ToLower()))
+                           .ToList();
+        }
+
+        var pagination = result.ToPagedList(page, 1);
+
+        // Add filter value to ViewBag for use in the view
+        ViewBag.Filter = filter;
+
+        return View(pagination);
     }
     [HttpGet]
     public async Task<IActionResult> CompanyDetail(Guid id)
