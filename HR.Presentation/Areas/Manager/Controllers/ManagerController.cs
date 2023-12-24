@@ -103,7 +103,7 @@ namespace HR.Presentation.Areas.Manager.Controllers
                                .ToList();
             }
 
-            var pagination = result.ToPagedList(page, 1);
+            var pagination = result.ToPagedList(page, 2);
 
             // Add filter value to ViewBag for use in the view
             ViewBag.Filter = filter;
@@ -197,7 +197,6 @@ namespace HR.Presentation.Areas.Manager.Controllers
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
-
                 return View();
             }
         }
@@ -205,6 +204,10 @@ namespace HR.Presentation.Areas.Manager.Controllers
         [HttpGet]
         public async Task<IActionResult> PersonnelUpdateByManager(Guid id)
         {
+            var logInPersonel = await mediator.Send(new GetPersonByIdQuery() { Id = Guid.Parse(HttpContext.Session.GetString("PersonnelId")) });
+            ViewBag.UserProfilePicture = logInPersonel.Photo;
+
+            // Güncellenecek personel 
             var result = await mediator.Send(new GetPersonByIdQuery() { Id = id });
             var updatePersonnelByManagerVM = mapper.Map<PersonUpdateByManagerVM>(result);
             updatePersonnelByManagerVM.Jobs = await mediator.Send(new GetAllJobQuery());

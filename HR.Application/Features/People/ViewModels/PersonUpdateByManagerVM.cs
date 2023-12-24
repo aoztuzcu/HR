@@ -83,6 +83,7 @@ public class PersonUpdateByManagerVM
 
     [Required(ErrorMessage = "Şirket Adı zorunludur.")]
     public string CompanyName { get; set; }
+    public Guid CompanyId { get; set; }
 
     [Required(ErrorMessage = "Maaş zorunludur.")]
     [Range(11402.32, double.MaxValue, ErrorMessage = "Maaş alanına minimum asgari ücret miktarını girmelisiniz.")]

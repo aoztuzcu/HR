@@ -26,6 +26,7 @@ public class PersonUpdateByManagerCommand : IRequest<PersonUpdateByManagerComman
     public Guid JobId { get; set; }
     public Guid DepartmentId { get; set; }
     public string CompanyName { get; set; }
+    public Guid CompanyId { get; set; }
     public decimal Salary { get; set; }
     public Guid UserId { get; set; }
     public Gender Gender { get; set; }

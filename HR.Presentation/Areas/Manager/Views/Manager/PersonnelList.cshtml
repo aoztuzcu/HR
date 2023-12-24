@@ -1,5 +1,4 @@
-﻿
-@using X.PagedList
+﻿@using X.PagedList
 @using X.PagedList.Mvc.Core
 @model IPagedList<PersonVM>
 
@@ -51,7 +50,7 @@
 
     h2 {
         text-align: center;
-        color: #764640; 
+        color: #764640;
         //font-weight: bold;
         margin-top: 20px;
         /* font-size: 28px; */
@@ -65,20 +64,19 @@
         display: flex;
         list-style: none;
         padding: 0;
-
     }
 
     .pagination-container {
         display: flex;
         justify-content: center;
-        margin-top: 100px; 
+        margin-top: 100px;
     }
 
     .pagination {
         display: flex;
         list-style: none;
         padding: 0;
-        color:black;
+        color: black;
     }
 
         .pagination li {
@@ -87,13 +85,12 @@
 
         .pagination a {
             text-decoration: none;
-           color: black;
+            color: black;
             padding: 8px 12px;
             border: 1px solid #dcb9ac;
             border-radius: 4px;
             background-color: #cabfbc;
             transition: background-color 0.3s ease;
-
         }
 
             .pagination a:hover {
@@ -109,18 +106,19 @@
     .button-group {
         margin-top: auto;
     }
-      .custom-modal-column {
-    width: 100%;
-    padding: 20px 20px; 
-    text-align: left;
-}
 
-.custom-modal-column p {
-    margin: 5px 20px;
-}
+    .custom-modal-column {
+        width: 100%;
+        padding: 20px 20px;
+        text-align: left;
+    }
+
+        .custom-modal-column p {
+            margin: 5px 20px;
+        }
+
     .btn-secondary {
         background-color: #cabfbc;
-       
     }
 
         .btn-secondary:hover {
@@ -144,16 +142,14 @@
         {
             <div class="col-md-3 ">
                 <div class="person-card">
-
                     <div class="avatar">
                         <img src="~/photos/@item.Photo" alt="..."
                              class="rounded-circle img-fluid" style="width: 100px;">
-
-                    </div
+                    </div>
                     <br />
                     <br />
                     <div class="person-name">
-                        <span>@item.Name.ToUpper() @(string.IsNullOrEmpty(item.SecondName) ? "" : item.SecondName.ToUpper()) @item.Surname.ToUpper()@(string.IsNullOrEmpty(item.SecondSurname) ? "" : item.SecondSurname.ToUpper())</span>
+                        <span>@item.Name.ToUpper() @(string.IsNullOrEmpty(item.SecondName) ? "" : item.SecondName.ToUpper()) @item.Surname.ToUpper() @(string.IsNullOrEmpty(item.SecondSurname) ? "" : item.SecondSurname.ToUpper())</span>
                     </div>
                     <div class="person-title">
                         <span>Pozisyon:</span>
@@ -180,33 +176,36 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                 </div>
-                                  <div class="modal-body custom-modal-body">
+                                <div class="modal-body custom-modal-body">
                                     <div class="row">
                                         <!-- Sol Sütun -->
                                         <div class="custom-modal-column">
-                                           
-                                                <p><strong>Ad:</strong> @item.Name</p>
-                                                @if (!string.IsNullOrEmpty(item.SecondSurname))
-                                                  {
-                                                <p><strong>İkinci Ad:</strong> @(item.SecondName ?? "")</p>
-                                                  }
-                                                <p><strong>Soyad:</strong> @item.Surname</p>
-                                               @if (!string.IsNullOrEmpty(item.SecondSurname))
-                                                  {
-                                                    <p><strong>İkinci Soyad:</strong> @item.SecondSurname</p>
-                                                  }
-                                                <p><strong>E-Posta:</strong> @item.EMail</p>
-                                                <p><strong>Maaş:</strong> @item.Salary TL</p>
 
-                                        
-                                            
-                                                <p><strong>Adres:</strong> @item.Address</p>
-                                                <p><strong>Telefon Numarası:</strong> @item.PhoneNumber</p>
-                                                <p><strong>İş:</strong> @item.Job.Name</p>
-                                                <p><strong>Departman:</strong> @item.Department.Name</p>
-                                                <p><strong>Cinsiyet:</strong> @Html.DisplayFor(modelItem => item.Gender)</p>
-                                                <span asp-validation-for="@item.Gender" class="text-danger"></span>
-                                           
+                                            <p><strong>Ad:</strong> @item.Name</p>
+
+                                            @if (!string.IsNullOrEmpty(item.SecondName))
+                                            {
+                                                <p><strong>İkinci Ad:</strong> @(item.SecondName ?? "")</p>
+                                            }
+
+                                            <p><strong>Soyad:</strong> @item.Surname</p>
+
+                                            @if (!string.IsNullOrEmpty(item.SecondSurname))
+                                            {
+                                                <p><strong>İkinci Soyad:</strong> @item.SecondSurname</p>
+                                            }
+                                            <p><strong>E-Posta:</strong> @item.EMail</p>
+                                            <p><strong>Maaş:</strong> @item.Salary TL</p>
+
+
+
+                                            <p><strong>Adres:</strong> @item.Address</p>
+                                            <p><strong>Telefon Numarası:</strong> @item.PhoneNumber</p>
+                                            <p><strong>İş:</strong> @item.Job.Name</p>
+                                            <p><strong>Departman:</strong> @item.Department.Name</p>
+                                            <p><strong>Cinsiyet:</strong> @Html.DisplayFor(modelItem => item.Gender)</p>
+                                            <span asp-validation-for="@item.Gender" class="text-danger"></span>
+
                                         </div>
                                     </div>
                                 </div>
@@ -228,7 +227,7 @@
 
     </div>
 </div>
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("PersonnelList",new {page}))
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("PersonnelList", new { page }))
 
 @section Scripts {
     @{
