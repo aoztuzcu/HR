@@ -94,18 +94,16 @@ namespace HR.Presentation.Areas.Manager.Controllers
             //GetAllPersonQuery query = new GetAllPersonQuery();
             var result = await mediator.Send(new GetAllPersonByCompanyIdQuery() { CompanyId = resultPerson.CompanyId });
 
-            // Apply filtering if the filter parameter is provided
+            
             if (!string.IsNullOrEmpty(filter))
             {
                 result = result.Where(p => p.Name.ToLower().Contains(filter.ToLower()) ||
-                                            p.Surname.ToLower().Contains(filter.ToLower()) ||
-                                            p.Department.Name.ToLower().Contains(filter.ToLower()))
-                               .ToList();
+                                           p.Surname.ToLower().Contains(filter.ToLower()))
+                              .ToList();
             }
 
-            var pagination = result.ToPagedList(page, 2);
+            var pagination = result.ToPagedList(page, 3);
 
-            // Add filter value to ViewBag for use in the view
             ViewBag.Filter = filter;
 
             return View(pagination);
