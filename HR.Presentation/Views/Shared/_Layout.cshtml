@@ -3,9 +3,9 @@
 @using HR.Presentation.Areas.Personnel;
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
-@{
+@* @{
     ViewData["Title"] = "Ana Sayfa";
-}
+} *@
 @using System.Security.Claims
 @using HR.Domain.Concrete;
 @{
@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]  İKİZLEME</title>
+    <title>@ViewData["Title"]</title>@* /* İKİZLEME */ *@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TestTemplate.styles.css" asp-append-version="true" />
@@ -172,11 +172,11 @@
                                 <img src="~/photos/@ViewBag.PersonnelProfilePicture" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item" asp-controller="Person" asp-action="Detail" asp-area="Personnel">
+                                <a class="dropdown-item nav-link" asp-controller="Person" asp-action="Detail" asp-area="Personnel">
                                     <i class="ti-user menu-icon text-warning"></i>
                         Kullanıcı Bilgilerim
                         </a>
-                         <a asp-controller="Login" asp-action="LogOut" asp-area="default" class="dropdown-item">
+                                <a class="dropdown-item nav-link" asp-controller="Login" asp-action="LogOut" asp-area="default">
                         <i class="ti-power-off text-danger"></i>Çıkış Yap </a>
                         </div>
                         </li>
