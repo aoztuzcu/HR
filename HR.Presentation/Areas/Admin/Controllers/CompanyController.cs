@@ -127,8 +127,8 @@ public class CompanyController : Controller
         var company = await mediator.Send(new GetCompanyByIdQuery() { Id = vm.CompanyId });
         vm.CompanyName = company.Name;
         //otomatik mail oluşturma 
-        //var email = CharacterFix.Fix(vm.Name) + "." + CharacterFix.Fix(vm.Surname) + "@bilgeadam.com";
-        var email = CharacterFix.Fix(vm.Name) + "." + CharacterFix.Fix(vm.Surname) + "@gmail.com";
+        var email = CharacterFix.Fix(vm.Name) + "." + CharacterFix.Fix(vm.Surname) + "@bilgeadam.com";
+        //var email = CharacterFix.Fix(vm.Name) + "." + CharacterFix.Fix(vm.Surname) + "@gmail.com";
         var existingUser = await userManager.FindByEmailAsync(email);
 
         if (existingUser != null)
@@ -167,8 +167,8 @@ public class CompanyController : Controller
             //mail gönderilicek
             var adminId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var admin = await userManager.FindByIdAsync(adminId.ToString());
-            await emailService.SendConfirmMail(recordUser.Email, password, $"{admin.Name} {admin.Surname}");
-            return RedirectToAction("Index", "Company");
+            await emailService.SendConfirmMailByAdmin(recordUser.Email, password, $"{admin.Name} {admin.Surname}");
+            return RedirectToAction("List", "Company");
         }
         else
         {

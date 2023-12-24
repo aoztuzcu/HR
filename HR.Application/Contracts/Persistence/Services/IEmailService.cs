@@ -9,4 +9,5 @@ namespace HR.Application.Contracts.Persistence.Services;
 public interface IEmailService
 {
     Task SendConfirmMail(string mailAddress,string sendPassword, string managerInfo);
+    Task SendConfirmMailByAdmin(string mailAddress, string sendPassword, string adminInfo);
 }
