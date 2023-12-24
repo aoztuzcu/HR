@@ -91,9 +91,8 @@ public class CompanyController : Controller
                            .ToList();
         }
 
-        var pagination = result.ToPagedList(page, 1);
+        var pagination = result.ToPagedList(page, 3);
 
-        // Add filter value to ViewBag for use in the view
         ViewBag.Filter = filter;
 
         return View(pagination);
