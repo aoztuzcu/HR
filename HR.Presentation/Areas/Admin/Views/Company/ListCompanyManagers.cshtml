@@ -1,4 +1,6 @@
-﻿@model IEnumerable<HR.Application.Features.Companies.ViewModels.ManagerInCompaniesVM>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<HR.Application.Features.Companies.ViewModels.ManagerInCompaniesVM>
 
 @{
     ViewData["Title"] = "ListCompanyManagers";
@@ -14,6 +16,9 @@
         text-align: center;
         margin: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
         .person-card a {
@@ -48,33 +53,82 @@
         color: #555;
     }
 
-    h3 {
+    h2 {
         text-align: center;
-        color: blue;
-        font-weight: bold;
+        color: #764640;
+        //font-weight: bold;
         margin-top: 20px;
-        font-size: 28px;
+        /* font-size: 28px; */
     }
 
     #nameFilter {
         margin-top: 20px;
     }
 
-    #personCardsContainer {
+    .pagination {
         display: flex;
-        flex-wrap: wrap;
-        align-items: stretch; /* This ensures all items have the same height */
-        justify-content: center; /* Center the items horizontally */
+        list-style: none;
+        padding: 0;
     }
 
-    .col-md-3 {
-        flex: 0 0 30%; /* Örnek: Genişliği artırmak için yüzdeyi artırabilirsiniz */
-        max-width: 30%; /* Maksimum genişliği artırabilirsiniz */
-        box-sizing: border-box;
-        margin-bottom: 20px;
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
     }
 
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
 
+        .pagination li {
+            margin-right: 5px;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #AA2C4A;
+            padding: 8px 12px;
+            border: 1px solid #F489A3;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+
+        }
+
+            .pagination a:hover {
+                background-color: #AA2C4A;
+                color: #fff;
+            }
+
+        .pagination .active a {
+            background-color: #AA2C4A;
+            color: #fff;
+        }
+
+    .button-group {
+        margin-top: auto;
+    }
+
+    .custom-modal-column {
+        width: 100%;
+        padding: 20px 20px;
+        text-align: left;
+    }
+
+        .custom-modal-column p {
+            margin: 5px 20px;
+        }
+
+    .btn-secondary {
+        background-color: #cabfbc;
+    }
+
+        .btn-secondary:hover {
+            background-color: #dcb9ac;
+        }
 </style>
 
 <div class="container">
@@ -85,7 +139,7 @@
     </div>
     <div class="row mt-2">
         <div class="col-md-12">
-            <input class="form-control" id="nameFilter" placeholder="Ad Giriniz" />
+            <input class="form-control" id="nameFilter" placeholder="Ad Giriniz" value="@ViewBag.Filter"/>
         </div>
     </div>
     <div class="row mt-2 d-flex justify-content-center " id="personCardsContainer">
@@ -114,6 +168,8 @@
         }
     </div>
 </div>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("ListCompanyManagers", new { page }))
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
@@ -121,6 +177,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
+            // Sayfa yüklendiğinde kartları sırala
+            sortPersonCards();
+
             $("#nameFilter").on("input", function () {
                 var filterValue = $(this).val().toLowerCase();
                 $("#personCardsContainer .person-card").each(function () {
@@ -131,9 +190,38 @@
                         $(this).hide();
                     }
                 });
+
+                updatePager();
             });
+
+            // Kartları sıralamak için kullanılan fonksiyon
+            function sortPersonCards() {
+                var container = $("#personCardsContainer");
+                var cards = container.find(".person-card");
+
+                // Kartları sırala
+                cards.sort(function (a, b) {
+                    var nameA = $(a).find(".person-name span").text().toLowerCase();
+                    var nameB = $(b).find(".person-name span").text().toLowerCase();
+                    return nameA.localeCompare(nameB);
+                });
+
+                container.html(cards);
+
+                cards.addClass("col-md-3");
+            }
+            function updatePager() {
+                var pageUrl = '@Url.Action("ListCompanyManagers")' + '?page=' + '@Model.PageNumber';
+
+                var filter = $("#nameFilter").val();
+                if (filter) {
+                    pageUrl += '&filter=' + filter;
+                }
+                if (window.location.href !== pageUrl) {
+                    window.location.href = pageUrl;
+                }
+            }
         });
     </script>
 }
-
 
