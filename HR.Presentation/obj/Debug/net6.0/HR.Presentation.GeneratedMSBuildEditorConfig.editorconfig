@@ -1,0 +1,185 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HR.Presentation
+build_property.RootNamespace = HR.Presentation
+build_property.ProjectDir = C:\Users\kadir\Desktop\HR\HR.Presentation\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\kadir\Desktop\HR\HR.Presentation
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Admin/DetailAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cRGV0YWlsQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Admin/UpdateAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cVXBkYXRlQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Company/CompanyDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tcGFueVxDb21wYW55RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Company/CompanyUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tcGFueVxDb21wYW55VXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Company/CreateCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tcGFueVxDcmVhdGVDb21wYW55LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Company/CreateManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tcGFueVxDcmVhdGVNYW5hZ2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Company/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tcGFueVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Company/ListCompanyManagers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tcGFueVxMaXN0Q29tcGFueU1hbmFnZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Manager/CreatePersonnel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xNYW5hZ2VyXENyZWF0ZVBlcnNvbm5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Manager/DetailManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xNYW5hZ2VyXERldGFpbE1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Manager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xNYW5hZ2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Manager/PersonnelList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xNYW5hZ2VyXFBlcnNvbm5lbExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Manager/PersonnelUpdateByManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xNYW5hZ2VyXFBlcnNvbm5lbFVwZGF0ZUJ5TWFuYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Manager/UpdateManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xNYW5hZ2VyXFVwZGF0ZU1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Request/AdvancePaymentRequestApprove.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xSZXF1ZXN0XEFkdmFuY2VQYXltZW50UmVxdWVzdEFwcHJvdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Request/ExpenditureRequestApprove.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xSZXF1ZXN0XEV4cGVuZGl0dXJlUmVxdWVzdEFwcHJvdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Request/PermissionRequestApprove.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xSZXF1ZXN0XFBlcm1pc3Npb25SZXF1ZXN0QXBwcm92ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/Shared/_ManagerLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xTaGFyZWRcX01hbmFnZXJMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Manager/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/AdvancePayment/CreateAdvancePayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEFkdmFuY2VQYXltZW50XENyZWF0ZUFkdmFuY2VQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/AdvancePayment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEFkdmFuY2VQYXltZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/Expenditure/CreateExpenditure.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEV4cGVuZGl0dXJlXENyZWF0ZUV4cGVuZGl0dXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/Expenditure/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEV4cGVuZGl0dXJlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/Permission/CreatePermissionRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFBlcm1pc3Npb25cQ3JlYXRlUGVybWlzc2lvblJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/Permission/GetAllPermissions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFBlcm1pc3Npb25cR2V0QWxsUGVybWlzc2lvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/Person/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFBlcnNvblxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/Person/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFBlcnNvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Areas/Personnel/Views/Person/UpdatePerson.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFBlcnNvblxVcGRhdGVQZXJzb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/Login/Login1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4xLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/Login/UpdatePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cVXBkYXRlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kadir/Desktop/HR/HR.Presentation/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-39vapjvizf

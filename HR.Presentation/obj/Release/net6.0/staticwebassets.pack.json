@@ -1,0 +1,1929 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\HR.Presentation.bundle.scp.css",
+      "PackagePath": "staticwebassets\\HR.Presentation.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\css\\LoginStyleSheet.css",
+      "PackagePath": "staticwebassets\\css\\LoginStyleSheet.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\css\\StyleSheet2.css",
+      "PackagePath": "staticwebassets\\css\\StyleSheet2.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\0aab0268-184b-4fab-a165-28b9c8b37440.jpg",
+      "PackagePath": "staticwebassets\\expenditureFile\\0aab0268-184b-4fab-a165-28b9c8b37440.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\0d4d04ae-923d-4ea1-856a-2aa156e7a5cb.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\0d4d04ae-923d-4ea1-856a-2aa156e7a5cb.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\162ea462-4ada-4963-95c0-b689ecc7ad00.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\162ea462-4ada-4963-95c0-b689ecc7ad00.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\21d4f79f-d24b-409b-9ae7-d24eba856b25.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\21d4f79f-d24b-409b-9ae7-d24eba856b25.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\26c33edb-91b4-46f1-8a5b-00e40db6cdcc.txt",
+      "PackagePath": "staticwebassets\\expenditureFile\\26c33edb-91b4-46f1-8a5b-00e40db6cdcc.txt"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\3014e9a1-5843-4a55-add3-4a2f4fb1c7e1.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\3014e9a1-5843-4a55-add3-4a2f4fb1c7e1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\365ead4e-6988-473e-ad3f-426b2cf0b53f.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\365ead4e-6988-473e-ad3f-426b2cf0b53f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\3782af4f-ed83-4cf4-9aa4-ea5fd804daeb.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\3782af4f-ed83-4cf4-9aa4-ea5fd804daeb.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\3a8ce11f-51c8-4a9e-a8ce-bc577c5a88ab.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\3a8ce11f-51c8-4a9e-a8ce-bc577c5a88ab.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\3bd1f04c-cabe-4257-86b8-72110e71d74c.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\3bd1f04c-cabe-4257-86b8-72110e71d74c.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\3ebd479a-6f84-4a22-b75e-22cb6e014493.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\3ebd479a-6f84-4a22-b75e-22cb6e014493.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\4b5e43ef-3cd2-4b9e-98ac-231b47bb19fe.jpg",
+      "PackagePath": "staticwebassets\\expenditureFile\\4b5e43ef-3cd2-4b9e-98ac-231b47bb19fe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\4e5943b4-f1dc-4689-a301-6b8db492ace2.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\4e5943b4-f1dc-4689-a301-6b8db492ace2.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\4ebe7ef4-d8e3-4409-9b19-f9599ae23559.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\4ebe7ef4-d8e3-4409-9b19-f9599ae23559.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\55b16858-9299-44d3-95a9-d153ab6aac3c.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\55b16858-9299-44d3-95a9-d153ab6aac3c.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\77aa0ffd-6892-4f95-809f-81c17239e15a.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\77aa0ffd-6892-4f95-809f-81c17239e15a.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\793b08b9-57d1-4eeb-b4aa-ac81f1db8048.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\793b08b9-57d1-4eeb-b4aa-ac81f1db8048.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\818d3d57-3346-4afc-8ac3-b00c98b8c5fe.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\818d3d57-3346-4afc-8ac3-b00c98b8c5fe.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\84f5e058-766a-4ffd-924b-ac792f6e833d.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\84f5e058-766a-4ffd-924b-ac792f6e833d.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\86fce3ce-3449-45d0-a3ec-026d79d30192.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\86fce3ce-3449-45d0-a3ec-026d79d30192.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\87d5f4b3-43d7-417b-9765-14116adad972.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\87d5f4b3-43d7-417b-9765-14116adad972.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\8c17dc64-8fe9-4220-b6a5-852bc49a077f.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\8c17dc64-8fe9-4220-b6a5-852bc49a077f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\990fde8b-d4cb-40b2-9f43-51b844eba16a.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\990fde8b-d4cb-40b2-9f43-51b844eba16a.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\Yeni Metin Belgesi.txt",
+      "PackagePath": "staticwebassets\\expenditureFile\\Yeni Metin Belgesi.txt"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\a13f279f-762e-4ed3-b8fc-a2ff5968a6f1.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\a13f279f-762e-4ed3-b8fc-a2ff5968a6f1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\a5d78b5d-ccc9-4043-a92e-2bf2de32568a.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\a5d78b5d-ccc9-4043-a92e-2bf2de32568a.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\a6f501e0-f9f9-45ca-84a9-56785013edd5.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\a6f501e0-f9f9-45ca-84a9-56785013edd5.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\a72edbe8-51d0-4391-b3c3-c29a4b3ab4d6.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\a72edbe8-51d0-4391-b3c3-c29a4b3ab4d6.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\a9afe8b6-4a36-4ca6-b858-b90af389a663.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\a9afe8b6-4a36-4ca6-b858-b90af389a663.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\aad4fa17-36c5-48bd-9853-7ab781f9e3bf.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\aad4fa17-36c5-48bd-9853-7ab781f9e3bf.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\ab1c0bc1-7922-40cc-987b-9d223016e36b.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\ab1c0bc1-7922-40cc-987b-9d223016e36b.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\abca495b-5f4d-4b24-92df-bc939cc9efd6.jpg",
+      "PackagePath": "staticwebassets\\expenditureFile\\abca495b-5f4d-4b24-92df-bc939cc9efd6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\abcfc6e0-d011-4297-acd9-ff3bf386d2c9.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\abcfc6e0-d011-4297-acd9-ff3bf386d2c9.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\acd50c9b-bdec-4e27-a5fd-818d0d28eb82.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\acd50c9b-bdec-4e27-a5fd-818d0d28eb82.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\b116c115-991e-4b00-8384-c88610047aea.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\b116c115-991e-4b00-8384-c88610047aea.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\b69cbb2d-2ef1-42c5-90ba-0babe53db3d4.jpg",
+      "PackagePath": "staticwebassets\\expenditureFile\\b69cbb2d-2ef1-42c5-90ba-0babe53db3d4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\b72ed632-9076-4bd0-a867-68c364384beb.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\b72ed632-9076-4bd0-a867-68c364384beb.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\bc28da7b-6fe2-4809-b122-238351e25e9c.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\bc28da7b-6fe2-4809-b122-238351e25e9c.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\bdbc55bd-92eb-4a41-949b-a267280e32cf.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\bdbc55bd-92eb-4a41-949b-a267280e32cf.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\c039033a-f3c4-4d18-a9c0-955e85496d8a.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\c039033a-f3c4-4d18-a9c0-955e85496d8a.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\c513adfe-b208-4a77-902c-71a647281b03.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\c513adfe-b208-4a77-902c-71a647281b03.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\c93ff8fb-cbb4-40a5-9edc-e9c3f623fe9b.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\c93ff8fb-cbb4-40a5-9edc-e9c3f623fe9b.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\c9f6c5a1-da44-45bd-a3bb-468c14c51fc6.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\c9f6c5a1-da44-45bd-a3bb-468c14c51fc6.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\cc3bf544-8f8e-4175-97d7-ef25a4d7d92b.png",
+      "PackagePath": "staticwebassets\\expenditureFile\\cc3bf544-8f8e-4175-97d7-ef25a4d7d92b.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\cf64e99c-bc6b-4708-9470-096ca5861f6b.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\cf64e99c-bc6b-4708-9470-096ca5861f6b.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\df764769-ee3d-4917-ac4e-79741e546c3b.docx",
+      "PackagePath": "staticwebassets\\expenditureFile\\df764769-ee3d-4917-ac4e-79741e546c3b.docx"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\e2298bdb-0103-4552-a5db-f2ec76b9f0af.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\e2298bdb-0103-4552-a5db-f2ec76b9f0af.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\e26904c7-6fb5-4a80-bcd5-282f4da82473.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\e26904c7-6fb5-4a80-bcd5-282f4da82473.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\e293c691-8b80-4e2d-9657-7f07b480c268.pdf",
+      "PackagePath": "staticwebassets\\expenditureFile\\e293c691-8b80-4e2d-9657-7f07b480c268.pdf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\ec4fa71d-294f-463d-8abb-6d6ac8d1aa60.docx",
+      "PackagePath": "staticwebassets\\expenditureFile\\ec4fa71d-294f-463d-8abb-6d6ac8d1aa60.docx"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\f9625e1d-64d6-469e-aae0-28ad16d07207.jpg",
+      "PackagePath": "staticwebassets\\expenditureFile\\f9625e1d-64d6-469e-aae0-28ad16d07207.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\expenditureFile\\fd3076bb-e168-42a6-acfd-2ab795357794.jpg",
+      "PackagePath": "staticwebassets\\expenditureFile\\fd3076bb-e168-42a6-acfd-2ab795357794.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\additional-methods.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\jquery-validation-sri.json",
+      "PackagePath": "staticwebassets\\jquery-validate\\jquery-validation-sri.json"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ar.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ar.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ar.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_az.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_az.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_az.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_az.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_bg.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_bg.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_bg.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_bg.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_bn_BD.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_bn_BD.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_bn_BD.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_bn_BD.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ca.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ca.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ca.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ca.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_cs.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_cs.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_cs.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_cs.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_da.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_da.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_da.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_da.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_de.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_de.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_de.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_de.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_el.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_el.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_el.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_el.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_es.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_es.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_es.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_es.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_es_AR.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_es_AR.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_es_AR.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_es_AR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_es_PE.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_es_PE.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_es_PE.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_es_PE.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_et.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_et.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_et.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_et.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_eu.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_eu.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_eu.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_eu.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_fa.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_fa.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_fa.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_fa.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_fi.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_fi.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_fi.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_fi.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_fr.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_fr.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_fr.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_fr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ge.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ge.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ge.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ge.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_gl.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_gl.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_gl.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_gl.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_he.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_he.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_he.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_he.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hi.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hi.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hi.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hi.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hr.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hr.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hr.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hu.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hu.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hu.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hu.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hy_AM.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hy_AM.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_hy_AM.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_hy_AM.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_id.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_id.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_id.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_id.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_is.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_is.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_is.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_is.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_it.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_it.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_it.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_it.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ja.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ja.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ja.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ja.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ka.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ka.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ka.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ka.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_kk.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_kk.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_kk.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_kk.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ko.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ko.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ko.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ko.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_lt.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_lt.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_lt.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_lt.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_lv.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_lv.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_lv.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_lv.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_mk.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_mk.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_mk.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_mk.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_my.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_my.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_my.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_my.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_nl.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_nl.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_nl.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_nl.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_no.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_no.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_no.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_no.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_pl.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_pl.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_pl.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_pl.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_pt_BR.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_pt_BR.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_pt_BR.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_pt_BR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_pt_PT.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_pt_PT.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_pt_PT.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_pt_PT.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ro.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ro.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ro.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ro.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ru.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ru.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ru.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ru.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sd.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sd.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sd.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_si.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_si.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_si.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_si.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sk.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sk.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sk.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sk.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sl.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sl.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sl.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sl.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sr.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sr.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sr.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sr_lat.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sr_lat.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sr_lat.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sr_lat.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sv.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sv.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_sv.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_sv.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_th.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_th.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_th.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_th.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_tj.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_tj.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_tj.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_tj.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_tr.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_tr.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_tr.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_tr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_uk.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_uk.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_uk.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_uk.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ur.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ur.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_ur.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_ur.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_vi.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_vi.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_vi.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_vi.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_zh.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_zh.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_zh.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_zh.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_zh_TW.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_zh_TW.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\messages_zh_TW.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\messages_zh_TW.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_de.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_de.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_de.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_de.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_es_CL.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_es_CL.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_es_CL.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_es_CL.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_fi.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_fi.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_fi.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_fi.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_it.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_it.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_it.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_it.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_nl.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_nl.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_nl.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_nl.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_pt.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_pt.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validate\\localization\\methods_pt.min.js",
+      "PackagePath": "staticwebassets\\jquery-validate\\localization\\methods_pt.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\jquery\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\js\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\js\\MinDateTime.js",
+      "PackagePath": "staticwebassets\\js\\MinDateTime.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\022f7e21-cc78-4a7e-9a23-bab755d3b547.png",
+      "PackagePath": "staticwebassets\\photos\\022f7e21-cc78-4a7e-9a23-bab755d3b547.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\0c244161-7c4b-4665-92a5-5322838ff4b2.png",
+      "PackagePath": "staticwebassets\\photos\\0c244161-7c4b-4665-92a5-5322838ff4b2.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\1035f4e3-81cd-4533-98d2-d065012cdb7a.png",
+      "PackagePath": "staticwebassets\\photos\\1035f4e3-81cd-4533-98d2-d065012cdb7a.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\15f226c8-9ba4-46f6-9760-bba454f2fa75.png",
+      "PackagePath": "staticwebassets\\photos\\15f226c8-9ba4-46f6-9760-bba454f2fa75.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\16b13c95-38f1-4f47-9743-0eac04610b03.png",
+      "PackagePath": "staticwebassets\\photos\\16b13c95-38f1-4f47-9743-0eac04610b03.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\1a606d4b-4f99-4390-b2d7-06ba475acf42.png",
+      "PackagePath": "staticwebassets\\photos\\1a606d4b-4f99-4390-b2d7-06ba475acf42.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\1f6252ed-25c5-4a16-b774-85e07e7c817c.png",
+      "PackagePath": "staticwebassets\\photos\\1f6252ed-25c5-4a16-b774-85e07e7c817c.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\3418ad23-1a61-4cd9-a030-b8f3cc225834.png",
+      "PackagePath": "staticwebassets\\photos\\3418ad23-1a61-4cd9-a030-b8f3cc225834.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\3e0a5c71-bc78-435c-be59-ca101022511b.png",
+      "PackagePath": "staticwebassets\\photos\\3e0a5c71-bc78-435c-be59-ca101022511b.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\3e50825f-ca99-4021-8fed-56bb268a22a4.png",
+      "PackagePath": "staticwebassets\\photos\\3e50825f-ca99-4021-8fed-56bb268a22a4.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\41db263f-fbed-4847-be1e-51eaf958ff80.png",
+      "PackagePath": "staticwebassets\\photos\\41db263f-fbed-4847-be1e-51eaf958ff80.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\45fde256-8afc-4487-a3cb-d45c6933a9db.jpg",
+      "PackagePath": "staticwebassets\\photos\\45fde256-8afc-4487-a3cb-d45c6933a9db.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\48f9a8cb-23f0-4eae-beb9-0b35eb808275.png",
+      "PackagePath": "staticwebassets\\photos\\48f9a8cb-23f0-4eae-beb9-0b35eb808275.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\4a5f3a8f-8481-4abd-9643-7f04a48fb47f.png",
+      "PackagePath": "staticwebassets\\photos\\4a5f3a8f-8481-4abd-9643-7f04a48fb47f.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\51e7dc7c-6183-42ff-ae96-7b345853359b.png",
+      "PackagePath": "staticwebassets\\photos\\51e7dc7c-6183-42ff-ae96-7b345853359b.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\53987a70-b8f6-48e0-ae02-29b5312001c0.jpg",
+      "PackagePath": "staticwebassets\\photos\\53987a70-b8f6-48e0-ae02-29b5312001c0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\589b5164-3057-4a48-8f64-3db61c6bc16c.png",
+      "PackagePath": "staticwebassets\\photos\\589b5164-3057-4a48-8f64-3db61c6bc16c.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\592123aa-e850-41fb-8a06-efcae027bc37.png",
+      "PackagePath": "staticwebassets\\photos\\592123aa-e850-41fb-8a06-efcae027bc37.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\5d5c86d7-1c91-4c4a-9f46-611c8136b33c.png",
+      "PackagePath": "staticwebassets\\photos\\5d5c86d7-1c91-4c4a-9f46-611c8136b33c.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\60111.jpg",
+      "PackagePath": "staticwebassets\\photos\\60111.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\62d92ab2-b740-4f96-a7d2-ebe62dcc0666.png",
+      "PackagePath": "staticwebassets\\photos\\62d92ab2-b740-4f96-a7d2-ebe62dcc0666.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\62e76eb8-59ac-4d68-bca8-fe419ad9a2c9.png",
+      "PackagePath": "staticwebassets\\photos\\62e76eb8-59ac-4d68-bca8-fe419ad9a2c9.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\647f7ca9-a1f5-4c1d-af05-4833d0fcf1c6.png",
+      "PackagePath": "staticwebassets\\photos\\647f7ca9-a1f5-4c1d-af05-4833d0fcf1c6.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\66a11181-aea7-44b7-a5f1-bcdcadb181bb.png",
+      "PackagePath": "staticwebassets\\photos\\66a11181-aea7-44b7-a5f1-bcdcadb181bb.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\698dc828-dba0-4735-b20f-f7c4816b5dc8.png",
+      "PackagePath": "staticwebassets\\photos\\698dc828-dba0-4735-b20f-f7c4816b5dc8.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\6bca9ac1-4f8e-4c4e-9802-e4f62b10aa69.jpg",
+      "PackagePath": "staticwebassets\\photos\\6bca9ac1-4f8e-4c4e-9802-e4f62b10aa69.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\6cc36611-a771-4c9d-a8e4-d7db8391b888.png",
+      "PackagePath": "staticwebassets\\photos\\6cc36611-a771-4c9d-a8e4-d7db8391b888.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\6e3999b5-759e-4189-9d60-86b5cbd4d0b6.png",
+      "PackagePath": "staticwebassets\\photos\\6e3999b5-759e-4189-9d60-86b5cbd4d0b6.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\74c64d99-5a84-46fd-9288-4854a9f40bdb.png",
+      "PackagePath": "staticwebassets\\photos\\74c64d99-5a84-46fd-9288-4854a9f40bdb.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\75077e82-e218-471d-8770-2b6c423332da.png",
+      "PackagePath": "staticwebassets\\photos\\75077e82-e218-471d-8770-2b6c423332da.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\79769a50-ce19-4836-a23c-942a1fe1086e.png",
+      "PackagePath": "staticwebassets\\photos\\79769a50-ce19-4836-a23c-942a1fe1086e.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\7bb62eed-b06b-44e8-a67f-857c1152e1f1.png",
+      "PackagePath": "staticwebassets\\photos\\7bb62eed-b06b-44e8-a67f-857c1152e1f1.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\7db74c58-ecd9-4fe5-8ce5-0e09d1fa29d0.png",
+      "PackagePath": "staticwebassets\\photos\\7db74c58-ecd9-4fe5-8ce5-0e09d1fa29d0.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\8676498c-6cae-409f-a44d-ff1b15730385.png",
+      "PackagePath": "staticwebassets\\photos\\8676498c-6cae-409f-a44d-ff1b15730385.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\8efd9530-f4b5-45c7-b36a-1f5004a48a17.png",
+      "PackagePath": "staticwebassets\\photos\\8efd9530-f4b5-45c7-b36a-1f5004a48a17.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\916fa28a-2787-47b2-b2dc-fc4a1001552a.jpg",
+      "PackagePath": "staticwebassets\\photos\\916fa28a-2787-47b2-b2dc-fc4a1001552a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\9d07c173-e3c3-4869-ac7e-22a879f26abf.png",
+      "PackagePath": "staticwebassets\\photos\\9d07c173-e3c3-4869-ac7e-22a879f26abf.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\Adsız tasarım (1).png",
+      "PackagePath": "staticwebassets\\photos\\Adsız tasarım (1).png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\Adsız tasarım.png",
+      "PackagePath": "staticwebassets\\photos\\Adsız tasarım.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\Ekran görüntüsü 2023-11-27 220712.png",
+      "PackagePath": "staticwebassets\\photos\\Ekran görüntüsü 2023-11-27 220712.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\aca92438-e538-416a-b656-79fa312f8edb.jpg",
+      "PackagePath": "staticwebassets\\photos\\aca92438-e538-416a-b656-79fa312f8edb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\adminLayoutLogo.png",
+      "PackagePath": "staticwebassets\\photos\\adminLayoutLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\adminLogoYeniRenk.png",
+      "PackagePath": "staticwebassets\\photos\\adminLogoYeniRenk.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\b633d92c-52fc-4eb0-b93e-f1b7cbce04c1.png",
+      "PackagePath": "staticwebassets\\photos\\b633d92c-52fc-4eb0-b93e-f1b7cbce04c1.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\bf89861f-d25d-4e60-bcb7-337e18fe7cb6.png",
+      "PackagePath": "staticwebassets\\photos\\bf89861f-d25d-4e60-bcb7-337e18fe7cb6.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\bf9c960c-2e99-4c66-8a1c-628b002b2245.png",
+      "PackagePath": "staticwebassets\\photos\\bf9c960c-2e99-4c66-8a1c-628b002b2245.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\c0a49bda-d71b-495e-8a89-9b4c1e787b3d.jpg",
+      "PackagePath": "staticwebassets\\photos\\c0a49bda-d71b-495e-8a89-9b4c1e787b3d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\c29731c7-6c16-458f-9822-ed8d689643e1.png",
+      "PackagePath": "staticwebassets\\photos\\c29731c7-6c16-458f-9822-ed8d689643e1.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\c357ca64-036a-48ad-998c-a92d2224e062.png",
+      "PackagePath": "staticwebassets\\photos\\c357ca64-036a-48ad-998c-a92d2224e062.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\cf349b49-89aa-4ed3-b0d3-85a142948fb8.png",
+      "PackagePath": "staticwebassets\\photos\\cf349b49-89aa-4ed3-b0d3-85a142948fb8.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\d393bd09-bc1f-4660-a927-a11c7d8ab9dc.png",
+      "PackagePath": "staticwebassets\\photos\\d393bd09-bc1f-4660-a927-a11c7d8ab9dc.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\d71e216b-fb39-4cf4-a92e-dc1b3498ca83.png",
+      "PackagePath": "staticwebassets\\photos\\d71e216b-fb39-4cf4-a92e-dc1b3498ca83.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\dd1727cb-f665-4a96-afa7-e018e68bb08f.png",
+      "PackagePath": "staticwebassets\\photos\\dd1727cb-f665-4a96-afa7-e018e68bb08f.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\e2b92e19-bb5f-4d1d-a64c-599c05c1d9e0.png",
+      "PackagePath": "staticwebassets\\photos\\e2b92e19-bb5f-4d1d-a64c-599c05c1d9e0.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\e3862c62-5fac-41d1-9d95-28cc11c72ba2.png",
+      "PackagePath": "staticwebassets\\photos\\e3862c62-5fac-41d1-9d95-28cc11c72ba2.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\e55b2665-8009-41be-9c88-cf4cd5de48cd.png",
+      "PackagePath": "staticwebassets\\photos\\e55b2665-8009-41be-9c88-cf4cd5de48cd.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\e940c339-691c-4c06-8e35-f1e1c832f4e9.jpg",
+      "PackagePath": "staticwebassets\\photos\\e940c339-691c-4c06-8e35-f1e1c832f4e9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\e962855d-8693-4a0e-993c-c06f3401301e.png",
+      "PackagePath": "staticwebassets\\photos\\e962855d-8693-4a0e-993c-c06f3401301e.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\e9e4a9f8-9606-486e-bbd1-0b408b36a064.png",
+      "PackagePath": "staticwebassets\\photos\\e9e4a9f8-9606-486e-bbd1-0b408b36a064.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\ea3624f7-e49f-48e0-ab10-ed72d6152c23.png",
+      "PackagePath": "staticwebassets\\photos\\ea3624f7-e49f-48e0-ab10-ed72d6152c23.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\ebfa7baa-9aab-4c90-ae1c-9ea90b32d710.png",
+      "PackagePath": "staticwebassets\\photos\\ebfa7baa-9aab-4c90-ae1c-9ea90b32d710.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\ec029aa9-47e1-4da3-9dfa-7318a1f12bf1.png",
+      "PackagePath": "staticwebassets\\photos\\ec029aa9-47e1-4da3-9dfa-7318a1f12bf1.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\ec7327d6-0fe8-4cef-bcc3-c0b1c46d5df3.jpg",
+      "PackagePath": "staticwebassets\\photos\\ec7327d6-0fe8-4cef-bcc3-c0b1c46d5df3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\ede6999e-6ca9-49ad-9e95-52fb2ee60873.png",
+      "PackagePath": "staticwebassets\\photos\\ede6999e-6ca9-49ad-9e95-52fb2ee60873.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\eee5a86a-8804-4dba-bfef-115a058d2b65.png",
+      "PackagePath": "staticwebassets\\photos\\eee5a86a-8804-4dba-bfef-115a058d2b65.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\f98ddde2-8c9d-4d71-9f2c-f0a42c45d1a1.png",
+      "PackagePath": "staticwebassets\\photos\\f98ddde2-8c9d-4d71-9f2c-f0a42c45d1a1.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\f9fbf48f-f3fb-44cc-b918-b8b46281e877.png",
+      "PackagePath": "staticwebassets\\photos\\f9fbf48f-f3fb-44cc-b918-b8b46281e877.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\fca621c8-e8f8-49ac-82c0-f4f4ea37348f.png",
+      "PackagePath": "staticwebassets\\photos\\fca621c8-e8f8-49ac-82c0-f4f4ea37348f.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\fcdc05b7-5b54-4575-aad0-800bfcbf7abf.png",
+      "PackagePath": "staticwebassets\\photos\\fcdc05b7-5b54-4575-aad0-800bfcbf7abf.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\fe72d50f-d0b7-4fac-a2c5-883a91209182.jpg",
+      "PackagePath": "staticwebassets\\photos\\fe72d50f-d0b7-4fac-a2c5-883a91209182.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\image-avatar-male.png",
+      "PackagePath": "staticwebassets\\photos\\image-avatar-male.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\image_avatar-female.png",
+      "PackagePath": "staticwebassets\\photos\\image_avatar-female.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\managerLayoutLogo.png",
+      "PackagePath": "staticwebassets\\photos\\managerLayoutLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\photos\\İKİZLEME.png",
+      "PackagePath": "staticwebassets\\photos\\İKİZLEME.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\css\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\css\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\css\\maps\\style.css.map",
+      "PackagePath": "staticwebassets\\template\\css\\maps\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\css\\style.css",
+      "PackagePath": "staticwebassets\\template\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\fonts\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Black.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Black.eot"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Black.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Black.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Black.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Black.woff2"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Bold.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Bold.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Bold.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Bold.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Light.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Light.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Light.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Light.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Medium.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Medium.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Medium.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Medium.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Regular.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Regular.eot"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Regular.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Regular.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Regular.woff"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\fonts\\Roboto\\Roboto-Regular.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\Roboto\\Roboto-Regular.woff2"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\images\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\auth\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\images\\auth\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\auth\\lockscreen-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\auth\\lockscreen-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\auth\\login-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\auth\\login-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\auth\\register-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\auth\\register-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\dashboard\\shape-1.svg",
+      "PackagePath": "staticwebassets\\template\\images\\dashboard\\shape-1.svg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\dashboard\\shape-2.svg",
+      "PackagePath": "staticwebassets\\template\\images\\dashboard\\shape-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\dashboard\\shape-3.svg",
+      "PackagePath": "staticwebassets\\template\\images\\dashboard\\shape-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\dashboard\\shape-4.svg",
+      "PackagePath": "staticwebassets\\template\\images\\dashboard\\shape-4.svg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face10.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face11.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face12.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face13.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face14.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face15.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face16.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face16.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face17.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face17.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face18.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face19.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face20.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face21.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face22.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face22.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face23.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face24.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face24.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face25.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face25.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face26.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face26.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face27.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face27.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face28.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face28.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face4.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face5.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face6.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face7.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face8.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\faces\\face9.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\faces\\face9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\template\\images\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\template\\images\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\logo-mini.svg",
+      "PackagePath": "staticwebassets\\template\\images\\logo-mini.svg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\template\\images\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\js\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\chart.js",
+      "PackagePath": "staticwebassets\\template\\js\\chart.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\template\\js\\dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\documentation.js",
+      "PackagePath": "staticwebassets\\template\\js\\documentation.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\file-upload.js",
+      "PackagePath": "staticwebassets\\template\\js\\file-upload.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\hoverable-collapse.js",
+      "PackagePath": "staticwebassets\\template\\js\\hoverable-collapse.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\jquery.cookie.js",
+      "PackagePath": "staticwebassets\\template\\js\\jquery.cookie.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\off-canvas.js",
+      "PackagePath": "staticwebassets\\template\\js\\off-canvas.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\tabs.js",
+      "PackagePath": "staticwebassets\\template\\js\\tabs.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\template.js",
+      "PackagePath": "staticwebassets\\template\\js\\template.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\todolist.js",
+      "PackagePath": "staticwebassets\\template\\js\\todolist.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\js\\tooltips.js",
+      "PackagePath": "staticwebassets\\template\\js\\tooltips.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\pages\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\charts\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\pages\\charts\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\charts\\chartjs.html",
+      "PackagePath": "staticwebassets\\template\\pages\\charts\\chartjs.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\forms\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\pages\\forms\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\forms\\basic_elements.html",
+      "PackagePath": "staticwebassets\\template\\pages\\forms\\basic_elements.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\icons\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\pages\\icons\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\icons\\themify.html",
+      "PackagePath": "staticwebassets\\template\\pages\\icons\\themify.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\samples\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\pages\\samples\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\samples\\lock-screen.html",
+      "PackagePath": "staticwebassets\\template\\pages\\samples\\lock-screen.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\samples\\login-2.html",
+      "PackagePath": "staticwebassets\\template\\pages\\samples\\login-2.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\samples\\login.html",
+      "PackagePath": "staticwebassets\\template\\pages\\samples\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\samples\\register-2.html",
+      "PackagePath": "staticwebassets\\template\\pages\\samples\\register-2.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\samples\\register.html",
+      "PackagePath": "staticwebassets\\template\\pages\\samples\\register.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\tables\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\pages\\tables\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\tables\\basic-table.html",
+      "PackagePath": "staticwebassets\\template\\pages\\tables\\basic-table.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\ui-features\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\pages\\ui-features\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\ui-features\\buttons.html",
+      "PackagePath": "staticwebassets\\template\\pages\\ui-features\\buttons.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\pages\\ui-features\\typography.html",
+      "PackagePath": "staticwebassets\\template\\pages\\ui-features\\typography.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\partials\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\partials\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\partials\\_footer.html",
+      "PackagePath": "staticwebassets\\template\\partials\\_footer.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\partials\\_navbar.html",
+      "PackagePath": "staticwebassets\\template\\partials\\_navbar.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\partials\\_sidebar.html",
+      "PackagePath": "staticwebassets\\template\\partials\\_sidebar.html"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\scss\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_background.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_background.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_demo.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_demo.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_fonts.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_fonts.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_footer.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_functions.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_layouts.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_layouts.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_misc.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_reset.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_reset.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_sidebar.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_sidebar.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_typography.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_typography.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\_vertical-wrapper.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\_vertical-wrapper.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_badges.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_badges.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_bootstrap-progress.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_bootstrap-progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_buttons.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_cards.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_checkbox-radio.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_checkbox-radio.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_forms.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_icons.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_icons.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_lists.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_lists.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_tables.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\components\\_todo-list.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\components\\_todo-list.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\landing-screens\\_auth.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\landing-screens\\_auth.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\mixins\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\scss\\mixins\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\mixins\\_animation.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\mixins\\_animation.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\mixins\\_badges.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\mixins\\_badges.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\mixins\\_blockqoute.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\mixins\\_blockqoute.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\mixins\\_cards.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\mixins\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\mixins\\_misc.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\mixins\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\template\\scss\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\.DS_Store",
+      "PackagePath": "staticwebassets\\template\\vendors\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\base\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\template\\vendors\\base\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\base\\vendor.bundle.base.css",
+      "PackagePath": "staticwebassets\\template\\vendors\\base\\vendor.bundle.base.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\base\\vendor.bundle.base.js",
+      "PackagePath": "staticwebassets\\template\\vendors\\base\\vendor.bundle.base.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\chart.js\\Chart.min.js",
+      "PackagePath": "staticwebassets\\template\\vendors\\chart.js\\Chart.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\ti-icons\\css\\themify-icons.css",
+      "PackagePath": "staticwebassets\\template\\vendors\\ti-icons\\css\\themify-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\ti-icons\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\template\\vendors\\ti-icons\\fonts\\themify.eot"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\ti-icons\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\template\\vendors\\ti-icons\\fonts\\themify.svg"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\ti-icons\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\template\\vendors\\ti-icons\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "C:\\Users\\kadir\\source\\repos\\HR\\HR.Presentation\\wwwroot\\template\\vendors\\ti-icons\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\template\\vendors\\ti-icons\\fonts\\themify.woff"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.HR.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.HR.Presentation.props",
+      "PackagePath": "build\\HR.Presentation.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.HR.Presentation.props",
+      "PackagePath": "buildMultiTargeting\\HR.Presentation.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.HR.Presentation.props",
+      "PackagePath": "buildTransitive\\HR.Presentation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
